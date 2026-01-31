@@ -431,10 +431,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2050508363}
   - {fileID: 873667640}
   - {fileID: 1024119306}
   - {fileID: 1615502555}
+  - {fileID: 2050508363}
   m_Father: {fileID: 375920665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -475,9 +475,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 800700104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0.66347086, y: 0.7196061}
-  m_AnchorMax: {x: 0.66347086, y: 0.7196061}
-  m_AnchoredPosition: {x: -152.29, y: -222}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 51, y: -169}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873667641
@@ -703,7 +703,7 @@ MonoBehaviour:
   buttonToBathroom: {fileID: 1615502556}
   buttonToKitchen: {fileID: 1024119307}
   fadePanel: {fileID: 2050508364}
-  fadeDuration: 1
+  fadeDuration: 1.8
 --- !u!4 &1004845969
 Transform:
   m_ObjectHideFlags: 0
@@ -753,9 +753,9 @@ RectTransform:
   m_Father: {fileID: 800700104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.7666364}
-  m_AnchoredPosition: {x: -313, y: 10}
-  m_SizeDelta: {x: 20, y: -19.999996}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -346, y: 82.29}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024119307
 MonoBehaviour:
@@ -1267,7 +1267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172.6, y: 3.88}
+  m_AnchoredPosition: {x: 172.6, y: 0}
   m_SizeDelta: {x: 2146.68, y: 978.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2050508364
