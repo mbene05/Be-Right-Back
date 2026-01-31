@@ -20,7 +20,7 @@ public class RoomSwitcher : MonoBehaviour
 
     [Header("Fade Settings")]
     public Image fadePanel;
-    public float fadeDuration = 0.5f; // How long fade takes (in seconds)
+    public float fadeDuration = 0.5f;
 
     private int currentRoom = 1;
     private bool isTransitioning = false;
@@ -30,31 +30,39 @@ public class RoomSwitcher : MonoBehaviour
         if (mainCamera == null)
             mainCamera = Camera.main;
 
-        // Make sure fade panel starts invisible
         if (fadePanel != null)
         {
             Color c = fadePanel.color;
             c.a = 0f;
             fadePanel.color = c;
+            fadePanel.transform.SetAsLastSibling();
         }
 
-        ShowRoom1(); // Start in Diner
+        // Hide ALL buttons at start
+        if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(false);
+        if (buttonToBathroom != null) buttonToBathroom.gameObject.SetActive(false);
+        if (buttonToKitchen != null) buttonToKitchen.gameObject.SetActive(false);
+
+        ShowRoom1();
     }
 
-    public void ShowRoom1() // Diner
+    public void ShowRoom1()
     {
+        Debug.Log("ShowRoom1 called");
         if (!isTransitioning)
             StartCoroutine(TransitionToRoom(1));
     }
 
-    public void ShowRoom2() // Bathroom
+    public void ShowRoom2()
     {
+        Debug.Log("ShowRoom2 called");
         if (!isTransitioning)
             StartCoroutine(TransitionToRoom(2));
     }
 
-    public void ShowRoom3() // Kitchen
+    public void ShowRoom3()
     {
+        Debug.Log("ShowRoom3 called");
         if (!isTransitioning)
             StartCoroutine(TransitionToRoom(3));
     }
@@ -63,10 +71,8 @@ public class RoomSwitcher : MonoBehaviour
     {
         isTransitioning = true;
 
-        // Fade to black
         yield return StartCoroutine(FadeToBlack());
 
-        // Switch room and move camera while screen is black
         currentRoom = roomNumber;
         
         if (roomNumber == 1)
@@ -91,10 +97,10 @@ public class RoomSwitcher : MonoBehaviour
             mainCamera.transform.position = new Vector3(room3.transform.position.x, room3.transform.position.y, cameraZPosition);
         }
 
-        UpdateButtons();
-
-        // Fade back from black
         yield return StartCoroutine(FadeFromBlack());
+
+        UpdateButtons();
+        Debug.Log("Buttons updated for room " + roomNumber);
 
         isTransitioning = false;
     }
@@ -135,24 +141,38 @@ public class RoomSwitcher : MonoBehaviour
 
     void UpdateButtons()
     {
-        // Hide all buttons first
         if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(false);
         if (buttonToBathroom != null) buttonToBathroom.gameObject.SetActive(false);
         if (buttonToKitchen != null) buttonToKitchen.gameObject.SetActive(false);
 
-        // Show buttons based on current room
-        if (currentRoom == 1) // In Diner (hub)
+        if (currentRoom == 1)
         {
-            if (buttonToBathroom != null) buttonToBathroom.gameObject.SetActive(true);
-            if (buttonToKitchen != null) buttonToKitchen.gameObject.SetActive(true);
+            if (buttonToBathroom != null) 
+            {
+                buttonToBathroom.gameObject.SetActive(true);
+                Debug.Log("Bathroom button activated");
+            }
+            if (buttonToKitchen != null) 
+            {
+                buttonToKitchen.gameObject.SetActive(true);
+                Debug.Log("Kitchen button activated");
+            }
         }
-        else if (currentRoom == 2) // In Bathroom
+        else if (currentRoom == 2)
         {
-            if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(true);
+            if (buttonToDiner != null) 
+            {
+                buttonToDiner.gameObject.SetActive(true);
+                Debug.Log("Diner button activated");
+            }
         }
-        else if (currentRoom == 3) // In Kitchen
+        else if (currentRoom == 3)
         {
-            if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(true);
+            if (buttonToDiner != null) 
+            {
+                buttonToDiner.gameObject.SetActive(true);
+                Debug.Log("Diner button activated");
+            }
         }
     }
 }
