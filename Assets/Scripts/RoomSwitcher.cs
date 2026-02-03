@@ -8,6 +8,7 @@ public class RoomSwitcher : MonoBehaviour
     public GameObject room1; // Diner
     public GameObject room2; // Bathroom
     public GameObject room3; // Kitchen
+    public GameObject bar; // Bar
 
     [Header("Camera Settings")]
     public Camera mainCamera;
@@ -17,6 +18,7 @@ public class RoomSwitcher : MonoBehaviour
     public Button buttonToDiner;
     public Button buttonToBathroom;
     public Button buttonToKitchen;
+    public Button buttonToBar;
 
     [Header("Fade Settings")]
     public Image fadePanel;
@@ -59,6 +61,12 @@ public class RoomSwitcher : MonoBehaviour
             StartCoroutine(TransitionToRoom(3));
     }
 
+    public void ShowBar() // Bar
+    {
+        if (!isTransitioning)
+            StartCoroutine(TransitionToRoom(4));
+    }
+
     IEnumerator TransitionToRoom(int roomNumber)
     {
         isTransitioning = true;
@@ -74,6 +82,7 @@ public class RoomSwitcher : MonoBehaviour
             room1.SetActive(true);
             room2.SetActive(false);
             room3.SetActive(false);
+            bar.SetActive(false);
             mainCamera.transform.position = new Vector3(room1.transform.position.x, room1.transform.position.y, cameraZPosition);
         }
         else if (roomNumber == 2)
@@ -81,6 +90,7 @@ public class RoomSwitcher : MonoBehaviour
             room1.SetActive(false);
             room2.SetActive(true);
             room3.SetActive(false);
+            bar.SetActive(false);
             mainCamera.transform.position = new Vector3(room2.transform.position.x, room2.transform.position.y, cameraZPosition);
         }
         else if (roomNumber == 3)
@@ -88,7 +98,16 @@ public class RoomSwitcher : MonoBehaviour
             room1.SetActive(false);
             room2.SetActive(false);
             room3.SetActive(true);
+            bar.SetActive(false);
             mainCamera.transform.position = new Vector3(room3.transform.position.x, room3.transform.position.y, cameraZPosition);
+        }
+        else if (roomNumber == 4)
+        {
+            room1.SetActive(false);
+            room2.SetActive(false);
+            room3.SetActive(false);
+            bar.SetActive(true);
+            mainCamera.transform.position = new Vector3(-25f, bar.transform.position.y, cameraZPosition);
         }
 
         UpdateButtons();
@@ -139,18 +158,24 @@ public class RoomSwitcher : MonoBehaviour
         if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(false);
         if (buttonToBathroom != null) buttonToBathroom.gameObject.SetActive(false);
         if (buttonToKitchen != null) buttonToKitchen.gameObject.SetActive(false);
+        if (buttonToBar != null) buttonToBar.gameObject.SetActive(false);
 
         // Show buttons based on current room
         if (currentRoom == 1) // In Diner (hub)
         {
             if (buttonToBathroom != null) buttonToBathroom.gameObject.SetActive(true);
             if (buttonToKitchen != null) buttonToKitchen.gameObject.SetActive(true);
+            if (buttonToBar != null) buttonToBar.gameObject.SetActive(true);
         }
         else if (currentRoom == 2) // In Bathroom
         {
             if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(true);
         }
         else if (currentRoom == 3) // In Kitchen
+        {
+            if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(true);
+        }
+        else if (currentRoom == 4) // In Bar
         {
             if (buttonToDiner != null) buttonToDiner.gameObject.SetActive(true);
         }
