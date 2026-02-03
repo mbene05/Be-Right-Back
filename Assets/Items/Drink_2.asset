@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e9401f8003aeb40a9a206359f9fe01, type: 3}
-  m_Name: Drink
+  m_Name: Drink_2
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Beer
-  itemID: 72
-  itemSprite: {fileID: 601055945652636980, guid: 01b9322ab026fc24aac9e213a8b2adcb, type: 3}
+  itemName: Drink_0
+  itemID: 73
+  itemSprite: {fileID: -6033280328393917619, guid: 704f9e116362e6342aeecfca547a1421, type: 3}
