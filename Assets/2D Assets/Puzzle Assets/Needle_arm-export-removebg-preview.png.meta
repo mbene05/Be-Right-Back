@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 226b5711655203c418c0bc0c6e4be2d6
+guid: ea14c46d6fd88544fbb2cbfc730e86d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3617867708823093519
-    second: dirty_0
+      213: -2206064534904931806
+    second: Needle_arm-export-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dirty_0
+      name: Needle_arm-export-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 22
-        width: 106
-        height: 104
+        x: 56
+        y: 0
+        width: 103
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fe3e33bc70cacdc0800000000000000
-      internalID: -3617867708823093519
+      spriteID: 22a77656efb7261e0800000000000000
+      internalID: -2206064534904931806
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dirty_0: -3617867708823093519
+      Needle_arm-export-removebg-preview_0: -2206064534904931806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,7 +5,7 @@ public class TitleScreenManager : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene"); // Replace with your actual game scene name
+        SceneManager.LoadScene("Intro"); // Replace with your actual game scene name
     }
 
     public void QuitGame()

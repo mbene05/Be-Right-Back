@@ -40,7 +40,48 @@ public class RoomSwitcher : MonoBehaviour
             fadePanel.color = c;
         }
 
-        ShowRoom1(); // Start in Diner
+        // Start immediately in the Diner without fading.
+        SetRoomImmediate(1);
+        UpdateButtons();
+    }
+
+    // Sets the active room and camera immediately without any fade.
+    void SetRoomImmediate(int roomNumber)
+    {
+        currentRoom = roomNumber;
+
+        if (roomNumber == 1)
+        {
+            room1.SetActive(true);
+            room2.SetActive(false);
+            room3.SetActive(false);
+            bar.SetActive(false);
+            mainCamera.transform.position = new Vector3(room1.transform.position.x, room1.transform.position.y, cameraZPosition);
+        }
+        else if (roomNumber == 2)
+        {
+            room1.SetActive(false);
+            room2.SetActive(true);
+            room3.SetActive(false);
+            bar.SetActive(false);
+            mainCamera.transform.position = new Vector3(room2.transform.position.x, room2.transform.position.y, cameraZPosition);
+        }
+        else if (roomNumber == 3)
+        {
+            room1.SetActive(false);
+            room2.SetActive(false);
+            room3.SetActive(true);
+            bar.SetActive(false);
+            mainCamera.transform.position = new Vector3(room3.transform.position.x, room3.transform.position.y, cameraZPosition);
+        }
+        else if (roomNumber == 4)
+        {
+            room1.SetActive(false);
+            room2.SetActive(false);
+            room3.SetActive(false);
+            bar.SetActive(true);
+            mainCamera.transform.position = new Vector3(-25f, bar.transform.position.y, cameraZPosition);
+        }
     }
 
     public void ShowRoom1() // Diner
