@@ -9,9 +9,10 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public float typingSpeed = 0.03f;
     public GameObject dialoguePanel;
-    private bool dialogueStarted = false;
+    public bool dialogueStarted = false;
     public Transform choicesContainer;
     public GameObject choiceButtonPrefab;
+    public Bar bar;  
 
     private Story story;
     private Coroutine typingCoroutine;
@@ -22,12 +23,21 @@ public class DialogueManager : MonoBehaviour
         story = new Story(inkJSON.text);
         dialoguePanel.SetActive(false);
         choicesContainer.gameObject.SetActive(false);
+
+        // Bind functions so Ink can call them
+        story.BindExternalFunction("AddToBar", (float amount) => {
+            bar.AddTime(amount);
+        });
+
+        story.BindExternalFunction("SubToBar", (float amount) => {
+            bar.ReduceTime(amount);
+        });
         
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!choicesContainer.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
             {
@@ -40,7 +50,7 @@ public class DialogueManager : MonoBehaviour
                 DisplayNextLine();
             }
         }
-    } 
+    }
 
     void DisplayNextLine()
     {
@@ -80,7 +90,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
-        if (dialogueStarted) return;
+        Start();
+        if (dialogueStarted) return; 
 
         dialogueStarted = true;
         dialoguePanel.SetActive(true);
@@ -89,18 +100,15 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayChoices()
     {
-        
-
-        //Show the container
         choicesContainer.gameObject.SetActive(true);
 
-        // Loop through all choices in the story
         for (int i = 0; i < story.currentChoices.Count; i++)
         {
             Choice choice = story.currentChoices[i];
 
             GameObject buttonGO = Instantiate(choiceButtonPrefab, choicesContainer);
             buttonGO.SetActive(true); 
+            buttonGO.name = "ChoiceButtonInstance";
 
             TextMeshProUGUI buttonText = buttonGO.GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = choice.text;
@@ -115,7 +123,8 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (Transform child in choicesContainer)
         {
-            Destroy(child.gameObject);
+            if (child.name == "ChoiceButtonInstance")
+                Destroy(child.gameObject);
         }
         story.ChooseChoiceIndex(choiceIndex);
         choicesContainer.gameObject.SetActive(false);
@@ -126,8 +135,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialoguePanel.SetActive(false);
-        dialogueStarted = false;
+        dialogueStarted = false; 
         isTyping = false;
+        choicesContainer.gameObject.SetActive(false); 
     }
 }
 
