@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,24 +15,21 @@ public class DialogueManager : MonoBehaviour
     public GameObject choiceButtonPrefab;
     public Bar bar;  
 
+    public string endSceneName = "WinScreen"; 
+
     private Story story;
     private Coroutine typingCoroutine;
     private bool isTyping;
 
+    public GameObject[] drinks;
+
     public void Start()
     {
-        story = new Story(inkJSON.text);
+        
         dialoguePanel.SetActive(false);
         choicesContainer.gameObject.SetActive(false);
 
-        // Bind functions so Ink can call them
-        story.BindExternalFunction("AddToBar", (float amount) => {
-            bar.AddTime(amount);
-        });
-
-        story.BindExternalFunction("SubToBar", (float amount) => {
-            bar.ReduceTime(amount);
-        });
+     
         
     }
 
@@ -88,13 +86,33 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
-    public void StartDialogue()
+    public void StartDialogue(TextAsset newInkJSON)
     {
         Start();
         if (dialogueStarted) return; 
 
         dialogueStarted = true;
         dialoguePanel.SetActive(true);
+         // Assign the new Ink JSON
+         inkJSON = newInkJSON;
+          story = new Story(inkJSON.text); 
+          // Bind functions so Ink can call them
+            story.BindExternalFunction("AddToBar", (float amount) => {
+                bar.AddTime(amount);
+            });
+
+            story.BindExternalFunction("SubToBar", (float amount) => {
+                bar.ReduceTime(amount);
+            });
+            
+              story.BindExternalFunction("DrinkRecieved", (int drinkNum) => {
+                ActivateDrink(drinkNum);
+            });
+
+              story.BindExternalFunction("EndedGame", (int didyouend) => {
+                LoadEndScene();
+            });
+
         DisplayNextLine();
     }
 
@@ -138,6 +156,20 @@ public class DialogueManager : MonoBehaviour
         dialogueStarted = false; 
         isTyping = false;
         choicesContainer.gameObject.SetActive(false); 
+    }
+
+    void ActivateDrink(int drinkNum)
+    {
+        for (int i = 0; i < drinks.Length; i++)
+        {
+            if (drinks[i] != null)
+                drinks[i].SetActive(i == drinkNum); // Activate only the selected drink
+        }
+    }
+
+    void LoadEndScene()
+    {
+        SceneManager.LoadScene(endSceneName);
     }
 }
 

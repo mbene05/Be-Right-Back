@@ -24,7 +24,7 @@ public class RoomSwitcher : MonoBehaviour
     public Image fadePanel;
     public float fadeDuration = 0.5f; // How long fade takes (in seconds)
 
-    private int currentRoom = 1;
+    public int currentRoom = 1;
     private bool isTransitioning = false;
 
     void Start()

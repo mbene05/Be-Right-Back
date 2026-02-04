@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Hotbar : MonoBehaviour
+public class HotbarManager : MonoBehaviour
 {
     public HotbarSlot[] slots = new HotbarSlot[6];
 
@@ -29,5 +29,10 @@ public class Hotbar : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void getridofslot1()
+    {
+        slots[0].ClearSlot();
     }
 }

@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"bartender_drink"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"bartender_drink":["^You already have a drink. Finish that one first, and I can give you another.","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}

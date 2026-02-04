@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"drinkguy_incorrect_drink"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"drinkguy_incorrect_drink":["^Sips drink*","\n","^Oh no, I can taste the synthetic materials...","\n","^It just reminds me of her...","\n","^I miss her so much :(","\n","^WAHHH","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}

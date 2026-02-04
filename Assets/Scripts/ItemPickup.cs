@@ -3,9 +3,12 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public Item item; // The Item ScriptableObject this pickup represents
-    public Hotbar hotbar; // Reference to the hotbar
+    public HotbarManager hotbar; // Reference to the hotbar
     public bool isLimitedPickup = false; // Check this for the 4 special items
     public string limitedGroupID = "drinks"; // Group ID for items that share the limit
+
+     public GameObject Bartender;
+     public GameObject SadGuy;
     
     private static System.Collections.Generic.Dictionary<string, GameObject> limitedPickups = new System.Collections.Generic.Dictionary<string, GameObject>();
 
@@ -14,7 +17,7 @@ public class ItemPickup : MonoBehaviour
         // Find the hotbar in the scene if not assigned
         if (hotbar == null)
         {
-            hotbar = FindObjectOfType<Hotbar>();
+            hotbar = FindObjectOfType<HotbarManager>();
         }
     }
 
@@ -37,7 +40,24 @@ public class ItemPickup : MonoBehaviour
             
             if (success)
             {
-                Debug.Log("Picked up: " + item.itemName);
+                BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
+                SadGuyManager selectedSadGuy = SadGuy.GetComponent<SadGuyManager>();
+                if (selectedBartender != null)
+                {
+                    selectedBartender.pickUpDrink = true;
+                }
+
+                if (selectedSadGuy != null)
+                {
+                    selectedSadGuy.pickUpDrink = true;
+                }
+
+                if (item.itemName == "Beer")
+                {
+                   selectedSadGuy.rightDrink = true;
+                    Debug.Log("Yay: ");
+                }
+               // Debug.Log("Picked up: " + item.itemName);
                 
                 // If this is a limited pickup, register it
                 if (isLimitedPickup)
