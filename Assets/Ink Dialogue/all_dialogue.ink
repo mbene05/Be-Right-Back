@@ -2,7 +2,11 @@
 
 === npc === 
 Hello!
-This is a test! 
-Still a test Lmao
--> END
+* [Choice 1]
+    This is a test! FSUDFBASUIFBASUBDSAUIJ DWAQJIB D
+    -> END
+* [Choice 2]
+    Still a test Lmao
+    -> END
+
 
