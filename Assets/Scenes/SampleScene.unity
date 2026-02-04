@@ -3264,8 +3264,10 @@ MonoBehaviour:
   dialogueText: {fileID: 124415452}
   typingSpeed: 0.03
   dialoguePanel: {fileID: 1090131041}
+  dialogueStarted: 0
   choicesContainer: {fileID: 985793517}
   choiceButtonPrefab: {fileID: 2053577972}
+  bar: {fileID: 0}
 --- !u!4 &1683366674
 Transform:
   m_ObjectHideFlags: 0
