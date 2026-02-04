@@ -6,6 +6,11 @@ public class DateManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        dialogueManager.StartDialogue();
+        
+        if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
+        {
+            dialogueManager.StartDialogue();
+        }
+        
     }
 }
