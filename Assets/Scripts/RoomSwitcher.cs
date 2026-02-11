@@ -26,6 +26,9 @@ public class RoomSwitcher : MonoBehaviour
 
     public int currentRoom = 1;
     private bool isTransitioning = false;
+    [SerializeField] private AudioClip walkingSound;
+
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -40,6 +43,11 @@ public class RoomSwitcher : MonoBehaviour
             fadePanel.color = c;
         }
 
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null){
+        Debug.LogError("NO AudioSource on this object!");
+        }
         // Start immediately in the Diner without fading.
         SetRoomImmediate(1);
         UpdateButtons();
@@ -111,6 +119,8 @@ public class RoomSwitcher : MonoBehaviour
     IEnumerator TransitionToRoom(int roomNumber)
     {
         isTransitioning = true;
+
+        audioSource.PlayOneShot(walkingSound);
 
         // Fade to black
         yield return StartCoroutine(FadeToBlack());
@@ -207,6 +217,8 @@ public class RoomSwitcher : MonoBehaviour
             if (buttonToBathroom != null) buttonToBathroom.gameObject.SetActive(true);
             if (buttonToKitchen != null) buttonToKitchen.gameObject.SetActive(true);
             if (buttonToBar != null) buttonToBar.gameObject.SetActive(true);
+
+
         }
         else if (currentRoom == 2) // In Bathroom
         {
