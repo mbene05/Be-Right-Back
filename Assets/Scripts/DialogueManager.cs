@@ -3,6 +3,8 @@ using TMPro;
 using Ink.Runtime;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -23,13 +25,19 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject[] drinks;
 
+    public AudioClip goodSound;
+    public AudioClip badSound;
+    public AudioClip neutralSound;
+
+    private AudioSource audioSource;
+
     public void Start()
     {
         
         dialoguePanel.SetActive(false);
         choicesContainer.gameObject.SetActive(false);
 
-     
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -59,6 +67,9 @@ public class DialogueManager : MonoBehaviour
         {
             string line = story.Continue().Trim();
             typingCoroutine = StartCoroutine(TypeLine(line));
+
+            HandleTags(story.currentTags);
+
         }
         //If there are choices
         else if (story.currentChoices.Count > 0)
@@ -71,6 +82,35 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
         }
     }
+
+    void HandleTags(List<string> tags)
+{
+    foreach (string tag in tags)
+    {
+        switch (tag)
+        {
+            case "good":
+                PlayResponseSound(goodSound);
+                break;
+
+            case "neutral":
+                PlayResponseSound(neutralSound);
+                break;
+
+            case "bad":
+                PlayResponseSound(badSound);
+                break;
+        }
+    }
+}
+
+void PlayResponseSound(AudioClip clip)
+{
+    if (clip == null) return;
+
+    audioSource.PlayOneShot(clip);
+}
+
 
     IEnumerator TypeLine(string line)
     {
