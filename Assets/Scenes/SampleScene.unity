@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DateManager
   dialogueManager: {fileID: 1683366673}
   myInkJSON: {fileID: 4900000, guid: 59c36a7beba8d9546b6fb691b9287f06, type: 3}
-  interactSound: {fileID: 8300000, guid: e7bec643efc0992498588c5e7984ae20, type: 3}
+  interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
 --- !u!61 &546114532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2783,8 +2783,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 93d3267b40323f34ab8c3504c9430be5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.9
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2857,7 +2857,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.86
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4412,9 +4412,9 @@ MonoBehaviour:
   - {fileID: 1053455367}
   - {fileID: 196266994}
   - {fileID: 764604371}
-  goodSound: {fileID: 8300000, guid: 9dad26eeb75c1754c9a687435f450ad7, type: 3}
-  badSound: {fileID: 8300000, guid: 9dad26eeb75c1754c9a687435f450ad7, type: 3}
-  neutralSound: {fileID: 8300000, guid: 9dad26eeb75c1754c9a687435f450ad7, type: 3}
+  goodSound: {fileID: 8300000, guid: dc5cd3a244a4a7142bcaed8d223eebd3, type: 3}
+  badSound: {fileID: 8300000, guid: a36c0884dd42db34096d60413ee913e6, type: 3}
+  neutralSound: {fileID: 8300000, guid: 7215e44791cec8340a9b6b709b5ab7fe, type: 3}
 --- !u!4 &1683366674
 Transform:
   m_ObjectHideFlags: 0
