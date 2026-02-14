@@ -26,9 +26,14 @@ public class RoomSwitcher : MonoBehaviour
 
     public int currentRoom = 1;
     private bool isTransitioning = false;
-    [SerializeField] private AudioClip walkingSound;
+    
+
+    [Header("Audio")]
+    public AudioClip walkingSound;
+    public AudioClip dinerMusic;
 
     private AudioSource audioSource;
+    private AudioSource backgroundAmbiance;
 
     void Start()
     {
@@ -43,11 +48,14 @@ public class RoomSwitcher : MonoBehaviour
             fadePanel.color = c;
         }
 
-        audioSource = GetComponent<AudioSource>();
+        AudioSource[] sources = GetComponents<AudioSource>();
+        audioSource = sources[0];
+        backgroundAmbiance = sources[1];
 
-        if (audioSource == null){
-        Debug.LogError("NO AudioSource on this object!");
-        }
+        backgroundAmbiance.clip = dinerMusic;
+        backgroundAmbiance.loop = true;
+        backgroundAmbiance.Play();
+
         // Start immediately in the Diner without fading.
         SetRoomImmediate(1);
         UpdateButtons();
@@ -57,6 +65,8 @@ public class RoomSwitcher : MonoBehaviour
     void SetRoomImmediate(int roomNumber)
     {
         currentRoom = roomNumber;
+
+        UpdateMusicForRoom();
 
         if (roomNumber == 1)
         {
@@ -116,6 +126,28 @@ public class RoomSwitcher : MonoBehaviour
             StartCoroutine(TransitionToRoom(4));
     }
 
+    void UpdateMusicForRoom()
+{
+    switch (currentRoom)
+    {
+        case 1: // Diner
+            backgroundAmbiance.volume = 0.3f;
+            break;
+
+        case 4: // Bar
+            backgroundAmbiance.volume = 0.15f;
+            break;
+
+        case 2: // Bathroom
+            backgroundAmbiance.volume = 0f;
+            break;
+
+        case 3: // Kitchen
+            backgroundAmbiance.volume = 0.15f;
+            break;
+    }
+}
+
     IEnumerator TransitionToRoom(int roomNumber)
     {
         isTransitioning = true;
@@ -127,6 +159,8 @@ public class RoomSwitcher : MonoBehaviour
 
         // Switch room and move camera while screen is black
         currentRoom = roomNumber;
+
+        UpdateMusicForRoom();
         
         if (roomNumber == 1)
         {
