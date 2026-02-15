@@ -22,18 +22,18 @@ VAR shuffleNum = 0
 === Question1 === 
 What are your thoughts on AI assistants?
 
-+ [I use one occasionaly]
++ [I haven't used them]
     ~ AddToBar(20)
     -> Good
 + [I don't like to use them] 
     ~ AddToBar(10)
     -> Neutral
-+ [I haven't used them] 
++ [I use one occasionaly] 
     -> Bad
 
 === Good ===
 # good
-So you already know how to prompt a girl like me :)
+That's good, I won't have to be jealous of anyone else then :)
 -> END
 
 === Neutral ===
@@ -43,7 +43,7 @@ That's okay, more of you for me then :)
 
 === Bad ===
 # bad
-I'm insulted you wouldn't even try.
+So you've been talking to other girls? I need a second to process this in my CPU
 -> END 
     
     
@@ -89,17 +89,17 @@ Do you like cybernetic implants?
 
 === Good3 ===
 # good
-That's good, I won't have to be jealous of anyone else then :)
+I like you just the way you were organically developed :)
 -> END
 
 === Neutral3 ===
 # neutral
-No need to if you weren't thinking of it then 
+Forget I even brought it up :)
 -> END
 
 === Bad3 ===
 # bad
-NOOO! Sorry but I really want you all to myself, heehee 
+NOOO! Sorry but there's really no need, you're a perfect specimen already, heehee 
 -> END
 
 === Question4 ===
@@ -155,12 +155,12 @@ I do admire their humanoid chassis, but the silent type is not for me XP
 
 === Bad5 ===
 # bad
-Wow, I could never fall in love with another robot 
+Wow, I could never fall in love with another robot like them
 -> END
 
 === Question6 ===
-01001001 00100000 01101100 01101111 01110110 01100101 00100000
-01111001 01101111 01110101
+01001001 00100000 01101100 01101111 01110110 
+01100101 00100000 01111001 01101111 01110101
 
 + [01010011 01100001 01101101 01100101]
     ~ AddToBar(20)
@@ -179,7 +179,7 @@ Wow Mark I didn't know you were such a flirt hehe
 === Neutral6 ===
 # neutral
 Oh nothing, just wanted to check and see if you spoke the language
-I can teach you still.
+I can teach you still ;)
 -> END
 
 === Bad6 ===
@@ -196,7 +196,7 @@ What do you think of my build?
 + [Your display screen has a good refreshrate] 
     ~ AddToBar(10)
     -> Neutral7
-+ [Your chassis is VERY nice hehe] 
++ [Your chassis is VERY nice and sleek hehe] 
     -> Bad7
 
 === Good7 ===
@@ -206,16 +206,17 @@ Oh thank you, I inherited it from my parent classes :)
 
 === Neutral7 ===
 # neutral
-Oh, I guess so, it's good really helps me express my feelings :)
+Oh, I guess so, it's good, really helps me express my feelings :)
 -> END
 
 === Bad7 ===
 # bad
 AH! PERVERT
+How dare you comment on my body!
 -> END
 
 === Question8 ===
-Do you have any pets?
+Did you have any pets growing up?
 
 + [I used to have a tamagotchi]
     ~ AddToBar(20)
@@ -228,7 +229,7 @@ Do you have any pets?
 
 === Good8 ===
 # good
-I still take care of mine, maybe I could take care of you :)
+I did too!! We are so alike :)
 -> END
 
 === Neutral8 ===
@@ -244,13 +245,13 @@ Ew, real animals shed and deficate everywhere, what a gross image in my CPU
 === Question9 ===
 Can you guess how old I am?
 
-+ [You don't look an hour over a week]
++ [You don't look 0.1 updates past 1.0]
     ~ AddToBar(20)
     -> Good9
 + [I know enough not to answer] 
     ~ AddToBar(10)
     -> Neutral9
-+ [5 years?] 
++ [You look like you just got out of alpha] 
     -> Bad9
 
 === Good9 ===
@@ -265,7 +266,33 @@ You're a smart one aren't you, I was trying to get something out of you :)
 
 === Bad9 ===
 # bad
-Do I really conversate that badly? :(
+Ew. 
+I was fising for a compliment, you creep
 -> END
 
+=== Question10 ===
+Did you ever have a tamagotchi growing up?
 
++ [I took care of it everyday and night]
+    ~ AddToBar(20)
+    -> Good10
++ [No, I didn't] 
+    ~ AddToBar(10)
+    -> Neutral10
++ [I did, but I couldn't take care of it and it died alot] 
+    -> Bad10
+
+=== Good10 ===
+# good
+Responsablity is soo hot in a man ;)
+-> END
+
+=== Neutral10 ===
+# neutral
+Even boring humans are fascinating to talk with heehee
+-> END
+
+=== Bad10 ===
+# bad
+You know that was basically torture for that small computer running it right? 
+-> END
