@@ -30,10 +30,12 @@ public class RoomSwitcher : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip walkingSound;
-    public AudioClip dinerMusic;
+    public AudioClip Ambiance;
+    public AudioClip music;
 
     private AudioSource audioSource;
     private AudioSource backgroundAmbiance;
+    private AudioSource dinerMusic;
 
     void Start()
     {
@@ -51,10 +53,15 @@ public class RoomSwitcher : MonoBehaviour
         AudioSource[] sources = GetComponents<AudioSource>();
         audioSource = sources[0];
         backgroundAmbiance = sources[1];
+        dinerMusic = sources[2];
 
-        backgroundAmbiance.clip = dinerMusic;
+        backgroundAmbiance.clip = Ambiance;
         backgroundAmbiance.loop = true;
         backgroundAmbiance.Play();
+
+        dinerMusic.clip = music;
+        dinerMusic.loop = true;
+        dinerMusic.Play();
 
         // Start immediately in the Diner without fading.
         SetRoomImmediate(1);
