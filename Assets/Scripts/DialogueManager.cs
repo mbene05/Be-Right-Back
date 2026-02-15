@@ -28,8 +28,10 @@ public class DialogueManager : MonoBehaviour
     public AudioClip goodSound;
     public AudioClip badSound;
     public AudioClip neutralSound;
+    public AudioClip bartenderVoice;
 
     private AudioSource audioSource;
+    private AudioSource voiceSource;
 
     public void Start()
     {
@@ -38,6 +40,9 @@ public class DialogueManager : MonoBehaviour
         choicesContainer.gameObject.SetActive(false);
 
         audioSource = GetComponent<AudioSource>();
+        voiceSource = GetComponent<AudioSource>();
+        voiceSource.clip = bartenderVoice; //change when i add more voices
+        voiceSource.loop = true;
         
     }
 
@@ -58,6 +63,20 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    IEnumerator PlayVoiceForDuration(int charCount)
+{
+
+    float timePerChar = 0.038f;
+    float duration = charCount * timePerChar;
+
+    voiceSource.loop = true;
+    voiceSource.Play();
+
+    yield return new WaitForSeconds(duration);
+
+    voiceSource.Stop();
+}
+
     void DisplayNextLine()
     {
         dialogueText.gameObject.SetActive(true);
@@ -65,10 +84,13 @@ public class DialogueManager : MonoBehaviour
         //If we can continue in the story
         if (story.canContinue)
         {
+
             string line = story.Continue().Trim();
             typingCoroutine = StartCoroutine(TypeLine(line));
+            StartCoroutine(PlayVoiceForDuration(line.Length));
 
             HandleTags(story.currentTags);
+
 
         }
         //If there are choices
@@ -80,6 +102,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             EndDialogue();
+
         }
     }
 
