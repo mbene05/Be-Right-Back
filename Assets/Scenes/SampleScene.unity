@@ -1666,7 +1666,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.1996808, y: 0.47923386}
+  m_Offset: {x: 0.14714909, y: 0.2691064}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1676,7 +1676,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.8953705, y: 2.9584682}
+  m_Size: {x: 5.471325, y: 4.7235384}
   m_EdgeRadius: 0
 --- !u!82 &546114533
 AudioSource:
@@ -2754,7 +2754,11 @@ MonoBehaviour:
   buttonToKitchen: {fileID: 1732884826}
   buttonToBar: {fileID: 1374962622}
   fadePanel: {fileID: 3602724494366167223}
+<<<<<<< Updated upstream
   fadeDuration: 1.5
+=======
+  fadeDuration: 1
+>>>>>>> Stashed changes
   currentRoom: 1
   walkingSound: {fileID: 8300000, guid: 79fdcaf5d2a99ee4bb4234a1374653f6, type: 3}
   Ambiance: {fileID: 8300000, guid: f67e243785ee89e4bb3cc3bab8cadf2a, type: 3}
