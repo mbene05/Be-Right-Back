@@ -2754,11 +2754,7 @@ MonoBehaviour:
   buttonToKitchen: {fileID: 1732884826}
   buttonToBar: {fileID: 1374962622}
   fadePanel: {fileID: 3602724494366167223}
-<<<<<<< Updated upstream
   fadeDuration: 1.5
-=======
-  fadeDuration: 1
->>>>>>> Stashed changes
   currentRoom: 1
   walkingSound: {fileID: 8300000, guid: 79fdcaf5d2a99ee4bb4234a1374653f6, type: 3}
   Ambiance: {fileID: 8300000, guid: f67e243785ee89e4bb3cc3bab8cadf2a, type: 3}
