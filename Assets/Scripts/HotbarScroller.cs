@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Attach this to the hotbar UI panel (the parent of slots). It receives scroll events and pages the hotbar.
+
 public class HotbarScroller : MonoBehaviour, IScrollHandler
 {
     public HotbarManager hotbarManager;
