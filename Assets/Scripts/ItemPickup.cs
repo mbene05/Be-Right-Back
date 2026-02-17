@@ -23,7 +23,7 @@ public class ItemPickup : MonoBehaviour
 
     void OnMouseDown()
     {
-        // If this is a limited pickup item, check if one from the same group is already picked
+     
         if (isLimitedPickup)
         {
             if (limitedPickups.ContainsKey(limitedGroupID) && limitedPickups[limitedGroupID] != null)
@@ -33,7 +33,7 @@ public class ItemPickup : MonoBehaviour
             }
         }
 
-        // When clicked, try to add to hotbar
+    
         if (hotbar != null && item != null)
         {
             bool success = hotbar.AddItem(item);

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Drink_0
   itemID: 73
-  itemSprite: {fileID: -6033280328393917619, guid: 704f9e116362e6342aeecfca547a1421, type: 3}
+  itemSprite: {fileID: -6033280328393917619, guid: 8836eeb2bee06974aa211b9c4db503fb, type: 3}
