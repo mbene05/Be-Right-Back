@@ -2,7 +2,7 @@ EXTERNAL AddToBar(amount)
 EXTERNAL SubToBar(amount)
 VAR shuffleNum = 0
 
-~ shuffleNum = RANDOM(1,9)
+~ shuffleNum = RANDOM(1,10)
 
 {
     - shuffleNum == 1: -> Question1
@@ -14,6 +14,7 @@ VAR shuffleNum = 0
     - shuffleNum == 7: -> Question7
     - shuffleNum == 8: -> Question8
     - shuffleNum == 9: -> Question9
+    - shuffleNum == 10: -> Question10
 
 }
 
@@ -81,7 +82,7 @@ Do you like cybernetic implants?
 + [I don't want any installed]
     ~ AddToBar(20)
     -> Good3
-+ [I have not considered them before] 
++ [I haven't considered them before] 
     ~ AddToBar(10)
     -> Neutral3
 + [I've considered installing one before] 
@@ -155,7 +156,8 @@ I do admire their humanoid chassis, but the silent type is not for me XP
 
 === Bad5 ===
 # bad
-Wow, I could never fall in love with another robot like them
+Wow, you think so lowly of me?
+I could never fall in love with another robot like them
 -> END
 
 === Question6 ===
@@ -295,4 +297,33 @@ Even boring humans are fascinating to talk with heehee
 === Bad10 ===
 # bad
 You know that was basically torture for that small computer running it right? 
+-> END
+
+=== Question11 ===
+What's your favorite meal?
+
++ [Real mayonnaise]
+    ~ AddToBar(20)
+    -> Good11
++ [Prepared potato salad] 
+    ~ AddToBar(10)
+    -> Neutral11
++ [Medium rare beef steak] 
+    -> Bad11
+
+=== Good11 ===
+# good
+Fascinating, and a rarity after the last avian flu
+I would like to try some one day with you :)
+-> END
+
+=== Neutral11 ===
+# neutral
+Oh, I suppose there is mayonnaise in potato salad
+I can get you better than prepared honey ;)
+-> END
+
+=== Bad11 ===
+# bad
+Are you sure you're Mark?
 -> END
