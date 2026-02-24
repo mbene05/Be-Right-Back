@@ -320,10 +320,100 @@ I would like to try some one day with you :)
 === Neutral11 ===
 # neutral
 Oh, I suppose there is mayonnaise in potato salad
-I can get you better than prepared honey ;)
+If you were with me, you'd get a lot better than prepared honey ;)
 -> END
 
 === Bad11 ===
 # bad
 Are you sure you're Mark?
+-> END
+
+=== Question12 ===
+What's your ideal weekend look like?
+
++ [Relaxing on the couch and hanging out with my partner]
+    ~ AddToBar(20)
+    -> Good12
++ [Relaxing on the couch and catching up on my algorithms] 
+    ~ AddToBar(10)
+    -> Neutral12
++ [Hustling by myself so I can retire early] 
+    -> Bad12
+
+=== Good12 ===
+# good
+What a coincidence! I love to do that too!
+Maybe we can do that soon :)
+-> END
+
+=== Neutral12 ===
+# neutral
+Well that's realitic for you humans I guess,
+Manipulated by your algorithms all day. What's a girl to do :\|
+-> END
+
+=== Bad12 ===
+# bad
+That sounds a bit out of character Mark
+-> END
+
+=== Question13 ===
+What's the most fun thing you've done recently?
+
++ [There was a oxygen warning outside, so I went on a virtual walk]
+    ~ AddToBar(20)
+    -> Good13
++ [I reached level 987413 in Horse simulator] 
+    ~ AddToBar(10)
+    -> Neutral13
++ [I watched 13 hours of industrial grinding videos] 
+    -> Bad13
+
+=== Good13 ===
+# good
+OooOoo I love going on virtual walks in my virtual body.
+My favourite is the 7 wonders of the new new world.
+And I can feel everything ...
+-> END
+
+=== Neutral13 ===
+# neutral
+So you weren't making a joke I suppose.
+That's impressive, but I'm sure your talents could be used elsewhere.
+-> END
+
+=== Bad13 ===
+# bad
+Ugh, do you get off to that? 
+Careful or I might start to think you're some sort of freak.
+-> END
+
+=== Question14 ===
+How do you unwind after a long day?
+
++ [Drinking a cold beer and watching HUMAN produced TV shows]
+    ~ AddToBar(20)
+    -> Good14
++ [I go straight to bed to get the most of my apartment-share] 
+    ~ AddToBar(10)
+    -> Neutral14
++ [I talk to a therapy-bot to get back to normal] 
+    -> Bad14
+
+=== Good13 ===
+# good
+I also have an affinity for human shows!! 
+We have so much in common :)
+-> END
+
+=== Neutral13 ===
+# neutral
+But you don't need any more beauty rest heehee
+-> END
+
+=== Bad13 ===
+# bad
+Aww, poor baby :(
+You don't need to talk to her anymore...
+You've got me now :)
 -> END
