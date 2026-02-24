@@ -320,7 +320,7 @@ I would like to try some one day with you :)
 === Neutral11 ===
 # neutral
 Oh, I suppose there is mayonnaise in potato salad
-If you were with me, you'd get a lot better than prepared honey ;)
+If you were with me, you'd get a lot better than prepared, honey ;)
 -> END
 
 === Bad11 ===
@@ -400,18 +400,18 @@ How do you unwind after a long day?
 + [I talk to a therapy-bot to get back to normal] 
     -> Bad14
 
-=== Good13 ===
+=== Good14 ===
 # good
 I also have an affinity for human shows!! 
 We have so much in common :)
 -> END
 
-=== Neutral13 ===
+=== Neutral14 ===
 # neutral
 But you don't need any more beauty rest heehee
 -> END
 
-=== Bad13 ===
+=== Bad14 ===
 # bad
 Aww, poor baby :(
 You don't need to talk to her anymore...
