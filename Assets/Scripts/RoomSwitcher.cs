@@ -29,13 +29,19 @@ public class RoomSwitcher : MonoBehaviour
     
 
     [Header("Audio")]
-    public AudioClip walkingSound;
+	private Coroutine bathroomEventRoutine;
+
+	public AudioClip walkingSound;
     public AudioClip Ambiance;
     public AudioClip music;
+    public AudioClip musicEvent;
+    public AudioClip bathroomEvent;
+    public AudioClip glassClink;
 
-    private AudioSource audioSource;
+	private AudioSource audioSource;
     private AudioSource backgroundAmbiance;
     private AudioSource dinerMusic;
+    private AudioSource events;
 
     void Start()
     {
@@ -54,8 +60,10 @@ public class RoomSwitcher : MonoBehaviour
         audioSource = sources[0];
         backgroundAmbiance = sources[1];
         dinerMusic = sources[2];
+		events = sources[3];
 
-        backgroundAmbiance.clip = Ambiance;
+
+		backgroundAmbiance.clip = Ambiance;
         backgroundAmbiance.loop = true;
         backgroundAmbiance.Play();
 
@@ -63,8 +71,9 @@ public class RoomSwitcher : MonoBehaviour
         dinerMusic.loop = true;
         dinerMusic.Play();
 
-        // Start immediately in the Diner without fading.
-        SetRoomImmediate(1);
+        
+		// Start immediately in the Diner without fading.
+		SetRoomImmediate(1);
         UpdateButtons();
     }
 
@@ -107,7 +116,18 @@ public class RoomSwitcher : MonoBehaviour
             bar.SetActive(true);
             mainCamera.transform.position = new Vector3(-25f, bar.transform.position.y, cameraZPosition);
         }
-    }
+
+		if (bathroomEventRoutine != null && currentRoom != 2)
+		{
+			StopCoroutine(bathroomEventRoutine);
+			bathroomEventRoutine = null;
+		}
+		if (currentRoom == 2 && bathroomEventRoutine == null)
+		{
+			bathroomEventRoutine = StartCoroutine(BathroomEventLoop());
+		}
+
+	}
 
     public void ShowRoom1() // Diner
     {
@@ -138,24 +158,43 @@ public class RoomSwitcher : MonoBehaviour
     switch (currentRoom)
     {
         case 1: // Diner
+            dinerMusic.volume = 0.2f;
             backgroundAmbiance.volume = 0.3f;
             break;
 
         case 4: // Bar
-            backgroundAmbiance.volume = 0.15f;
-            break;
+            backgroundAmbiance.volume = 0.2f;
+            dinerMusic.volume = 0.13f;
+				break;
 
         case 2: // Bathroom
-            backgroundAmbiance.volume = 0f;
-            break;
+            backgroundAmbiance.volume = 0.14f;
+            dinerMusic.volume = 0.09f;
+			break;
 
         case 3: // Kitchen
             backgroundAmbiance.volume = 0.15f;
-            break;
+            dinerMusic.volume = 0.09f;
+			break;
     }
 }
 
-    IEnumerator TransitionToRoom(int roomNumber)
+	IEnumerator BathroomEventLoop()
+	{
+		while (currentRoom == 2)
+		{
+			float wait = Random.Range(9,16);
+			yield return new WaitForSeconds(wait);
+
+			if (currentRoom != 2) break;
+
+			events.PlayOneShot(bathroomEvent);
+		}
+
+		bathroomEventRoutine = null;
+	}
+
+	IEnumerator TransitionToRoom(int roomNumber)
     {
         isTransitioning = true;
 
@@ -167,7 +206,13 @@ public class RoomSwitcher : MonoBehaviour
         // Switch room and move camera while screen is black
         currentRoom = roomNumber;
 
-        UpdateMusicForRoom();
+		if (bathroomEventRoutine != null && currentRoom != 2)
+		{
+			StopCoroutine(bathroomEventRoutine);
+			bathroomEventRoutine = null;
+		}
+
+		UpdateMusicForRoom();
         
         if (roomNumber == 1)
         {
@@ -184,8 +229,14 @@ public class RoomSwitcher : MonoBehaviour
             room3.SetActive(false);
             bar.SetActive(false);
             mainCamera.transform.position = new Vector3(room2.transform.position.x, room2.transform.position.y, cameraZPosition);
-        }
-        else if (roomNumber == 3)
+
+            events.PlayOneShot(musicEvent);
+
+			if (bathroomEventRoutine == null)
+			    bathroomEventRoutine = StartCoroutine(BathroomEventLoop());
+
+		}
+		else if (roomNumber == 3)
         {
             room1.SetActive(false);
             room2.SetActive(false);
@@ -200,7 +251,10 @@ public class RoomSwitcher : MonoBehaviour
             room3.SetActive(false);
             bar.SetActive(true);
             mainCamera.transform.position = new Vector3(-25f, bar.transform.position.y, cameraZPosition);
-        }
+
+            events.PlayOneShot(glassClink);
+
+		}
 
         UpdateButtons();
 

@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     public AudioClip goodSound;
     public AudioClip badSound;
     public AudioClip neutralSound;
-    public AudioClip bartenderVoice;
+    public AudioClip sadGuyVoice;
 
     private AudioSource audioSource;
     private AudioSource voiceSource;
@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         voiceSource = GetComponent<AudioSource>();
-        voiceSource.clip = bartenderVoice; //change when i add more voices
+        voiceSource.clip = sadGuyVoice; //change when i add more voices
         voiceSource.loop = true;
         
     }

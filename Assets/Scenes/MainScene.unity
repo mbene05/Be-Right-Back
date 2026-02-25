@@ -3501,6 +3501,7 @@ GameObject:
   - component: {fileID: 1004845970}
   - component: {fileID: 1004845971}
   - component: {fileID: 1004845972}
+  - component: {fileID: 1004845973}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -3533,9 +3534,12 @@ MonoBehaviour:
   fadePanel: {fileID: 3602724494366167223}
   fadeDuration: 1.5
   currentRoom: 1
-  walkingSound: {fileID: 8300000, guid: 79fdcaf5d2a99ee4bb4234a1374653f6, type: 3}
+  walkingSound: {fileID: 8300000, guid: f983afa00f9ddb84398a34293149805e, type: 3}
   Ambiance: {fileID: 8300000, guid: f67e243785ee89e4bb3cc3bab8cadf2a, type: 3}
   music: {fileID: 8300000, guid: 96cfc961b006fc5459fbc2e423860f24, type: 3}
+  musicEvent: {fileID: 8300000, guid: 062afc1817d9a0a48b6454ddc30c5158, type: 3}
+  bathroomEvent: {fileID: 8300000, guid: 9dfc217bb4b4d0e47a8fb3fefba6ae2c, type: 3}
+  glassClink: {fileID: 8300000, guid: db5918e552ab73a4d84f12df330730a6, type: 3}
 --- !u!4 &1004845969
 Transform:
   m_ObjectHideFlags: 0
@@ -3564,7 +3568,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 93d3267b40323f34ab8c3504c9430be5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.9
+  m_Volume: 0.8
   m_Pitch: 0.9
   Loop: 0
   Mute: 0
@@ -3758,9 +3762,106 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.092
   m_Pitch: 1
   Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1004845973
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004845967}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5950,7 +6051,7 @@ MonoBehaviour:
   goodSound: {fileID: 8300000, guid: dc5cd3a244a4a7142bcaed8d223eebd3, type: 3}
   badSound: {fileID: 8300000, guid: a36c0884dd42db34096d60413ee913e6, type: 3}
   neutralSound: {fileID: 8300000, guid: 7215e44791cec8340a9b6b709b5ab7fe, type: 3}
-  bartenderVoice: {fileID: 8300000, guid: 3454bcc3e88678e4ab113aaaa232e702, type: 3}
+  sadGuyVoice: {fileID: 8300000, guid: cbda2d18e0f6db74ab728b978c84fa4f, type: 3}
 --- !u!4 &1683366674
 Transform:
   m_ObjectHideFlags: 0
@@ -6082,7 +6183,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 106
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
