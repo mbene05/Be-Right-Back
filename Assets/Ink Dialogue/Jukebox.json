@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[[{"->":"jukebox"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"jukebox":["^This jukebox is broken.","\n","^It seems to be missing a needle, a record, and a computer chip.","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[[{"->":"jukebox"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"jukebox":["^This jukebox is currently out of order","\n","^It seems to be missing a needle, a record, and a computer chip.","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}

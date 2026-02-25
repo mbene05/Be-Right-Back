@@ -1,15 +1,16 @@
 -> drinkguy_no_drink
 
 === drinkguy_no_drink ===
-AAAAH MAN
 My chatbot girlfriend just broke up with me..
-Love sucks man
+Im so sad, love sucks man.
 I'm tired of all this synthetic garbage
 I just want something real for once, something human.
-You know what doesn't suck
+You know what doesn't suck?
 DRINKING!!!!
 I want a drink from the bar that is made only with real ingredients, 
 nothing synthetic. 
+This wrench reminds me of her cold touch, 
+I could give it to you if you get me that drink
 
 + [I can get that for you]
     -> drinkguy_no_drink_answer
