@@ -8,7 +8,9 @@ public class BartenderManager : MonoBehaviour
     public TextAsset myInkJSON; 
     public TextAsset myInkJSON2; 
 
-    public TextAsset myInkJSON3; 
+    public TextAsset myInkJSON3;
+
+    public AudioClip bartenderVoice;
 
     public bool pickUpDrink = false;
 
@@ -24,19 +26,19 @@ public class BartenderManager : MonoBehaviour
 
             if (pickUpDrink == true)
             {
-                 dialogueManager.StartDialogue(myInkJSON3);
+                 dialogueManager.StartDialogue(myInkJSON3,bartenderVoice);
             }
 
             else
             {
                 if (menuScript != null && menuScript.HasClicked)
                 {
-                    dialogueManager.StartDialogue(myInkJSON2);
+                    dialogueManager.StartDialogue(myInkJSON2, bartenderVoice);
                 }
 
                 else
                 {
-                    dialogueManager.StartDialogue(myInkJSON);
+                    dialogueManager.StartDialogue(myInkJSON, bartenderVoice);
                 }  
             }
             

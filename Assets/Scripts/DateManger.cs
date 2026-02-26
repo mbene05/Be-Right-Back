@@ -7,6 +7,7 @@ public class DateManager : MonoBehaviour
 
     public AudioClip interactSound;   // robot sound
     private AudioSource audioSource;
+    public AudioClip charlieVoice;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class DateManager : MonoBehaviour
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
-            dialogueManager.StartDialogue(myInkJSON);
+            dialogueManager.StartDialogue(myInkJSON, charlieVoice);
         }
         
     }

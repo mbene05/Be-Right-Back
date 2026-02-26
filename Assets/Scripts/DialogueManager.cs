@@ -28,7 +28,6 @@ public class DialogueManager : MonoBehaviour
     public AudioClip goodSound;
     public AudioClip badSound;
     public AudioClip neutralSound;
-    public AudioClip sadGuyVoice;
 
     private AudioSource audioSource;
     private AudioSource voiceSource;
@@ -41,24 +40,17 @@ public class DialogueManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         voiceSource = GetComponent<AudioSource>();
-        voiceSource.clip = sadGuyVoice; //change when i add more voices
         voiceSource.loop = true;
         
     }
 
     void Update()
     {
-        if (!choicesContainer.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0))
         {
-            if (isTyping)
             {
-                StopCoroutine(typingCoroutine);
-                dialogueText.text = story.currentText;
-                isTyping = false;
-            }
-            else
-            {
-                DisplayNextLine();
+                if (!isTyping)
+                    DisplayNextLine();
             }
         }
     }
@@ -81,20 +73,33 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.gameObject.SetActive(true);
 
-        //If we can continue in the story
-        if (story.canContinue)
+        if (isTyping && typingCoroutine != null)
         {
+            StopCoroutine(typingCoroutine);
+            isTyping = false;
+        }
 
-            string line = story.Continue().Trim();
-            typingCoroutine = StartCoroutine(TypeLine(line));
-            StartCoroutine(PlayVoiceForDuration(line.Length));
+        //If we can continue in the story
+        while (story.canContinue)
+        {
+            string line = story.Continue();
 
+            // Handle tags as soon as we advance the story
             HandleTags(story.currentTags);
 
+            // If it's empty, skip it and keep going
+            if (string.IsNullOrWhiteSpace(line))
+                continue;
 
+            line = line.Trim();
+
+            typingCoroutine = StartCoroutine(TypeLine(line));
+            StartCoroutine(PlayVoiceForDuration(line.Length));
+            return; // important: stop here so we wait for input for the next line
         }
+
         //If there are choices
-        else if (story.currentChoices.Count > 0)
+        if (story.currentChoices.Count > 0)
         {
             dialoguePanel.SetActive(false);
             DisplayChoices();
@@ -149,10 +154,12 @@ void PlayResponseSound(AudioClip clip)
         isTyping = false;
     }
 
-    public void StartDialogue(TextAsset newInkJSON)
+    public void StartDialogue(TextAsset newInkJSON, AudioClip voiceClip)
     {
         Start();
-        if (dialogueStarted) return; 
+        if (dialogueStarted) return;
+
+        voiceSource.clip = voiceClip;
 
         dialogueStarted = true;
         dialoguePanel.SetActive(true);

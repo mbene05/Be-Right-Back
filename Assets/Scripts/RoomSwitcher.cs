@@ -224,7 +224,7 @@ public class RoomSwitcher : MonoBehaviour
             yield return new WaitForSeconds(wait);
 
             if (currentRoom != 2) break;
-
+            events.volume = 0.15f;
             events.PlayOneShot(bathroomEvent);
         }
 
@@ -271,6 +271,7 @@ public class RoomSwitcher : MonoBehaviour
             foyer.SetActive(false);
             mainCamera.transform.position = new Vector3(room2.transform.position.x, room2.transform.position.y, cameraZPosition);
 
+            events.volume = 0.2f;
             events.PlayOneShot(musicEvent);
 
             if (bathroomEventRoutine == null)

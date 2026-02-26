@@ -4,6 +4,7 @@ public class SadGuyManager : MonoBehaviour
 {
     public DialogueManager dialogueManager;
 
+
     public TextAsset myInkJSON; 
     public TextAsset myInkJSON2; 
 
@@ -12,12 +13,11 @@ public class SadGuyManager : MonoBehaviour
     public GameObject Hotbar;
     public GameObject Bartender;
 
-    
-
-
-
     public bool rightDrink = false;
     public bool pickUpDrink = false;
+
+    public AudioClip sadGuyVoice;
+
 
     void OnMouseDown()
     {
@@ -28,7 +28,7 @@ public class SadGuyManager : MonoBehaviour
 
             if (pickUpDrink == false)
             {
-                dialogueManager.StartDialogue(myInkJSON3);
+                dialogueManager.StartDialogue(myInkJSON3, sadGuyVoice);
             }
 
             else
@@ -39,7 +39,7 @@ public class SadGuyManager : MonoBehaviour
                     BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
                     selectedBartender.pickUpDrink = false;
                     hotbar.getridofslot1();
-                    dialogueManager.StartDialogue(myInkJSON2);
+                    dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
                 }
 
                 else
@@ -48,7 +48,7 @@ public class SadGuyManager : MonoBehaviour
                      hotbar.getridofslot1();
                       BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
                      selectedBartender.pickUpDrink = false;
-                     dialogueManager.StartDialogue(myInkJSON);
+                     dialogueManager.StartDialogue(myInkJSON, sadGuyVoice);
                 }
             }
             

@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class JukeboxManager : MonoBehaviour
@@ -16,7 +17,7 @@ public class JukeboxManager : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
 
-        dialogueManager.StartDialogue(myInkJSON);
+        dialogueManager.StartDialogue(myInkJSON,null);
     
         
     }
