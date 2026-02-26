@@ -14,6 +14,8 @@ public class JukeboxManager : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (MapManager.IsOpen) return;
+
         dialogueManager.StartDialogue(myInkJSON);
     
         

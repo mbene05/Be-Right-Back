@@ -21,6 +21,8 @@ public class SadGuyManager : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (MapManager.IsOpen) return;
+
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
 

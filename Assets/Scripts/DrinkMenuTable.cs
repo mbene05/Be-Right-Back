@@ -18,6 +18,8 @@ public class DrinkMenu : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (MapManager.IsOpen) return;
+
         HasClicked = true;
         Debug.Log("Menu object activated");
         // Toggle the menu on click

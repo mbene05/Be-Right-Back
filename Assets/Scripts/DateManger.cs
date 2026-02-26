@@ -19,7 +19,8 @@ public class DateManager : MonoBehaviour
 
     void OnMouseDown()
     {
-       
+        if (MapManager.IsOpen) return;
+
         audioSource.pitch = Random.Range(0.9f, 1.1f);
 
 

@@ -23,7 +23,8 @@ public class ItemPickup : MonoBehaviour
 
     void OnMouseDown()
     {
-     
+        if (MapManager.IsOpen) return;
+
         if (isLimitedPickup)
         {
             if (limitedPickups.ContainsKey(limitedGroupID) && limitedPickups[limitedGroupID] != null)
