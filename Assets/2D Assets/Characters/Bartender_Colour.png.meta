@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 5086613403328489941
     second: Bartender_Colour_4
+  - first:
+      213: 5199426966412221694
+    second: Bartender_Colour_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -150,10 +153,10 @@ TextureImporter:
       name: Bartender_Colour_1
       rect:
         serializedVersion: 2
-        x: 825
-        y: 1580
-        width: 16
-        height: 17
+        x: 547
+        y: 1592
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +175,10 @@ TextureImporter:
       name: Bartender_Colour_2
       rect:
         serializedVersion: 2
-        x: 836
-        y: 1571
-        width: 13
-        height: 13
+        x: 807
+        y: 1561
+        width: 52
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +197,10 @@ TextureImporter:
       name: Bartender_Colour_3
       rect:
         serializedVersion: 2
-        x: 303
-        y: 0
-        width: 793
-        height: 1546
+        x: 524
+        y: 1577
+        width: 14
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,6 +219,28 @@ TextureImporter:
       name: Bartender_Colour_4
       rect:
         serializedVersion: 2
+        x: 303
+        y: 0
+        width: 793
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d9a227b0f7479640800000000000000
+      internalID: 5086613403328489941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bartender_Colour_5
+      rect:
+        serializedVersion: 2
         x: 1176
         y: 662
         width: 26
@@ -228,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d9a227b0f7479640800000000000000
-      internalID: 5086613403328489941
+      spriteID: efc56983743182840800000000000000
+      internalID: 5199426966412221694
       vertices: []
       indices: 
       edges: []
@@ -253,6 +278,7 @@ TextureImporter:
       Bartender_Colour_2: -92441156465347439
       Bartender_Colour_3: -7988012438516140998
       Bartender_Colour_4: 5086613403328489941
+      Bartender_Colour_5: 5199426966412221694
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

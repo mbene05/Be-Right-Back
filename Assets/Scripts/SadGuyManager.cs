@@ -12,15 +12,36 @@ public class SadGuyManager : MonoBehaviour
 
     public GameObject Hotbar;
     public GameObject Bartender;
+    public GameObject highlighted;
 
     public bool rightDrink = false;
     public bool pickUpDrink = false;
 
     public AudioClip sadGuyVoice;
 
+    void OnMouseOver()
+    {
+        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf)
+        {
+            highlighted.SetActive(false);
+        }
+        else
+        {
+            highlighted.SetActive(true);
+        }
+
+    }
+
+    void OnMouseExit()
+    {
+        highlighted.SetActive(false);
+    }
+
 
     void OnMouseDown()
     {
+        highlighted.SetActive(false);
+
         if (MapManager.IsOpen) return;
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
