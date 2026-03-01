@@ -46,12 +46,12 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        if (!dialogueStarted) return;
+
         if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0))
         {
-            {
-                if (!isTyping)
-                    DisplayNextLine();
-            }
+            if (!isTyping)
+                DisplayNextLine();
         }
     }
 
