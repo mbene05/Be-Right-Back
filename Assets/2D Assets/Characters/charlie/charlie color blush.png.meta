@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5dff0150428995d43a95a0841b278c99
+guid: 073ff85ef921bf04c8687608c7f6673f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5468146724227442863
-    second: Hallucination_0
+      213: -7544082799200721145
+    second: charlie color blush_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1100
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hallucination_0
+      name: charlie color blush_0
       rect:
         serializedVersion: 2
-        x: 156
-        y: 130
-        width: 843
-        height: 1258
+        x: 0
+        y: 0
+        width: 443
+        height: 383
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa8ea456972c2eb40800000000000000
-      internalID: 5468146724227442863
+      spriteID: 707a1851aa80e4790800000000000000
+      internalID: -7544082799200721145
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hallucination_0: 5468146724227442863
+      charlie color blush_0: -7544082799200721145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

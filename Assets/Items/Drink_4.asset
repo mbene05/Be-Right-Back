@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: GreenHaze
   itemID: 75
-  itemSprite: {fileID: -2568228747730650124, guid: 41a489f4a7bb52447ae570677adfded2, type: 3}
+  itemSprite: {fileID: 21300000, guid: 5dff0150428995d43a95a0841b278c99, type: 3}

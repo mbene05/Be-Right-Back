@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Beer
   itemID: 72
-  itemSprite: {fileID: 8272200526932957052, guid: 67ade4d4654a86845b2be04a598afb71, type: 3}
+  itemSprite: {fileID: 21300000, guid: 4646cf4c590f70f47aeedb462bcb8f1b, type: 3}
