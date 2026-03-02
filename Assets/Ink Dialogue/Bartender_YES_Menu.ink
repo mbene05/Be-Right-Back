@@ -17,6 +17,8 @@ What would you like to drink?
 + [I want one Automation Blues]
     ~DrinkRecieved(1)  
     -> Blue
++ [Can I use your employee keycard?]
+    -> keycard_answer
     
 === Green ===
 Here's your Green Hallucination.
@@ -29,4 +31,8 @@ Here's your Cerebral Zip Bomb.
 -> END
 === Blue ===
 Here's your Automation Blues.
+-> END
+=== keycard_answer ===
+I don't have one available for you.
+Maybe the chef will let you use his.
 -> END
