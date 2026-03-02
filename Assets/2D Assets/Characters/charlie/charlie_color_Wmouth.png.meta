@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 58acddfd4342a2a4dacf739adbb2e1ea
+guid: 636a09ed63fad9240b4d38b375cc54e5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 949974026406634436
-    second: charlie color pissed_0
+      213: -8633302258997058776
+    second: charlie_color_Wmouth_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: charlie color pissed_0
+      name: charlie_color_Wmouth_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c3a0d5085cfe2d00800000000000000
-      internalID: 949974026406634436
+      spriteID: 82327ed2659503880800000000000000
+      internalID: -8633302258997058776
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      charlie color pissed_0: 949974026406634436
+      charlie_color_Wmouth_0: -8633302258997058776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

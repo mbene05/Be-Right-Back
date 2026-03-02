@@ -2,7 +2,7 @@ EXTERNAL AddToBar(amount)
 EXTERNAL SubToBar(amount)
 VAR shuffleNum = 0
 
-~ shuffleNum = RANDOM(1,10)
+~ shuffleNum = RANDOM(1,14)
 
 {
     - shuffleNum == 1: -> Question1
@@ -16,6 +16,9 @@ VAR shuffleNum = 0
     - shuffleNum == 9: -> Question9
     - shuffleNum == 10: -> Question10
     - shuffleNum == 11: -> Question11
+    - shuffleNum == 12: -> Question12
+    - shuffleNum == 13: -> Question13
+    - shuffleNum == 14: -> Question14
 
 }
 
@@ -34,17 +37,17 @@ What are your thoughts on AI assistants?
     -> Bad
 
 === Good ===
-# good
-That's good, I won't have to be jealous of anyone else then :)
+# good2
+That's good, I won't have to be jealous of anyone else then 
 -> END
 
 === Neutral ===
-# neutral
-That's okay, more of you for me then :)
+# igotthis
+That's okay, more of you for me then
 -> END
 
 === Bad ===
-# bad
+# confused
 So you've been talking to other girls? I need a second to process this in my CPU
 -> END 
     
@@ -67,7 +70,7 @@ I hear wedding bellsss hehehe
 -> END
 
 === Neutral2 ===
-# neutral
+# colon3
 There's plenty of time to think about it still :3
 -> END
 
@@ -90,12 +93,12 @@ Do you like cybernetic implants?
     -> Bad3
 
 === Good3 ===
-# good
+# good2
 I like you just the way you were organically developed :)
 -> END
 
 === Neutral3 ===
-# neutral
+# slightlyhappier
 Forget I even brought it up :)
 -> END
 
@@ -122,7 +125,7 @@ Oh, poor baby :( Don't worry, I can support you :)
 -> END
 
 === Neutral4 ===
-# neutral
+# slightlyhappier
 Maybe I should stick with you with that kind of luck XD
 -> END
 
@@ -180,7 +183,7 @@ Wow Mark I didn't know you were such a flirt hehe
 -> END
 
 === Neutral6 ===
-# neutral
+# slightlyhappier
 Oh nothing, just wanted to check and see if you spoke the language
 I can teach you still ;)
 -> END
@@ -203,13 +206,13 @@ What do you think of my build?
     -> Bad7
 
 === Good7 ===
-# good
-Oh thank you, I inherited it from my parent classes :)
+# good2
+Oh thank you, I inherited it from my parent classes
 -> END
 
 === Neutral7 ===
-# neutral
-Oh, I guess so, it's good, really helps me express my feelings :)
+# slightlyhappier
+Oh, I guess so, it's good, really helps me express my feelings 
 -> END
 
 === Bad7 ===
@@ -231,13 +234,13 @@ Did you have any pets growing up?
     -> Bad8
 
 === Good8 ===
-# good
+# good2
 I did too!! We are so alike :)
 -> END
 
 === Neutral8 ===
-# neutral
-Yes, maybe we could adopt a cyber-stray :)
+# slightlyhappier
+Yes, maybe we could adopt a cyber-stray 
 -> END
 
 === Bad8 ===
@@ -259,18 +262,18 @@ Can you guess how old I am?
 
 === Good9 ===
 # good
-You know how to flatter a girl :)
+You know how to flatter a girl 
 -> END
 
 === Neutral9 ===
-# neutral
-You're a smart one aren't you, I was trying to get something out of you :)
+# igotthis
+You're a smart one aren't you, I was trying to get something out of you 
 -> END
 
 === Bad9 ===
 # bad
 Ew. 
-I was fising for a compliment, you creep
+I was fishing for a compliment, you creep
 -> END
 
 === Question10 ===
@@ -291,7 +294,7 @@ Responsablity is soo hot in a man ;)
 -> END
 
 === Neutral10 ===
-# neutral
+# slightlyhappier
 Even boring humans are fascinating to talk with heehee
 -> END
 
@@ -313,13 +316,13 @@ What's your favorite meal?
     -> Bad11
 
 === Good11 ===
-# good
+# good2
 Fascinating, and a rarity after the last avian flu
 I would like to try some one day with you :)
 -> END
 
 === Neutral11 ===
-# neutral
+# slightlyhappier
 Oh, I suppose there is mayonnaise in potato salad
 If you were with me, you'd get a lot better than prepared, honey ;)
 -> END
@@ -342,7 +345,7 @@ What's your ideal weekend look like?
     -> Bad12
 
 === Good12 ===
-# good
+# good2
 What a coincidence! I love to do that too!
 Maybe we can do that soon :)
 -> END
@@ -402,19 +405,20 @@ How do you unwind after a long day?
     -> Bad14
 
 === Good14 ===
-# good
+# good2
 I also have an affinity for human shows!! 
 We have so much in common :)
 -> END
 
 === Neutral14 ===
-# neutral
+# slightlyhappier
 But you don't need any more beauty rest heehee
 -> END
 
 === Bad14 ===
 # bad
-Aww, poor baby :(
-You don't need to talk to her anymore...
-You've got me now :)
+A therapy bot? ...they're useless 
+You don't need one when you have me
+I'm the best listener you'll ever have, and I won't judge you for anything you say to me
+I promise <3
 -> END

@@ -19,11 +19,24 @@ public class DialogueManager : MonoBehaviour
 
     public string endSceneName = "WinScreen"; 
 
+    private MapManager mapManager;
+
     private Story story;
     private Coroutine typingCoroutine;
     private bool isTyping;
 
     public GameObject[] drinks;
+
+    private SpriteRenderer charlieRenderer;
+    public Sprite charlieFace;
+    public Sprite charlieFaceGood;
+    public Sprite charlieFaceNeutral;
+    public Sprite charlieFaceBad;
+    public Sprite charlieFaceColon3;
+    public Sprite charlieFaceIGotThis;
+    public Sprite charlieFaceGood2;
+    public Sprite charlieConfused;
+    public Sprite CharlieSlightlyHappier;
 
     public AudioClip goodSound;
     public AudioClip badSound;
@@ -41,7 +54,10 @@ public class DialogueManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         voiceSource = GetComponent<AudioSource>();
         voiceSource.loop = true;
-        
+
+        charlieRenderer = GameObject.Find("charlie color neutral_0").GetComponent<SpriteRenderer>();
+        mapManager = FindObjectOfType<MapManager>();
+
     }
 
     void Update()
@@ -119,16 +135,41 @@ public class DialogueManager : MonoBehaviour
         {
             case "good":
                 PlayResponseSound(goodSound);
+                charlieRenderer.sprite = charlieFaceGood; 
                 break;
 
             case "neutral":
                 PlayResponseSound(neutralSound);
+                charlieRenderer.sprite = charlieFaceNeutral;
                 break;
 
             case "bad":
                 PlayResponseSound(badSound);
+                charlieRenderer.sprite = charlieFaceBad;
                 break;
-        }
+
+            case "colon3":
+                PlayResponseSound(neutralSound);
+                charlieRenderer.sprite = charlieFaceColon3;
+                break;
+
+            case "igotthis":
+                PlayResponseSound(neutralSound);
+                charlieRenderer.sprite = charlieFaceIGotThis;
+                break;
+            case "good2":
+                PlayResponseSound(goodSound);
+                charlieRenderer.sprite = charlieFaceGood2;
+                break;
+            case "confused":
+                PlayResponseSound(badSound);
+                charlieRenderer.sprite = charlieConfused;
+                break;
+            case "slightlyhappier":
+                PlayResponseSound(neutralSound);
+                charlieRenderer.sprite = CharlieSlightlyHappier;
+                break;
+            }
     }
 }
 
@@ -137,7 +178,8 @@ void PlayResponseSound(AudioClip clip)
     if (clip == null) return;
 
     audioSource.PlayOneShot(clip);
-}
+
+ }
 
 
     IEnumerator TypeLine(string line)
@@ -145,10 +187,14 @@ void PlayResponseSound(AudioClip clip)
         isTyping = true;
         dialogueText.text = "";
 
+        mapManager.toggleButton.interactable = false; // Disable the map toggle button while typing
+
+
         foreach (char letter in line)
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
+
         }
 
         isTyping = false;
@@ -158,6 +204,8 @@ void PlayResponseSound(AudioClip clip)
     {
         Start();
         if (dialogueStarted) return;
+
+        charlieRenderer.sprite = charlieFace;
 
         voiceSource.clip = voiceClip;
 
@@ -170,7 +218,6 @@ void PlayResponseSound(AudioClip clip)
             story.BindExternalFunction("AddToBar", (float amount) => {
                 bar.AddTime(amount);
             });
-
             story.BindExternalFunction("SubToBar", (float amount) => {
                 bar.ReduceTime(amount);
             });
@@ -225,7 +272,9 @@ void PlayResponseSound(AudioClip clip)
         dialoguePanel.SetActive(false);
         dialogueStarted = false; 
         isTyping = false;
-        choicesContainer.gameObject.SetActive(false); 
+        choicesContainer.gameObject.SetActive(false);
+        mapManager.toggleButton.interactable = true; 
+
     }
 
     void ActivateDrink(int drinkNum)
