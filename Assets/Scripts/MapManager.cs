@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using TMPro;
 
 public class MapManager : MonoBehaviour
 {
@@ -23,7 +22,7 @@ public class MapManager : MonoBehaviour
     [Header("Colors")]
     public Color colorCurrent = Color.white;
     public Color colorAccessible = new Color(0.6f, 0.6f, 0.6f, 1f);
-    public Color colorInaccessible = new Color(0.55f, 0.55f, 0.55f, 1f);
+    public Color colorInaccessible = new Color(0.4f, 0.4f, 0.4f, 1f);
 
     public static bool IsOpen { get; private set; }
 
@@ -89,6 +88,9 @@ public class MapManager : MonoBehaviour
 
     void SetupMapLayout()
     {
+        // Create a full-screen blocker that sits behind the map panel.
+        // This prevents clicks from reaching anything outside the map while it's open.
+        // Give mapPanel its own Canvas so it overrides sort order and always renders on top.
         Canvas panelCanvas = mapPanel.GetComponent<Canvas>();
         if (panelCanvas == null) panelCanvas = mapPanel.AddComponent<Canvas>();
         panelCanvas.overrideSorting = true;
@@ -96,11 +98,12 @@ public class MapManager : MonoBehaviour
         if (mapPanel.GetComponent<GraphicRaycaster>() == null)
             mapPanel.AddComponent<GraphicRaycaster>();
 
+        // Blocker sits just below the map panel in sort order.
         mapBlocker = new GameObject("MapBlocker");
         mapBlocker.transform.SetParent(mapPanel.transform.parent, false);
 
         Image blockerImg = mapBlocker.AddComponent<Image>();
-        blockerImg.color = new Color(0f, 0f, 0f, 0f);
+        blockerImg.color = new Color(0f, 0f, 0f, 0f); // fully transparent but catches raycasts
         blockerImg.raycastTarget = true;
 
         Canvas blockerCanvas = mapBlocker.AddComponent<Canvas>();
@@ -121,79 +124,29 @@ public class MapManager : MonoBehaviour
         panelRT.anchorMax = new Vector2(0.5f, 0.5f);
         panelRT.pivot = new Vector2(0.5f, 0.5f);
         panelRT.anchoredPosition = Vector2.zero;
-        panelRT.sizeDelta = new Vector2(520, 310);
+        panelRT.sizeDelta = new Vector2(480, 300);
 
         Image panelImg = mapPanel.GetComponent<Image>();
         if (panelImg != null)
             panelImg.color = new Color(0.05f, 0.05f, 0.05f, 0.95f);
 
-      
-        SetNodeTransform(nodeKitchenBackroom, -170f,  110f,  110f,  70f);
-        SetNodeTransform(nodeKitchen,           -7.5f, 110f,  215f,  70f);
-        SetNodeTransform(nodeBar,             -170f,   12.5f, 110f, 125f);
-        SetNodeTransform(nodeDiner,             -7.5f,  12.5f, 250f, 150f);
-        SetNodeTransform(nodeBathroom,         152.5f,  12.5f, 105f, 125f);
-        SetNodeTransform(nodeCoatRoom,        -170f,  -87.5f, 110f,  75f);
-        SetNodeTransform(nodeFoyer,             -7.5f, -87.5f, 215f,  75f);
+        SetNodeTransform(nodeKitchenBackroom,  -90, 100);
+        SetNodeTransform(nodeKitchen,           80, 100);
+        SetNodeTransform(nodeBar,             -190,   0);
+        SetNodeTransform(nodeDiner,              0,   0);
+        SetNodeTransform(nodeBathroom,         190,   0);
+        SetNodeTransform(nodeCoatRoom,        -190, -100);
+        SetNodeTransform(nodeFoyer,              0, -100);
     }
 
-    void SetNodeTransform(Button node, float x, float y, float w, float h)
+    void SetNodeTransform(Button node, float x, float y)
     {
         RectTransform rt = node.GetComponent<RectTransform>();
         rt.anchorMin = new Vector2(0.5f, 0.5f);
         rt.anchorMax = new Vector2(0.5f, 0.5f);
         rt.pivot = new Vector2(0.5f, 0.5f);
         rt.anchoredPosition = new Vector2(x, y);
-        rt.sizeDelta = new Vector2(w, h);
-
-       
-       
-        node.transition = Selectable.Transition.None;
-
-       
-        if (node.TryGetComponent(out Image border))
-        {
-            border.sprite = null;
-            border.type   = Image.Type.Simple;
-            border.color  = colorInaccessible;
-        }
-
-        
-        if (node.transform.Find("MapRoomFill") == null)
-        {
-            GameObject fill = new GameObject("MapRoomFill");
-            fill.transform.SetParent(node.transform, false);
-            fill.transform.SetSiblingIndex(0); 
-
-            Image fillImg = fill.AddComponent<Image>();
-            fillImg.color = new Color(0.07f, 0.07f, 0.07f, 0.95f);
-            fillImg.raycastTarget = false;
-
-            RectTransform fillRT = fill.GetComponent<RectTransform>();
-            fillRT.anchorMin = Vector2.zero;
-            fillRT.anchorMax = Vector2.one;
-            fillRT.offsetMin = new Vector2(2f, 2f);
-            fillRT.offsetMax = new Vector2(-2f, -2f);
-        }
-
-        
-        foreach (var txt in node.GetComponentsInChildren<Text>(true))
-        {
-            txt.alignment = TextAnchor.MiddleCenter;
-            txt.resizeTextForBestFit = true;
-            txt.resizeTextMinSize = 7;
-            txt.resizeTextMaxSize = 12;
-            txt.color = Color.white;
-        }
-
-        foreach (var tmp in node.GetComponentsInChildren<TextMeshProUGUI>(true))
-        {
-            tmp.alignment = TextAlignmentOptions.Center;
-            tmp.enableAutoSizing = true;
-            tmp.fontSizeMin = 7;
-            tmp.fontSizeMax = 12;
-            tmp.color = Color.white;
-        }
+        rt.sizeDelta = new Vector2(100, 36);
     }
 
     void SetPanelVisible(bool visible)
@@ -241,15 +194,11 @@ public class MapManager : MonoBehaviour
     {
         node.interactable = interactable;
 
-        
-        if (node.TryGetComponent(out Image border))
-            border.color = color;
+        foreach (var img in node.GetComponentsInChildren<Image>(true))
+            img.color = color;
 
         foreach (var txt in node.GetComponentsInChildren<Text>(true))
-            txt.color = Color.white;
-
-        foreach (var tmp in node.GetComponentsInChildren<TextMeshProUGUI>(true))
-            tmp.color = Color.white;
+            txt.color = color;
     }
 
     void NavigateTo(int roomId)
