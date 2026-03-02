@@ -13,8 +13,8 @@ public class DateManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        if (audioSource == null)
-            Debug.LogError("Robot has no AudioSource!");
+
+
     }
 
 

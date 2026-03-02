@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator PlayVoiceForDuration(int charCount)
 {
 
-    float timePerChar = 0.038f;
+    float timePerChar = 0.0375f;
     float duration = charCount * timePerChar;
 
     voiceSource.loop = true;
