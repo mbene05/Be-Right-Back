@@ -10678,11 +10678,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 575861745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &1251864260
-=======
---- !u!1 &1268523832
->>>>>>> 21c2887fca4c9ce5e5c92418acf29b0da52ae568
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10690,31 +10686,18 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 1251864262}
   - component: {fileID: 1251864261}
   m_Layer: 0
   m_Name: charlie color blush_0
-=======
-  - component: {fileID: 1268523833}
-  - component: {fileID: 1268523835}
-  - component: {fileID: 1268523834}
-  m_Layer: 5
-  m_Name: Image
->>>>>>> 21c2887fca4c9ce5e5c92418acf29b0da52ae568
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!212 &1251864261
 SpriteRenderer:
   serializedVersion: 2
-=======
---- !u!224 &1268523833
-RectTransform:
->>>>>>> 21c2887fca4c9ce5e5c92418acf29b0da52ae568
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
