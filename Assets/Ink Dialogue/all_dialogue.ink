@@ -174,7 +174,7 @@ I could never fall in love with another robot like them
 + [What?] 
     ~ AddToBar(10)
     -> Neutral6
-+ [53 61 6D 65] 
++ [0000001 00000011 0000001 00000011 0000001 0000001] 
     -> Bad6
 
 === Good6 ===
@@ -190,7 +190,7 @@ I can teach you still ;)
 
 === Bad6 ===
 # bad
-Are we even speaking the same language??
+What did you just call me >:[
 -> END
 
 === Question7 ===
