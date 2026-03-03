@@ -41,6 +41,7 @@ public class BartenderManager : MonoBehaviour
         highlighted.SetActive(false);
 
         if (MapManager.IsOpen) return;
+        if (PinCodeMiniGame.IsOpen) return;
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {

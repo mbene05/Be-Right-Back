@@ -20,6 +20,7 @@ public class DrinkMenu : MonoBehaviour
         highlighted.SetActive(false);
 
         if (MapManager.IsOpen) return;
+        if (PinCodeMiniGame.IsOpen) return;
 
         HasClicked = true;
         Debug.Log("Menu object activated");

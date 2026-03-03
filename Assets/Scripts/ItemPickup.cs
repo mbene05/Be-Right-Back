@@ -24,6 +24,7 @@ public class ItemPickup : MonoBehaviour
     void OnMouseDown()
     {
         if (MapManager.IsOpen) return;
+        if (PinCodeMiniGame.IsOpen) return;
 
         if (isLimitedPickup)
         {

@@ -130,6 +130,23 @@ public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                             }
                         }
                     }
+
+                    if (!consumed)
+                    {
+                        Vector2 worldPos2D = cam.ScreenToWorldPoint(eventData.position);
+                        RaycastHit2D hit2D = Physics2D.Raycast(worldPos2D, Vector2.zero);
+                        if (hit2D.collider != null)
+                        {
+                            var usable = hit2D.collider.GetComponentInParent<IUsableWithItem>();
+                            if (usable != null)
+                            {
+                                if (usable.UseWithItem(draggingItem, hit2D.point))
+                                {
+                                    consumed = true;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 if (!consumed)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SadGuyManager : MonoBehaviour
+public class SadGuyManager : MonoBehaviour, IUsableWithItem
 {
     public DialogueManager dialogueManager;
 
@@ -43,6 +43,7 @@ public class SadGuyManager : MonoBehaviour
         highlighted.SetActive(false);
 
         if (MapManager.IsOpen) return;
+        if (PinCodeMiniGame.IsOpen) return;
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
@@ -77,5 +78,29 @@ public class SadGuyManager : MonoBehaviour
         
     }
 
-   
+
+    public bool UseWithItem(Item item, Vector3 hitPoint)
+    {
+        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf)
+            return false;
+
+        if (!pickUpDrink)
+            return false;
+
+        highlighted.SetActive(false);
+
+        BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
+        selectedBartender.pickUpDrink = false;
+
+        if (rightDrink)
+        {
+            dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
+        }
+        else
+        {
+            dialogueManager.StartDialogue(myInkJSON, sadGuyVoice);
+        }
+
+        return true;
+    }
 }
