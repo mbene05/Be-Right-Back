@@ -10678,7 +10678,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 575861745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &1251864260
 GameObject:
   m_ObjectHideFlags: 0
@@ -10770,8 +10769,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 433869968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 78c0ec4 (new Build)
+=======
+>>>>>>> parent of 9fe2c4e (comit)
 --- !u!1 &1280120019
 GameObject:
   m_ObjectHideFlags: 0
