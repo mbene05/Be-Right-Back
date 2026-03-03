@@ -9688,7 +9688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.170013, y: 146}
+  m_AnchoredPosition: {x: -37.169983, y: 146}
   m_SizeDelta: {x: 105.36, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090131043
@@ -10678,6 +10678,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 575861745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1251864260
 GameObject:
   m_ObjectHideFlags: 0
@@ -10769,6 +10770,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 433869968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 78c0ec4 (new Build)
 --- !u!1 &1280120019
 GameObject:
   m_ObjectHideFlags: 0
