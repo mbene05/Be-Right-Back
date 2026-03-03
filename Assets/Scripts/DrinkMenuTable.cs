@@ -17,6 +17,8 @@ public class DrinkMenu : MonoBehaviour
 
     void OnMouseDown()
     {
+        highlighted.SetActive(false);
+
         if (MapManager.IsOpen) return;
 
         HasClicked = true;
@@ -32,7 +34,15 @@ public class DrinkMenu : MonoBehaviour
 
     void OnMouseEnter()
     {
-        highlighted.SetActive(true);
+        if (menuPanel.activeInHierarchy)
+        {
+            highlighted.SetActive(false);
+        }
+        else
+        {
+            highlighted.SetActive(true);
+        }
+           
     }
 
     void OnMouseExit()
