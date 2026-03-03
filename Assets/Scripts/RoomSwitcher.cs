@@ -181,38 +181,38 @@ public class RoomSwitcher : MonoBehaviour
         switch (currentRoom)
         {
             case 1:
-                dinerMusic.volume = 0.04f;
-                backgroundAmbiance.volume = 0.06f;
-                break;
-
-            case 4:
-                backgroundAmbiance.volume = 0.04f;
-                dinerMusic.volume = 0.03f;
-                break;
-
-            case 2:
-                backgroundAmbiance.volume = 0.03f;
+                backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
 
+            case 4:
+                backgroundAmbiance.volume = 0.01f;
+                dinerMusic.volume = 0.02f;
+                break;
+
+            case 2:
+                backgroundAmbiance.volume = 0.008f;
+                dinerMusic.volume = 0.009f;
+                break;
+
             case 3:
-                backgroundAmbiance.volume = 0.05f;
-                dinerMusic.volume = 0.015f;
+                backgroundAmbiance.volume = 0.02f;
+                dinerMusic.volume = 0.007f;
                 break;
 
             case 6:
-                backgroundAmbiance.volume = 0.01f;
-                dinerMusic.volume = 0.04f;
+                backgroundAmbiance.volume = 0.009f;
+                dinerMusic.volume = 0.02f;
                 break;
 
             case 7:
-                backgroundAmbiance.volume = 0.06f;
-                dinerMusic.volume = 0.04f;
+                backgroundAmbiance.volume = 0.02f;
+                dinerMusic.volume = 0.02f;
                 break;
 
             case 8:
-                backgroundAmbiance.volume = 0.06f;
-                dinerMusic.volume = 0.04f;
+                backgroundAmbiance.volume = 0.02f;
+                dinerMusic.volume = 0.02f;
                 break;
         }
     }
