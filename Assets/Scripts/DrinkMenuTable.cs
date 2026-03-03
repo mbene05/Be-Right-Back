@@ -7,8 +7,7 @@ public class DrinkMenu : MonoBehaviour
     
      private SpriteRenderer sr;
 
-    public Color hoverColor = Color.red;
-    private Color originalColor;
+    public GameObject highlighted;
 
     void Start()
     {
@@ -29,16 +28,15 @@ public class DrinkMenu : MonoBehaviour
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        originalColor = sr.color;
     }
 
     void OnMouseEnter()
     {
-        sr.color = hoverColor;
+        highlighted.SetActive(true);
     }
 
     void OnMouseExit()
     {
-        sr.color = originalColor;
+        highlighted.SetActive(false);
     }
 }
