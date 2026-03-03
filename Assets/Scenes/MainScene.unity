@@ -8542,6 +8542,8 @@ MonoBehaviour:
   bathroomEvent: {fileID: 8300000, guid: 9dfc217bb4b4d0e47a8fb3fefba6ae2c, type: 3}
   glassClink: {fileID: 8300000, guid: db5918e552ab73a4d84f12df330730a6, type: 3}
   conveyorBelt: {fileID: 8300000, guid: 4ab617d43bce7524f82a21c615efa6a6, type: 3}
+  robotArmMovement: {fileID: 8300000, guid: a80c3543ce1b43e43a20e9b35d52ccea, type: 3}
+  windows95: {fileID: 8300000, guid: d81010b705c27704ab384d298a9ab312, type: 3}
 --- !u!4 &1004845969
 Transform:
   m_ObjectHideFlags: 0

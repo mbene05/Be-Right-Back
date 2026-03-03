@@ -37,11 +37,14 @@ public class RoomSwitcher : MonoBehaviour
     public AudioClip bathroomEvent;
     public AudioClip glassClink;
     public AudioClip conveyorBelt;
+    public AudioClip robotArmMovement;
+    public AudioClip windows95;
 
     private AudioSource audioSource;
     private AudioSource backgroundAmbiance;
     private AudioSource dinerMusic;
     private AudioSource events;
+
 
     void Start()
     {
@@ -201,7 +204,7 @@ public class RoomSwitcher : MonoBehaviour
                 break;
 
             case 6:
-                backgroundAmbiance.volume = 0.009f;
+                backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
 
@@ -250,7 +253,7 @@ public class RoomSwitcher : MonoBehaviour
 
         UpdateMusicForRoom();
 
-        if (roomNumber == 1)
+        if (roomNumber == 1)//main dinning
         {
             room1.SetActive(true);
             room2.SetActive(false);
@@ -262,7 +265,7 @@ public class RoomSwitcher : MonoBehaviour
             mainCamera.transform.position = new Vector3(room1.transform.position.x, room1.transform.position.y, cameraZPosition);
 
         }
-        else if (roomNumber == 2)
+        else if (roomNumber == 2)//bathroom
         {
             room1.SetActive(false);
             room2.SetActive(true);
@@ -279,7 +282,7 @@ public class RoomSwitcher : MonoBehaviour
             //if (bathroomEventRoutine == null)
                 //bathroomEventRoutine = StartCoroutine(BathroomEventLoop());
         }
-        else if (roomNumber == 3)
+        else if (roomNumber == 3) //kitchen
         {
             room1.SetActive(false);
             room2.SetActive(false);
@@ -290,11 +293,16 @@ public class RoomSwitcher : MonoBehaviour
             foyer.SetActive(false);
             mainCamera.transform.position = new Vector3(room3.transform.position.x, room3.transform.position.y, cameraZPosition);
 
+            backgroundAmbiance.Pause();
             dinerMusic.Pause();
+
+            backgroundAmbiance.clip = Ambiance;
             dinerMusic.clip = music;
+
+            backgroundAmbiance.Play();
             dinerMusic.Play();
         }
-        else if (roomNumber == 4)
+        else if (roomNumber == 4)//bar
         {
             room1.SetActive(false);
             room2.SetActive(false);
@@ -308,7 +316,7 @@ public class RoomSwitcher : MonoBehaviour
 
             events.PlayOneShot(glassClink);
         }
-        else if (roomNumber == 6)
+        else if (roomNumber == 6) //backroom
         {
             room1.SetActive(false);
             room2.SetActive(false);
@@ -319,14 +327,21 @@ public class RoomSwitcher : MonoBehaviour
             foyer.SetActive(false);
             mainCamera.transform.position = new Vector3(kitchenBackroom.transform.position.x, kitchenBackroom.transform.position.y, cameraZPosition);
 
-            dinerMusic.Stop();
+            backgroundAmbiance.Pause();
+            dinerMusic.Pause();
 
             dinerMusic.clip = conveyorBelt;
+            backgroundAmbiance.clip = robotArmMovement;
 
             dinerMusic.Play();
+            backgroundAmbiance.Play();
+
+            events.PlayDelayed(2f);
+            events.PlayOneShot(windows95);
+
 
         }
-        else if (roomNumber == 7)
+        else if (roomNumber == 7)//coat room
         {
             room1.SetActive(false);
             room2.SetActive(false);
@@ -338,7 +353,7 @@ public class RoomSwitcher : MonoBehaviour
             mainCamera.transform.position = new Vector3(coatRoom.transform.position.x, coatRoom.transform.position.y, cameraZPosition);
 
         }
-        else if (roomNumber == 8)
+        else if (roomNumber == 8)//foyer
         {
             room1.SetActive(false);
             room2.SetActive(false);
