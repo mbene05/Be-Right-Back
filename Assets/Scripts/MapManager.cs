@@ -41,6 +41,7 @@ public class MapManager : MonoBehaviour
     private bool mapOpen = false;
     private CanvasGroup panelGroup;
     private GameObject mapBlocker;
+    private Dictionary<int, GameObject> lockIndicators = new Dictionary<int, GameObject>();
 
     private readonly Dictionary<int, int[]> accessibleFrom = new Dictionary<int, int[]>
     {
@@ -95,6 +96,7 @@ public class MapManager : MonoBehaviour
         toggleButton.onClick.AddListener(ToggleMap);
 
         SetupMapLayout();
+        CreateLockIndicators();
         SetPanelVisible(false);
         RefreshMap();
     }
@@ -202,6 +204,49 @@ public class MapManager : MonoBehaviour
         }
     }
 
+    void CreateLockIndicators()
+    {
+        if (roomLocks == null) return;
+        foreach (var roomLock in roomLocks)
+        {
+            if (!nodes.ContainsKey(roomLock.roomNumber)) continue;
+            Button node = nodes[roomLock.roomNumber];
+
+            GameObject lockObj = new GameObject("LockIndicator");
+            lockObj.transform.SetParent(node.transform, false);
+            lockObj.transform.SetAsLastSibling();
+
+            Image bg = lockObj.AddComponent<Image>();
+            bg.color = new Color(0f, 0f, 0f, 0.55f);
+            bg.raycastTarget = false;
+
+            RectTransform rt = lockObj.GetComponent<RectTransform>();
+            rt.anchorMin = Vector2.zero;
+            rt.anchorMax = Vector2.one;
+            rt.offsetMin = Vector2.zero;
+            rt.offsetMax = Vector2.zero;
+
+            GameObject textObj = new GameObject("LockText");
+            textObj.transform.SetParent(lockObj.transform, false);
+
+            TextMeshProUGUI tmp = textObj.AddComponent<TextMeshProUGUI>();
+            tmp.text = "X";
+            tmp.fontSize = 24;
+            tmp.fontStyle = FontStyles.Bold;
+            tmp.color = new Color(0.9f, 0.15f, 0.15f, 1f);
+            tmp.alignment = TextAlignmentOptions.Center;
+            tmp.raycastTarget = false;
+
+            RectTransform textRt = textObj.GetComponent<RectTransform>();
+            textRt.anchorMin = Vector2.zero;
+            textRt.anchorMax = Vector2.one;
+            textRt.offsetMin = Vector2.zero;
+            textRt.offsetMax = Vector2.zero;
+
+            lockIndicators[roomLock.roomNumber] = lockObj;
+        }
+    }
+
     void SetPanelVisible(bool visible)
     {
         IsOpen = visible;
@@ -240,6 +285,17 @@ public class MapManager : MonoBehaviour
                 ApplyState(node, colorAccessible, true);
             else
                 ApplyState(node, colorInaccessible, false);
+        }
+
+        // Show/hide lock indicators
+        if (roomLocks != null)
+        {
+            foreach (var roomLock in roomLocks)
+            {
+                if (!lockIndicators.ContainsKey(roomLock.roomNumber)) continue;
+                bool isLocked = hotbar == null || !hotbar.HasItem(roomLock.requiredItemName);
+                lockIndicators[roomLock.roomNumber].SetActive(isLocked);
+            }
         }
     }
 
