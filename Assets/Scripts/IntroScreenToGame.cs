@@ -31,6 +31,6 @@ public class IntroScreenToGame : MonoBehaviour
 
     public void ToGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainScene");
     }
 }
