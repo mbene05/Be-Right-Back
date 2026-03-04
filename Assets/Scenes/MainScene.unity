@@ -26589,6 +26589,7 @@ MonoBehaviour:
   - {fileID: 1053455367}
   - {fileID: 196266994}
   - {fileID: 764604371}
+  Keycard: {fileID: 0}
   charlieFace: {fileID: 7859895392139811753, guid: d45c2e9905c2f98468b107c3ed6811ed, type: 3}
   charlieFaceGood: {fileID: -7544082799200721145, guid: 073ff85ef921bf04c8687608c7f6673f, type: 3}
   charlieFaceNeutral: {fileID: -5449744190622932387, guid: fee221b1be052b743aeea1877e591770, type: 3}
@@ -27464,7 +27465,6 @@ MonoBehaviour:
   cameraZPosition: -10
   pipePuzzleRoom: {fileID: 896109459}
   returnRoom: {fileID: 0}
-  requiredItemName: Wrench
 --- !u!65 &1765050137
 BoxCollider:
   m_ObjectHideFlags: 0
