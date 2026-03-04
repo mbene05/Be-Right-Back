@@ -17,9 +17,12 @@ public class PinCodeMiniGame : MonoBehaviour
     public TextMeshProUGUI[] digitDisplays; 
 
     [Header("Feedback")]
-    public GameObject instructionOverlay; 
-    public GameObject failOverlay;        
-    public GameObject winOverlay;        
+    public GameObject instructionOverlay;
+    public GameObject failOverlay;
+    public GameObject winOverlay;
+
+    [Header("On Success")]
+    public GameObject computerChip;
 
     private string enteredCode = "";
 
@@ -141,6 +144,7 @@ public class PinCodeMiniGame : MonoBehaviour
                 break;
             case State.Won:
                 winOverlay.SetActive(true);
+                computerChip?.SetActive(true);
                 break;
         }
     }
