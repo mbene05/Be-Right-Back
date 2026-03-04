@@ -5,6 +5,7 @@ public class PipePuzzleManager : MonoBehaviour
 {
     PipeScript[] pipes;
     bool puzzleSolved = false;
+    public GameObject chef;
 
     void Start()
     {
@@ -43,12 +44,7 @@ public class PipePuzzleManager : MonoBehaviour
 
     void DoSomethingAfterWin()
     {
-        Debug.Log("PUZZLE COMPLETE!");
-
-        // Put your action here:
-        // Open door
-        // Move camera
-        // Enable object
-        // Play animation
+        ChefManager selectedChef = chef.GetComponent<ChefManager>();
+         selectedChef.logsCollected++;
     }
 }

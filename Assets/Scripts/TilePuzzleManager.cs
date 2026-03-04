@@ -7,15 +7,20 @@ public class TilePuzzleManager : MonoBehaviour
     public float disNum = 2f;
     [SerializeField] private TileScript[] tiles;
     private int emptySpaceIndex = 8;
+    public int correctTiles;
+
+    public GameObject chef;
+
+    public bool done = false;
 
 
     void Start()
     {
-        Shuffle();
+       // Shuffle();
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && done == false)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
@@ -34,7 +39,30 @@ public class TilePuzzleManager : MonoBehaviour
                 }
             }
         }
+
+        int correctTiles = 0;
+        foreach (var a in tiles)
+        {
+            if (a != null)
+            {
+                if(a.inrightPlace)
+                    correctTiles++;
+            }
+        }
+        
+        if (correctTiles == 8 && done == false)
+        {
+                ChefManager selectedChef = chef.GetComponent<ChefManager>();
+                  selectedChef.logsCollected++;
+                done = true;
+
+        }
+
     }
+
+   
+
+
 
     public void Shuffle()
     {
