@@ -39,11 +39,12 @@ public class ItemPickup : MonoBehaviour
         if (hotbar != null && item != null)
         {
             bool success = hotbar.AddItem(item);
-            
+
             if (success)
             {
-                BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
-                SadGuyManager selectedSadGuy = SadGuy.GetComponent<SadGuyManager>();
+                BartenderManager selectedBartender = (Bartender != null) ? Bartender.GetComponent<BartenderManager>() : null;
+                SadGuyManager selectedSadGuy = (SadGuy != null) ? SadGuy.GetComponent<SadGuyManager>() : null;
+
                 if (selectedBartender != null)
                 {
                     selectedBartender.pickUpDrink = true;
@@ -54,7 +55,7 @@ public class ItemPickup : MonoBehaviour
                     selectedSadGuy.pickUpDrink = true;
                 }
 
-                if (item.itemName == "Beer")
+                if (item.itemName == "Beer" && selectedSadGuy != null)
                 {
                    selectedSadGuy.rightDrink = true;
                     Debug.Log("Yay: ");

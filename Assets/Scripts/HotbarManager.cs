@@ -88,6 +88,16 @@ public class HotbarManager : MonoBehaviour
         return false;
     }
 
+    public bool HasItem(string itemName)
+    {
+        foreach (var slot in allSlots)
+        {
+            if (slot != null && slot.currentItem != null && slot.currentItem.itemName == itemName)
+                return true;
+        }
+        return false;
+    }
+
     public Item GetItemByID(int id)
     {
         foreach (var slot in allSlots)

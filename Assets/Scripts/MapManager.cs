@@ -3,9 +3,20 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
+[System.Serializable]
+public struct RoomLock
+{
+    public int roomNumber;
+    public string requiredItemName;
+}
+
 public class MapManager : MonoBehaviour
 {
     public RoomSwitcher roomSwitcher;
+    private HotbarManager hotbar;
+
+    [Header("Locked Rooms")]
+    public RoomLock[] roomLocks;
 
     [Header("Map UI")]
     public GameObject mapPanel;
@@ -46,6 +57,7 @@ public class MapManager : MonoBehaviour
 
     void Start()
     {
+        hotbar = FindObjectOfType<HotbarManager>();
         if (roomSwitcher == null) { Debug.LogError("MapManager: roomSwitcher is not assigned."); return; }
         if (mapPanel == null) { Debug.LogError("MapManager: mapPanel is not assigned."); return; }
         if (toggleButton == null) { Debug.LogError("MapManager: toggleButton is not assigned."); return; }
@@ -246,6 +258,18 @@ public class MapManager : MonoBehaviour
     }
     void NavigateTo(int roomId)
     {
+        if (roomLocks != null && hotbar != null)
+        {
+            foreach (var roomLock in roomLocks)
+            {
+                if (roomLock.roomNumber == roomId && !hotbar.HasItem(roomLock.requiredItemName))
+                {
+                    Debug.Log("You need a " + roomLock.requiredItemName + " to enter here.");
+                    return;
+                }
+            }
+        }
+
         mapOpen = false;
         SetPanelVisible(false);
 

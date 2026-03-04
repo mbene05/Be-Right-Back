@@ -137,6 +137,12 @@ public class RoomSwitcher : MonoBehaviour
         }
     }
 
+    public void GoToRoom(int roomNumber)
+    {
+        if (!isTransitioning)
+            StartCoroutine(TransitionToRoom(roomNumber));
+    }
+
     public void ShowRoom1()
     {
         if (!isTransitioning)
