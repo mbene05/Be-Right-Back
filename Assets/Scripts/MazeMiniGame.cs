@@ -13,7 +13,7 @@ public class MazeMiniGame : MonoBehaviour
     [Header("Zones")]
     public RectTransform startZone;
     public RectTransform exitZone;
-
+    public GameObject chef;
     [Header("Walls")]
     public RectTransform[] walls;
 
@@ -142,6 +142,8 @@ public class MazeMiniGame : MonoBehaviour
                 break;
             case State.Won:
                 winOverlay.SetActive(true);
+                ChefManager selectedChef = chef.GetComponent<ChefManager>();
+                 selectedChef.logsCollected++;
                 break;
         }
     }
