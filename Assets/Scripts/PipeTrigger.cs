@@ -3,15 +3,10 @@ using UnityEngine;
 public class PipeTrigger : MonoBehaviour
 {
     public Camera mainCamera;
-    private SpriteRenderer sr;
-
-    public Color hoverColor = Color.red;
-    private Color originalColor;
     public float cameraZPosition = -10f;
     public GameObject pipePuzzleRoom;
     public GameObject returnRoom;
     public string requiredItemName = "Wrench";
-    
 
     private HotbarManager hotbar;
     private bool isOpen = false;
@@ -19,22 +14,6 @@ public class PipeTrigger : MonoBehaviour
     void Start()
     {
         hotbar = FindObjectOfType<HotbarManager>();
-    }
-
-     void Awake()
-    {
-        sr = GetComponent<SpriteRenderer>();
-        originalColor = sr.color;
-    }
-
-    void OnMouseEnter()
-    {
-        sr.color = hoverColor;
-    }
-
-    void OnMouseExit()
-    {
-        sr.color = originalColor;
     }
 
     void OnMouseDown()
@@ -50,10 +29,7 @@ public class PipeTrigger : MonoBehaviour
         }
 
         isOpen = true;
-       
         mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
-        
-
     }
 
     void Update()

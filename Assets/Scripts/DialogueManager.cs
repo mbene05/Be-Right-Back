@@ -15,8 +15,6 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueStarted = false;
     public Transform choicesContainer;
     public GameObject choiceButtonPrefab;
-    public GameObject Wrench;
-    public GameObject Needle;
     public Bar bar;  
 
     public string endSceneName = "WinScreen"; 
@@ -29,8 +27,6 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject[] drinks;
     public GameObject Keycard;
-
-    public GameObject CosLog;
 
     private SpriteRenderer charlieRenderer;
     public Sprite charlieFace;
@@ -231,17 +227,10 @@ void PlayResponseSound(AudioClip clip)
                 ActivateDrink(drinkNum);
             });
               story.BindExternalFunction("EndedGame", (int didyouend) => {
-                Wrench.SetActive(true);
+                LoadEndScene();
             });
              story.BindExternalFunction("giveLog", (int givenLog) => {
                 Keycard.SetActive(true);
-            });
-             story.BindExternalFunction("giveLog2", (int givenLog2) => {
-                CosLog.SetActive(true);
-            });
-
-             story.BindExternalFunction("getNeedle", (int needGot) => {
-                Needle.SetActive(true);
             });
 
         DisplayNextLine();

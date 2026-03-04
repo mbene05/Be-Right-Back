@@ -1,1 +1,0 @@
-﻿{"inkVersion":21,"root":[[{"->":"sink_pipes_fixed"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"sink_pipes_fixed":["^You reach into the sink and find the jukebox needle!","\n","ev",1,{"x()":"getNeedle","exArgs":1},"pop","/ev","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}
