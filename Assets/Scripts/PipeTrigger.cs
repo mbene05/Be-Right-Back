@@ -2,17 +2,14 @@ using UnityEngine;
 
 public class PipeTrigger : MonoBehaviour
 {
-<<<<<<< Updated upstream
-=======
-    bool isOpen = false;
->>>>>>> Stashed changes
     public Camera mainCamera;
     public float cameraZPosition = -10f;
     public GameObject pipePuzzleRoom;
-<<<<<<< Updated upstream
+    public GameObject returnRoom;
     public string requiredItemName = "Wrench";
 
     private HotbarManager hotbar;
+    private bool isOpen = false;
 
     void Start()
     {
@@ -23,6 +20,7 @@ public class PipeTrigger : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (isOpen) return;
 
         if (hotbar != null && !hotbar.HasItem(requiredItemName))
         {
@@ -30,25 +28,16 @@ public class PipeTrigger : MonoBehaviour
             return;
         }
 
-        mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
-=======
-    public GameObject returnRoom;
-    void OnMouseDown()
-    {
-        if (isOpen == false)
-        { 
         isOpen = true;
-        mainCamera.transform.position = new Vector3( pipePuzzleRoom.transform.position.x,  pipePuzzleRoom.transform.position.y, cameraZPosition);
-        }
+        mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isOpen == true)
+        if (isOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             isOpen = false;
-             mainCamera.transform.position = new Vector3(returnRoom.transform.position.x,  returnRoom.transform.position.y, cameraZPosition);
+            mainCamera.transform.position = new Vector3(returnRoom.transform.position.x, returnRoom.transform.position.y, cameraZPosition);
         }
->>>>>>> Stashed changes
     }
 }
