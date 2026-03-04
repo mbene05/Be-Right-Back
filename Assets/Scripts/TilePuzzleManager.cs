@@ -53,7 +53,7 @@ public class TilePuzzleManager : MonoBehaviour
         if (correctTiles == 8 && done == false)
         {
                 ChefManager selectedChef = chef.GetComponent<ChefManager>();
-                  selectedChef.logsCollected++;
+                selectedChef.logsCollected++;
                 done = true;
 
         }

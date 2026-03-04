@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping;
 
     public GameObject[] drinks;
+    public GameObject Keycard;
 
     private SpriteRenderer charlieRenderer;
     public Sprite charlieFace;
@@ -225,9 +226,11 @@ void PlayResponseSound(AudioClip clip)
               story.BindExternalFunction("DrinkRecieved", (int drinkNum) => {
                 ActivateDrink(drinkNum);
             });
-
               story.BindExternalFunction("EndedGame", (int didyouend) => {
                 LoadEndScene();
+            });
+             story.BindExternalFunction("giveLog", (int givenLog) => {
+                Keycard.SetActive(true);
             });
 
         DisplayNextLine();
