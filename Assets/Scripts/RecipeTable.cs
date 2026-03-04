@@ -8,11 +8,30 @@ public class RecipeTable : MonoBehaviour
     
      private SpriteRenderer sr;
 
+    public Color hoverColor = Color.red;
+    private Color originalColor;
+
 
     void Start()
     {
         // Make sure menu is hidden at start
         recipePanel.SetActive(false);
+    }
+
+    void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color;
+    }
+
+    void OnMouseEnter()
+    {
+        sr.color = hoverColor;
+    }
+
+    void OnMouseExit()
+    {
+        sr.color = originalColor;
     }
 
     void OnMouseDown()
@@ -26,9 +45,5 @@ public class RecipeTable : MonoBehaviour
         recipePanel.SetActive(true);
     }
 
-    void Awake()
-    {
-        sr = GetComponent<SpriteRenderer>();
-    }
    
 }

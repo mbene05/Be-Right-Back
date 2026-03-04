@@ -3,7 +3,9 @@ using UnityEngine;
 public class DateManager : MonoBehaviour
 {
     public DialogueManager dialogueManager;
-    public TextAsset myInkJSON; // Assign the specific JSON for this date in Inspector
+    public TextAsset myInkJSON;
+    public bool saidOp = false;
+    public TextAsset myInkJSON2; // Assign the specific JSON for this date in Inspector
 
     public AudioClip interactSound;   // robot sound
     private AudioSource audioSource;
@@ -12,11 +14,16 @@ public class DateManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
-
-
     }
 
+    void Update()
+    {
+        if (saidOp == false)
+        {
+            dialogueManager.StartDialogue(myInkJSON2, charlieVoice);
+            saidOp = true;
+        }
+    }
 
     void OnMouseDown()
     {

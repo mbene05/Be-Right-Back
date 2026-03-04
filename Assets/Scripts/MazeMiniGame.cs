@@ -5,7 +5,9 @@ public class MazeMiniGame : MonoBehaviour
 {
     public static MazeMiniGame Instance { get; private set; }
     public static bool IsOpen { get; private set; }
+    bool done = false;
 
+    public GameObject tileTrigger;
     [Header("Panel")]
     public GameObject mazePanel;
     public RectTransform mazeBounds; // the outer boundary
@@ -14,6 +16,9 @@ public class MazeMiniGame : MonoBehaviour
     public RectTransform startZone;
     public RectTransform exitZone;
     public GameObject chef;
+    public bool done2 = false;
+
+   
     [Header("Walls")]
     public RectTransform[] walls;
 
@@ -142,8 +147,12 @@ public class MazeMiniGame : MonoBehaviour
                 break;
             case State.Won:
                 winOverlay.SetActive(true);
-                ChefManager selectedChef = chef.GetComponent<ChefManager>();
+                if (done2 == false)
+                {
+                    ChefManager selectedChef = chef.GetComponent<ChefManager>();
                  selectedChef.logsCollected++;
+                 done2 = true;
+                }
                 break;
         }
     }
