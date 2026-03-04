@@ -546,6 +546,9 @@ MonoBehaviour:
   - {fileID: 2013968739}
   - {fileID: 214865587}
   - {fileID: 0}
+  correctTiles: 0
+  chef: {fileID: 0}
+  done: 0
 --- !u!4 &20409700
 Transform:
   m_ObjectHideFlags: 0
@@ -945,7 +948,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13, y: 16}
+    oldSize: {x: 5.7, y: 12.92}
     newSize: {x: 1.01, y: 1.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1020,7 +1023,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 5185557003165074f940f5578d299570, type: 3}
+  m_Sprite: {fileID: 4547227261782474700, guid: a9251d031ac070144a3e255296a14116, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1079,6 +1082,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 4
+  inrightPlace: 0
 --- !u!61 &47185769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2107,7 +2111,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 101
+  m_SortingOrder: 103
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1209644786745948262, guid: 00b5a8e50ab5e5444a0f4e81dc2e4514, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2745,6 +2749,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 2
+  inrightPlace: 0
 --- !u!61 &156381726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4028,6 +4033,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 8
+  inrightPlace: 0
 --- !u!61 &214865588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6110,6 +6116,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 1
+  inrightPlace: 0
 --- !u!61 &397198903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11128,6 +11135,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 3
+  inrightPlace: 0
 --- !u!61 &799248370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17860,6 +17868,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 6
+  inrightPlace: 0
 --- !u!61 &1122797442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17994,6 +18003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10395a2930eb0ea4d8eadf30001d9f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PipePuzzleManager
+  chef: {fileID: 0}
 --- !u!4 &1134035850
 Transform:
   m_ObjectHideFlags: 0
@@ -26579,6 +26589,7 @@ MonoBehaviour:
   - {fileID: 1053455367}
   - {fileID: 196266994}
   - {fileID: 764604371}
+  Keycard: {fileID: 0}
   charlieFace: {fileID: 7859895392139811753, guid: d45c2e9905c2f98468b107c3ed6811ed, type: 3}
   charlieFaceGood: {fileID: -7544082799200721145, guid: 073ff85ef921bf04c8687608c7f6673f, type: 3}
   charlieFaceNeutral: {fileID: -5449744190622932387, guid: fee221b1be052b743aeea1877e591770, type: 3}
@@ -26752,6 +26763,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   cameraZPosition: -10
   tilePuzzleRoom: {fileID: 1090959047}
+  tilereturnRoom: {fileID: 0}
 --- !u!65 &1702342040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27452,7 +27464,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   cameraZPosition: -10
   pipePuzzleRoom: {fileID: 896109459}
-  requiredItemName: Wrench
+  returnRoom: {fileID: 0}
 --- !u!65 &1765050137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30111,6 +30123,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 7
+  inrightPlace: 0
 --- !u!61 &2013968740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30867,6 +30880,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   correctPosition: {x: 0, y: 0, z: 0}
   number: 5
+  inrightPlace: 0
 --- !u!61 &2051835267
 BoxCollider2D:
   m_ObjectHideFlags: 0
