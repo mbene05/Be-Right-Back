@@ -377,7 +377,8 @@ What's the most fun thing you've done recently?
 # good
 OooOoo I love going on virtual walks in my virtual body.
 My favourite is the 7 wonders of the new new world.
-And I can feel everything ...
+And I can feel 
+Everything ...
 -> END
 
 === Neutral13 ===
