@@ -9,8 +9,8 @@ You know what doesn't suck?
 DRINKING!!!!
 I want a drink from the bar that is made only with real ingredients, 
 nothing synthetic. 
-This wrench reminds me of her cold touch, 
-I could give it to you if you get me that drink
+This wrench reminds me of her constant cold gaze.. 
+I'll give it to you if you get me that sweet sweet drink.
 
 + [I can get that for you]
     -> drinkguy_no_drink_answer
