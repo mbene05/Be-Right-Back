@@ -1,3 +1,4 @@
+EXTERNAL giveLog2(givenLog2)
 -> chef_no_log
 
 === chef_no_log ===
@@ -20,4 +21,5 @@ but as you might know by now, I'm very forgetful,
 I set the old drive down and then I just forget where I just placed it.
 I would get it, but I have to stay back here and keep an eye on things.
 Here's my most recent drive, hopefully it will lead you to my keycard.
+~ giveLog2(1)
 -> END

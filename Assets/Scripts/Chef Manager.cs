@@ -14,6 +14,8 @@ public class ChefManager : MonoBehaviour
 
     public GameObject Hotbar;
     public GameObject Bartender;
+
+    public bool Giventhing = false;
    
 
     public int logsCollected = 0;
@@ -40,17 +42,18 @@ public class ChefManager : MonoBehaviour
 
             else
             {
-                if (logsCollected == 0)
+                if (logsCollected < 2)
                 {
                     dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
                 }
                 
-                else if (logsCollected == 1)
+                if (logsCollected == 2 && Giventhing == false)
                 {
                     dialogueManager.StartDialogue(myInkJSON3, sadGuyVoice);
+                    Giventhing = true;
                 }
 
-                else 
+                else
                 {
                     dialogueManager.StartDialogue(myInkJSON4, sadGuyVoice);
                 }

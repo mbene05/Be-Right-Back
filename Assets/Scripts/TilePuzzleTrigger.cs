@@ -5,15 +5,18 @@ public class TilePuzzleTrigger : MonoBehaviour
     bool isOpen = false;
     public Camera mainCamera;
     public float cameraZPosition = -10f;
+    public bool done = false;
+ 
+
 
     public GameObject tilePuzzleRoom;
     public GameObject tilereturnRoom;
     void OnMouseDown()
     {
-        if (isOpen == false)
+        if (isOpen == false && done == false)
         { 
-        isOpen = true;
-        mainCamera.transform.position = new Vector3( tilePuzzleRoom.transform.position.x,  tilePuzzleRoom.transform.position.y, cameraZPosition);
+            isOpen = true;
+            mainCamera.transform.position = new Vector3( tilePuzzleRoom.transform.position.x,  tilePuzzleRoom.transform.position.y, cameraZPosition);
         }
     }
 
