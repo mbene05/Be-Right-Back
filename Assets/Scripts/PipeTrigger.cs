@@ -8,6 +8,7 @@ public class PipeTrigger : MonoBehaviour
     public string requiredItemName = "Wrench";
 
     private HotbarManager hotbar;
+    private bool isOpen = false;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class PipeTrigger : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (isOpen) return;
 
         if (hotbar != null && !hotbar.HasItem(requiredItemName))
         {
