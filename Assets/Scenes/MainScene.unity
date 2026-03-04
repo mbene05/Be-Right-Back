@@ -9148,7 +9148,7 @@ MonoBehaviour:
   saidOp: 0
   myInkJSON2: {fileID: 4900000, guid: 814e1182b696bdd4f950771738f8186f, type: 3}
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
-  charlieVoice: {fileID: 0}
+  charlieVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
 --- !u!61 &546114532
 BoxCollider2D:
   m_ObjectHideFlags: 0
