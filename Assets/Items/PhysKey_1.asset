@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Key
   itemID: 9000
-  itemSprite: {fileID: 21300000, guid: 5185557003165074f940f5578d299570, type: 3}
+  itemSprite: {fileID: 4547227261782474700, guid: a9251d031ac070144a3e255296a14116, type: 3}
