@@ -4959,6 +4959,7 @@ MonoBehaviour:
   mazeBounds: {fileID: 224450280}
   startZone: {fileID: 1247146652}
   exitZone: {fileID: 810006765}
+  chef: {fileID: 0}
   walls:
   - {fileID: 974903384}
   - {fileID: 189368186}
@@ -8527,7 +8528,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1683366673}
   myInkJSON: {fileID: 4900000, guid: 59c36a7beba8d9546b6fb691b9287f06, type: 3}
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
-  charlieVoice: {fileID: 0}
+  charlieVoice: {fileID: 8300000, guid: ac8a725f163a5f44cb79514c1ab5e591, type: 3}
 --- !u!61 &546114532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22220,7 +22221,7 @@ MonoBehaviour:
   myInkJSON: {fileID: 4900000, guid: af5bf4cf960be974c9281226925c87d9, type: 3}
   myInkJSON2: {fileID: 4900000, guid: c4624c11d8a5cfb41bd1b9634a89e73d, type: 3}
   myInkJSON3: {fileID: 4900000, guid: ac74a16f4af158c4684a1238b4cac360, type: 3}
-  bartenderVoice: {fileID: 0}
+  bartenderVoice: {fileID: 8300000, guid: 603c27f178f98d64e8a42a9ce26abf1a, type: 3}
   highlighted: {fileID: 1539749367}
   pickUpDrink: 0
 --- !u!82 &1349623691
@@ -27465,6 +27466,7 @@ MonoBehaviour:
   cameraZPosition: -10
   pipePuzzleRoom: {fileID: 896109459}
   returnRoom: {fileID: 0}
+  requiredItemName: Wrench
 --- !u!65 &1765050137
 BoxCollider:
   m_ObjectHideFlags: 0
