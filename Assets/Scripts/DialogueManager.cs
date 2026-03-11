@@ -42,7 +42,6 @@ public class DialogueManager : MonoBehaviour
     public Sprite charlieFaceGood2;
     public Sprite charlieConfused;
     public Sprite CharlieSlightlyHappier;
-    public Sprite charlieLoading;
 
     public AudioClip goodSound;
     public AudioClip badSound;
