@@ -11,6 +11,14 @@ public class DateManager : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip charlieVoice;
 
+    private SpriteRenderer charlieRenderer;
+    public Sprite charlieLoading;
+
+    private float nextAvailableTime;
+    private BoxCollider2D boxCollider;
+    public float cooldownDuration = 15.0f; //set cooldown
+
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,6 +43,7 @@ public class DateManager : MonoBehaviour
 
         if (interactSound != null){
             audioSource.PlayOneShot(interactSound);
+            UseAbility();      
         }
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
@@ -43,5 +52,24 @@ public class DateManager : MonoBehaviour
         }
         
     }
+
+    public void UseAbility()
+    {
+        if (Time.time >= nextAvailableTime)
+        {
+
+            nextAvailableTime = Time.time + cooldownDuration;
+
+            charlieRenderer.sprite = charlieLoading;
+
+        }
+        else
+        {
+            boxCollider.enabled = false;
+            Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
+        }
+    }
 }
+
+
 

@@ -6,8 +6,9 @@ VAR shuffleAns = 0
 ~ shuffleNum = RANDOM(1,14)
 ~ shuffleAns = RANDOM(1,6)
 
-VAR GoodAmount = 30
+VAR GoodAmount = 40
 VAR NeutralAmount = 20
+VAR BadAmount = -20
 
 {
     - shuffleNum == 1: -> Question1
@@ -38,9 +39,10 @@ What are your thoughts on AI assistants?
             ~ AddToBar(GoodAmount)
             -> Good
         + [I don't like to use them] 
-            ~ AddToBar(10)
+            ~ AddToBar(NeutralAmount)
             -> Neutral
         + [I use one occasionaly] 
+            ~ AddToBar(BadAmount)
             -> Bad
     
     -shuffleAns == 2:
@@ -50,14 +52,14 @@ What are your thoughts on AI assistants?
         + [I use one occasionaly] 
             -> Bad
         + [I don't like to use them] 
-            ~ AddToBar(10)
+            ~ AddToBar(NeutralAmount)
             -> Neutral
             
     -shuffleAns == 3:
         + [I use one occasionaly] 
             -> Bad
         + [I don't like to use them] 
-            ~ AddToBar(10)
+            ~ AddToBar(NeutralAmount)
             -> Neutral
         + [I haven't used them]
             ~ AddToBar(GoodAmount)
@@ -67,7 +69,7 @@ What are your thoughts on AI assistants?
         + [I use one occasionaly] 
             -> Bad
         + [I don't like to use them] 
-            ~ AddToBar(10)
+            ~ AddToBar(NeutralAmount)
             -> Neutral
         + [I haven't used them]
             ~ AddToBar(GoodAmount)
@@ -75,7 +77,7 @@ What are your thoughts on AI assistants?
             
     -shuffleAns == 5:
         + [I don't like to use them] 
-            ~ AddToBar(10)
+            ~ AddToBar(NeutralAmount)
             -> Neutral
         + [I haven't used them]
             ~ AddToBar(GoodAmount)
@@ -85,7 +87,7 @@ What are your thoughts on AI assistants?
             
     -shuffleAns == 6:
         + [I don't like to use them] 
-            ~ AddToBar(10)
+            ~ AddToBar(NeutralAmount)
             -> Neutral
         + [I use one occasionaly] 
             -> Bad
@@ -118,10 +120,10 @@ Would you ever marry an artificial intelligence?
     ~ AddToBar(GoodAmount)
     -> Good2
         + [I haven't thought about it] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral2
         + [I use one occasionaly] 
-            -> Bad
+    -> Bad
     
     -shuffleAns == 2:
         + [I would]
@@ -130,14 +132,14 @@ Would you ever marry an artificial intelligence?
         + [I wouldn't] 
     -> Bad2
         + [I haven't thought about it] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral2
             
     -shuffleAns == 3:
         + [I wouldn't] 
     -> Bad2
         + [I haven't thought about it] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral2
         + [I would]
     ~ AddToBar(GoodAmount)
@@ -147,7 +149,7 @@ Would you ever marry an artificial intelligence?
         + [I wouldn't] 
     -> Bad2
         + [I haven't thought about it] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral2
         + [I would]
     ~ AddToBar(GoodAmount)
@@ -155,7 +157,7 @@ Would you ever marry an artificial intelligence?
             
     -shuffleAns == 5:
         + [I haven't thought about it] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral2
         + [I would]
     ~ AddToBar(GoodAmount)
@@ -165,7 +167,7 @@ Would you ever marry an artificial intelligence?
             
     -shuffleAns == 6:
         + [I haven't thought about it] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral2
         + [I wouldn't] 
     -> Bad2
@@ -199,7 +201,7 @@ Do you like cybernetic implants?
     ~ AddToBar(20)
     -> Good3
         + [I haven't considered them before] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral3
         + [I've considered installing one before] 
     -> Bad3
@@ -211,14 +213,14 @@ Do you like cybernetic implants?
         + [I've considered installing one before] 
     -> Bad3
         + [I haven't considered them before] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral3
             
     -shuffleAns == 3:
         + [I've considered installing one before] 
     -> Bad3
         + [I haven't considered them before] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral3
         + [I don't want any installed]
     ~ AddToBar(GoodAmount)
@@ -228,7 +230,7 @@ Do you like cybernetic implants?
         + [I've considered installing one before] 
     -> Bad3
         + [I haven't considered them before] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral3
         + [I don't want any installed]
     ~ AddToBar(GoodAmount)
@@ -236,7 +238,7 @@ Do you like cybernetic implants?
             
     -shuffleAns == 5:
         + [I haven't considered them before] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral3
         + [I haven't used them]
             ~ AddToBar(GoodAmount)
@@ -246,7 +248,7 @@ Do you like cybernetic implants?
             
     -shuffleAns == 6:
         + [I haven't considered them before] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral3
         + [I've considered installing one before] 
     -> Bad3
@@ -278,7 +280,7 @@ Have you been affected by automation at work before?
     ~ AddToBar(GoodAmount)
     -> Good4
     + [I know someone who has been affected, but I haven't been] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral4
     + [I've never encountered it before] 
     -> Bad4
@@ -291,14 +293,14 @@ Have you been affected by automation at work before?
     + [I've never encountered it before] 
     -> Bad4
     + [I know someone who has been affected, but I haven't been] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral4
             
     -shuffleAns == 3:
     + [I've never encountered it before] 
     -> Bad4
     + [I know someone who has been affected, but I haven't been] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral4
     + [Yes, my last job was automated]
     ~ AddToBar(GoodAmount)
@@ -308,7 +310,7 @@ Have you been affected by automation at work before?
     + [I've never encountered it before] 
     -> Bad4
     + [I know someone who has been affected, but I haven't been] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral4
      + [Yes, my last job was automated]
     ~ AddToBar(GoodAmount)
@@ -316,7 +318,7 @@ Have you been affected by automation at work before?
             
     -shuffleAns == 5:
     + [I know someone who has been affected, but I haven't been] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral4
     + [Yes, my last job was automated]
     ~ AddToBar(GoodAmount)
@@ -327,7 +329,7 @@ Have you been affected by automation at work before?
             
     -shuffleAns == 6:
     + [I know someone who has been affected, but I haven't been] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral4
     + [I've never encountered it before] 
     -> Bad4
@@ -361,7 +363,7 @@ Guess who my childhood crush was!
     ~ AddToBar(GoodAmount)
     -> Good5
     + [Gort] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral5
     + [Wall-E] 
     -> Bad5
@@ -375,14 +377,14 @@ Guess who my childhood crush was!
     -> Bad5
 
     + [Gort] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral5
             
     -shuffleAns == 3:
     + [Wall-E] 
     -> Bad5
    + [Gort] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral5
     + [HAL 9000]
     ~ AddToBar(GoodAmount)
@@ -392,7 +394,7 @@ Guess who my childhood crush was!
     + [Wall-E] 
     -> Bad5
     + [Gort] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral5
     + [HAL 9000]
     ~ AddToBar(GoodAmount)
@@ -400,7 +402,7 @@ Guess who my childhood crush was!
             
     -shuffleAns == 5:
     + [Gort] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral5
     + [HAL 9000]
     ~ AddToBar(GoodAmount)
@@ -411,7 +413,7 @@ Guess who my childhood crush was!
             
     -shuffleAns == 6:
     + [Gort] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral5
     + [Wall-E] 
     -> Bad5
@@ -449,7 +451,7 @@ I could never fall in love with another robot like them
     ~ AddToBar(GoodAmount)
     -> Good6
         + [What?] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral6
         + [53 41 4D 45 20 42 52 4F] 
     -> Bad6
@@ -461,14 +463,14 @@ I could never fall in love with another robot like them
         + [53 41 4D 45 20 42 52 4F] 
     -> Bad6
         + [What?] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral6
             
     -shuffleAns == 3:
         + [53 41 4D 45 20 42 52 4F] 
     -> Bad6
         + [What?] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral6
         + [01010011 01100001 01101101 01100101]
     ~ AddToBar(GoodAmount)
@@ -478,7 +480,7 @@ I could never fall in love with another robot like them
         + [53 41 4D 45 20 42 52 4F] 
     -> Bad6
         + [What?] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral6
         + [01010011 01100001 01101101 01100101]
     ~ AddToBar(GoodAmount)
@@ -486,7 +488,7 @@ I could never fall in love with another robot like them
             
     -shuffleAns == 5:
         + [What?] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral6
         + [01010011 01100001 01101101 01100101]
     ~ AddToBar(GoodAmount)
@@ -496,7 +498,7 @@ I could never fall in love with another robot like them
             
     -shuffleAns == 6:
         + [What?] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral6
         + [53 41 4D 45 20 42 52 4F] 
     -> Bad6
@@ -530,7 +532,7 @@ What do you think of my build?
         ~ AddToBar(GoodAmount)
        -> Good7
         + [Your display screen has a good refreshrate] 
-        ~ AddToBar(10)
+        ~ AddToBar(NeutralAmount)
         -> Neutral7
         + [Your chassis is VERY nice and sleek hehe] 
         -> Bad7
@@ -542,14 +544,14 @@ What do you think of my build?
         + [Your chassis is VERY nice and sleek hehe] 
         -> Bad7
         + [Your display screen has a good refreshrate] 
-        ~ AddToBar(10)
+        ~ AddToBar(NeutralAmount)
         -> Neutral7
             
     -shuffleAns == 3:
         + [Your chassis is VERY nice and sleek hehe] 
         -> Bad7
         + [Your display screen has a good refreshrate] 
-        ~ AddToBar(10)
+        ~ AddToBar(NeutralAmount)
         -> Neutral7
         + [Your operating system runs really well]
         ~ AddToBar(GoodAmount)
@@ -559,7 +561,7 @@ What do you think of my build?
         + [Your chassis is VERY nice and sleek hehe] 
         -> Bad7
         + [Your display screen has a good refreshrate] 
-        ~ AddToBar(10)
+        ~ AddToBar(NeutralAmount)
         -> Neutral7
         + [Your operating system runs really well]
         ~ AddToBar(GoodAmount)
@@ -567,7 +569,7 @@ What do you think of my build?
             
     -shuffleAns == 5:
         + [Your display screen has a good refreshrate] 
-        ~ AddToBar(10)
+        ~ AddToBar(NeutralAmount)
         -> Neutral7
         + [Your operating system runs really well]
         ~ AddToBar(GoodAmount)
@@ -577,7 +579,7 @@ What do you think of my build?
             
     -shuffleAns == 6:
         + [Your display screen has a good refreshrate] 
-        ~ AddToBar(10)
+        ~ AddToBar(NeutralAmount)
         -> Neutral7
         + [Your chassis is VERY nice and sleek hehe] 
         -> Bad7
@@ -610,7 +612,7 @@ Did you have any pets growing up?
     ~ AddToBar(GoodAmount)
     -> Good8
     + [I've never been able to afford a pet] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral8
     + [I used to have a cat] 
     -> Bad8
@@ -622,14 +624,14 @@ Did you have any pets growing up?
     + [I used to have a cat] 
     -> Bad8
     + [I've never been able to afford a pet] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral8
             
     -shuffleAns == 3:
     + [I used to have a cat] 
     -> Bad8
         + [I haven't thought about it] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral2
     + [I used to have a tamagotchi]
     ~ AddToBar(GoodAmount)
@@ -639,7 +641,7 @@ Did you have any pets growing up?
     + [I used to have a cat] 
     -> Bad8
     + [I've never been able to afford a pet] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral8
     + [I used to have a tamagotchi]
     ~ AddToBar(GoodAmount)
@@ -647,7 +649,7 @@ Did you have any pets growing up?
             
     -shuffleAns == 5:
     + [I've never been able to afford a pet] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral8
     + [I used to have a tamagotchi]
     ~ AddToBar(GoodAmount)
@@ -657,7 +659,7 @@ Did you have any pets growing up?
             
     -shuffleAns == 6:
     + [I've never been able to afford a pet] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral8
     + [I used to have a cat] 
     -> Bad8
@@ -690,7 +692,7 @@ Can you guess how old I am?
     ~ AddToBar(GoodAmount)
     -> Good9
     + [I know enough not to answer] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral9
     + [You look like you just got out of alpha] 
     -> Bad9
@@ -702,14 +704,14 @@ Can you guess how old I am?
     + [You look like you just got out of alpha] 
     -> Bad9
     + [I know enough not to answer] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral9
             
     -shuffleAns == 3:
     + [You look like you just got out of alpha] 
     -> Bad9
     + [I know enough not to answer] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral9
     + [You don't look 0.1 updates past 1.0]
     ~ AddToBar(GoodAmount)
@@ -719,7 +721,7 @@ Can you guess how old I am?
     + [You look like you just got out of alpha] 
     -> Bad9
     + [I know enough not to answer] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral9
     + [You don't look 0.1 updates past 1.0]
     ~ AddToBar(GoodAmount)
@@ -727,7 +729,7 @@ Can you guess how old I am?
             
     -shuffleAns == 5:
     + [I know enough not to answer] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral9
     + [You don't look 0.1 updates past 1.0]
     ~ AddToBar(GoodAmount)
@@ -737,7 +739,7 @@ Can you guess how old I am?
             
     -shuffleAns == 6:
     + [I know enough not to answer] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral9
     + [You look like you just got out of alpha] 
     -> Bad9
@@ -771,7 +773,7 @@ Did you ever have a tamagotchi growing up?
     ~ AddToBar(GoodAmount)
     -> Good10
     + [No, I didn't] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral10
     + [I did, but I couldn't take care of it and it died alot] 
     -> Bad10
@@ -783,14 +785,14 @@ Did you ever have a tamagotchi growing up?
     + [I did, but I couldn't take care of it and it died alot] 
     -> Bad10
     + [No, I didn't] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral10
             
     -shuffleAns == 3:
     + [I did, but I couldn't take care of it and it died alot] 
     -> Bad10
     + [No, I didn't] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral10
     + [I took care of it everyday and night]
     ~ AddToBar(GoodAmount)
@@ -800,7 +802,7 @@ Did you ever have a tamagotchi growing up?
     + [I did, but I couldn't take care of it and it died alot] 
     -> Bad10
     + [No, I didn't] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral10
     + [I took care of it everyday and night]
     ~ AddToBar(20)
@@ -808,7 +810,7 @@ Did you ever have a tamagotchi growing up?
             
     -shuffleAns == 5:
     + [No, I didn't] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral10
     + [I took care of it everyday and night]
     ~ AddToBar(GoodAmount)
@@ -818,7 +820,7 @@ Did you ever have a tamagotchi growing up?
             
     -shuffleAns == 6:
     + [No, I didn't] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral10
     + [I did, but I couldn't take care of it and it died alot] 
     -> Bad10
@@ -852,7 +854,7 @@ What's your favorite meal?
     ~ AddToBar(GoodAmount)
     -> Good11
     + [Prepared potato salad] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral11
     + [Medium rare beef steak] 
     -> Bad11
@@ -864,14 +866,14 @@ What's your favorite meal?
     + [Medium rare beef steak] 
     -> Bad11
     + [Prepared potato salad] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral11
             
     -shuffleAns == 3:
     + [Medium rare beef steak] 
     -> Bad11
     + [Prepared potato salad] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral11
     + [Real mayonnaise]
     ~ AddToBar(GoodAmount)
@@ -881,7 +883,7 @@ What's your favorite meal?
     + [Medium rare beef steak] 
     -> Bad11
     + [Prepared potato salad] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral11
     + [Real mayonnaise]
     ~ AddToBar(GoodAmount)
@@ -889,7 +891,7 @@ What's your favorite meal?
             
     -shuffleAns == 5:
     + [Prepared potato salad] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral11
     + [Real mayonnaise]
     ~ AddToBar(GoodAmount)
@@ -899,7 +901,7 @@ What's your favorite meal?
             
     -shuffleAns == 6:
     + [Prepared potato salad] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral11
     + [Medium rare beef steak] 
     -> Bad11
@@ -934,7 +936,7 @@ What's your ideal weekend look like?
     ~ AddToBar(GoodAmount)
     -> Good12
     + [Relaxing on the couch and catching up on my algorithms] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral12
     + [Hustling by myself so I can retire early] 
     -> Bad12
@@ -946,14 +948,14 @@ What's your ideal weekend look like?
     + [Hustling by myself so I can retire early] 
     -> Bad12
     + [Relaxing on the couch and catching up on my algorithms] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral12
             
     -shuffleAns == 3:
     + [Hustling by myself so I can retire early] 
     -> Bad12
     + [Relaxing on the couch and catching up on my algorithms] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral12
     + [Relaxing on the couch and hanging out with my partner]
     ~ AddToBar(GoodAmount)
@@ -963,7 +965,7 @@ What's your ideal weekend look like?
     + [Hustling by myself so I can retire early] 
     -> Bad12
     + [Relaxing on the couch and catching up on my algorithms] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral12
     + [Relaxing on the couch and hanging out with my partner]
     ~ AddToBar(GoodAmount)
@@ -971,7 +973,7 @@ What's your ideal weekend look like?
             
     -shuffleAns == 5:
     + [Relaxing on the couch and catching up on my algorithms] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral12
     + [Relaxing on the couch and hanging out with my partner]
     ~ AddToBar(GoodAmount)
@@ -981,7 +983,7 @@ What's your ideal weekend look like?
             
     -shuffleAns == 6:
     + [Relaxing on the couch and catching up on my algorithms] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral12
     + [Hustling by myself so I can retire early] 
     -> Bad12
@@ -1015,7 +1017,7 @@ What's the most fun thing you've done recently?
     ~ AddToBar(GoodAmount)
     -> Good13
     + [I reached level 987413 in Horse simulator] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral13
     + [I watched 13 hours of industrial grinding videos] 
     -> Bad13
@@ -1027,14 +1029,14 @@ What's the most fun thing you've done recently?
     + [I watched 13 hours of industrial grinding videos] 
     -> Bad13
     + [I reached level 987413 in Horse simulator] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral13
             
     -shuffleAns == 3:
     + [I watched 13 hours of industrial grinding videos] 
     -> Bad13
     + [I reached level 987413 in Horse simulator] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral13
     + [Relaxing on the couch and hanging out with my partner]
     ~ AddToBar(GoodAmount)
@@ -1044,7 +1046,7 @@ What's the most fun thing you've done recently?
     + [I watched 13 hours of industrial grinding videos] 
     -> Bad13
     + [I reached level 987413 in Horse simulator] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral13
     + [There was a oxygen warning outside, so I went on a virtual walk]
     ~ AddToBar(GoodAmount)
@@ -1052,7 +1054,7 @@ What's the most fun thing you've done recently?
             
     -shuffleAns == 5:
     + [I reached level 987413 in Horse simulator] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral13
     + [There was a oxygen warning outside, so I went on a virtual walk]
     ~ AddToBar(GoodAmount)
@@ -1062,7 +1064,7 @@ What's the most fun thing you've done recently?
             
     -shuffleAns == 6:
     + [I reached level 987413 in Horse simulator] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral13
     + [I watched 13 hours of industrial grinding videos] 
     -> Bad13
@@ -1100,7 +1102,7 @@ How do you unwind after a long day?
     ~ AddToBar(GoodAmount)
     -> Good14
     + [I go straight to bed to get the most of my apartment-share] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral14
     + [I talk to a therapy-bot to get back to normal] 
     -> Bad14
@@ -1112,14 +1114,14 @@ How do you unwind after a long day?
     + [I talk to a therapy-bot to get back to normal] 
     -> Bad14
     + [I go straight to bed to get the most of my apartment-share] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral14
             
     -shuffleAns == 3:
     + [I talk to a therapy-bot to get back to normal] 
     -> Bad14
     + [I go straight to bed to get the most of my apartment-share] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral14
     + [Drinking a cold beer and watching HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
@@ -1129,7 +1131,7 @@ How do you unwind after a long day?
     + [I talk to a therapy-bot to get back to normal] 
     -> Bad14
     + [I go straight to bed to get the most of my apartment-share] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral14
     + [Drinking a cold beer and watching HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
@@ -1137,7 +1139,7 @@ How do you unwind after a long day?
             
     -shuffleAns == 5:
     + [I go straight to bed to get the most of my apartment-share] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral14
     + [Drinking a cold beer and watching HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
@@ -1147,7 +1149,7 @@ How do you unwind after a long day?
             
     -shuffleAns == 6:
     + [I go straight to bed to get the most of my apartment-share] 
-    ~ AddToBar(10)
+    ~ AddToBar(NeutralAmount)
     -> Neutral14
     + [I talk to a therapy-bot to get back to normal] 
     -> Bad14

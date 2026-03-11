@@ -1,9 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
-
 using Ink.Runtime;
-
+using System.Threading;
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Bar : MonoBehaviour
 {
@@ -14,7 +14,8 @@ public class Bar : MonoBehaviour
     private float currentTime;
 
     private bool hasEnded = false;
-   
+
+
 
     void Start()
     {
