@@ -11,8 +11,8 @@ I don't even care it's carcinogenic.
     -> drinkguy_answer
 
 === drinkguy_answer ===
-Thank you for looking out for a fellow human.
-Here's that jukebox arm I promised you.
+I guess theres still a sense of community left in this cold world.
+Thank you friend
+Here's that wrench I promised you
 ~ EndedGame(1)
-yay
 -> END
