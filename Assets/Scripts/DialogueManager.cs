@@ -67,13 +67,7 @@ public class DialogueManager : MonoBehaviour
 
         if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0))
         {
-            if (isTyping)
-            {
-                StopCoroutine(typingCoroutine);
-                dialogueText.text = story.currentText; // Show the full line immediately
-                isTyping = false;
-            }
-            else if (!isTyping)
+            if (!isTyping)
                 DisplayNextLine();
         }
     }
