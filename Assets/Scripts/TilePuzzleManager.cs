@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class TilePuzzleManager : MonoBehaviour
 {
@@ -7,16 +8,24 @@ public class TilePuzzleManager : MonoBehaviour
     public float disNum = 2f;
     [SerializeField] private TileScript[] tiles;
     private int emptySpaceIndex = 8;
+    public bool inrightPlace;
+public int number;
+public Vector2 targetPosition;
     public int correctTiles;
+    public GameObject skipButton;
 
     public GameObject chef;
 
-    public bool done = false;
+    bool done = false;
 
+    public GameObject tileTrigger;
 
+    public bool move = false;
     void Start()
     {
-       // Shuffle();
+        
+        skipButton.SetActive(false);
+       Shuffle();
     }
     void Update()
     {
@@ -28,6 +37,11 @@ public class TilePuzzleManager : MonoBehaviour
             {
                 if (Vector2.Distance(emptySpace.position,hit.transform.position) < disNum)
                 {
+                    if (move == false)
+                    {
+                        StartCoroutine(ShowSkipAfterDelay());
+                        move = true;
+                    }
                     Vector2 lastEmptySpacePosition = emptySpace.position;
                     TileScript thisTile = hit.transform.GetComponent<TileScript>();
                     emptySpace.position = thisTile.targetPosition;
@@ -55,12 +69,47 @@ public class TilePuzzleManager : MonoBehaviour
                 ChefManager selectedChef = chef.GetComponent<ChefManager>();
                 selectedChef.logsCollected++;
                 done = true;
+                tileTrigger.SetActive(true);
 
         }
 
     }
 
-   
+ public void SkipDialogue()
+{
+    if (done) return;
+
+    // Move every tile to its correct position
+    foreach (TileScript tile in tiles)
+    {
+        if (tile != null)
+        {
+            tile.targetPosition = tile.correctPosition;
+        }
+    }
+
+    // Move empty space back to correct spot (last index)
+    emptySpace.position = tiles[8] == null 
+        ? emptySpace.position 
+        : tiles[8].correctPosition;
+
+    emptySpaceIndex = 8;
+
+    // Mark puzzle complete
+    ChefManager selectedChef = chef.GetComponent<ChefManager>();
+    selectedChef.logsCollected++;
+
+    tileTrigger.SetActive(true);
+    done = true;
+
+    skipButton.SetActive(false);
+}
+
+    IEnumerator ShowSkipAfterDelay()
+    {
+        yield return new WaitForSeconds(100f); 
+        skipButton.SetActive(true);
+    }
 
 
 

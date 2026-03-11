@@ -7,6 +7,14 @@ public class PipePuzzleManager : MonoBehaviour
     bool puzzleSolved = false;
     public GameObject chef;
 
+    public GameObject SinkClogged;
+    public GameObject SinkFull;
+
+
+
+
+    public GameObject tileTrigger;
+
     void Start()
     {
         pipes = FindObjectsOfType<PipeScript>();
@@ -44,7 +52,7 @@ public class PipePuzzleManager : MonoBehaviour
 
     void DoSomethingAfterWin()
     {
-        ChefManager selectedChef = chef.GetComponent<ChefManager>();
-         selectedChef.logsCollected++;
+        SinkClogged.SetActive(false);
+        SinkFull.SetActive(true);
     }
 }
