@@ -1,6 +1,7 @@
 using Ink.Runtime;
 using System.Threading;
 using TMPro;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,12 +23,16 @@ public class Bar : MonoBehaviour
     {
         bar.fillAmount = 1f;
         currentTime = maxTime;
+
     }
 
     void Update()
     {
+
+
         if (currentTime > 0 && isTimerRunning)
         {
+            StartCoroutine(StartTimerDelay());
             currentTime -= Time.deltaTime;
             bar.fillAmount = currentTime / maxTime;
         }
@@ -38,6 +43,11 @@ public class Bar : MonoBehaviour
         }
     }
 
+    IEnumerator StartTimerDelay()
+    {
+        yield return new WaitForSeconds(30f);
+        isTimerRunning = true;
+    }
 
     public void AddTime(float amount)
     {
@@ -66,11 +76,5 @@ public class Bar : MonoBehaviour
         SceneManager.LoadScene(endSceneName);
     }
     
-    // Optional: Refill the bar
-   // public void RefillTime()
-   // {
-    //    currentTime = maxTime;
-    //   bar.fillAmount = 1f;
-    //}
 
 }

@@ -42,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     public Sprite charlieFaceGood2;
     public Sprite charlieConfused;
     public Sprite CharlieSlightlyHappier;
+    public Sprite CharlieLoading;
 
     public AudioClip goodSound;
     public AudioClip badSound;
@@ -134,8 +135,16 @@ public class DialogueManager : MonoBehaviour
         else
         {
             EndDialogue();
+            charlieRenderer.sprite = CharlieLoading;
+            StartCoroutine(DelayedFace());
+
 
         }
+    }
+    IEnumerator DelayedFace()
+    {
+        yield return new WaitForSeconds(3f); //important for delay very very important do not forget
+        charlieRenderer.sprite = charlieFace;
     }
 
     void HandleTags(List<string> tags)
@@ -251,6 +260,7 @@ void PlayResponseSound(AudioClip clip)
             });
 
         DisplayNextLine();
+
     }
 
     void DisplayChoices()
