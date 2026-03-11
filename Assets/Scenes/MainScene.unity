@@ -9149,7 +9149,7 @@ MonoBehaviour:
   saidOp: 0
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
   charlieVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
-  charlieLoading: {fileID: -4680563514017623591, guid: fc2254827d775124cbb912772f9f151c, type: 3}
+  charlieLoading: {fileID: 0}
   cooldownDuration: 5
 --- !u!61 &546114532
 BoxCollider2D:
@@ -19792,6 +19792,7 @@ MonoBehaviour:
   bar: {fileID: 1979720963}
   maxTime: 150
   endSceneName: DeathScreen
+  isTimerRunning: 1
 --- !u!1 &1172615899
 GameObject:
   m_ObjectHideFlags: 0

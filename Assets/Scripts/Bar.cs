@@ -14,6 +14,7 @@ public class Bar : MonoBehaviour
     private float currentTime;
 
     private bool hasEnded = false;
+    public bool isTimerRunning = true;
 
 
 
@@ -25,7 +26,7 @@ public class Bar : MonoBehaviour
 
     void Update()
     {
-        if (currentTime > 0)
+        if (currentTime > 0 && isTimerRunning)
         {
             currentTime -= Time.deltaTime;
             bar.fillAmount = currentTime / maxTime;

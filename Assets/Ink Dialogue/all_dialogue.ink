@@ -6,8 +6,8 @@ VAR shuffleAns = 0
 ~ shuffleNum = RANDOM(1,14)
 ~ shuffleAns = RANDOM(1,6)
 
-VAR GoodAmount = 40
-VAR NeutralAmount = 20
+VAR GoodAmount = 55
+VAR NeutralAmount = 22
 VAR BadAmount = 15
 
 {
