@@ -1,6 +1,6 @@
 -> sink_no_wrench
 === sink_no_wrench ===
-This sink is backed up somewhere else in the restaurant.
-The pipes seem to be heading towards the coat room.
-Maybe the chef will know what's down the sink.
+This sink is backed up.
+I think the Chef mentioned something about the pipes leading to the Coat Room.
+I should check it out.
 -> END
