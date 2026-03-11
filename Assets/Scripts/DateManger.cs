@@ -4,24 +4,26 @@ public class DateManager : MonoBehaviour
 {
     public DialogueManager dialogueManager;
     public TextAsset myInkJSON;
+    public TextAsset myInkJSON2;
     public bool saidOp = false;
-    public TextAsset myInkJSON2; // Assign the specific JSON for this date in Inspector
 
-    public AudioClip interactSound;   // robot sound
-    private AudioSource audioSource;
+    public AudioClip interactSound;
     public AudioClip charlieVoice;
+
+    private AudioSource audioSource;
 
     private SpriteRenderer charlieRenderer;
     public Sprite charlieLoading;
 
     private float nextAvailableTime;
     private BoxCollider2D boxCollider;
-    public float cooldownDuration = 15.0f; //set cooldown
-
+    public float cooldownDuration;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        charlieRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -38,38 +40,34 @@ public class DateManager : MonoBehaviour
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
 
+        if (Time.time < nextAvailableTime)
+        {
+            Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
+            return;
+        }
+
         audioSource.pitch = Random.Range(0.9f, 1.1f);
 
-
-        if (interactSound != null){
+        if (interactSound != null)
+        {
             audioSource.PlayOneShot(interactSound);
-            UseAbility();      
         }
+
+        UseAbility();
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
             dialogueManager.StartDialogue(myInkJSON, charlieVoice);
         }
-        
     }
 
     public void UseAbility()
     {
-        if (Time.time >= nextAvailableTime)
+        nextAvailableTime = Time.time + cooldownDuration;
+
+        if (charlieRenderer != null && charlieLoading != null)
         {
-
-            nextAvailableTime = Time.time + cooldownDuration;
-
             charlieRenderer.sprite = charlieLoading;
-
-        }
-        else
-        {
-            boxCollider.enabled = false;
-            Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
         }
     }
 }
-
-
-
