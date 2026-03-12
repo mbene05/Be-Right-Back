@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 34af4333f82401e4395e7e8d2bf25f7b
+guid: c0ee7231b0ab74e40a1c25a1c821bf8f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4130673191388965599
-    second: Inventory_Icon_0
+      213: -8819206626797505329
+    second: ComputerChip_Highlight_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inventory_Icon_0
+      name: ComputerChip_Highlight_0
       rect:
         serializedVersion: 2
-        x: 479
-        y: 639
-        width: 2162
-        height: 2002
+        x: 157
+        y: 13
+        width: 1261
+        height: 1277
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12518002e96eca6c0800000000000000
-      internalID: -4130673191388965599
+      spriteID: fc4b6f09c42eb9580800000000000000
+      internalID: -8819206626797505329
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inventory_Icon_0: -4130673191388965599
+      ComputerChip_Highlight_0: -8819206626797505329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

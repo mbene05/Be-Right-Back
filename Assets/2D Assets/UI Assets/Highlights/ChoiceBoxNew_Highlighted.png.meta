@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ef903e0b40ddb004792c5322ca8b5bc2
+guid: 7cd59be2857509642bca39d63c96738e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -601167320069568822
-    second: Wrench_0
+      213: -3571697405044135428
+    second: ChoiceBoxNew_Highlighted_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wrench_0
+      name: ChoiceBoxNew_Highlighted_0
       rect:
         serializedVersion: 2
-        x: 194
-        y: 170
-        width: 866
-        height: 1276
+        x: 75
+        y: 98
+        width: 1831
+        height: 1136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac60eace18938a7f0800000000000000
-      internalID: -601167320069568822
+      spriteID: cf9e82f3228ce6ec0800000000000000
+      internalID: -3571697405044135428
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wrench_0: -601167320069568822
+      ChoiceBoxNew_Highlighted_0: -3571697405044135428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
