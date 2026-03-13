@@ -50,6 +50,7 @@ public class DialogueManager : MonoBehaviour
 
     private AudioSource audioSource;
     private AudioSource voiceSource;
+    private bool hasChanged = false;
 
     public void Start()
     {
@@ -135,7 +136,11 @@ public class DialogueManager : MonoBehaviour
         else
         {
             EndDialogue();
-            charlieRenderer.sprite = CharlieLoading;
+            if (hasChanged == true)
+            {
+                charlieRenderer.sprite = CharlieLoading;
+            }
+            hasChanged = true;
             StartCoroutine(DelayedFace());
 
 
@@ -143,8 +148,10 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator DelayedFace()
     {
-        yield return new WaitForSeconds(3f); //important for delay very very important do not forget
+
+        yield return new WaitForSeconds(12); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
+        
     }
 
     void HandleTags(List<string> tags)

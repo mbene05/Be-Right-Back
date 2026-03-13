@@ -6,9 +6,9 @@ VAR shuffleAns = 0
 ~ shuffleNum = RANDOM(1,14)
 ~ shuffleAns = RANDOM(1,6)
 
-VAR GoodAmount = 55
-VAR NeutralAmount = 22
-VAR BadAmount = 15
+VAR GoodAmount = 65
+VAR NeutralAmount = 30
+VAR BadAmount = 10
 
 {
     - shuffleNum == 1: -> Question1

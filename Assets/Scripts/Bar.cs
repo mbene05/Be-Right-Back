@@ -15,7 +15,7 @@ public class Bar : MonoBehaviour
     private float currentTime;
 
     private bool hasEnded = false;
-    public bool isTimerRunning = true;
+    private bool isTimerRunning = false;
 
 
 
@@ -23,6 +23,8 @@ public class Bar : MonoBehaviour
     {
         bar.fillAmount = 1f;
         currentTime = maxTime;
+
+        StartCoroutine(StartTimerDelay()); //start delay
 
     }
 
@@ -32,20 +34,21 @@ public class Bar : MonoBehaviour
 
         if (currentTime > 0 && isTimerRunning)
         {
-            StartCoroutine(StartTimerDelay());
             currentTime -= Time.deltaTime;
             bar.fillAmount = currentTime / maxTime;
         }
-        else if (!hasEnded)
+        else if (currentTime <= 0 && !hasEnded)
         {
             hasEnded = true;
             LoadEndScene();
         }
+
+        Debug.Log("Timer running: " + isTimerRunning + " | Current time: " + currentTime);
     }
 
     IEnumerator StartTimerDelay()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(60f);
         isTimerRunning = true;
     }
 
