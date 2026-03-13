@@ -16188,7 +16188,7 @@ Transform:
   m_GameObject: {fileID: 936608096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: 0, z: 0}
+  m_LocalPosition: {x: 24.94, y: 0.25, z: 0}
   m_LocalScale: {x: 19.51917, y: 9.920755, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22212,8 +22212,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.66, y: 12.76}
-    newSize: {x: 1.01, y: 1.55}
+    oldSize: {x: 13, y: 16}
+    newSize: {x: 13, y: 16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -22276,8 +22276,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.66, y: 12.76}
-    newSize: {x: 1.01, y: 1.55}
+    oldSize: {x: 13, y: 16}
+    newSize: {x: 13, y: 16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -22754,15 +22754,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -601167320069568822, guid: ef903e0b40ddb004792c5322ca8b5bc2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef903e0b40ddb004792c5322ca8b5bc2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.01, y: 1.55}
+  m_Size: {x: 13, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!1 &1304346839
 GameObject:
@@ -31700,15 +31700,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1973814687021892665, guid: 8e5a7897425edb74f9acd2b0886b9212, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e5a7897425edb74f9acd2b0886b9212, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 16, y: 13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!4 &1871532732
 Transform:
