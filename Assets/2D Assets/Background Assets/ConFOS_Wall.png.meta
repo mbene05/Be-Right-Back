@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: f6a860c3f08e50c4382cc76afc446137
+guid: 2ce319d3a8ce0434a926505038a8e525
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6381874538636111981
-    second: TextBoxNew_0
-  - first:
-      213: -417288714733034059
-    second: TextBoxNew_1
+      213: -5177647546853404912
+    second: ConFOS_Wall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TextBoxNew_0
+      name: ConFOS_Wall_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 44
-        width: 1829
-        height: 1191
+        x: 0
+        y: 0
+        width: 1600
+        height: 1600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d60f38c8419f09850800000000000000
-      internalID: 6381874538636111981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TextBoxNew_1
-      rect:
-        serializedVersion: 2
-        x: 1900
-        y: 642
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5b5ee85ff1e753af0800000000000000
-      internalID: -417288714733034059
+      spriteID: 01f41ad0dfc4528b0800000000000000
+      internalID: -5177647546853404912
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TextBoxNew_0: 6381874538636111981
-      TextBoxNew_1: -417288714733034059
+      ConFOS_Wall_0: -5177647546853404912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
