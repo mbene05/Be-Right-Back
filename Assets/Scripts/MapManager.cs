@@ -33,8 +33,8 @@ public class MapManager : MonoBehaviour
 
     [Header("Colors")]
     public Color colorCurrent = Color.white;
-    public Color colorAccessible = new Color(0.6f, 0.6f, 0.6f, 1f);
-    public Color colorInaccessible = new Color(0.55f, 0.55f, 0.55f, 1f);
+    public Color colorAccessible = new Color(0.8f, 0.8f, 0.8f, 1f);
+    public Color colorInaccessible = new Color(0.12f, 0.12f, 0.12f, 1f);
 
     public static bool IsOpen { get; private set; }
 
@@ -299,18 +299,26 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    void ApplyState(Button node, Color color, bool interactable)
+    void ApplyState(Button node, Color borderColor, bool interactable)
     {
         node.interactable = interactable;
 
+        bool dark = !interactable && borderColor != colorCurrent;
+        Color fillColor = dark ? new Color(0.04f, 0.04f, 0.04f, 0.95f) : new Color(0.07f, 0.07f, 0.07f, 0.95f);
+        Color textColor = dark ? new Color(0.25f, 0.25f, 0.25f, 1f) : Color.white;
+
         if (node.TryGetComponent(out Image border))
-            border.color = color;
+            border.color = borderColor;
+
+        Transform fill = node.transform.Find("MapRoomFill");
+        if (fill != null && fill.TryGetComponent(out Image fillImg))
+            fillImg.color = fillColor;
 
         foreach (var txt in node.GetComponentsInChildren<Text>(true))
-            txt.color = Color.white;
+            txt.color = textColor;
 
         foreach (var tmp in node.GetComponentsInChildren<TextMeshProUGUI>(true))
-            tmp.color = Color.white;
+            tmp.color = textColor;
     }
     void NavigateTo(int roomId)
     {

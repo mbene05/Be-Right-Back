@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dialogueStarted) return;
 
-        if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0))
+        if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0) && !MapManager.IsOpen)
         {
             if (isTyping)
             {

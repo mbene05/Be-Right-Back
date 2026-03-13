@@ -13,6 +13,7 @@ public class TilePuzzleTrigger : MonoBehaviour
     public GameObject tilereturnRoom;
     void OnMouseDown()
     {
+        if (MapManager.IsOpen) return;
         if (isOpen == false && done == false)
         { 
             isOpen = true;

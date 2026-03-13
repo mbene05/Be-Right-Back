@@ -6,7 +6,7 @@ public class DrinkMenuScreen : MonoBehaviour
     void Update()
     {
         timer++;
-        if (Input.GetMouseButtonDown(0) && timer > 20)
+        if (Input.GetMouseButtonDown(0) && timer > 20 && !MapManager.IsOpen)
         {
             gameObject.SetActive(false);
             timer = 0;

@@ -7,6 +7,7 @@ public class skipbutton : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (MapManager.IsOpen) return;
         puzzleManager.SkipDialogue();
     }
 }

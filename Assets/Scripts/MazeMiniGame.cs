@@ -36,8 +36,12 @@ public class MazeMiniGame : MonoBehaviour
     private float graceTimer;
     private const float GraceDuration = 0.3f;
 
+    private float winGraceTimer;
+    private const float WinGraceDuration = 1.0f;
+
     private Canvas canvas;
     private Camera uiCamera;
+    private GameObject mazeBlocker;
 
     void Awake()
     {
@@ -48,6 +52,35 @@ public class MazeMiniGame : MonoBehaviour
     {
         canvas = mazePanel.GetComponentInParent<Canvas>();
         uiCamera = canvas ? canvas.worldCamera : null;
+
+        // Force panel to render over everything
+        Canvas panelCanvas = mazePanel.GetComponent<Canvas>();
+        if (panelCanvas == null) panelCanvas = mazePanel.AddComponent<Canvas>();
+        panelCanvas.overrideSorting = true;
+        panelCanvas.sortingOrder = 200;
+        if (mazePanel.GetComponent<GraphicRaycaster>() == null)
+            mazePanel.AddComponent<GraphicRaycaster>();
+
+        // Full-screen blocker so nothing behind can be clicked
+        mazeBlocker = new GameObject("MazeBlocker");
+        mazeBlocker.transform.SetParent(mazePanel.transform.parent, false);
+
+        Image blockerImg = mazeBlocker.AddComponent<Image>();
+        blockerImg.color = new Color(0f, 0f, 0f, 0f);
+        blockerImg.raycastTarget = true;
+
+        Canvas blockerCanvas = mazeBlocker.AddComponent<Canvas>();
+        blockerCanvas.overrideSorting = true;
+        blockerCanvas.sortingOrder = 199;
+        mazeBlocker.AddComponent<GraphicRaycaster>();
+
+        RectTransform blockerRT = mazeBlocker.GetComponent<RectTransform>();
+        blockerRT.anchorMin = Vector2.zero;
+        blockerRT.anchorMax = Vector2.one;
+        blockerRT.offsetMin = Vector2.zero;
+        blockerRT.offsetMax = Vector2.zero;
+
+        mazeBlocker.SetActive(false);
         mazePanel.SetActive(false);
     }
 
@@ -55,6 +88,7 @@ public class MazeMiniGame : MonoBehaviour
     {
         IsOpen = true;
         mazePanel.SetActive(true);
+        mazeBlocker?.SetActive(true);
         SetState(State.Idle);
     }
 
@@ -62,6 +96,7 @@ public class MazeMiniGame : MonoBehaviour
     {
         IsOpen = false;
         mazePanel.SetActive(false);
+        mazeBlocker?.SetActive(false);
     }
 
     void Update()
@@ -119,7 +154,8 @@ public class MazeMiniGame : MonoBehaviour
                 break;
 
             case State.Won:
-                if (Input.GetMouseButtonDown(0))
+                winGraceTimer -= Time.deltaTime;
+                if (winGraceTimer <= 0f && Input.GetMouseButtonDown(0) && !MapManager.IsOpen)
                     Close();
                 break;
         }
@@ -147,6 +183,7 @@ public class MazeMiniGame : MonoBehaviour
                 break;
             case State.Won:
                 winOverlay.SetActive(true);
+                winGraceTimer = WinGraceDuration;
                 if (done2 == false)
                 {
                     ChefManager selectedChef = chef.GetComponent<ChefManager>();

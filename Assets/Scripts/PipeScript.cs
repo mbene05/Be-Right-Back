@@ -35,6 +35,7 @@ public float currentRotation;
 
     private void OnMouseDown()
     {
+        if (MapManager.IsOpen) return;
         if (!isRotating)
             StartCoroutine(RotateSmooth());
     }

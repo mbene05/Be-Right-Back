@@ -44,6 +44,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (MazeMiniGame.IsOpen) return;
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {

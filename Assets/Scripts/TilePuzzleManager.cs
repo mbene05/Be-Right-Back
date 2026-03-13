@@ -29,7 +29,7 @@ public Vector2 targetPosition;
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && done == false)
+        if (Input.GetMouseButtonDown(0) && done == false && !MapManager.IsOpen)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);

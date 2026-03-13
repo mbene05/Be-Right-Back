@@ -9,6 +9,7 @@ public class BackScript : MonoBehaviour
     public GameObject tilePuzzleRoom;
     void OnMouseDown()
     {
+        if (MapManager.IsOpen) return;
         mainCamera.transform.position = new Vector3(tilePuzzleRoom.transform.position.x, tilePuzzleRoom.transform.position.y, cameraZPosition);
     }
 }
