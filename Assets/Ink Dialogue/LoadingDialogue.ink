@@ -1,7 +1,6 @@
 -> Charlie1
 
 === Charlie1 ===
-Please give a moment im processing your answer...
 #loading
-
+Please give a moment Mark, I'm still processing your answer...
 -> END
