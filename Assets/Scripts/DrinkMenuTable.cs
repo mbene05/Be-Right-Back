@@ -5,8 +5,9 @@ public class DrinkMenu : MonoBehaviour
 {
     public GameObject menuPanel; // Assign your Panel in Inspector
     public bool HasClicked = false;
-    
-     private SpriteRenderer sr;
+
+    private SpriteRenderer sr;
+    private int openTimer = 0;
 
     public GameObject highlighted;
 
@@ -17,13 +18,16 @@ public class DrinkMenu : MonoBehaviour
     }
     void Update()
     {
-        if (menuPanel.activeSelf && Input.GetMouseButtonDown(0))
+        if (menuPanel.activeSelf && Input.GetMouseButtonDown(0) && openTimer > 5)
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 menuPanel.SetActive(false);
+                openTimer = 0;
             }
         }
+        if (menuPanel.activeSelf)
+            openTimer++;
     }
 
     void OnMouseDown()
@@ -34,6 +38,7 @@ public class DrinkMenu : MonoBehaviour
         if (PinCodeMiniGame.IsOpen) return;
 
         HasClicked = true;
+        openTimer = 0;
         Debug.Log("Menu object activated");
         // Toggle the menu on click
         menuPanel.SetActive(true);
