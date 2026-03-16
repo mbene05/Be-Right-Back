@@ -149,7 +149,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator DelayedFace()
     {
 
-        yield return new WaitForSeconds(12); //important for delay very very important do not forget
+        yield return new WaitForSeconds(15); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
         
     }
@@ -265,6 +265,25 @@ void PlayResponseSound(AudioClip clip)
              story.BindExternalFunction("getNeedle", (int needGot) => {
                 Needle.SetActive(true);
             });
+
+        DisplayNextLine();
+
+    }
+
+    public void LoadingDialogue(TextAsset newInkJSON, AudioClip voiceClip)
+    {
+
+        Start();
+        if (dialogueStarted) return;
+
+        voiceSource.clip = voiceClip;
+
+        dialogueStarted = true;
+        dialoguePanel.SetActive(true);
+
+        // Assign the new Ink JSON
+        inkJSON = newInkJSON;
+        story = new Story(inkJSON.text);
 
         DisplayNextLine();
 

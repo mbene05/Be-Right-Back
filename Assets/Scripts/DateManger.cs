@@ -42,6 +42,7 @@ public class DateManager : MonoBehaviour
 
         if (Time.time < nextAvailableTime)
         {
+
             Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
             return;
         }

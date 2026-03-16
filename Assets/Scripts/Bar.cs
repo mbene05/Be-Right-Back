@@ -43,12 +43,11 @@ public class Bar : MonoBehaviour
             LoadEndScene();
         }
 
-        Debug.Log("Timer running: " + isTimerRunning + " | Current time: " + currentTime);
     }
 
     IEnumerator StartTimerDelay()
     {
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(60f); //delay of 60 seconds before the timer starts
         isTimerRunning = true;
     }
 
