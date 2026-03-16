@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Wrench
   itemID: 99
-  itemSprite: {fileID: -601167320069568822, guid: ef903e0b40ddb004792c5322ca8b5bc2, type: 3}
+  itemSprite: {fileID: 21300000, guid: ef903e0b40ddb004792c5322ca8b5bc2, type: 3}

@@ -16,6 +16,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
     public bool rightDrink = false;
     public bool pickUpDrink = false;
+    public bool hasReceivedDrink = false;
 
     public AudioClip sadGuyVoice;
 
@@ -64,7 +65,12 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         if (!pickUpDrink)
             return false;
 
+        if (hasReceivedDrink)
+            return false;
+
         highlighted.SetActive(false);
+
+        hasReceivedDrink = true;
 
         BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
         selectedBartender.pickUpDrink = false;

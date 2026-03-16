@@ -50,14 +50,10 @@ public class ItemPickup : MonoBehaviour
                     selectedBartender.pickUpDrink = true;
                 }
 
-                if (selectedSadGuy != null)
-                {
-                    selectedSadGuy.pickUpDrink = true;
-                }
-
                 if (item.itemName == "Beer" && selectedSadGuy != null)
                 {
-                   selectedSadGuy.rightDrink = true;
+                    selectedSadGuy.pickUpDrink = true;
+                    selectedSadGuy.rightDrink = true;
                     Debug.Log("Yay: ");
                 }
                // Debug.Log("Picked up: " + item.itemName);
