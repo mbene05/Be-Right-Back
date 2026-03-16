@@ -9883,7 +9883,7 @@ MonoBehaviour:
   saidOp: 0
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
   charlieVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
-  charlieNormal: {fileID: 7859895392139811753, guid: d45c2e9905c2f98468b107c3ed6811ed, type: 3}
+  charlieNormal: {fileID: 0}
   cooldownDuration: 25
 --- !u!61 &546114532
 BoxCollider2D:
