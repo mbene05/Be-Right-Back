@@ -148,8 +148,7 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator DelayedFace()
     {
-
-        yield return new WaitForSeconds(15); //important for delay very very important do not forget
+        yield return new WaitForSeconds(25); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
         
     }
@@ -195,6 +194,9 @@ public class DialogueManager : MonoBehaviour
             case "slightlyhappier":
                 PlayResponseSound(neutralSound);
                 charlieRenderer.sprite = CharlieSlightlyHappier;
+                break;
+            case "normal":
+                charlieRenderer.sprite = charlieFace;
                 break;
             }
     }

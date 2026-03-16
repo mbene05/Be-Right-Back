@@ -5,6 +5,7 @@ public class DateManager : MonoBehaviour
     public DialogueManager dialogueManager;
     public TextAsset myInkJSON;
     public TextAsset myInkJSON2;
+    public TextAsset myInkJSON3;
     public bool saidOp = false;
 
     public AudioClip interactSound;
@@ -44,6 +45,9 @@ public class DateManager : MonoBehaviour
         {
 
             Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
+
+            dialogueManager.LoadingDialogue(myInkJSON3, charlieVoice);
+
             return;
         }
 
