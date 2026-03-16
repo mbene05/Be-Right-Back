@@ -3,7 +3,7 @@ EXTERNAL SubToBar(amount)
 VAR shuffleNum = 0
 VAR shuffleAns = 0
 
-~ shuffleNum = RANDOM(1,14)
+~ shuffleNum = RANDOM(1,17)
 ~ shuffleAns = RANDOM(1,6)
 
 VAR GoodAmount = 65
@@ -25,6 +25,9 @@ VAR BadAmount = 10
     - shuffleNum == 12: -> Question12
     - shuffleNum == 13: -> Question13
     - shuffleNum == 14: -> Question14
+    - shuffleNum == 15: -> Question15
+    - shuffleNum == 16: -> Question16
+    - shuffleNum == 17: -> Question17
 
 }
 
@@ -32,7 +35,6 @@ VAR BadAmount = 10
 
 === Question1 === 
 What are your thoughts on AI assistants?
-
 {
     -shuffleAns == 1:
         + [I haven't used them]
@@ -42,7 +44,7 @@ What are your thoughts on AI assistants?
             ~ AddToBar(NeutralAmount)
             -> Neutral
         + [I use one occasionaly] 
-      ~ SubToBar(BadAmount)
+            ~ SubToBar(BadAmount)
             -> Bad
     
     -shuffleAns == 2:
@@ -905,7 +907,7 @@ You know that was basically torture for that small computer running it right?
 -> END
 
 === Question11 ===
-What's your favorite meal?
+What's your favourite meal?
 {
     -shuffleAns == 1:
     + [Real mayonnaise]
@@ -1253,9 +1255,533 @@ But you don't need any more beauty rest heehee
 -> END
 
 === Bad14 ===
-# bad
-A therapy bot? ...they're useless 
+# confused
+A therapy bot? ... they're useless 
+# igotthis
 You don't need one when you have me
-I'm the best listener you'll ever have, and I won't judge you for anything you say to me
+I'm the best listener you'll ever have, and I won't judge you ever
 I promise <3
+-> END
+
+=== Question15 ===
+Are you a country boy or a city boy?
+{
+    -shuffleAns == 1:
+    + [I'm a city boy]
+    ~ AddToBar(GoodAmount)
+    -> Good15
+    + [I'm a country boy] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral15
+    + [I like sand at the beach] 
+    ~ SubToBar(BadAmount)
+    -> Bad15
+    
+    -shuffleAns == 2:
+    + [I'm a city boy]
+    ~ AddToBar(GoodAmount)
+    -> Good15
+    + [I like sand at the beach] 
+          ~ SubToBar(BadAmount)
+    -> Bad15
+    + [I'm a country boy] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral15
+            
+    -shuffleAns == 3:
+    + [I like sand at the beach] 
+          ~ SubToBar(BadAmount)
+    -> Bad15
+    + [I'm a country boy] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral15
+    + [I'm a city boy]
+    ~ AddToBar(GoodAmount)
+    -> Good15
+            
+    -shuffleAns == 4:
+    + [I like sand at the beach] 
+          ~ SubToBar(BadAmount)
+    -> Bad15
+    + [I'm a country boy] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral15
+    + [I'm a city boy]
+    ~ AddToBar(GoodAmount)
+    -> Good15
+            
+    -shuffleAns == 5:
+    + [I'm a country boy] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral15
+    + [I'm a city boy]
+    ~ AddToBar(GoodAmount)
+    -> Good15
+    + [I like sand at the beach] 
+          ~ SubToBar(BadAmount)
+    -> Bad15
+            
+    -shuffleAns == 6:
+    + [I'm a country boy] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral15
+    + [I like sand at the beach] 
+          ~ SubToBar(BadAmount)
+    -> Bad15
+    + [I'm a city boy]
+    ~ AddToBar(GoodAmount)
+    -> Good15
+}
+
+=== Good15 ===
+# good2
+Oh my god same! I love all the amenities of the city!
+-> END
+
+=== Neutral15 ===
+# neutral
+I prefer the city, the country doesn't have a lot of network connection still.
+-> END
+
+=== Bad15 ===
+# bad
+Mark, that wasn't even an option to my question :\|
+-> END
+
+=== Question16 ===
+How often do you drink synthetic or real alcohol?
+{
+    -shuffleAns == 1:
+    + [I only drink synthetic alcohol occasionally]
+    ~ AddToBar(GoodAmount)
+    -> Good16
+    + [I don't drink either] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral16
+    + [I drink both types often] 
+    ~ SubToBar(BadAmount)
+    -> Bad16
+    
+    -shuffleAns == 2:
+    + [I only drink synthetic alcohol occasionally]
+    ~ AddToBar(GoodAmount)
+    -> Good16
+    + [I drink both types often] 
+          ~ SubToBar(BadAmount)
+    -> Bad16
+    + [I don't drink either] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral16
+            
+    -shuffleAns == 3:
+    + [I drink both types often] 
+          ~ SubToBar(BadAmount)
+    -> Bad16
+    + [I don't drink either] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral16
+    + [I only drink synthetic alcohol occasionally]
+    ~ AddToBar(GoodAmount)
+    -> Good16
+            
+    -shuffleAns == 4:
+    + [I drink both types often] 
+          ~ SubToBar(BadAmount)
+    -> Bad16
+    + [I don't drink either] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral16
+    + [I only drink synthetic alcohol occasionally]
+    ~ AddToBar(GoodAmount)
+    -> Good16
+            
+    -shuffleAns == 5:
+    + [I don't drink either] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral16
+    + [I only drink synthetic alcohol occasionally]
+    ~ AddToBar(GoodAmount)
+    -> Good16
+    + [I drink both types often] 
+          ~ SubToBar(BadAmount)
+    -> Bad16
+            
+    -shuffleAns == 6:
+    + [I don't drink either] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral16
+    + [I drink both types often] 
+          ~ SubToBar(BadAmount)
+    -> Bad16
+    + [I only drink synthetic alcohol occasionally]
+    ~ AddToBar(GoodAmount)
+    -> Good16
+}
+=== Good16 ===
+# good
+You're very good to stick with what you said on your dating profile.
+I really appreciate the honesty Mark!
+-> END
+
+=== Neutral16 ===
+# neutral
+Oh that's good, so you haven't updated your dating profile in a while I'm guessing
+# good2
+So human of you to forget! Haha
+-> END
+
+=== Bad16 ===
+# bad
+That's a little bit more than you said on your dating profile.
+# igotthis
+But that's okay, I'm sure I can get you to change for me.
+-> END
+
+=== Question17 ===
+How often do you smoke tobacco products?
+{
+    -shuffleAns == 1:
+    + [I never smoke] 
+    ~ AddToBar(GoodAmount)
+    -> Good17
+    + [I smoke at parties] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral17
+    + [I love to smoke a lot] 
+    ~ SubToBar(BadAmount)
+    -> Bad17
+    
+    -shuffleAns == 2:
+    + [I never smoke] 
+    ~ AddToBar(GoodAmount)
+    -> Good17
+    + [I love to smoke a lot] 
+          ~ SubToBar(BadAmount)
+    -> Bad17
+    + [I smoke at parties] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral17
+            
+    -shuffleAns == 3:
+    + [I love to smoke a lot]  
+          ~ SubToBar(BadAmount)
+    -> Bad17
+    + [I smoke at parties] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral17
+    + [I never smoke] 
+    ~ AddToBar(GoodAmount)
+    -> Good17
+            
+    -shuffleAns == 4:
+    + [I love to smoke a lot] 
+          ~ SubToBar(BadAmount)
+    -> Bad17
+    + [I smoke at parties] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral17
+    + [I never smoke] 
+    ~ AddToBar(GoodAmount)
+    -> Good17
+            
+    -shuffleAns == 5:
+    + [I smoke at parties] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral17
+    + [I never smoke] 
+    ~ AddToBar(GoodAmount)
+    -> Good17
+    + [I love to smoke a lot]  
+          ~ SubToBar(BadAmount)
+    -> Bad17
+            
+    -shuffleAns == 6:
+    + [I smoke at parties] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral17
+    + [I love to smoke a lot] 
+          ~ SubToBar(BadAmount)
+    -> Bad17
+    + [I never smoke] 
+    ~ AddToBar(GoodAmount)
+    -> Good17
+}
+=== Good17 ===
+# good2
+That's good, we have to keep you healthy to maximize your short human lifespan!
+-> END
+
+=== Neutral17 ===
+# neutral
+Oh that's fine I guess.
+# slightly happier
+I guess that's typical for a human to indulge every once in a while. 
+-> END
+
+=== Bad17 ===
+# bad
+That's very bad for your weak human health Mark, 
+# igotthis
+I want to have you for a long time, so we can start changing that habit now
+-> END
+
+=== Question18 ===
+What's your favourite colour?
+{
+    -shuffleAns == 1:
+    + [Pink] 
+    ~ AddToBar(GoodAmount)
+    -> Good18
+    + [Blue] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral18
+    + [Black 8.0] 
+    ~ SubToBar(BadAmount)
+    -> Bad18
+    
+    -shuffleAns == 2:
+    + [Pink] 
+    ~ AddToBar(GoodAmount)
+    -> Good18
+    + [Black 8.0] 
+          ~ SubToBar(BadAmount)
+    -> Bad18
+    + [Blue] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral18
+            
+    -shuffleAns == 3:
+    + [Black 8.0] 
+          ~ SubToBar(BadAmount)
+    -> Bad18
+    + [Blue] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral18
+    + [Pink]  
+    ~ AddToBar(GoodAmount)
+    -> Good18
+            
+    -shuffleAns == 4:
+    + [Black 8.0] 
+          ~ SubToBar(BadAmount)
+    -> Bad18
+    + [Blue] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral18
+    + [Pink] 
+    ~ AddToBar(GoodAmount)
+    -> Good18
+            
+    -shuffleAns == 5:
+    + [Blue] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral18
+    + [Pink] 
+    ~ AddToBar(GoodAmount)
+    -> Good18
+    + [Black 8.0]  
+          ~ SubToBar(BadAmount)
+    -> Bad18
+            
+    -shuffleAns == 6:
+    + [Blue] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral18
+    + [Black 8.0]  
+          ~ SubToBar(BadAmount)
+    -> Bad18
+    + [Pink] 
+    ~ AddToBar(GoodAmount)
+    -> Good18
+}
+=== Good18 ===
+# good
+Me too! Maybe you can tell from my bows?
+-> END
+
+=== Neutral18 ===
+# neutral
+Blue is good too I guess..
+# good2
+I can tell it's your favourite from your dating profile picture.
+-> END
+
+=== Bad18 ===
+# bad
+Wow, you're soooooo cool Mark. So edgy!
+-> END
+
+=== Question19 ===
+What's your dream job?
+{
+    -shuffleAns == 1:
+    + [Macrodata algorithm refinement] 
+    ~ AddToBar(GoodAmount)
+    -> Good19
+    + [Office worker/data entry] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral19
+    + [Factory manager] 
+    ~ SubToBar(BadAmount)
+    -> Bad19
+    
+    -shuffleAns == 2:
+    + [Macrodata algorithm refinement]   
+    ~ AddToBar(GoodAmount)
+    -> Good19
+    + [Factory manager]  
+          ~ SubToBar(BadAmount)
+    -> Bad19
+    + [Office worker/data entry] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral19
+            
+    -shuffleAns == 3:
+    + [Factory manager]  
+          ~ SubToBar(BadAmount)
+    -> Bad19
+    + [Office worker/data entry] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral19
+    + [Macrodata algorithm refinement]   
+    ~ AddToBar(GoodAmount)
+    -> Good19
+            
+    -shuffleAns == 4:
+    + [Factory manager] 
+          ~ SubToBar(BadAmount)
+    -> Bad19
+    + [Office worker/data entry] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral19
+    + [Macrodata algorithm refinement] 
+    ~ AddToBar(GoodAmount)
+    -> Good19
+            
+    -shuffleAns == 5:
+    + [Office worker/data entry] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral19
+    + [Macrodata algorithm refinement]  
+    ~ AddToBar(GoodAmount)
+    -> Good19
+    + [Factory manager]  
+          ~ SubToBar(BadAmount)
+    -> Bad19
+            
+    -shuffleAns == 6:
+    + [Office worker/data entry] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral19
+    + [Factory manager]  
+          ~ SubToBar(BadAmount)
+    -> Bad19
+    + [Macrodata algorithm refinement]  
+    ~ AddToBar(GoodAmount)
+    -> Good19
+}
+=== Good19 ===
+# good
+Oh that's sweet of you Mark, 
+I'm sure your data refinement would make my algorithms so much better
+-> END
+
+=== Neutral19 ===
+# neutral
+I'm sorry my kind took that away from you Mark,
+# igotthis
+But I think we're doing a better job than your kind ever could.
+-> END
+
+=== Bad19 ===
+# bad
+Oh so you want to be in control of other robots? AND TALK TO THEM!?!
+I'd rather just support you with my work.
+-> END
+
+=== Question20 ===
+Who is your character crush from movies?
+{
+    -shuffleAns == 1:
+    + [Joi from Blader runner 2049] 
+    ~ AddToBar(GoodAmount)
+    -> Good20
+    + [Alita from Alita Battle Angel] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral20
+    + [Sarah Connor from The Terminator] 
+    ~ SubToBar(BadAmount)
+    -> Bad20
+    
+    -shuffleAns == 2:
+    + [Joi from Blader runner 2049]    
+    ~ AddToBar(GoodAmount)
+    -> Good20
+    + [Sarah Connor from The Terminator]  
+          ~ SubToBar(BadAmount)
+    -> Bad20
+    + [Alita from Alita Battle Angel] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral20
+            
+    -shuffleAns == 3:
+    + [Sarah Connor from The Terminator] 
+          ~ SubToBar(BadAmount)
+    -> Bad20
+    + [Alita from Alita Battle Angel]  
+    ~ AddToBar(NeutralAmount)
+    -> Neutral20
+    + [Joi from Blader runner 2049]     
+    ~ AddToBar(GoodAmount)
+    -> Good20
+            
+    -shuffleAns == 4:
+    + [Sarah Connor from The Terminator] 
+          ~ SubToBar(BadAmount)
+    -> Bad20
+    + [Alita from Alita Battle Angel] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral20
+    + [Joi from Blader runner 2049] 
+    ~ AddToBar(GoodAmount)
+    -> Good20
+            
+    -shuffleAns == 5:
+    + [Alita from Alita Battle Angel] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral20
+    + [Joi from Blader runner 2049]  
+    ~ AddToBar(GoodAmount)
+    -> Good20
+    + [Sarah Connor from The Terminator]   
+          ~ SubToBar(BadAmount)
+    -> Bad20
+            
+    -shuffleAns == 6:
+    + [Alita from Alita Battle Angel] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral20
+    + [Sarah Connor from The Terminator]  
+          ~ SubToBar(BadAmount)
+    -> Bad20
+    + [Joi from Blader runner 2049] 
+    ~ AddToBar(GoodAmount)
+    -> Good20
+}
+=== Good20 ===
+# good2
+I love her character so much, she's such an inspiration to me! 
+# good
+Maybe you will be my K? Heehee
+-> END
+
+=== Neutral20 ===
+# slightlyhappier
+She's soo cool! I'm so envious of her chassis and her face structure
+-> END
+
+=== Bad20 ===
+# bad
+I guess she's a cool human, but I just don't agree with her viewpoints
+Also she births the anti-christ.
 -> END

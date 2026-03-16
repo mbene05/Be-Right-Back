@@ -9,7 +9,7 @@ You know what doesn't suck?
 DRINKING!!!!
 I want a drink from the bar that is made only with real ingredients, 
 nothing synthetic. 
-This wrench reminds me of her constant cold gaze.. 
+This wrench reminds me of her constant cold touch.. 
 I'll give it to you if you get me that sweet sweet drink.
 
 + [I can get that for you]
@@ -17,4 +17,7 @@ I'll give it to you if you get me that sweet sweet drink.
 
 === drinkguy_no_drink_answer ===
 Thank you
+Also if you don't get my drink right,
+I'm gonna tell your date that you're trying to leave.
+And she seems crazy, so I'm sure you want to keep her happy.
 -> END 
