@@ -9883,7 +9883,7 @@ MonoBehaviour:
   saidOp: 0
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
   charlieVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
-  charlieLoading: {fileID: 0}
+  charlieNormal: {fileID: 7859895392139811753, guid: d45c2e9905c2f98468b107c3ed6811ed, type: 3}
   cooldownDuration: 25
 --- !u!61 &546114532
 BoxCollider2D:
@@ -19055,7 +19055,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8248260018913809423, guid: 69016f8a93b19494985ac87d39f8707e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -21505,7 +21505,7 @@ MonoBehaviour:
   Giventhing: 0
   logsCollected: 0
   talked: 0
-  sadGuyVoice: {fileID: 0}
+  ChefVoice: {fileID: 0}
 --- !u!61 &1216920843
 BoxCollider2D:
   m_ObjectHideFlags: 0

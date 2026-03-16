@@ -17,11 +17,13 @@ public class DialogueManager : MonoBehaviour
     public GameObject choiceButtonPrefab;
     public GameObject Wrench;
     public GameObject Needle;
-    public Bar bar;  
+    public Bar bar;
 
     public string endSceneName = "WinScreen"; 
 
     private MapManager mapManager;
+    public static bool choicesActive = false;
+    public static bool dialogueActive = false;
 
     private Story story;
     private Coroutine typingCoroutine;
@@ -100,6 +102,7 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayNextLine()
     {
+        choicesActive = false;
         dialogueText.gameObject.SetActive(true);
 
         if (isTyping && typingCoroutine != null)
@@ -130,8 +133,11 @@ public class DialogueManager : MonoBehaviour
         //If there are choices
         if (story.currentChoices.Count > 0)
         {
+            choicesActive = true;
             dialoguePanel.SetActive(false);
             DisplayChoices();
+
+            
         }
         else
         {
@@ -141,8 +147,10 @@ public class DialogueManager : MonoBehaviour
                 charlieRenderer.sprite = CharlieLoading;
             }
             hasChanged = true;
+            if (dialogueActive == false) { 
             StartCoroutine(DelayedFace());
-
+            dialogueActive = true;
+            }
 
         }
     }
@@ -150,7 +158,13 @@ public class DialogueManager : MonoBehaviour
     {
         yield return new WaitForSeconds(25); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
-        
+        dialogueActive = false;
+
+    }
+    public void Choices(int choiceIndex)
+    {
+        story.ChooseChoiceIndex(choiceIndex);
+        DisplayNextLine();
     }
 
     void HandleTags(List<string> tags)
@@ -198,6 +212,9 @@ public class DialogueManager : MonoBehaviour
             case "normal":
                 charlieRenderer.sprite = charlieFace;
                 break;
+            case "loading":
+                charlieRenderer.sprite = CharlieLoading;
+                break;
             }
     }
 }
@@ -214,6 +231,7 @@ void PlayResponseSound(AudioClip clip)
     IEnumerator TypeLine(string line)
     {
         isTyping = true;
+        choicesActive = true;
         dialogueText.text = "";
 
         mapManager.toggleButton.interactable = false; // Disable the map toggle button while typing
@@ -289,6 +307,8 @@ void PlayResponseSound(AudioClip clip)
 
         DisplayNextLine();
 
+
+
     }
 
     void DisplayChoices()
@@ -319,6 +339,8 @@ void PlayResponseSound(AudioClip clip)
             if (child.name == "ChoiceButtonInstance")
                 Destroy(child.gameObject);
         }
+        choicesActive = false;
+
         story.ChooseChoiceIndex(choiceIndex);
         choicesContainer.gameObject.SetActive(false);
         dialoguePanel.SetActive(true);

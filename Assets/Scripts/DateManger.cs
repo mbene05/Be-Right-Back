@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DateManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class DateManager : MonoBehaviour
     private AudioSource audioSource;
 
     private SpriteRenderer charlieRenderer;
-    public Sprite charlieLoading;
+    public Sprite charlieNormal;
 
     private float nextAvailableTime;
     private BoxCollider2D boxCollider;
@@ -40,6 +41,8 @@ public class DateManager : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (DialogueManager.choicesActive) return;
+
 
         if (Time.time < nextAvailableTime)
         {
@@ -62,6 +65,7 @@ public class DateManager : MonoBehaviour
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
+
             dialogueManager.StartDialogue(myInkJSON, charlieVoice);
         }
     }
@@ -70,9 +74,16 @@ public class DateManager : MonoBehaviour
     {
         nextAvailableTime = Time.time + cooldownDuration;
 
-        if (charlieRenderer != null && charlieLoading != null)
+        StartCoroutine(ReturnToNormalFace());
+    }
+    IEnumerator ReturnToNormalFace()
+    {
+        yield return new WaitForSeconds(cooldownDuration);
+
+        if (charlieRenderer != null && charlieNormal != null)
         {
-            charlieRenderer.sprite = charlieLoading;
+            charlieRenderer.sprite = charlieNormal;
         }
     }
+
 }

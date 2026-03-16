@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DrinkMenu : MonoBehaviour
 {
@@ -13,6 +14,16 @@ public class DrinkMenu : MonoBehaviour
     {
         // Make sure menu is hidden at start
         menuPanel.SetActive(false);
+    }
+    void Update()
+    {
+        if (menuPanel.activeSelf && Input.GetMouseButtonDown(0))
+        {
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                menuPanel.SetActive(false);
+            }
+        }
     }
 
     void OnMouseDown()

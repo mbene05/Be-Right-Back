@@ -20,8 +20,7 @@ public class ChefManager : MonoBehaviour
 
     public int logsCollected = 0;
     public bool talked = false;
-
-    public AudioClip sadGuyVoice;
+    public AudioClip ChefVoice;
 
 
     void OnMouseDown()
@@ -30,32 +29,33 @@ public class ChefManager : MonoBehaviour
 
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (DialogueManager.choicesActive) return;
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
 
             if (talked == false)
             {
+                dialogueManager.StartDialogue(myInkJSON, ChefVoice);
                 talked = true;
-                dialogueManager.StartDialogue(myInkJSON, sadGuyVoice);
             }
 
             else
             {
-                if (logsCollected < 2)
+                if (logsCollected > 2)
                 {
-                    dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
+                    dialogueManager.StartDialogue(myInkJSON4, ChefVoice);
                 }
                 
                 if (logsCollected == 2 && Giventhing == false)
                 {
-                    dialogueManager.StartDialogue(myInkJSON3, sadGuyVoice);
+                    dialogueManager.StartDialogue(myInkJSON3, ChefVoice);
                     Giventhing = true;
                 }
 
                 else
                 {
-                    dialogueManager.StartDialogue(myInkJSON4, sadGuyVoice);
+                    dialogueManager.StartDialogue(myInkJSON2, ChefVoice);
                 }
 
             }
