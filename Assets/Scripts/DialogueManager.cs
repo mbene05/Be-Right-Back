@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     private MapManager mapManager;
     public static bool choicesActive = false;
     public static bool dialogueActive = false;
+    public static bool hasChanged = false;
 
     private Story story;
     private Coroutine typingCoroutine;
@@ -52,7 +53,6 @@ public class DialogueManager : MonoBehaviour
 
     private AudioSource audioSource;
     private AudioSource voiceSource;
-    private bool hasChanged = false;
 
     public void Start()
     {
@@ -145,20 +145,22 @@ public class DialogueManager : MonoBehaviour
             if (hasChanged == true)
             {
                 charlieRenderer.sprite = CharlieLoading;
+                Debug.Log("Changed to loading face");
             }
             hasChanged = true;
             if (dialogueActive == false) { 
             StartCoroutine(DelayedFace());
-            dialogueActive = true;
             }
 
         }
     }
     IEnumerator DelayedFace()
     {
+        dialogueActive = true;
         yield return new WaitForSeconds(25); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
         dialogueActive = false;
+        Debug.Log("Delayed face back to normal");
 
     }
     public void Choices(int choiceIndex)

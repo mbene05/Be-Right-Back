@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class RoomSwitcher : MonoBehaviour
 {
@@ -195,31 +196,37 @@ public class RoomSwitcher : MonoBehaviour
                 break;
 
             case 4:
+                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.03f;
                 break;
 
             case 2:
+                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.01f;
                 dinerMusic.volume = 0.01f;
                 break;
 
             case 3:
+                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.03f;
                 dinerMusic.volume = 0.03f;
                 break;
 
             case 6:
+                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
 
             case 7:
+                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
 
             case 8:
+                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
