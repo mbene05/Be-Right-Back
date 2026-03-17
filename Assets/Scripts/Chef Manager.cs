@@ -26,7 +26,7 @@ public class ChefManager : MonoBehaviour
     void OnMouseDown()
     {
       
-
+        if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
@@ -36,6 +36,7 @@ public class ChefManager : MonoBehaviour
 
             if (talked == false)
             {
+                
                 dialogueManager.StartDialogue(myInkJSON, ChefVoice);
                 talked = true;
             }

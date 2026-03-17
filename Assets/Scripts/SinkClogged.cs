@@ -18,6 +18,7 @@ public class SinkClogged : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
 

@@ -37,6 +37,7 @@ public class BartenderManager : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (dialogueManager.dialogueStarted) return;
 
         highlighted.SetActive(false);
 

@@ -33,6 +33,7 @@ public class JukeboxManager : MonoBehaviour, IUsableWithItem
 
     void OnMouseDown()
     {
+        if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
 
