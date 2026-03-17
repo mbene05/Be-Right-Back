@@ -10,7 +10,7 @@ public class Bar : MonoBehaviour
 {
     public Image bar;
     public float maxTime;
-    public string endSceneName = "DeathScreen"; 
+    public static string endSceneName = "DeathScreen"; 
     
     private float currentTime;
 
@@ -72,7 +72,7 @@ public class Bar : MonoBehaviour
     }
 
     
-    void LoadEndScene()
+    public static void LoadEndScene()
     {
         Debug.Log("Time's up! Loading end scene...");
         SceneManager.LoadScene(endSceneName);

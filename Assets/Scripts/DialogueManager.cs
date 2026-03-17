@@ -254,8 +254,6 @@ void PlayResponseSound(AudioClip clip)
         Start();
         if (dialogueStarted) return;
 
-        charlieRenderer.sprite = charlieFace;
-
         voiceSource.clip = voiceClip;
 
         dialogueStarted = true;
