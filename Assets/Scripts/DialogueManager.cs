@@ -147,11 +147,14 @@ public class DialogueManager : MonoBehaviour
                 charlieRenderer.sprite = CharlieLoading;
                 Debug.Log("Changed to loading face");
             }
+
             hasChanged = true;
-            if (dialogueActive == false) { 
-            StartCoroutine(DelayedFace());
+
+            if (dialogueActive == false) {
+                StartCoroutine(DelayedFace());
             }
 
+            dialogueActive = false;
         }
     }
     IEnumerator DelayedFace()
@@ -159,7 +162,6 @@ public class DialogueManager : MonoBehaviour
         dialogueActive = true;
         yield return new WaitForSeconds(25); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
-        dialogueActive = false;
         Debug.Log("Delayed face back to normal");
 
     }
@@ -253,6 +255,12 @@ void PlayResponseSound(AudioClip clip)
     {
         Start();
         if (dialogueStarted) return;
+
+        if (dialogueActive == false) {
+
+            charlieRenderer.sprite = charlieFace;
+
+        }
 
         voiceSource.clip = voiceClip;
 
