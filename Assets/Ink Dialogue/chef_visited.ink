@@ -11,8 +11,8 @@ Oh, you haven't found my authenticators yet, huh.
 === Answer ===
 I need you to find the key to get in to the food prep area still.
 I really can't remember where I put it, so you have to find my authenticators..
-and figure out where I put the key.
-Once you find out where the key is I can help you.
+and complete the authentication, so I can find out where I put the key.
+Once you have completed the authentication on both, I can ask conFOS where the key is.
 -> END
 
 === Answer2 ===
