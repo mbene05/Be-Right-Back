@@ -1,11 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(find c:UsersDevDocumentsGitHubBe-Right-BackAssets -type f -name *.cs)",
-      "Bash(find c:UsersDevDocumentsGitHubBe-Right-BackAssets -name README* -o -name *.md)",
-      "Bash(grep -i \"\\\\.png$\")",
-      "Bash(grep -l \"roomNumber\\\\|room:\" c:UsersDevDocumentsGitHubBe-Right-BackAssetsInk Dialogue/*.ink)",
-      "Bash(git -C \"c:\\\\Users\\\\Dev\\\\Documents\\\\GitHub\\\\Be-Right-Back\" log --oneline -20)"
-    ]
+    "allow": []
   }
 }
