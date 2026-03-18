@@ -6,6 +6,7 @@ public class PinCodeMiniGame : MonoBehaviour
 {
     public static PinCodeMiniGame Instance { get; private set; }
     public static bool IsOpen { get; private set; }
+    public GameObject BackButton;
 
     [Header("Panel")]
     public GameObject pinPanel;
@@ -31,7 +32,7 @@ public class PinCodeMiniGame : MonoBehaviour
 
     private float failTimer;
     private const float FailDuration = 1.0f;
-
+    public bool won = false;
     private float stateTimer;
     private const float StateCooldown = 0.15f;
 
@@ -144,6 +145,8 @@ public class PinCodeMiniGame : MonoBehaviour
                 break;
             case State.Won:
                 winOverlay.SetActive(true);
+                won = true;
+                BackButton.SetActive(false);
                 computerChip?.SetActive(true);
                 break;
         }

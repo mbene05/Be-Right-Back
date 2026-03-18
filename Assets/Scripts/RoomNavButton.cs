@@ -6,9 +6,11 @@ using UnityEngine;
 public class RoomNavButton : MonoBehaviour
 {
     public int showInRoom;
+     public DialogueManager dialogueManager;
     public string requiredItem = "";
 
     private CanvasGroup _group;
+    public TextAsset myInkJSON; 
     private RoomSwitcher _switcher;
     private HotbarManager _hotbar;
     private bool _locked;
@@ -43,6 +45,7 @@ public class RoomNavButton : MonoBehaviour
         else
             SetVisible(true, true);
     }
+
 
     void SetVisible(bool visible, bool interactable)
     {

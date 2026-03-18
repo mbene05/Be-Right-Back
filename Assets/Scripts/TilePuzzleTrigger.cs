@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TilePuzzleTrigger : MonoBehaviour
 {
-    bool isOpen = false;
+    public bool isOpen = false;
     public Camera mainCamera;
     public float cameraZPosition = -10f;
     public bool done = false;

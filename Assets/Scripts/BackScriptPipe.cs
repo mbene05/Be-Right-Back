@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BackScript : MonoBehaviour
+public class BackScriptPipe : MonoBehaviour
 {
    
     public Camera mainCamera;
@@ -10,7 +10,7 @@ public class BackScript : MonoBehaviour
 
     void OnMouseDown()
     {
-        trigger.GetComponent<TilePuzzleTrigger>().isOpen = false;
+        trigger.GetComponent<PipeTrigger>().isOpen = false;
         mainCamera.transform.position = new Vector3(tilereturnRoom.transform.position.x, tilereturnRoom.transform.position.y, cameraZPosition);
     }
 }

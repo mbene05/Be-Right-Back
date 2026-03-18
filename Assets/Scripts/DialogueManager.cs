@@ -73,6 +73,12 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+             SceneManager.LoadScene("MainTitle");
+        }
+
+
         if (!dialogueStarted) return;
 
         if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0) && !MapManager.IsOpen && !RoomSwitcher.IsTransitioning)
