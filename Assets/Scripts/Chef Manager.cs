@@ -73,6 +73,7 @@ public class ChefManager : MonoBehaviour
                 if (logsCollected == 2 && Giventhing == false)
                 {
                     dialogueManager.StartDialogue(myInkJSON3, ChefVoice);
+                    Giventhing = true;
                     
                 }
 
