@@ -6850,7 +6850,7 @@ MonoBehaviour:
   instructionOverlay: {fileID: 1384934906}
   failOverlay: {fileID: 1085820844}
   winOverlay: {fileID: 864136397}
-  winSound: {fileID: 8300000, guid: 9f6787af969a12c44884a2394ec031c2, type: 3}
+  winSound: {fileID: 0}
 --- !u!4 &314439846
 Transform:
   m_ObjectHideFlags: 0
@@ -20406,7 +20406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkMenuScreen
   timer: 0
-  TableMenu: {fileID: 0}
+  TableMenu: {fileID: 1210807255}
 --- !u!114 &966398098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36509,7 +36509,7 @@ MonoBehaviour:
   done: 0
   tilePuzzleRoom: {fileID: 1090959047}
   tilereturnRoom: {fileID: 1223012124}
-  Arrow: {fileID: 705191404}
+  Arrow: {fileID: 753523521}
 --- !u!212 &1702342041
 SpriteRenderer:
   serializedVersion: 2
@@ -37131,7 +37131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1749045170
 SpriteRenderer:
   serializedVersion: 2
@@ -37179,7 +37179,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: c50e1e58282d0e841b27b8df37200902, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -37351,7 +37351,7 @@ MonoBehaviour:
   returnRoom: {fileID: 1540643731}
   requiredItemName: Wrench
   isOpen: 0
-  Arrow: {fileID: 941992025}
+  Arrow: {fileID: 1082975504}
 --- !u!212 &1765050138
 SpriteRenderer:
   serializedVersion: 2
