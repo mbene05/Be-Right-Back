@@ -60,7 +60,7 @@ public class BartenderManager : MonoBehaviour
 
             else
             {
-                if (menuScript != null && menuScript.HasClicked)
+                if (menuScript != null && menuScript.HasClickedFR)
                 {
                     dialogueManager.StartDialogue(myInkJSON2, bartenderVoice);
                 }

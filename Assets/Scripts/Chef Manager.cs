@@ -11,6 +11,8 @@ public class ChefManager : MonoBehaviour
     public TextAsset myInkJSON3; 
 
     public TextAsset myInkJSON4;
+    public TextAsset myInkJSON5;
+    public TextAsset myInkJSON6;
 
     public GameObject Hotbar;
     public GameObject Bartender;
@@ -41,9 +43,24 @@ public class ChefManager : MonoBehaviour
 
             if (talked == false)
             {
+                if (logsCollected == 2)
+                {
+                    dialogueManager.StartDialogue(myInkJSON5, ChefVoice);
+                    talked = true;
+                }
+
+                else if (logsCollected == 1)
+                {
+                    dialogueManager.StartDialogue(myInkJSON6, ChefVoice);
+                    talked = true;
+                }
+
+                else 
+                {
+                    dialogueManager.StartDialogue(myInkJSON, ChefVoice);
+                    talked = true;
+                }
                 
-                dialogueManager.StartDialogue(myInkJSON, ChefVoice);
-                talked = true;
             }
 
             else

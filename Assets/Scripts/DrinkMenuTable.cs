@@ -6,6 +6,7 @@ public class DrinkMenuTable : MonoBehaviour
     public GameObject menuPanel;
     public DialogueManager dialogueManager;
     public bool HasClicked = false;
+    public bool HasClickedFR = false;
 
     private SpriteRenderer sr;
     private int openTimer = 0;
@@ -42,6 +43,7 @@ public class DrinkMenuTable : MonoBehaviour
         if (RoomSwitcher.IsTransitioning) return;
 
         HasClicked = true;
+        HasClickedFR = true;
         openTimer = 0;
         Debug.Log("Menu object activated");
         // Toggle the menu on click

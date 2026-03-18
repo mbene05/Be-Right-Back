@@ -10752,6 +10752,7 @@ MonoBehaviour:
   menuPanel: {fileID: 258083121}
   dialogueManager: {fileID: 1683366673}
   HasClicked: 0
+  HasClickedFR: 0
   highlighted: {fileID: 148739386}
 --- !u!114 &493312497
 MonoBehaviour:
@@ -16506,7 +16507,10 @@ MonoBehaviour:
   myInkJSON: {fileID: 4900000, guid: b97b5ee0136985c49902dc9bb04e2953, type: 3}
   myInkJSON2: {fileID: 4900000, guid: 45a916f720903b947a7d62fee79a727f, type: 3}
   myInkJSON3: {fileID: 4900000, guid: 48aef9ad4fa3c164983f0724ea5da635, type: 3}
-  myInkJSON4: {fileID: 0}
+  myInkJSON4: {fileID: 4900000, guid: 48aef9ad4fa3c164983f0724ea5da635, type: 3}
+  myInkJSON5: {fileID: 4900000, guid: c129dabeba3d66a43a80b0f2a436d3c5, type: 3}
+  myInkJSON6: {fileID: 4900000, guid: 5524222f578d67c4589808a5814b87c4, type: 3}
+  GivenDrink: 0
   Hotbar: {fileID: 4928864647905721170}
   Bartender: {fileID: 1349623686}
   highlighted: {fileID: 2002762588}
@@ -24060,6 +24064,7 @@ MonoBehaviour:
   SinkClogged: {fileID: 1523831628}
   SinkFull: {fileID: 1805076145}
   winSound: {fileID: 8300000, guid: 9f6787af969a12c44884a2394ec031c2, type: 3}
+  won: 0
   tileTrigger: {fileID: 1765050134}
 --- !u!4 &1134035850
 Transform:
@@ -25503,6 +25508,7 @@ MonoBehaviour:
   menuPanel: {fileID: 966398096}
   dialogueManager: {fileID: 0}
   HasClicked: 0
+  HasClickedFR: 0
   highlighted: {fileID: 946706966}
 --- !u!114 &1210807261
 MonoBehaviour:
@@ -25745,6 +25751,8 @@ MonoBehaviour:
   myInkJSON2: {fileID: 4900000, guid: 8b70d82ca00cd99488cbcbc22fa65716, type: 3}
   myInkJSON3: {fileID: 4900000, guid: 37ef4f6f4a2411848ad2946028afedd8, type: 3}
   myInkJSON4: {fileID: 4900000, guid: 1ea57fb887600c849a1d4f6a2c469674, type: 3}
+  myInkJSON5: {fileID: 4900000, guid: a0346b746be38094b8e41a44d2eed265, type: 3}
+  myInkJSON6: {fileID: 4900000, guid: b68a73390bee0004a96d79d4a596b8b2, type: 3}
   Hotbar: {fileID: 4928864647905721170}
   Bartender: {fileID: 1083094339}
   Giventhing: 0
@@ -36085,6 +36093,159 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1203168525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659770594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659770598}
+  - component: {fileID: 1659770597}
+  - component: {fileID: 1659770596}
+  - component: {fileID: 1659770595}
+  m_Layer: 0
+  m_Name: ComputerChip_0 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1659770595
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659770594}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.64, y: 5.84}
+    newSize: {x: 5.64, y: 5.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 5.64, y: 5.84}
+  m_EdgeRadius: 0
+--- !u!114 &1659770596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659770594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86fdd79b72f6f04da5d1e5f46c522f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockedArrowTrigger
+  dialogueManager: {fileID: 1683366673}
+  myInkJSON: {fileID: 4900000, guid: cf1adb3d82736c14d9f6cd87e1e5c9a6, type: 3}
+--- !u!212 &1659770597
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659770594}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -3154796742629961955, guid: f2d542bd30659074e9fa6134fef66c08, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.64, y: 5.84}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!4 &1659770598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659770594}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 56.67, y: 2.56, z: 0}
+  m_LocalScale: {x: 0.45035, y: 0.15265252, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1670511965
 GameObject:
   m_ObjectHideFlags: 0
@@ -36159,8 +36320,8 @@ MonoBehaviour:
   SadGuy: {fileID: 830238205}
   drunkguy_no_wrench: {fileID: 21300000, guid: cbed607409de6274e8462e414aad06f5, type: 3}
   Needle: {fileID: 1337247534}
-  coatroomArrow: {fileID: 0}
-  backkitchenArrow: {fileID: 0}
+  coatroomArrow: {fileID: 1274388357}
+  backkitchenArrow: {fileID: 1659770594}
   bar: {fileID: 1169209638}
   endSceneName: WinScreen
   drinks:
@@ -36348,7 +36509,7 @@ MonoBehaviour:
   done: 0
   tilePuzzleRoom: {fileID: 1090959047}
   tilereturnRoom: {fileID: 1223012124}
-  Arrow: {fileID: 0}
+  Arrow: {fileID: 705191404}
 --- !u!212 &1702342041
 SpriteRenderer:
   serializedVersion: 2
@@ -44644,3 +44805,4 @@ SceneRoots:
   - {fileID: 941992029}
   - {fileID: 468618156}
   - {fileID: 1274388360}
+  - {fileID: 1659770598}

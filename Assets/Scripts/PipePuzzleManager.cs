@@ -11,6 +11,7 @@ public class PipePuzzleManager : MonoBehaviour
     public GameObject SinkFull;
     private AudioSource audioSource;
     public AudioClip winSound;
+    public bool won = false;
 
 
 
@@ -54,6 +55,7 @@ public class PipePuzzleManager : MonoBehaviour
 
     void DoSomethingAfterWin()
     {
+        won = true;
         audioSource.PlayOneShot(winSound);
         SinkClogged.SetActive(false);
         SinkFull.SetActive(true);

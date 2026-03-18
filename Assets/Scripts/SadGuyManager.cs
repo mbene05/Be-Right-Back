@@ -10,6 +10,11 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     public TextAsset myInkJSON2; 
     public TextAsset myInkJSON3;
     public TextAsset myInkJSON4;
+     public TextAsset myInkJSON5;
+
+    public TextAsset myInkJSON6;
+     public bool GivenDrink = false;
+
 
     public GameObject Hotbar;
     public GameObject Bartender;
@@ -52,8 +57,24 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
 
-        if (rightDrink == true) {
-           dialogueManager.StartDialogue(myInkJSON4, sadGuyVoice);
+        if (GivenDrink == true)
+        {
+            dialogueManager.StartDialogue(myInkJSON5, sadGuyVoice);
+        }
+
+        else
+        {
+        if (rightDrink == true && GivenDrink) {
+            if (hasTalked == true)
+            {
+                dialogueManager.StartDialogue(myInkJSON6, sadGuyVoice);
+            }
+
+            else
+            {
+                dialogueManager.StartDialogue(myInkJSON4, sadGuyVoice);
+            }
+          
         }
         if (hasTalked == true)
         {
@@ -63,6 +84,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         {
             dialogueManager.StartDialogue(myInkJSON3, sadGuyVoice);
             hasTalked = true;
+        }
         }
 
     }
@@ -87,6 +109,8 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         if (rightDrink)
         {
             dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
+            GivenDrink = true;
+
         }
         else if (!rightDrink)
         {
