@@ -8,6 +8,7 @@ public class RoomNavButton : MonoBehaviour
     public int showInRoom;
      public DialogueManager dialogueManager;
     public string requiredItem = "";
+    public GameObject phone;
 
     private CanvasGroup _group;
     public TextAsset myInkJSON; 
@@ -34,7 +35,7 @@ public class RoomNavButton : MonoBehaviour
 
         bool inRoom  = _switcher.currentRoom == showInRoom;
         bool itemOk  = string.IsNullOrEmpty(requiredItem) || (_hotbar != null && _hotbar.HasItem(requiredItem));
-        bool suppress = DialogueManager.IsOpen || DialogueManager.choicesActive || RoomSwitcher.IsTransitioning;
+        bool suppress = DialogueManager.IsOpen || DialogueManager.choicesActive || RoomSwitcher.IsTransitioning || phone.GetComponent<PhoneScript>().HasClicked == true;
 
         _locked = !itemOk;
 
