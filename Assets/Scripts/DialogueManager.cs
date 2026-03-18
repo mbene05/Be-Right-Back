@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject SadGuy;
     public Sprite drunkguy_no_wrench;
     public GameObject Needle;
+
+    public GameObject coatroomArrow;
     
     public Bar bar;
 
@@ -295,6 +297,7 @@ void PlayResponseSound(AudioClip clip)
             });
              story.BindExternalFunction("giveLog", (int givenLog) => {
                 Keycard.SetActive(true);
+                coatroomArrow.SetActive(false);
             });
              story.BindExternalFunction("giveLog2", (int givenLog2) => {
                 CosLog.SetActive(true);
