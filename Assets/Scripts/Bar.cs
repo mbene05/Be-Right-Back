@@ -10,7 +10,7 @@ public class Bar : MonoBehaviour
 {
     public Image bar;
     public float maxTime;
-    public string endSceneName = "DeathScreen"; 
+    public static string endSceneName = "DeathScreen"; 
     public float percent;
     public float currentTime;
 
