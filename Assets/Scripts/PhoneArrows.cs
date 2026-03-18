@@ -19,6 +19,7 @@ public class PhoneArrows : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (RoomSwitcher.IsTransitioning) return;
         nextPage.SetActive(true);
         lastPage.SetActive(false);
         highlighted.SetActive(false);

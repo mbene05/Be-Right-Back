@@ -10,6 +10,7 @@ public class BackScript : MonoBehaviour
     void OnMouseDown()
     {
         if (MapManager.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
         mainCamera.transform.position = new Vector3(tilePuzzleRoom.transform.position.x, tilePuzzleRoom.transform.position.y, cameraZPosition);
     }
 }

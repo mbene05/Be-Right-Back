@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SadGuyManager : MonoBehaviour, IUsableWithItem
 {
@@ -7,8 +8,8 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
     public TextAsset myInkJSON; 
     public TextAsset myInkJSON2; 
-
-    public TextAsset myInkJSON3; 
+    public TextAsset myInkJSON3;
+    public TextAsset myInkJSON4;
 
     public GameObject Hotbar;
     public GameObject Bartender;
@@ -17,6 +18,8 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     public bool rightDrink = false;
     public bool pickUpDrink = false;
     public bool hasReceivedDrink = false;
+    public bool hasTalked = false;
+
 
     public AudioClip sadGuyVoice;
 
@@ -47,13 +50,21 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         if (PinCodeMiniGame.IsOpen) return;
         if (MazeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
-
-        if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
+        if (rightDrink == true) {
+           dialogueManager.StartDialogue(myInkJSON4, sadGuyVoice);
+        }
+        if (hasTalked == true)
+        {
+            dialogueManager.StartDialogue(myInkJSON, sadGuyVoice);
+        }
+        else if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
             dialogueManager.StartDialogue(myInkJSON3, sadGuyVoice);
+            hasTalked = true;
         }
-        
+
     }
 
 
@@ -62,8 +73,6 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf)
             return false;
 
-        if (!pickUpDrink)
-            return false;
 
         if (hasReceivedDrink)
             return false;
@@ -79,11 +88,14 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         {
             dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
         }
-        else
+        else if (!rightDrink)
         {
-            dialogueManager.StartDialogue(myInkJSON, sadGuyVoice);
+            Bar.LoadEndScene();
         }
 
+
+
         return true;
+
     }
 }

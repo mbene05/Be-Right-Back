@@ -11,15 +11,12 @@ public class PipeTrigger : MonoBehaviour
     public GameObject pipePuzzleRoom;
     public GameObject returnRoom;
     public string requiredItemName = "Wrench";
-    private MapManager mapManager;
-
     private HotbarManager hotbar;
     private bool isOpen = false;
 
     void Start()
     {
         hotbar = FindObjectOfType<HotbarManager>();
-        mapManager = FindObjectOfType<MapManager>();
     }
 
      void Awake()
@@ -42,6 +39,7 @@ public class PipeTrigger : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
         if (isOpen) return;
 
         if (hotbar != null && !hotbar.HasItem(requiredItemName))
@@ -51,8 +49,6 @@ public class PipeTrigger : MonoBehaviour
         }
 
         isOpen = true;
-         mapManager.toggleButton.interactable = false;
-       
         mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
         
 
@@ -63,7 +59,6 @@ public class PipeTrigger : MonoBehaviour
         if (isOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             isOpen = false;
-             mapManager.toggleButton.interactable =true;
             mainCamera.transform.position = new Vector3(returnRoom.transform.position.x, returnRoom.transform.position.y, cameraZPosition);
         }
     }

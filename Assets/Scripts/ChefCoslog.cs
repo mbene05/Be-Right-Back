@@ -24,6 +24,7 @@ public class ChefCoslog : MonoBehaviour
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         dialogueManager.StartDialogue(myInkJSON, null);
     }

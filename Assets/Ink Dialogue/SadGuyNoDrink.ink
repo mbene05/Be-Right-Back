@@ -1,9 +1,7 @@
--> drinkguy_incorrect_drink
+-> talk_again
 
-=== drinkguy_incorrect_drink ===
-\*Sips drink*
-Oh no, I can taste the synthetic materials...
-It just reminds me of her...
-I miss her so much :(
-WAHHH
+=== talk_again ===
+What are you still doing here
+Do you want the wrench or not
+Stop fooling around man 
 -> END

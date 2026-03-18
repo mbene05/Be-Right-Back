@@ -16,7 +16,7 @@ public class ChefManager : MonoBehaviour
     public GameObject Bartender;
 
     public bool Giventhing = false;
-   
+
 
     public int logsCollected = 0;
     public bool talked = false;
@@ -30,6 +30,7 @@ public class ChefManager : MonoBehaviour
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
@@ -43,7 +44,7 @@ public class ChefManager : MonoBehaviour
 
             else
             {
-                if (logsCollected > 2)
+                if (logsCollected == 2)
                 {
                     dialogueManager.StartDialogue(myInkJSON4, ChefVoice);
                 }

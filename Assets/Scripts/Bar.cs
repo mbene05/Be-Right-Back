@@ -79,7 +79,7 @@ public class Bar : MonoBehaviour
     }
 
     
-    void LoadEndScene()
+    public static void LoadEndScene()
     {
         Debug.Log("Time's up! Loading end scene...");
         SceneManager.LoadScene(endSceneName);

@@ -6,6 +6,7 @@ public class MazeTrigger : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
         MazeMiniGame.Instance.Open();
     }
 }

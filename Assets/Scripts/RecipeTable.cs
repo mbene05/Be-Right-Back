@@ -38,6 +38,7 @@ public class RecipeTable : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         HasClicked = true;
         Debug.Log("Menu object activated");

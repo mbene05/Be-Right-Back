@@ -7,6 +7,7 @@ public class PinCodeTrigger : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
         PinCodeMiniGame.Instance.Open();
     }
 }

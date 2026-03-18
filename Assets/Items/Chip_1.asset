@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: ComputerChip
   itemID: 1000
-  itemSprite: {fileID: -1209644786745948262, guid: 00b5a8e50ab5e5444a0f4e81dc2e4514, type: 3}
+  itemSprite: {fileID: 21300000, guid: f3687fbfac809034d802150a38ce289b, type: 3}
