@@ -47,6 +47,7 @@ public class ChefManager : MonoBehaviour
                 {
                     dialogueManager.StartDialogue(myInkJSON5, ChefVoice);
                     talked = true;
+                    Giventhing = true;
                 }
 
 
