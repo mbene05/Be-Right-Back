@@ -6709,7 +6709,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 11
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 216a3958853bf4d499416269bc51be7b, type: 3}
+  m_Sprite: {fileID: -8904228483658802606, guid: 0afcea7aeca0a2f4a849055f13d68324, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6772,7 +6772,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13, y: 17}
+    oldSize: {x: 11.8, y: 17}
     newSize: {x: 13, y: 17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -12692,7 +12692,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 23230a6b916c07745ba56eb1115b1796, type: 3}
+  m_Sprite: {fileID: -300549287046671943, guid: 53180327b2101604780575f80b2ec841, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12755,7 +12755,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13, y: 17}
+    oldSize: {x: 11.8, y: 17}
     newSize: {x: 13, y: 17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13968,7 +13968,7 @@ MonoBehaviour:
   cameraZPosition: -10
   tilereturnRoom: {fileID: 1223012124}
   trigger: {fileID: 1702342037}
-  Arrow: {fileID: 0}
+  Arrow: {fileID: 753523521}
 --- !u!212 &705191407
 SpriteRenderer:
   serializedVersion: 2
@@ -20033,7 +20033,7 @@ MonoBehaviour:
   cameraZPosition: -10
   tilereturnRoom: {fileID: 1540643731}
   trigger: {fileID: 1765050134}
-  Arrow: {fileID: 0}
+  Arrow: {fileID: 1082975504}
 --- !u!61 &941992027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25506,7 +25506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkMenu
   menuPanel: {fileID: 966398096}
-  dialogueManager: {fileID: 0}
+  dialogueManager: {fileID: 1683366673}
   HasClicked: 0
   HasClickedFR: 0
   highlighted: {fileID: 946706966}
@@ -37351,7 +37351,7 @@ MonoBehaviour:
   returnRoom: {fileID: 1540643731}
   requiredItemName: Wrench
   isOpen: 0
-  Arrow: {fileID: 0}
+  Arrow: {fileID: 941992025}
 --- !u!212 &1765050138
 SpriteRenderer:
   serializedVersion: 2
