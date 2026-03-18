@@ -50,7 +50,7 @@ public class BartenderManager : MonoBehaviour
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
 
-            DrinkMenu menuScript = drinkmenuPanel.GetComponent<DrinkMenu>();
+            DrinkMenuTable menuScript = drinkmenuPanel.GetComponent<DrinkMenuTable>();
             
 
             if (pickUpDrink == true)

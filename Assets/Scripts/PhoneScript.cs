@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DrinkMenuTable : MonoBehaviour
+public class PhoneScript : MonoBehaviour
 {
-    public GameObject menuPanel;
+      public GameObject menuPanel;
     public DialogueManager dialogueManager;
     public bool HasClicked = false;
 
@@ -24,7 +24,7 @@ public class DrinkMenuTable : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                menuPanel.SetActive(false);
+               // menuPanel.SetActive(false);
                 openTimer = 0;
             }
         }
@@ -36,6 +36,7 @@ public class DrinkMenuTable : MonoBehaviour
     {
         if (dialogueManager.dialogueStarted) return;
         highlighted.SetActive(false);
+        if (HasClicked == true) return;
 
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
@@ -70,4 +71,5 @@ public class DrinkMenuTable : MonoBehaviour
     {
         highlighted.SetActive(false);
     }
+
 }

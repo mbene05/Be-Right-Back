@@ -10,6 +10,7 @@ public class DateManager : MonoBehaviour
     public bool saidOp = false;
 
     public AudioClip interactSound;
+    public GameObject TableMenu;
     public AudioClip charlieVoice;
 
     private AudioSource audioSource;
@@ -39,6 +40,7 @@ public class DateManager : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (TableMenu.GetComponent<DrinkMenuTable>().HasClicked == true) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
