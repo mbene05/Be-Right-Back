@@ -43,6 +43,11 @@ public class MazeMiniGame : MonoBehaviour
     private Camera uiCamera;
     private GameObject mazeBlocker;
 
+    [Header("Audio")]
+    private AudioSource audioSource;
+    public AudioClip winSound;
+
+
     void Awake()
     {
         Instance = this;
@@ -50,6 +55,7 @@ public class MazeMiniGame : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         canvas = mazePanel.GetComponentInParent<Canvas>();
         uiCamera = canvas ? canvas.worldCamera : null;
 
@@ -154,6 +160,7 @@ public class MazeMiniGame : MonoBehaviour
                 break;
 
             case State.Won:
+                audioSource.PlayOneShot(winSound);
                 winGraceTimer -= Time.deltaTime;
                 if (winGraceTimer <= 0f && Input.GetMouseButtonDown(0) && !MapManager.IsOpen)
                     Close();

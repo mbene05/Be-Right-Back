@@ -9,7 +9,8 @@ public class PipePuzzleManager : MonoBehaviour
 
     public GameObject SinkClogged;
     public GameObject SinkFull;
-
+    private AudioSource audioSource;
+    public AudioClip winSound;
 
 
 
@@ -17,6 +18,7 @@ public class PipePuzzleManager : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         pipes = FindObjectsOfType<PipeScript>();
     }
 
@@ -52,6 +54,7 @@ public class PipePuzzleManager : MonoBehaviour
 
     void DoSomethingAfterWin()
     {
+        audioSource.PlayOneShot(winSound);
         SinkClogged.SetActive(false);
         SinkFull.SetActive(true);
     }

@@ -18,14 +18,17 @@ public Vector2 targetPosition;
 
     bool done = false;
 
+    private AudioSource audioSource;
+    public AudioClip winSound;
+
     public GameObject tileTrigger;
 
     public bool move = false;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
         skipButton.SetActive(false);
-       Shuffle();
+        Shuffle();
     }
     void Update()
     {
@@ -66,6 +69,7 @@ public Vector2 targetPosition;
         
         if (correctTiles == 8 && done == false)
         {
+                audioSource.PlayOneShot(winSound);
                 ChefManager selectedChef = chef.GetComponent<ChefManager>();
                 selectedChef.logsCollected++;
                 done = true;

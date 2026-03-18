@@ -6,6 +6,7 @@ public class TileRotateManager : MonoBehaviour
     public GameObject chef;
     public bool isSolved = false;
 
+
     void Update()
     {
         if (isSolved) return;
