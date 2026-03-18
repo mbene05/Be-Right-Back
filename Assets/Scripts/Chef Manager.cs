@@ -20,9 +20,13 @@ public class ChefManager : MonoBehaviour
 
     public int logsCollected = 0;
     public bool talked = false;
+    public AudioSource audioSource;
     public AudioClip ChefVoice;
 
-
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void OnMouseDown()
     {
       
