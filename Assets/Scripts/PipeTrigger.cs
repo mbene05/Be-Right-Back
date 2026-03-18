@@ -13,6 +13,7 @@ public class PipeTrigger : MonoBehaviour
     public string requiredItemName = "Wrench";
     private HotbarManager hotbar;
     public bool isOpen = false;
+    public GameObject Arrow;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class PipeTrigger : MonoBehaviour
             Debug.Log("You need a " + requiredItemName + " to access this.");
             return;
         }
+        Arrow.SetActive(false);
 
         isOpen = true;
         mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
@@ -58,6 +60,7 @@ public class PipeTrigger : MonoBehaviour
     {
         if (isOpen && Input.GetKeyDown(KeyCode.Escape))
         {
+            Arrow.SetActive(true);
             isOpen = false;
             mainCamera.transform.position = new Vector3(returnRoom.transform.position.x, returnRoom.transform.position.y, cameraZPosition);
         }
