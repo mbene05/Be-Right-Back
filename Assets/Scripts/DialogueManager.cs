@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject Needle;
 
     public GameObject coatroomArrow;
+    public GameObject backkitchenArrow;
     
     public Bar bar;
 
@@ -298,6 +299,7 @@ void PlayResponseSound(AudioClip clip)
              story.BindExternalFunction("giveLog", (int givenLog) => {
                 Keycard.SetActive(true);
                 coatroomArrow.SetActive(false);
+                backkitchenArrow.SetActive(false);
             });
              story.BindExternalFunction("giveLog2", (int givenLog2) => {
                 CosLog.SetActive(true);
