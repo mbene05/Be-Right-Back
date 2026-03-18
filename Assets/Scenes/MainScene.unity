@@ -1057,6 +1057,7 @@ MonoBehaviour:
   showInRoom: 3
   dialogueManager: {fileID: 0}
   requiredItem: Key
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &33358983
 GameObject:
@@ -5717,6 +5718,7 @@ MonoBehaviour:
   showInRoom: 2
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &250961987
 GameObject:
@@ -6211,6 +6213,7 @@ MonoBehaviour:
   showInRoom: 4
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!114 &270996115
 MonoBehaviour:
@@ -14342,6 +14345,7 @@ MonoBehaviour:
   showInRoom: 8
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &756102033
 GameObject:
@@ -23041,6 +23045,7 @@ MonoBehaviour:
   showInRoom: 7
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &1083094339
 GameObject:
@@ -25717,7 +25722,7 @@ Transform:
   m_GameObject: {fileID: 1216920839}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.96, y: 0.86, z: 0}
+  m_LocalPosition: {x: 53.86, y: 1.06, z: 0}
   m_LocalScale: {x: 0.37, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28521,6 +28526,7 @@ MonoBehaviour:
   showInRoom: 6
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &1313642530
 GameObject:
@@ -30632,6 +30638,7 @@ MonoBehaviour:
   showInRoom: 1
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &1384934906
 GameObject:
@@ -32283,6 +32290,7 @@ MonoBehaviour:
   showInRoom: 1
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &1480173598
 GameObject:
@@ -34908,6 +34916,7 @@ MonoBehaviour:
   showInRoom: 3
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &1600273104
 GameObject:
@@ -35403,6 +35412,7 @@ MonoBehaviour:
   showInRoom: 1
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!114 &1622581566
 MonoBehaviour:
@@ -36863,6 +36873,7 @@ MonoBehaviour:
   showInRoom: 1
   dialogueManager: {fileID: 0}
   requiredItem: 
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &1742784830
 GameObject:
@@ -36959,7 +36970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1749045170
 SpriteRenderer:
   serializedVersion: 2
@@ -37028,7 +37039,7 @@ Transform:
   m_GameObject: {fileID: 1749045169}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.96, y: 0.84, z: 0}
+  m_LocalPosition: {x: 53.86, y: 1.04, z: 0}
   m_LocalScale: {x: 0.37, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41685,6 +41696,7 @@ MonoBehaviour:
   showInRoom: 4
   dialogueManager: {fileID: 0}
   requiredItem: KeyCard
+  phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
 --- !u!1 &2029240826
 GameObject:
