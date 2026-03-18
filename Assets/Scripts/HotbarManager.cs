@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HotbarManager : MonoBehaviour
 {
@@ -16,6 +17,15 @@ public class HotbarManager : MonoBehaviour
 
     void Start()
     {
+        // Add an overriding Canvas to this GameObject so it renders above
+        // panels that use sortingOrder (e.g. jukebox panel at 200).
+        Canvas c = GetComponent<Canvas>();
+        if (c == null) c = gameObject.AddComponent<Canvas>();
+        c.overrideSorting = true;
+        c.sortingOrder = 201;
+        if (GetComponent<GraphicRaycaster>() == null)
+            gameObject.AddComponent<GraphicRaycaster>();
+
         EnsureSlotsInitialized();
         RefreshVisibleSlots();
     }

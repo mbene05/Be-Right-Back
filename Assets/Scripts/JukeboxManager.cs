@@ -71,9 +71,6 @@ public class JukeboxManager : MonoBehaviour, IUsableWithItem
             counterText.text = $"{itemCount}/{maxItems}";
         }
 
-        if (itemCount >= maxItems)
-            SceneManager.LoadScene(endSceneName);
-
         return true;
     }
 }

@@ -90,15 +90,24 @@ public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             EventSystem.current.RaycastAll(pointerData, results);
 
             HotbarSlot targetSlot = null;
+            IUsableWithItem uiDropTarget = null;
             foreach (var hit in results)
             {
-                targetSlot = hit.gameObject.GetComponentInParent<HotbarSlot>();
-                if (targetSlot != null) break;
+                if (targetSlot == null)
+                    targetSlot = hit.gameObject.GetComponentInParent<HotbarSlot>();
+                if (uiDropTarget == null)
+                    uiDropTarget = hit.gameObject.GetComponentInParent<IUsableWithItem>();
+                if (targetSlot != null && uiDropTarget != null) break;
             }
 
             bool consumed = false;
 
-            if (targetSlot != null && targetSlot != this)
+            if (uiDropTarget != null && !(uiDropTarget is HotbarSlot))
+            {
+                consumed = uiDropTarget.UseWithItem(draggingItem, Vector3.zero);
+                if (!consumed) AddItem(draggingItem);
+            }
+            else if (targetSlot != null && targetSlot != this)
             {
                 Item targetItem = targetSlot.currentItem;
                 targetSlot.AddItem(draggingItem);

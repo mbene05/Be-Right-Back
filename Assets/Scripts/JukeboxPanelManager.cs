@@ -35,6 +35,7 @@ public class JukeboxPanelManager : MonoBehaviour
     private Canvas canvas;
     private Camera uiCamera;
     private GameObject panelBlocker;
+    private PhysicsRaycaster physicsRaycaster;
 
     private RectTransform dragging = null;
     private Vector2 dragOffset;
@@ -49,6 +50,8 @@ public class JukeboxPanelManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         canvas = jukeboxPanel.GetComponentInParent<Canvas>();
         uiCamera = canvas ? canvas.worldCamera : null;
+        if (uiCamera != null)
+            physicsRaycaster = uiCamera.GetComponent<PhysicsRaycaster>();
 
         needleStartPos = needle.anchoredPosition;
         chipStartPos = computerChip.anchoredPosition;
@@ -88,14 +91,44 @@ public class JukeboxPanelManager : MonoBehaviour
     {
         IsOpen = true;
         jukeboxPanel.SetActive(true);
+        // Items stay hidden until dropped from hotbar
+        needle.gameObject.SetActive(needlePlaced);
+        computerChip.gameObject.SetActive(chipPlaced);
+        needleDropZone.gameObject.SetActive(true);
+        chipDropZone.gameObject.SetActive(true);
         panelBlocker?.SetActive(true);
+        if (physicsRaycaster) physicsRaycaster.enabled = false;
+    }
+
+    public void PlaceNeedle()
+    {
+        if (needlePlaced) return;
+        needlePlaced = true;
+        needle.gameObject.SetActive(true);
+        needle.anchoredPosition = needleDropZone.anchoredPosition;
+        if (needlePlaced && chipPlaced && !IsDone) OnPuzzleComplete();
+    }
+
+    public void PlaceChip()
+    {
+        if (chipPlaced) return;
+        chipPlaced = true;
+        computerChip.gameObject.SetActive(true);
+        computerChip.anchoredPosition = chipDropZone.anchoredPosition;
+        if (needlePlaced && chipPlaced && !IsDone) OnPuzzleComplete();
     }
 
     public void Close()
     {
         IsOpen = false;
+        dragging = null;
         jukeboxPanel.SetActive(false);
+        needle.gameObject.SetActive(false);
+        computerChip.gameObject.SetActive(false);
+        needleDropZone.gameObject.SetActive(false);
+        chipDropZone.gameObject.SetActive(false);
         panelBlocker?.SetActive(false);
+        if (physicsRaycaster) physicsRaycaster.enabled = true;
     }
 
     void Update()
@@ -116,13 +149,13 @@ public class JukeboxPanelManager : MonoBehaviour
             if (!needlePlaced && RectTransformUtility.RectangleContainsScreenPoint(needle, mousePos, uiCamera))
             {
                 dragging = needle;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(needle, mousePos, uiCamera, out Vector2 local);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(needle.parent as RectTransform, mousePos, uiCamera, out Vector2 local);
                 dragOffset = needle.anchoredPosition - local;
             }
             else if (!chipPlaced && RectTransformUtility.RectangleContainsScreenPoint(computerChip, mousePos, uiCamera))
             {
                 dragging = computerChip;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(computerChip, mousePos, uiCamera, out Vector2 local);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(computerChip.parent as RectTransform, mousePos, uiCamera, out Vector2 local);
                 dragOffset = computerChip.anchoredPosition - local;
             }
         }
@@ -140,7 +173,7 @@ public class JukeboxPanelManager : MonoBehaviour
         {
             if (dragging == needle)
             {
-                if (RectTransformUtility.RectangleContainsScreenPoint(needleDropZone, mousePos, uiCamera))
+                if (RectsOverlap(needle, needleDropZone))
                 {
                     needle.anchoredPosition = needleDropZone.anchoredPosition;
                     needlePlaced = true;
@@ -152,7 +185,7 @@ public class JukeboxPanelManager : MonoBehaviour
             }
             else if (dragging == computerChip)
             {
-                if (RectTransformUtility.RectangleContainsScreenPoint(chipDropZone, mousePos, uiCamera))
+                if (RectsOverlap(computerChip, chipDropZone))
                 {
                     computerChip.anchoredPosition = chipDropZone.anchoredPosition;
                     chipPlaced = true;
@@ -173,15 +206,24 @@ public class JukeboxPanelManager : MonoBehaviour
     void OnPuzzleComplete()
     {
         IsDone = true;
-
         if (audioSource != null && successSound != null)
             audioSource.PlayOneShot(successSound);
-
         Invoke(nameof(LoadWinScreen), 1.0f);
     }
 
     void LoadWinScreen()
     {
         SceneManager.LoadScene(winSceneName);
+    }
+
+    bool RectsOverlap(RectTransform a, RectTransform b)
+    {
+        Vector3[] cornersA = new Vector3[4];
+        Vector3[] cornersB = new Vector3[4];
+        a.GetWorldCorners(cornersA);
+        b.GetWorldCorners(cornersB);
+        Rect rectA = new Rect(cornersA[0].x, cornersA[0].y, cornersA[2].x - cornersA[0].x, cornersA[2].y - cornersA[0].y);
+        Rect rectB = new Rect(cornersB[0].x, cornersB[0].y, cornersB[2].x - cornersB[0].x, cornersB[2].y - cornersB[0].y);
+        return rectA.Overlaps(rectB);
     }
 }

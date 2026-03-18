@@ -7542,7 +7542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JukeboxTrigger
   jukeboxPanelObject: {fileID: 1742784830}
-  backButton: {fileID: 0}
 --- !u!1 &344389635
 GameObject:
   m_ObjectHideFlags: 0
@@ -8057,6 +8056,7 @@ Transform:
   - {fileID: 1223012125}
   - {fileID: 800700104}
   - {fileID: 337970785}
+  - {fileID: 2021784039}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &377764008
@@ -13902,6 +13902,7 @@ MonoBehaviour:
   cameraZPosition: -10
   tilereturnRoom: {fileID: 1223012124}
   trigger: {fileID: 1702342037}
+  Arrow: {fileID: 0}
 --- !u!212 &705191407
 SpriteRenderer:
   serializedVersion: 2
@@ -18092,6 +18093,7 @@ GameObject:
   - component: {fileID: 853089343}
   - component: {fileID: 853089345}
   - component: {fileID: 853089344}
+  - component: {fileID: 853089346}
   m_Layer: 5
   m_Name: ChipDropZone
   m_TagString: Untagged
@@ -18156,6 +18158,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853089342}
   m_CullTransparentMesh: 1
+--- !u!114 &853089346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853089342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102c372e35b989f488908ad642853d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JukeboxDropZone
+  zoneType: 1
 --- !u!1 &864136397
 GameObject:
   m_ObjectHideFlags: 0
@@ -19948,6 +19963,7 @@ MonoBehaviour:
   cameraZPosition: -10
   tilereturnRoom: {fileID: 1540643731}
   trigger: {fileID: 1765050134}
+  Arrow: {fileID: 0}
 --- !u!61 &941992027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23007,6 +23023,7 @@ GameObject:
   - component: {fileID: 1085353094}
   - component: {fileID: 1085353096}
   - component: {fileID: 1085353095}
+  - component: {fileID: 1085353097}
   m_Layer: 5
   m_Name: NeedleDropZone
   m_TagString: Untagged
@@ -23071,6 +23088,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085353093}
   m_CullTransparentMesh: 1
+--- !u!114 &1085353097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085353093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102c372e35b989f488908ad642853d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JukeboxDropZone
+  zoneType: 0
 --- !u!1 &1085820844
 GameObject:
   m_ObjectHideFlags: 0
@@ -36056,6 +36086,7 @@ MonoBehaviour:
   drunkguy_no_wrench: {fileID: 21300000, guid: cbed607409de6274e8462e414aad06f5, type: 3}
   Needle: {fileID: 1337247534}
   coatroomArrow: {fileID: 0}
+  backkitchenArrow: {fileID: 0}
   bar: {fileID: 1169209638}
   endSceneName: WinScreen
   drinks:
@@ -36243,6 +36274,7 @@ MonoBehaviour:
   done: 0
   tilePuzzleRoom: {fileID: 1090959047}
   tilereturnRoom: {fileID: 1223012124}
+  Arrow: {fileID: 0}
 --- !u!212 &1702342041
 SpriteRenderer:
   serializedVersion: 2
@@ -37083,6 +37115,7 @@ MonoBehaviour:
   returnRoom: {fileID: 1540643731}
   requiredItemName: Wrench
   isOpen: 0
+  Arrow: {fileID: 0}
 --- !u!212 &1765050138
 SpriteRenderer:
   serializedVersion: 2
@@ -41433,12 +41466,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021784037}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.67293, y: 0.28635, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2614005, y: 0.3058345, z: -0.038665038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 375920665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2022981845
 GameObject:
@@ -44535,4 +44568,3 @@ SceneRoots:
   - {fileID: 941992029}
   - {fileID: 468618156}
   - {fileID: 1274388360}
-  - {fileID: 2021784039}
