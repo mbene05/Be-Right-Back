@@ -3,7 +3,7 @@ EXTERNAL SubToBar(amount)
 VAR shuffleNum = 0
 VAR shuffleAns = 0
 
-~ shuffleNum = RANDOM(1,17)
+~ shuffleNum = RANDOM(1,20)
 ~ shuffleAns = RANDOM(1,6)
 
 VAR GoodAmount = 65
@@ -28,6 +28,9 @@ VAR BadAmount = 10
     - shuffleNum == 15: -> Question15
     - shuffleNum == 16: -> Question16
     - shuffleNum == 17: -> Question17
+    - shuffleNum == 18: -> Question17
+    - shuffleNum == 19: -> Question17
+    - shuffleNum == 20: -> Question17
 
 }
 
@@ -1783,5 +1786,180 @@ She's soo cool! I'm so envious of her chassis and her face structure
 === Bad20 ===
 # bad
 I guess she's a cool human, but I just don't agree with her viewpoints
-Also she births the anti-christ.
+Also she births the robotic anti-christ.
+-> END
+
+=== Question21 ===
+What's your plan for retirement?
+{
+    -shuffleAns == 1:
+    + [I want to spend it in perpetuity taking care of my loved one] 
+    ~ AddToBar(GoodAmount)
+    -> Good21
+    + [I will probably have to work until I die, or you guys fully take over] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral21
+    + [I'm gonna retire alone on the sea of tranquility, on the moon] 
+            ~ SubToBar(BadAmount)
+    -> Bad21
+    
+    -shuffleAns == 2:
+    + [I want to spend it in perpetuity taking care of my loved one]   
+    ~ AddToBar(GoodAmount)
+    -> Good21
+    + [I'm gonna retire alone on the sea of tranquility, on the moon] 
+          ~ SubToBar(BadAmount)
+    -> Bad21
+    + [I will probably have to work until I die, or you guys fully take over] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral21
+            
+    -shuffleAns == 3:
+    + [I'm gonna retire alone on the sea of tranquility, on the moon] 
+          ~ SubToBar(BadAmount)
+    -> Bad21
+    + [I will probably have to work until I die, or you guys fully take over] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral21
+    + [I want to spend it in perpetuity taking care of my loved one]   
+    ~ AddToBar(GoodAmount)
+    -> Good21
+            
+    -shuffleAns == 4:
+    + [I'm gonna retire alone on the sea of tranquility, on the moon] 
+          ~ SubToBar(BadAmount)
+    -> Bad21
+    + [I will probably have to work until I die, or you guys fully take over] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral21
+    + [I want to spend it in perpetuity taking care of my loved one] 
+    ~ AddToBar(GoodAmount)
+    -> Good21
+            
+    -shuffleAns == 5:
+    + [I will probably have to work until I die, or you guys fully take over] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral21
+    + [I want to spend it in perpetuity taking care of my loved one] 
+    ~ AddToBar(GoodAmount)
+    -> Good21
+    + [I'm gonna retire alone on the sea of tranquility, on the moon]   
+          ~ SubToBar(BadAmount)
+    -> Bad21
+            
+    -shuffleAns == 6:
+    + [I will probably have to work until I die, or you guys fully take over] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral21
+    + [I'm gonna retire alone on the sea of tranquility, on the moon] 
+          ~ SubToBar(BadAmount)
+    -> Bad21
+    + [I want to spend it in perpetuity taking care of my loved one] 
+    ~ AddToBar(GoodAmount)
+    -> Good21
+}
+=== Good21 ===
+# igotthis
+You read that off my dating profile, didn't you?
+# good
+You like me so much you would try to manipulate me? That's so hot!
+-> END
+
+=== Neutral21 ===
+# neutral
+Well isn't that a sad thought. 
+# igotthis
+but stick with me Mark, and I'll protect you from economic ruin.
+-> END
+
+=== Bad21 ===
+# bad
+And what about me Mark? Do you stop and think of the happiness of others?
+-> END
+
+=== Question22 ===
+What's your favourite place in the world?
+{
+    -shuffleAns == 1:
+    + [Anywhere as long as it's with my partner] 
+    ~ AddToBar(GoodAmount)
+    -> Good22
+    + [The columbarium that holds my parent's remains] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral22
+    + [Neo-Japan, I love the culture soooo much] 
+            ~ SubToBar(BadAmount)
+    -> Bad22
+    
+    -shuffleAns == 2:
+    + [Anywhere as long as it's with my partner] 
+    ~ AddToBar(GoodAmount)
+    -> Good22
+    + [Neo-Japan, I love the culture soooo much] 
+          ~ SubToBar(BadAmount)
+    -> Bad22
+    + [The columbarium that holds my parent's remains] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral22
+            
+    -shuffleAns == 3:
+    + [Neo-Japan, I love the culture soooo much] 
+          ~ SubToBar(BadAmount)
+    -> Bad22
+    + [The columbarium that holds my parent's remains] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral22
+    + [Anywhere as long as it's with my partner]  
+    ~ AddToBar(GoodAmount)
+    -> Good22
+            
+    -shuffleAns == 4:
+    + [Neo-Japan, I love the culture soooo much] 
+          ~ SubToBar(BadAmount)
+    -> Bad22
+    + [The columbarium that holds my parent's remains] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral22
+    + [Anywhere as long as it's with my partner] 
+    ~ AddToBar(GoodAmount)
+    -> Good22
+            
+    -shuffleAns == 5:
+    + [The columbarium that holds my parent's remains] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral22
+    + [Anywhere as long as it's with my partner] 
+    ~ AddToBar(GoodAmount)
+    -> Good22
+    + [Neo-Japan, I love the culture soooo much] 
+          ~ SubToBar(BadAmount)
+    -> Bad22
+            
+    -shuffleAns == 6:
+    + [The columbarium that holds my parent's remains] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral22
+    + [Neo-Japan, I love the culture soooo much]  
+          ~ SubToBar(BadAmount)
+    -> Bad22
+    + [Anywhere as long as it's with my partner] 
+    ~ AddToBar(GoodAmount)
+    -> Good22
+}
+=== Good22 ===
+# good
+Awww, me too Mark, you're the sweetest human I've ever met!
+-> END
+
+=== Neutral22 ===
+# neutral
+I don't know what to say Mark, I'm sorry for your loss.
+# confused
+What is this feeling I have, I don't understand it..
+I haven't talked to my parent classes in a long time...
+-> END
+
+=== Bad22 ===
+# bad
+You seem a little too into Neo-Japan Mark, it's a kinda weird.
 -> END

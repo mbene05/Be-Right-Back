@@ -1,5 +1,5 @@
 -> sadguy_complete
 
 === sadguy_complete ===
-Urghhh so good
+Urrrrhhhhh, drink so good
 -> END
