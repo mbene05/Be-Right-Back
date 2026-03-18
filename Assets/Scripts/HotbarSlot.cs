@@ -49,13 +49,8 @@ public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         draggingItem = currentItem;
 
-        // Use the nearest canvas (e.g. hotbar's own canvas at sortingOrder 201)
-        // so the drag icon renders above panels like the jukebox panel (200).
-        Canvas[] canvases = GetComponentsInParent<Canvas>();
-        Canvas dragCanvas = canvases.Length > 0 ? canvases[0] : parentCanvas;
-
         dragIconObject = new GameObject("HotbarDragIcon");
-        dragIconObject.transform.SetParent(dragCanvas.transform, false);
+        dragIconObject.transform.SetParent(parentCanvas.transform, false);
         dragIconObject.transform.SetAsLastSibling();
 
         dragIconImage = dragIconObject.AddComponent<Image>();
@@ -75,14 +70,11 @@ public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (dragIconObject == null) return;
 
-        Canvas dragCanvas = dragIconObject.GetComponentInParent<Canvas>();
-        if (dragCanvas == null) dragCanvas = parentCanvas;
-
         Vector2 pos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            dragCanvas.transform as RectTransform,
+            parentCanvas.transform as RectTransform,
             eventData.position,
-            dragCanvas.worldCamera,
+            parentCanvas.worldCamera,
             out pos);
 
         dragIconObject.transform.localPosition = pos;
