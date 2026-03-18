@@ -17,7 +17,7 @@ public class TilePuzzleTrigger : MonoBehaviour
         if (RoomSwitcher.IsTransitioning) return;
         if (isOpen == false && done == false)
         {
-           
+            Arrow.SetActive(false);
             isOpen = true;
             mainCamera.transform.position = new Vector3(tilePuzzleRoom.transform.position.x, tilePuzzleRoom.transform.position.y, cameraZPosition);
         }
@@ -27,6 +27,7 @@ public class TilePuzzleTrigger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isOpen == true)
         {
+            Arrow.SetActive(true);
             isOpen = false;
             mainCamera.transform.position = new Vector3(tilereturnRoom.transform.position.x, tilereturnRoom.transform.position.y, cameraZPosition);
         }

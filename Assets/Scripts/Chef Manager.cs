@@ -49,11 +49,6 @@ public class ChefManager : MonoBehaviour
                     talked = true;
                 }
 
-                else if (logsCollected == 1)
-                {
-                    dialogueManager.StartDialogue(myInkJSON6, ChefVoice);
-                    talked = true;
-                }
 
                 else 
                 {
@@ -65,18 +60,23 @@ public class ChefManager : MonoBehaviour
 
             else
             {
-                if (logsCollected == 2)
+                if (logsCollected == 2 && Giventhing == true)
                 {
                     dialogueManager.StartDialogue(myInkJSON4, ChefVoice);
+                }
+
+                if (logsCollected == 1)
+                {
+                    dialogueManager.StartDialogue(myInkJSON6, ChefVoice);
                 }
                 
                 if (logsCollected == 2 && Giventhing == false)
                 {
                     dialogueManager.StartDialogue(myInkJSON3, ChefVoice);
-                    Giventhing = true;
+                    
                 }
 
-                else
+                if (logsCollected == 0)
                 {
                     dialogueManager.StartDialogue(myInkJSON2, ChefVoice);
                 }
