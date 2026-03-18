@@ -16,7 +16,10 @@ public class DialogueManager : MonoBehaviour
     public Transform choicesContainer;
     public GameObject choiceButtonPrefab;
     public GameObject Wrench;
+    public GameObject SadGuy;
+    public Sprite drunkguy_no_wrench;
     public GameObject Needle;
+    
     public Bar bar;
 
     public string endSceneName = "WinScreen"; 
@@ -274,6 +277,8 @@ void PlayResponseSound(AudioClip clip)
             });
               story.BindExternalFunction("EndedGame", (int didyouend) => {
                 Wrench.SetActive(true);
+                SpriteRenderer sr = SadGuy.GetComponent<SpriteRenderer>();
+                sr.sprite = drunkguy_no_wrench;
             });
              story.BindExternalFunction("giveLog", (int givenLog) => {
                 Keycard.SetActive(true);

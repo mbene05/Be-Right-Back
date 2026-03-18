@@ -11,8 +11,8 @@ public class Bar : MonoBehaviour
     public Image bar;
     public float maxTime;
     public string endSceneName = "DeathScreen"; 
-    
-    private float currentTime;
+    public float percent;
+    public float currentTime;
 
     private bool hasEnded = false;
     private bool isTimerRunning = false;
@@ -23,6 +23,8 @@ public class Bar : MonoBehaviour
     {
         bar.fillAmount = 1f;
         currentTime = maxTime;
+        
+        percent = currentTime / maxTime;
 
         StartCoroutine(StartTimerDelay()); //start delay
 
@@ -30,7 +32,8 @@ public class Bar : MonoBehaviour
 
     void Update()
     {
-
+        percent = currentTime / maxTime;
+        UpdateBarColor();
 
         if (currentTime > 0 && isTimerRunning)
         {
@@ -57,6 +60,8 @@ public class Bar : MonoBehaviour
         if (currentTime > maxTime)
             currentTime = maxTime;
 
+        UpdateBarColor();
+
         bar.fillAmount = currentTime / maxTime;
         Debug.Log("Bar increased by " + amount + " Current: " + currentTime);
     }
@@ -67,6 +72,8 @@ public class Bar : MonoBehaviour
         if (currentTime < 0)
             currentTime = 0;
 
+        UpdateBarColor();
+
         bar.fillAmount = currentTime / maxTime;
         Debug.Log("Bar reduced by " + amount + " Current: " + currentTime);
     }
@@ -76,6 +83,24 @@ public class Bar : MonoBehaviour
     {
         Debug.Log("Time's up! Loading end scene...");
         SceneManager.LoadScene(endSceneName);
+    }
+
+    void UpdateBarColor()
+    {
+        
+
+        if (percent <= 0.2f)
+        {
+            bar.color = Color.red;
+        }
+        else if (percent <= 0.5f)
+        {
+            bar.color = Color.yellow;
+        }
+        else
+        {
+            bar.color = Color.green; // optional default
+        }
     }
     
 
