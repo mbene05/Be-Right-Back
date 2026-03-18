@@ -215,7 +215,7 @@ public class RoomSwitcher : MonoBehaviour
 
             case 6:
                 DialogueManager.hasChanged = false;
-                backgroundAmbiance.volume = 0.02f;
+                backgroundAmbiance.volume = 0.03f;
                 dinerMusic.volume = 0.02f;
                 break;
 

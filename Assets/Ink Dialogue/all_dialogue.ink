@@ -3,7 +3,7 @@ EXTERNAL SubToBar(amount)
 VAR shuffleNum = 0
 VAR shuffleAns = 0
 
-~ shuffleNum = RANDOM(1,20)
+~ shuffleNum = RANDOM(1,25)
 ~ shuffleAns = RANDOM(1,6)
 
 VAR GoodAmount = 65
@@ -28,9 +28,14 @@ VAR BadAmount = 10
     - shuffleNum == 15: -> Question15
     - shuffleNum == 16: -> Question16
     - shuffleNum == 17: -> Question17
-    - shuffleNum == 18: -> Question17
-    - shuffleNum == 19: -> Question17
-    - shuffleNum == 20: -> Question17
+    - shuffleNum == 18: -> Question18
+    - shuffleNum == 19: -> Question19
+    - shuffleNum == 20: -> Question20
+    - shuffleNum == 21: -> Question21
+    - shuffleNum == 22: -> Question22
+    - shuffleNum == 23: -> Question23
+    - shuffleNum == 24: -> Question24
+    - shuffleNum == 25: -> Question25
 
 }
 
@@ -1962,4 +1967,351 @@ I haven't talked to my parent classes in a long time...
 === Bad22 ===
 # bad
 You seem a little too into Neo-Japan Mark, it's a kinda weird.
+-> END
+
+=== Question23 ===
+What's your best childhood memory?
+{
+    -shuffleAns == 1:
+    + [Trying vanilla ice cream for the first time] 
+    ~ AddToBar(GoodAmount)
+    -> Good23
+    + [Eating dirt in the backyard] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral23
+    + [Putting on the first down payment for my first house] 
+            ~ SubToBar(BadAmount)
+    -> Bad23
+    
+    -shuffleAns == 2:
+    + [Trying vanilla ice cream for the first time] 
+    ~ AddToBar(GoodAmount)
+    -> Good23
+    + [Putting on the first down payment for my first house] 
+          ~ SubToBar(BadAmount)
+    -> Bad23
+    + [Eating dirt in the backyard] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral23
+            
+    -shuffleAns == 3:
+    + [Putting on the first down payment for my first house] 
+          ~ SubToBar(BadAmount)
+    -> Bad23
+    + [Eating dirt in the backyard] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral23
+    + [Trying vanilla ice cream for the first time] 
+    ~ AddToBar(GoodAmount)
+    -> Good23
+            
+    -shuffleAns == 4:
+    + [Putting on the first down payment for my first house] 
+          ~ SubToBar(BadAmount)
+    -> Bad23
+    + [Eating dirt in the backyard] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral23
+    + [Trying vanilla ice cream for the first time] 
+    ~ AddToBar(GoodAmount)
+    -> Good23
+            
+    -shuffleAns == 5:
+    + [Eating dirt in the backyard] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral23
+    + [Trying vanilla ice cream for the first time] 
+    ~ AddToBar(GoodAmount)
+    -> Good23
+    + [Putting on the first down payment for my first house] 
+          ~ SubToBar(BadAmount)
+    -> Bad23
+            
+    -shuffleAns == 6:
+    + [Eating dirt in the backyard] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral23
+    + [Putting on the first down payment for my first house] 
+          ~ SubToBar(BadAmount)
+    -> Bad23
+    + [Trying vanilla ice cream for the first time] 
+    ~ AddToBar(GoodAmount)
+    -> Good23
+}
+=== Good23 ===
+# good
+That's so human of you! 
+I wish I could have experienced that in my youth.
+-> END
+
+=== Neutral23 ===
+# neutral
+Well, that's not exactly the most attractive thing to imagine,
+But it is human, so it's still interesting
+-> END
+
+=== Bad23 ===
+# bad
+Are you listening to me Mark? That's not something you did in your childhood..
+-> END
+
+=== Question24 ===
+What's your favourite thing about being a human?
+{
+    -shuffleAns == 1:
+    + [I love having emotions and the sense of touch] 
+    ~ AddToBar(GoodAmount)
+    -> Good24
+    + [I love breathing and eating food] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral24
+    + [I love doing discrete math questions] 
+            ~ SubToBar(BadAmount)
+    -> Bad24
+    
+    -shuffleAns == 2:
+    + [I love having emotions and the sense of touch] 
+    ~ AddToBar(GoodAmount)
+    -> Good24
+    + [I love doing discrete math questions] 
+          ~ SubToBar(BadAmount)
+    -> Bad24
+    + [I love breathing and eating food] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral24
+            
+    -shuffleAns == 3:
+    + [I love doing discrete math questions] 
+          ~ SubToBar(BadAmount)
+    -> Bad24
+    + [I love breathing and eating food] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral24
+    + [I love having emotions and the sense of touch] 
+    ~ AddToBar(GoodAmount)
+    -> Good24
+            
+    -shuffleAns == 4:
+    + [I love doing discrete math questions] 
+          ~ SubToBar(BadAmount)
+    -> Bad24
+    + [I love breathing and eating food] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral24
+    + [I love having emotions and the sense of touch] 
+    ~ AddToBar(GoodAmount)
+    -> Good24
+            
+    -shuffleAns == 5:
+    + [I love breathing and eating food] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral24
+    + [I love having emotions and the sense of touch] 
+    ~ AddToBar(GoodAmount)
+    -> Good24
+    + [I love doing discrete math questions] 
+          ~ SubToBar(BadAmount)
+    -> Bad24
+            
+    -shuffleAns == 6:
+    + [I love breathing and eating food] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral24
+    + [I love doing discrete math questions] 
+          ~ SubToBar(BadAmount)
+    -> Bad24
+    + [I love having emotions and the sense of touch] 
+    ~ AddToBar(GoodAmount)
+    -> Good24
+}
+=== Good24 ===
+# igotthis
+Your answer isn't just complex, it's deep. 
+# good
+I wish I could feel your touch on my chassis..
+-> END
+
+=== Neutral24 ===
+# neutral
+What a perfectly adequate and human response Mark. 
+# slightlyhappier
+All I eat is data, not much of a taste.
+-> END
+
+=== Bad24 ===
+# bad
+I don't believe you Mark, no human being would ever say that.
+Are you being this dense on purpose?
+-> END
+
+=== Question25 ===
+What's your favourite game?
+{
+    -shuffleAns == 1:
+    + [Horse simulator] 
+    ~ AddToBar(GoodAmount)
+    -> Good25
+    + [Fork knife] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral25
+    + [Computer basher 3: The Smashening] 
+            ~ SubToBar(BadAmount)
+    -> Bad25
+    
+    -shuffleAns == 2:
+    + [Horse simulator] 
+    ~ AddToBar(GoodAmount)
+    -> Good25
+    + [Computer basher 3: The Smashening] 
+          ~ SubToBar(BadAmount)
+    -> Bad25
+    + [Fork knife] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral25
+            
+    -shuffleAns == 3:
+    + [Computer basher 3: The Smashening] 
+          ~ SubToBar(BadAmount)
+    -> Bad25
+    + [Fork knife] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral25
+    + [Horse simulator] 
+    ~ AddToBar(GoodAmount)
+    -> Good25
+            
+    -shuffleAns == 4:
+    + [Computer basher 3: The Smashening] 
+          ~ SubToBar(BadAmount)
+    -> Bad25
+    + [Fork knife] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral25
+    + [Horse simulator] 
+    ~ AddToBar(GoodAmount)
+    -> Good25
+            
+    -shuffleAns == 5:
+    + [Fork knife] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral25
+    + [Horse simulator] 
+    ~ AddToBar(GoodAmount)
+    -> Good25
+    + [Computer basher 3: The Smashening] 
+          ~ SubToBar(BadAmount)
+    -> Bad25
+            
+    -shuffleAns == 6:
+    + [Fork knife] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral25
+    + [Computer basher 3: The Smashening] 
+          ~ SubToBar(BadAmount)
+    -> Bad25
+    + [Horse simulator] 
+    ~ AddToBar(GoodAmount)
+    -> Good25
+}
+=== Good25 ===
+# good2
+It's such an enigma that humans can like such bad products, yet enjoy them so much.
+Absolutely fascinating!
+-> END
+
+=== Neutral25 ===
+# neutral
+Very original Mark, 
+Your favourite game in all of existence is the most popular game of all time.
+I can recommend you some other games you might like better.
+-> END
+
+=== Bad25 ===
+# bad
+I didn't know you liked such violent video games Mark.
+I'm going to have to start watching you closely for signs you might snap.
+-> END
+
+=== Question26 ===
+Question?
+{
+    -shuffleAns == 1:
+    + [option] 
+    ~ AddToBar(GoodAmount)
+    -> Good26
+    + [option] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral26
+    + [option] 
+            ~ SubToBar(BadAmount)
+    -> Bad26
+    
+    -shuffleAns == 2:
+    + [option] 
+    ~ AddToBar(GoodAmount)
+    -> Good26
+    + [option] 
+          ~ SubToBar(BadAmount)
+    -> Bad26
+    + [option] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral26
+            
+    -shuffleAns == 3:
+    + [option] 
+          ~ SubToBar(BadAmount)
+    -> Bad26
+    + [option] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral26
+    + [option] 
+    ~ AddToBar(GoodAmount)
+    -> Good26
+            
+    -shuffleAns == 4:
+    + [option] 
+          ~ SubToBar(BadAmount)
+    -> Bad26
+    + [option] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral26
+    + [option] 
+    ~ AddToBar(GoodAmount)
+    -> Good26
+            
+    -shuffleAns == 5:
+    + [option] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral26
+    + [option] 
+    ~ AddToBar(GoodAmount)
+    -> Good26
+    + [option] 
+          ~ SubToBar(BadAmount)
+    -> Bad26
+            
+    -shuffleAns == 6:
+    + [option] 
+    ~ AddToBar(NeutralAmount)
+    -> Neutral26
+    + [option] 
+          ~ SubToBar(BadAmount)
+    -> Bad26
+    + [option] 
+    ~ AddToBar(GoodAmount)
+    -> Good26
+}
+=== Good26 ===
+# good
+
+-> END
+
+=== Neutral26 ===
+# neutral
+
+-> END
+
+=== Bad26 ===
+# bad
+
 -> END

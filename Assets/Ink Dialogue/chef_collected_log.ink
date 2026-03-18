@@ -15,6 +15,6 @@ conFOS - Welcome back Matt, you left that key in the coatroom.
 I do!
 Here's my employee keycard to get into the coat room.
 Once you get my key, you're welcome to use to it to get into the prep area.
-I'm so grateful to you for getting my connie back!
+I'm so grateful to you for getting my Connie back!
 ~ giveLog(1)
 -> END
