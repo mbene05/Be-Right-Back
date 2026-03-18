@@ -18,6 +18,7 @@ public class LockedRoom : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         if (hotbar.HasItem(requiredItemName))
         {

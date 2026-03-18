@@ -25,6 +25,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         if (isLimitedPickup)
         {

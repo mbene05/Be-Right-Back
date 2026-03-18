@@ -26,7 +26,7 @@ public class RoomSwitcher : MonoBehaviour
     public float fadeDuration = 0.5f;
 
     public int currentRoom = 1;
-    public bool isTransitioning = false;
+    public static bool IsTransitioning = false;
 
     [Header("Audio")]
     private Coroutine bathroomEventRoutine;
@@ -140,49 +140,49 @@ public class RoomSwitcher : MonoBehaviour
 
     public void GoToRoom(int roomNumber)
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(roomNumber));
     }
 
     public void ShowRoom1()
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(1));
     }
 
     public void ShowRoom2()
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(2));
     }
 
     public void ShowRoom3()
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(3));
     }
 
     public void ShowKitchenBackroom()
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(6));
     }
 
     public void ShowCoatRoom()
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(7));
     }
 
     public void ShowFoyer()
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(8));
     }
 
     public void ShowBar()
     {
-        if (!isTransitioning)
+        if (!IsTransitioning)
             StartCoroutine(TransitionToRoom(4));
     }
 
@@ -250,7 +250,7 @@ public class RoomSwitcher : MonoBehaviour
 
     IEnumerator TransitionToRoom(int roomNumber)
     {
-        isTransitioning = true;
+        IsTransitioning = true;
 
         audioSource.PlayOneShot(walkingSound);
 
@@ -384,7 +384,7 @@ public class RoomSwitcher : MonoBehaviour
 
         yield return StartCoroutine(FadeFromBlack());
 
-        isTransitioning = false;
+        IsTransitioning = false;
     }
 
     IEnumerator FadeToBlack()

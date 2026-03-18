@@ -21,10 +21,10 @@ public class DialogueManager : MonoBehaviour
 
     public string endSceneName = "WinScreen"; 
 
-    private MapManager mapManager;
     public static bool choicesActive = false;
     public static bool dialogueActive = false;
     public static bool hasChanged = false;
+    public static bool IsOpen = false;
 
     private Story story;
     private Coroutine typingCoroutine;
@@ -65,7 +65,6 @@ public class DialogueManager : MonoBehaviour
         voiceSource.loop = true;
 
         charlieRenderer = GameObject.Find("charlie color neutral_0").GetComponent<SpriteRenderer>();
-        mapManager = FindObjectOfType<MapManager>();
 
     }
 
@@ -73,7 +72,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dialogueStarted) return;
 
-        if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0) && !MapManager.IsOpen)
+        if (!choicesContainer.gameObject.activeSelf && Input.GetMouseButtonDown(0) && !MapManager.IsOpen && !RoomSwitcher.IsTransitioning)
         {
             if (isTyping)
             {
@@ -238,7 +237,6 @@ void PlayResponseSound(AudioClip clip)
         choicesActive = true;
         dialogueText.text = "";
 
-        mapManager.toggleButton.interactable = false; // Disable the map toggle button while typing
 
 
         foreach (char letter in line)
@@ -265,6 +263,7 @@ void PlayResponseSound(AudioClip clip)
         voiceSource.clip = voiceClip;
 
         dialogueStarted = true;
+        IsOpen = true;
         dialoguePanel.SetActive(true);
          // Assign the new Ink JSON
          inkJSON = newInkJSON;
@@ -307,6 +306,7 @@ void PlayResponseSound(AudioClip clip)
         voiceSource.clip = voiceClip;
 
         dialogueStarted = true;
+        IsOpen = true;
         dialoguePanel.SetActive(true);
 
         // Assign the new Ink JSON
@@ -358,10 +358,10 @@ void PlayResponseSound(AudioClip clip)
     void EndDialogue()
     {
         dialoguePanel.SetActive(false);
-        dialogueStarted = false; 
+        dialogueStarted = false;
+        IsOpen = false;
         isTyping = false;
         choicesContainer.gameObject.SetActive(false);
-        mapManager.toggleButton.interactable = true; 
 
     }
 

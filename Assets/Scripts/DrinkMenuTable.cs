@@ -36,6 +36,7 @@ public class DrinkMenu : MonoBehaviour
 
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         HasClicked = true;
         openTimer = 0;

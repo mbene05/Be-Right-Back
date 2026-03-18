@@ -21,6 +21,7 @@ public class SinkClogged : MonoBehaviour
         if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         dialogueManager.StartDialogue(myInkJSON, null);
     }
