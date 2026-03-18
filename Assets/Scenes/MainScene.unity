@@ -7677,7 +7677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RecipeTable
   recipePanel: {fileID: 54960455}
   HasClicked: 0
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &344389637
 SpriteRenderer:
   serializedVersion: 2
@@ -14169,7 +14169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &727822605
 Transform:
   m_ObjectHideFlags: 0
@@ -14232,7 +14232,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 1bf7724caf05d6f4bbf96eb75cbcb493, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
