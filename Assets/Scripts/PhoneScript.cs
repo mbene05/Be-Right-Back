@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class PhoneScript : MonoBehaviour
 {
       public GameObject menuPanel;
+      public GameObject Arrow;
     public DialogueManager dialogueManager;
     public bool HasClicked = false;
 
@@ -47,6 +48,7 @@ public class PhoneScript : MonoBehaviour
         Debug.Log("Menu object activated");
         // Toggle the menu on click
         menuPanel.SetActive(true);
+        Arrow.SetActive(true);
     }
 
     void Awake()

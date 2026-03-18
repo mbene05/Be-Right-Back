@@ -10,6 +10,7 @@ public class PhoneScreen : MonoBehaviour
     public GameObject page1;
     public GameObject page2;
     public int timer;
+    public GameObject phone;
     void Start()
     {
         timer = 0;
@@ -31,16 +32,13 @@ public class PhoneScreen : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (timer >= 30)
+            if (timer >= 10)
             {
-                if (hit.collider.gameObject != gameObject)
+                if (hit.collider.gameObject == gameObject)
                 {
-                    Debug.Log("Click!!!");
+                     ClosePages();
                 }
-                else
-                {
-                    ClosePages();
-                }
+           
             }
         }
         else
@@ -51,13 +49,14 @@ public class PhoneScreen : MonoBehaviour
     }
 }
 
-void ClosePages()
-{
-    Debug.Log("NO work");
-    timer = 0;
-    arrow1.SetActive(false);
-    page1.SetActive(false);
-    arrow2.SetActive(false);
-    page2.SetActive(false);
-}
+    void ClosePages()
+    {
+        phone.GetComponent<PhoneScript>().HasClicked = false;
+        Debug.Log("NO work");
+        timer = 0;
+        arrow1.SetActive(false);
+        page1.SetActive(false);
+        arrow2.SetActive(false);
+        page2.SetActive(false);
+    }
 }

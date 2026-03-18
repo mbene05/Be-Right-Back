@@ -19,11 +19,4 @@ public class PhoneClicked : MonoBehaviour
         page2.SetActive(true);
     }
 
-    void OnDisable()
-    {
-        arrow1.SetActive(false);
-        arrow2.SetActive(false);
-        page1.SetActive(false);
-        page2.SetActive(false);
-    }
 }

@@ -8,6 +8,7 @@ public class DateManager : MonoBehaviour
     public TextAsset myInkJSON2;
     public TextAsset myInkJSON3;
     public bool saidOp = false;
+    public GameObject phone;
 
     public AudioClip interactSound;
     public GameObject TableMenu;
@@ -41,6 +42,7 @@ public class DateManager : MonoBehaviour
     void OnMouseDown()
     {
         if (TableMenu.GetComponent<DrinkMenuTable>().HasClicked == true) return;
+        if (phone.GetComponent<PhoneScript>().HasClicked == true) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
