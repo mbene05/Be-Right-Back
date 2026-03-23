@@ -170,7 +170,7 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator DelayedFace()
     {
-        yield return new WaitForSeconds(15); //important for delay very very important do not forget
+        yield return new WaitForSeconds(12); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
         Debug.Log("Delayed face back to normal");
 

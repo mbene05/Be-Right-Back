@@ -72,7 +72,10 @@ public class DateManager : MonoBehaviour
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
+            DialogueManager.dialogueActive = true;
             dialogueManager.StartDialogue(myInkJSON, charlieVoice);
+            DialogueManager.dialogueActive = false;
+
         }
     }
 
