@@ -16803,6 +16803,8 @@ MonoBehaviour:
   myInkJSON4: {fileID: 4900000, guid: 48aef9ad4fa3c164983f0724ea5da635, type: 3}
   myInkJSON5: {fileID: 4900000, guid: c129dabeba3d66a43a80b0f2a436d3c5, type: 3}
   myInkJSON6: {fileID: 4900000, guid: 5524222f578d67c4589808a5814b87c4, type: 3}
+  wrongDrink: {fileID: 4900000, guid: e50eb3341e703eb4e8c10f129f7c8675, type: 3}
+  angryGuy: {fileID: 4900000, guid: 2f2658024efbda1459bacae73815ef58, type: 3}
   GivenDrink: 0
   Hotbar: {fileID: 4928864647905721170}
   Bartender: {fileID: 1349623686}

@@ -9,11 +9,12 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     public TextAsset myInkJSON; 
     public TextAsset myInkJSON2; 
     public TextAsset myInkJSON3;
-    public TextAsset myInkJSON4;
-     public TextAsset myInkJSON5;
-
+    public TextAsset myInkJSON5;
     public TextAsset myInkJSON6;
-     public bool GivenDrink = false;
+    public TextAsset wrongDrink;
+    public TextAsset angryGuy;
+
+    public bool GivenDrink = false;
 
 
     public GameObject Hotbar;
@@ -72,7 +73,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
             else
             {
-                dialogueManager.StartDialogue(myInkJSON4, sadGuyVoice);
+                dialogueManager.StartDialogue(myInkJSON3, sadGuyVoice);
             }
           
         }
@@ -96,26 +97,27 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
             return false;
 
 
-        if (hasReceivedDrink)
-            return false;
 
         highlighted.SetActive(false);
 
-        hasReceivedDrink = true;
 
         BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
         selectedBartender.pickUpDrink = false;
 
-        if (rightDrink)
+        if (!rightDrink)
+        {
+            dialogueManager.StartDialogue(wrongDrink, sadGuyVoice);
+            hasReceivedDrink = false;
+            myInkJSON = angryGuy;
+        }
+
+        else if (rightDrink)
         {
             dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
             GivenDrink = true;
 
         }
-        else if (!rightDrink)
-        {
-            Bar.LoadEndScene();
-        }
+
 
 
 
