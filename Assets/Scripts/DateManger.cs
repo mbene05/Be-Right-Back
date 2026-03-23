@@ -72,7 +72,6 @@ public class DateManager : MonoBehaviour
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
-            DialogueManager.dialogueActive = false;
             dialogueManager.StartDialogue(myInkJSON, charlieVoice);
         }
     }
@@ -80,6 +79,8 @@ public class DateManager : MonoBehaviour
     public void UseAbility()
     {
         nextAvailableTime = Time.time + cooldownDuration;
+
+        DialogueManager.dialogueActive = false;
 
         StartCoroutine(ReturnToNormalFace());
     }
