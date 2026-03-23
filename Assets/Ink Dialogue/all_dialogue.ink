@@ -8,7 +8,7 @@ VAR shuffleAns = 0
 
 VAR GoodAmount = 65
 VAR NeutralAmount = 30
-VAR BadAmount = 10
+VAR BadAmount = 5
 
 {
     - shuffleNum == 1: -> Question1
