@@ -2,6 +2,6 @@
 
 === talk_again ===
 What are you still doing here?
-Do you want the wrench or not?!
-Stop fooling around and get my drink man.
+Nothing synthetic got it?
+Stop fooling around and get my drink.
 -> END

@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[[{"->":"talk_again"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"talk_again":["^What are you still doing here?","\n","^Do you want the wrench or not?!","\n","^Stop fooling around and get my drink man.","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[[{"->":"talk_again"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"talk_again":["^What are you still doing here?","\n","^Nothing synthetic got it?","\n","^Stop fooling around and get my drink.","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}

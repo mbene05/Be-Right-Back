@@ -584,7 +584,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.058
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11771,7 +11771,7 @@ MonoBehaviour:
   TableMenu: {fileID: 493312494}
   charlieVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
   charlieNormal: {fileID: 0}
-  cooldownDuration: 25
+  cooldownDuration: 15
 --- !u!61 &546114532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24446,7 +24446,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.059
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31803,7 +31803,7 @@ Transform:
   m_GameObject: {fileID: 1445086929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77.86, y: 1.4, z: 0}
+  m_LocalPosition: {x: 77.33, y: 1.4, z: 0}
   m_LocalScale: {x: 0.301703, y: 0.24398038, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36134,7 +36134,7 @@ Transform:
   m_GameObject: {fileID: 1626362011}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 78.36, y: -0.8, z: 0}
+  m_LocalPosition: {x: 73.07, y: -2.42, z: 0}
   m_LocalScale: {x: 0.91, y: 0.91, z: 0.91}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -36943,7 +36943,7 @@ Transform:
   m_GameObject: {fileID: 1702342037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.021100158, y: -0.09299999, z: -0.04}
+  m_LocalPosition: {x: -0.0613, y: -0.085, z: -0.04}
   m_LocalScale: {x: 0.005992254, y: 0.013054999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
