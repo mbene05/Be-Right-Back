@@ -55,6 +55,8 @@ public class DateManager : MonoBehaviour
             Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
 
             dialogueManager.LoadingDialogue(myInkJSON3, charlieVoice);
+            DialogueManager.hasChanged = false;
+            DialogueManager.dialogueActive = true;
 
             return;
         }
@@ -70,7 +72,7 @@ public class DateManager : MonoBehaviour
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
-
+            DialogueManager.dialogueActive = false;
             dialogueManager.StartDialogue(myInkJSON, charlieVoice);
         }
     }

@@ -56,7 +56,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         if (MazeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
-
+        DialogueManager.hasChanged = false;
         if (GivenDrink == true)
         {
             dialogueManager.StartDialogue(myInkJSON5, sadGuyVoice);

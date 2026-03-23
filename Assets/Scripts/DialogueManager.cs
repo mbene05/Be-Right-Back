@@ -157,7 +157,6 @@ public class DialogueManager : MonoBehaviour
             {
                 charlieRenderer.sprite = CharlieLoading;
                 Debug.Log("Changed to loading face");
-                dialogueActive = true;
             }
 
             hasChanged = true;
@@ -166,12 +165,12 @@ public class DialogueManager : MonoBehaviour
                 StartCoroutine(DelayedFace());
             }
 
-            dialogueActive = false;
+
         }
     }
     IEnumerator DelayedFace()
     {
-        yield return new WaitForSeconds(25); //important for delay very very important do not forget
+        yield return new WaitForSeconds(15); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
         Debug.Log("Delayed face back to normal");
 

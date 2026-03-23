@@ -37,6 +37,7 @@ public class ChefManager : MonoBehaviour
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
+        DialogueManager.hasChanged = false;
 
         if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
