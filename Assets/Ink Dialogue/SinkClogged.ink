@@ -1,6 +1,7 @@
--> sink_no_wrench
-=== sink_no_wrench ===
+-> sink_clogged
+=== sink_clogged ===
 This sink is backed up.
-I think the Chef mentioned something about the pipes leading to the Coat Room.
+I could ask the chef about what's clogging it.
+The pipes seems to be leading towards the Coat Room.
 I should check it out.
 -> END

@@ -22,12 +22,14 @@ But please stay and have dinner with me, I think you'll like it!
 I should probably warn you, I need constant human interaction or I might malfunction
 And if that happens, I'll short circuit and explode! Haha
 # igotthis
-I've exploited your smartglasses to show you my Human Interaction Lenience Level..
-it will show you how close I am to malfunctioning.
+Don't worry Mark, I've exploited your smart-contacts..
+to show you my Human Interaction Lenience Level..
+# normal
+it will let you know how close I am to malfunctioning.
 # good
 Anyways, what should we talk about first, I'm so nervous >_<
 # slightlyhappy
-Oh! Did you see the broken jukebox at the bar? It's sad to see another machine in trouble
+Oh! Did you see the broken jukebox at the bar? It's sad to see a machine in trouble
 My research indicates that it has a lot of my favourite songs.. 
 # neutral
 Too bad it isn't working

@@ -4,7 +4,7 @@ EXTERNAL giveLog2(givenLog2)
 === chef_no_log ===
 Hello there! Welcome to the kitchen.
 I'm the head and only chef, as the kitchen is completely automated.
-Even I'm not supposed to be in the food prep area,
+Even I'm not supposed to be in the auto-kitchen area at all!
 I only got this job because my AI assistant helped me get it...
 I don't have any real experience in the kitchen.
 I'm just here because I look like a sterotypical chef!
