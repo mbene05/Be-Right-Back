@@ -35,7 +35,6 @@ public class RoomSwitcher : MonoBehaviour
     public AudioClip Ambiance;
     public AudioClip music;
     public AudioClip musicEvent;
-    public AudioClip bathroomEvent;
     public AudioClip glassClink;
     public AudioClip conveyorBelt;
     public AudioClip robotArmMovement;
@@ -128,15 +127,6 @@ public class RoomSwitcher : MonoBehaviour
             mainCamera.transform.position = new Vector3(foyer.transform.position.x, foyer.transform.position.y, cameraZPosition);
         }
 
-        if (bathroomEventRoutine != null && currentRoom != 2)
-        {
-            StopCoroutine(bathroomEventRoutine);
-            bathroomEventRoutine = null;
-        }
-        if (currentRoom == 2 && bathroomEventRoutine == null)
-        {
-            bathroomEventRoutine = StartCoroutine(BathroomEventLoop());
-        }
     }
 
     public void GoToRoom(int roomNumber)
@@ -228,20 +218,6 @@ public class RoomSwitcher : MonoBehaviour
         }
     }
 
-    IEnumerator BathroomEventLoop()
-    {
-        while (currentRoom == 2)
-        {
-            float wait = Random.Range(9, 16);
-            yield return new WaitForSeconds(wait);
-
-            if (currentRoom != 2) break;
-            events.volume = 0.15f;
-            events.PlayOneShot(bathroomEvent);
-        }
-
-        bathroomEventRoutine = null;
-    }
 
     IEnumerator TransitionToRoom(int roomNumber)
     {
