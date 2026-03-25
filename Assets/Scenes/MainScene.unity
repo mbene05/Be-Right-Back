@@ -2148,6 +2148,7 @@ GameObject:
   - component: {fileID: 102300633}
   - component: {fileID: 102300632}
   - component: {fileID: 102300631}
+  - component: {fileID: 102300635}
   m_Layer: 0
   m_Name: PickUp_chip
   m_TagString: Untagged
@@ -2760,6 +2761,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &102300635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102300629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
+  dialogueManager: {fileID: 1683366673}
+  highlighted: {fileID: 1773141470}
 --- !u!1 &124415450
 GameObject:
   m_ObjectHideFlags: 0
@@ -13934,6 +13949,39 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &685313016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685313017}
+  m_Layer: 0
+  m_Name: Pipe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &685313017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685313016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1765050135}
+  - {fileID: 1876017663}
+  m_Father: {fileID: 1540643732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697127484
 GameObject:
   m_ObjectHideFlags: 0
@@ -24455,7 +24503,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1120723982}
   - component: {fileID: 1120723984}
-  - component: {fileID: 1120723983}
   m_Layer: 0
   m_Name: Keycard_Highlight
   m_TagString: Untagged
@@ -24478,20 +24525,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 189633548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1120723983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120723981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
-  dialogueManager: {fileID: 1683366673}
-  highlighted: {fileID: 1120723981}
 --- !u!212 &1120723984
 SpriteRenderer:
   serializedVersion: 2
@@ -25340,6 +25373,7 @@ GameObject:
   - component: {fileID: 1161646184}
   - component: {fileID: 1161646182}
   - component: {fileID: 1161646185}
+  - component: {fileID: 1161646186}
   m_Layer: 0
   m_Name: PickUpItem
   m_TagString: Untagged
@@ -25485,6 +25519,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.89393413, y: 1.3533326}
   m_EdgeRadius: 0
+--- !u!114 &1161646186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161646180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
+  dialogueManager: {fileID: 1683366673}
+  highlighted: {fileID: 1120723981}
 --- !u!1 &1169209636
 GameObject:
   m_ObjectHideFlags: 0
@@ -29529,6 +29577,7 @@ GameObject:
   - component: {fileID: 1337247538}
   - component: {fileID: 1337247537}
   - component: {fileID: 1337247536}
+  - component: {fileID: 1337247540}
   m_Layer: 0
   m_Name: PickUp_needle
   m_TagString: Untagged
@@ -30141,6 +30190,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1337247540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337247534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
+  dialogueManager: {fileID: 1683366673}
+  highlighted: {fileID: 1651978247}
 --- !u!1 &1349623686
 GameObject:
   m_ObjectHideFlags: 0
@@ -34543,7 +34606,7 @@ Transform:
   m_LocalScale: {x: 19.51917, y: 9.920755, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1765050135}
+  - {fileID: 685313017}
   m_Father: {fileID: 375920665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1540643733
@@ -36885,7 +36948,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1651978248}
   - component: {fileID: 1651978250}
-  - component: {fileID: 1651978249}
   m_Layer: 0
   m_Name: Needle_Highlight
   m_TagString: Untagged
@@ -36908,20 +36970,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 677773741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.516}
---- !u!114 &1651978249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651978247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
-  dialogueManager: {fileID: 1683366673}
-  highlighted: {fileID: 1651978247}
 --- !u!212 &1651978250
 SpriteRenderer:
   serializedVersion: 2
@@ -38200,6 +38248,7 @@ GameObject:
   - component: {fileID: 1765050136}
   - component: {fileID: 1765050139}
   - component: {fileID: 1765050140}
+  - component: {fileID: 1765050141}
   m_Layer: 0
   m_Name: PipePuzzleTrigger
   m_TagString: Untagged
@@ -38216,11 +38265,11 @@ Transform:
   m_GameObject: {fileID: 1765050134}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17342, y: 0.05841, z: -0.0386734}
-  m_LocalScale: {x: 0.04442207, y: 0.09985753, z: 1}
+  m_LocalPosition: {x: 0.17342013, y: 0.05841, z: -0.0386734}
+  m_LocalScale: {x: 0.044422068, y: 0.099857524, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1540643732}
+  m_Father: {fileID: 685313017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1765050136
 MonoBehaviour:
@@ -38235,7 +38284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PipeTrigger
   mainCamera: {fileID: 519420031}
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
   cameraZPosition: -10
   pipePuzzleRoom: {fileID: 896109459}
   returnRoom: {fileID: 1540643731}
@@ -38289,7 +38338,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1634428275937745366, guid: e187c789ea2b9f84e9f4d9f64438fb36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -38651,6 +38700,20 @@ PolygonCollider2D:
       - {x: 1.7199999, y: 2.9099998}
       - {x: 1.7099999, y: 2.8999999}
   m_UseDelaunayMesh: 1
+--- !u!114 &1765050141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765050134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
+  dialogueManager: {fileID: 1683366673}
+  highlighted: {fileID: 1876017662}
 --- !u!1 &1766495925
 GameObject:
   m_ObjectHideFlags: 0
@@ -38769,7 +38832,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1773141471}
   - component: {fileID: 1773141473}
-  - component: {fileID: 1773141472}
   m_Layer: 0
   m_Name: ComputerChip_Highlight
   m_TagString: Untagged
@@ -38792,20 +38854,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 906093349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1773141472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773141470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
-  dialogueManager: {fileID: 1683366673}
-  highlighted: {fileID: 1773141470}
 --- !u!212 &1773141473
 SpriteRenderer:
   serializedVersion: 2
@@ -39041,13 +39089,14 @@ GameObject:
   - component: {fileID: 1805076146}
   - component: {fileID: 1805076148}
   - component: {fileID: 1805076149}
+  - component: {fileID: 1805076150}
   m_Layer: 0
   m_Name: kitchen_edit_1_sink_filled_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1805076146
 SpriteRenderer:
   serializedVersion: 2
@@ -39540,6 +39589,20 @@ PolygonCollider2D:
       - {x: -1.13, y: 2.2649999}
       - {x: -1.14, y: 2.2749999}
   m_UseDelaunayMesh: 1
+--- !u!114 &1805076150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805076145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
+  dialogueManager: {fileID: 1683366673}
+  highlighted: {fileID: 236786928}
 --- !u!1 &1811546185
 GameObject:
   m_ObjectHideFlags: 0
@@ -40404,6 +40467,97 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.35, y: 1.76}
   m_EdgeRadius: 0
+--- !u!1 &1876017662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876017663}
+  - component: {fileID: 1876017664}
+  m_Layer: 0
+  m_Name: Pipe_Highlight 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1876017663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876017662}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.171, y: 0.061, z: -0.038665038}
+  m_LocalScale: {x: 0.021672474, y: 0.044302106, z: 0.43951038}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685313017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1876017664
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876017662}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 5c72081cf41ed1949bdba29fbbfbe8ed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 14, y: 16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &1882783765
 GameObject:
   m_ObjectHideFlags: 0
