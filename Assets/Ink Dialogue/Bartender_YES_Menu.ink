@@ -19,20 +19,26 @@ What would you like to drink?
     -> Blue
 + [Can I use your employee keycard?]
     -> keycard_answer
++ [I don't want anything to drink]
+    -> leave_answer
     
 === Green ===
-Here's your Green Hallucination.
+Here's your Green Hallucination, sir.
 -> END
 === Direct ===
-Here's your Directory bourbon.
+Here's your Directory bourbon, sir.
 -> END
 === Zip ===
-Here's your Cerebral Zip Bomb.
+Here's your Cerebral Zip Bomb, sir.
 -> END
 === Blue ===
-Here's your Automation Blues.
+Here's your Automation Blues, sir.
 -> END
 === keycard_answer ===
-I don't have one available for you.
+I don't have one available for you, sir.
 Maybe the chef will let you use his.
+-> END
+
+=== leave_answer ===
+Have a good evening sir.
 -> END

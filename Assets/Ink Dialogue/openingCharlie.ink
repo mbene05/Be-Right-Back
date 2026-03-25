@@ -21,15 +21,18 @@ But please stay and have dinner with me, I think you'll like it!
 # good2
 I should probably warn you, I need constant human interaction or I might malfunction
 And if that happens, I'll short circuit and explode! Haha
+# igotthis
+I've exploited your smartglasses to show you my Human Interaction Lenience Level..
+it will show you how close I am to malfunctioning.
 # good
 Anyways, what should we talk about first, I'm so nervous >_<
 # slightlyhappy
-Oh btw! Did you see the poster in the foyer? It's of my favourite artist.
-My research indicates that the jukebox has a lot of their songs..
+Oh! Did you see the broken jukebox at the bar? It's sad to see another machine in trouble
+My research indicates that it has a lot of my favourite songs.. 
 # neutral
-But the jukebox is broken right now, too bad :(
+Too bad it isn't working
 # good2
-If it was working, I'd have to dedicate my entire CPU to focus on listening..
+If it was, I'd have to dedicate my entire CPU to focus on listening..
 And I wouldn't be able to concentrate on anything else, even you! L.O.L.
 # normal
 So lets get to know each other better ;)

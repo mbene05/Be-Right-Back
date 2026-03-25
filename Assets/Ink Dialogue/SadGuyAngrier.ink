@@ -1,4 +1,4 @@
-﻿-> talk_angry
+-> talk_angry
 
 === talk_angry ===
 If you get me another wrong drink im gonna crash out AGAIN

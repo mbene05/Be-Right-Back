@@ -1,4 +1,4 @@
-﻿EXTERNAL SubToBar(amount)
+EXTERNAL SubToBar(amount)
 
 -> wrong_drink
 
