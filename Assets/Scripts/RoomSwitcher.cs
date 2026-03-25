@@ -35,11 +35,11 @@ public class RoomSwitcher : MonoBehaviour
     public AudioClip Ambiance;
     public AudioClip music;
     public AudioClip musicEvent;
-    public AudioClip bathroomEvent;
     public AudioClip glassClink;
     public AudioClip conveyorBelt;
     public AudioClip robotArmMovement;
     public AudioClip windows95;
+    public AudioClip bellDing;
 
     private AudioSource audioSource;
     private AudioSource backgroundAmbiance;
@@ -127,15 +127,6 @@ public class RoomSwitcher : MonoBehaviour
             mainCamera.transform.position = new Vector3(foyer.transform.position.x, foyer.transform.position.y, cameraZPosition);
         }
 
-        if (bathroomEventRoutine != null && currentRoom != 2)
-        {
-            StopCoroutine(bathroomEventRoutine);
-            bathroomEventRoutine = null;
-        }
-        if (currentRoom == 2 && bathroomEventRoutine == null)
-        {
-            bathroomEventRoutine = StartCoroutine(BathroomEventLoop());
-        }
     }
 
     public void GoToRoom(int roomNumber)
@@ -196,57 +187,37 @@ public class RoomSwitcher : MonoBehaviour
                 break;
 
             case 4:
-                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.03f;
                 break;
 
             case 2:
-                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.01f;
                 dinerMusic.volume = 0.01f;
                 break;
 
             case 3:
-                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.03f;
                 dinerMusic.volume = 0.03f;
                 break;
 
-            case 6:
-                DialogueManager.hasChanged = false;
+            case 6: //background
                 backgroundAmbiance.volume = 0.03f;
                 dinerMusic.volume = 0.02f;
                 break;
 
             case 7:
-                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
 
             case 8:
-                DialogueManager.hasChanged = false;
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
         }
     }
 
-    IEnumerator BathroomEventLoop()
-    {
-        while (currentRoom == 2)
-        {
-            float wait = Random.Range(9, 16);
-            yield return new WaitForSeconds(wait);
-
-            if (currentRoom != 2) break;
-            events.volume = 0.15f;
-            events.PlayOneShot(bathroomEvent);
-        }
-
-        bathroomEventRoutine = null;
-    }
 
     IEnumerator TransitionToRoom(int roomNumber)
     {
@@ -376,6 +347,8 @@ public class RoomSwitcher : MonoBehaviour
             coatRoom.SetActive(false);
             foyer.SetActive(true);
             mainCamera.transform.position = new Vector3(foyer.transform.position.x, foyer.transform.position.y, cameraZPosition);
+
+            events.PlayOneShot(bellDing);
 
 
         }

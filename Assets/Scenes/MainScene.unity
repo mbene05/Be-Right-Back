@@ -21959,12 +21959,12 @@ MonoBehaviour:
   walkingSound: {fileID: 8300000, guid: f983afa00f9ddb84398a34293149805e, type: 3}
   Ambiance: {fileID: 8300000, guid: f67e243785ee89e4bb3cc3bab8cadf2a, type: 3}
   music: {fileID: 8300000, guid: 96cfc961b006fc5459fbc2e423860f24, type: 3}
-  musicEvent: {fileID: 8300000, guid: 062afc1817d9a0a48b6454ddc30c5158, type: 3}
-  bathroomEvent: {fileID: 8300000, guid: 9dfc217bb4b4d0e47a8fb3fefba6ae2c, type: 3}
+  musicEvent: {fileID: 8300000, guid: 54606a5806039d6428e7ace3118cdf6c, type: 3}
   glassClink: {fileID: 8300000, guid: db5918e552ab73a4d84f12df330730a6, type: 3}
   conveyorBelt: {fileID: 8300000, guid: 4ab617d43bce7524f82a21c615efa6a6, type: 3}
   robotArmMovement: {fileID: 8300000, guid: a80c3543ce1b43e43a20e9b35d52ccea, type: 3}
   windows95: {fileID: 8300000, guid: d81010b705c27704ab384d298a9ab312, type: 3}
+  bellDing: {fileID: 8300000, guid: f40d676ce4850c149ab36c1894ea3183, type: 3}
 --- !u!4 &1004845969
 Transform:
   m_ObjectHideFlags: 0
