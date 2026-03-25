@@ -116,10 +116,10 @@ TextureImporter:
       name: NeedleMissing_Highlight_0
       rect:
         serializedVersion: 2
-        x: 117
-        y: 70
-        width: 1073
-        height: 1517
+        x: 25
+        y: 1
+        width: 1221
+        height: 1588
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
