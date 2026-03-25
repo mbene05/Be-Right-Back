@@ -7063,7 +7063,7 @@ MonoBehaviour:
   instructionOverlay: {fileID: 1384934906}
   failOverlay: {fileID: 1085820844}
   winOverlay: {fileID: 864136397}
-  winSound: {fileID: 0}
+  winSound: {fileID: 8300000, guid: 9f6787af969a12c44884a2394ec031c2, type: 3}
 --- !u!4 &314439846
 Transform:
   m_ObjectHideFlags: 0
@@ -7092,7 +7092,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
