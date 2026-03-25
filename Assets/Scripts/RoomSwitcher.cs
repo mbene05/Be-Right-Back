@@ -183,24 +183,24 @@ public class RoomSwitcher : MonoBehaviour
     {
         switch (currentRoom)
         {
-            case 1:
+            case 1: //diner
                 backgroundAmbiance.volume = 0.03f;
                 dinerMusic.volume = 0.04f;
                 break;
 
-            case 4:
+            case 4: //bar
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.03f;
                 break;
 
-            case 2:
+            case 2: //bathroom
                 backgroundAmbiance.volume = 0.01f;
                 dinerMusic.volume = 0.01f;
                 break;
 
-            case 3:
-                backgroundAmbiance.volume = 0.03f;
-                dinerMusic.volume = 0.03f;
+            case 3: //kitchen
+                backgroundAmbiance.volume = 0.015f;
+                dinerMusic.volume = 0.015f;
                 break;
 
             case 6: //background
@@ -208,12 +208,12 @@ public class RoomSwitcher : MonoBehaviour
                 dinerMusic.volume = 0.02f;
                 break;
 
-            case 7:
+            case 7: //coat room
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
 
-            case 8:
+            case 8: //foyer
                 backgroundAmbiance.volume = 0.02f;
                 dinerMusic.volume = 0.02f;
                 break;
