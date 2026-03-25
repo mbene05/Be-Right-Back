@@ -21966,7 +21966,7 @@ MonoBehaviour:
   windows95: {fileID: 8300000, guid: d81010b705c27704ab384d298a9ab312, type: 3}
   bellDing: {fileID: 8300000, guid: f40d676ce4850c149ab36c1894ea3183, type: 3}
   waterDrip: {fileID: 8300000, guid: 249f653544f583c47b42769104d20cc3, type: 3}
-  squeakydoor: {fileID: 8300000, guid: 4ea90fb507cc10e4f980d8b691314fdd, type: 3}
+  squeakydoor: {fileID: 8300000, guid: 3a3896960e3c1fb4e973dcf1f61c3832, type: 3}
 --- !u!4 &1004845969
 Transform:
   m_ObjectHideFlags: 0
