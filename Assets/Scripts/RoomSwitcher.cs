@@ -40,6 +40,8 @@ public class RoomSwitcher : MonoBehaviour
     public AudioClip robotArmMovement;
     public AudioClip windows95;
     public AudioClip bellDing;
+    public AudioClip waterDrip;
+    public AudioClip squeakydoor;
 
     private AudioSource audioSource;
     private AudioSource backgroundAmbiance;
@@ -285,6 +287,9 @@ public class RoomSwitcher : MonoBehaviour
 
             backgroundAmbiance.Play();
             dinerMusic.Play();
+
+            events.PlayOneShot(waterDrip);
+
         }
         else if (roomNumber == 4)//bar
         {
@@ -335,6 +340,8 @@ public class RoomSwitcher : MonoBehaviour
             coatRoom.SetActive(true);
             foyer.SetActive(false);
             mainCamera.transform.position = new Vector3(coatRoom.transform.position.x, coatRoom.transform.position.y, cameraZPosition);
+
+            events.PlayOneShot(squeakydoor);
 
         }
         else if (roomNumber == 8)//foyer
