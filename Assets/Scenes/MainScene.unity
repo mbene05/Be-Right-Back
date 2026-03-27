@@ -10895,6 +10895,7 @@ GameObject:
   - component: {fileID: 493312496}
   - component: {fileID: 493312499}
   - component: {fileID: 493312501}
+  - component: {fileID: 493312502}
   m_Layer: 5
   m_Name: DrinkMenuTabelPanel2
   m_TagString: Untagged
@@ -11081,6 +11082,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &493312502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493312494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
+  dialogueManager: {fileID: 1683366673}
+  highlighted: {fileID: 148739386}
 --- !u!1 &498650669
 GameObject:
   m_ObjectHideFlags: 0
@@ -11248,6 +11263,7 @@ GameObject:
   - component: {fileID: 504177565}
   - component: {fileID: 504177566}
   - component: {fileID: 504177567}
+  - component: {fileID: 504177568}
   m_Layer: 0
   m_Name: PhoneIcon
   m_TagString: Untagged
@@ -11391,6 +11407,20 @@ MonoBehaviour:
   Arrow: {fileID: 1645840758}
   dialogueManager: {fileID: 1683366673}
   HasClicked: 0
+  highlighted: {fileID: 1407162941}
+--- !u!114 &504177568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504177562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec233d47e38bfd41a315f789e81f0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightManager
+  dialogueManager: {fileID: 1683366673}
   highlighted: {fileID: 1407162941}
 --- !u!1 &519420028
 GameObject:
