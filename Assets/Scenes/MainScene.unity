@@ -1015,7 +1015,7 @@ GameObject:
   - component: {fileID: 31818905}
   - component: {fileID: 31818908}
   m_Layer: 5
-  m_Name: ToKitchenBack
+  m_Name: FromKitchenToKitchenBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5923,7 +5923,7 @@ GameObject:
   - component: {fileID: 250682672}
   - component: {fileID: 250682674}
   m_Layer: 5
-  m_Name: ToDiner
+  m_Name: FromBathroomToDiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6513,7 +6513,7 @@ GameObject:
   - component: {fileID: 270996115}
   - component: {fileID: 270996114}
   m_Layer: 5
-  m_Name: ToDiner (6)
+  m_Name: FromBarToDiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14973,7 +14973,7 @@ GameObject:
   - component: {fileID: 753523523}
   - component: {fileID: 753523526}
   m_Layer: 5
-  m_Name: ToDiner (5)
+  m_Name: FromFoyerToDiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24003,7 +24003,7 @@ GameObject:
   - component: {fileID: 1082975506}
   - component: {fileID: 1082975509}
   m_Layer: 5
-  m_Name: ToBar (1)
+  m_Name: FromCoatRoomToBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29670,7 +29670,7 @@ GameObject:
   - component: {fileID: 1307133133}
   - component: {fileID: 1307133136}
   m_Layer: 1
-  m_Name: ToKitchen (1)
+  m_Name: FromBackKitchenToKitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31934,7 +31934,7 @@ GameObject:
   - component: {fileID: 1374962622}
   - component: {fileID: 1374962623}
   m_Layer: 5
-  m_Name: ToBar
+  m_Name: FromDinningToBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33587,7 +33587,7 @@ GameObject:
   - component: {fileID: 1479231094}
   - component: {fileID: 1479231095}
   m_Layer: 5
-  m_Name: ToBathroom
+  m_Name: FromDinningToBathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36320,7 +36320,7 @@ GameObject:
   - component: {fileID: 1590172995}
   - component: {fileID: 1590172998}
   m_Layer: 5
-  m_Name: ToDiner (4)
+  m_Name: FromKitchenToDiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36988,7 +36988,7 @@ GameObject:
   - component: {fileID: 1622581566}
   - component: {fileID: 1622581565}
   m_Layer: 5
-  m_Name: ToFoyer
+  m_Name: FromDinningToFoyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38602,7 +38602,7 @@ GameObject:
   - component: {fileID: 1732884826}
   - component: {fileID: 1732884829}
   m_Layer: 1
-  m_Name: ToKitchen
+  m_Name: FromDinningToKitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43920,7 +43920,7 @@ GameObject:
   - component: {fileID: 2022981847}
   - component: {fileID: 2022981850}
   m_Layer: 5
-  m_Name: ToCoatRoom
+  m_Name: FromBarToCoatRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
