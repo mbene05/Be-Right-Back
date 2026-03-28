@@ -75,6 +75,11 @@ public class ItemPickup : MonoBehaviour
         }
     }
     
+    public static void ResetAll()
+    {
+        limitedPickups.Clear();
+    }
+
     // Call this method when a limited item is used/destroyed
     public static void ClearLimitedItem(string groupID)
     {

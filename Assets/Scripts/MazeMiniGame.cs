@@ -56,6 +56,7 @@ public class MazeMiniGame : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        IsOpen = false;
     }
 
     void Start()

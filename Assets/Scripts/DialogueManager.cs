@@ -63,7 +63,11 @@ public class DialogueManager : MonoBehaviour
 
     public void Start()
     {
-        
+        choicesActive = false;
+        dialogueActive = false;
+        hasChanged = false;
+        IsOpen = false;
+
         dialoguePanel.SetActive(false);
         choicesContainer.gameObject.SetActive(false);
 

@@ -51,6 +51,9 @@ public class RoomSwitcher : MonoBehaviour
 
     void Start()
     {
+        IsTransitioning = false;
+        ItemPickup.ResetAll();
+
         if (mainCamera == null)
             mainCamera = Camera.main;
 

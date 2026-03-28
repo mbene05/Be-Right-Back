@@ -39,6 +39,7 @@ public class PinCodeMiniGame : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        IsOpen = false;
     }
 
     void Start()

@@ -43,6 +43,7 @@ public class JukeboxPanelManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        IsOpen = false;
     }
 
     void Start()
