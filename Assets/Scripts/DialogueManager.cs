@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     private Story story;
     private Coroutine typingCoroutine;
     private bool isTyping;
+    private bool needleGiven = false;
 
     public GameObject[] drinks;
     public GameObject Keycard;
@@ -305,7 +306,11 @@ void PlayResponseSound(AudioClip clip)
             });
 
              story.BindExternalFunction("getNeedle", (int needGot) => {
-                Needle.SetActive(true);
+                if (!needleGiven)
+                {
+                    needleGiven = true;
+                    Needle.SetActive(true);
+                }
             });
 
         DisplayNextLine();

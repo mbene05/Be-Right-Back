@@ -7,7 +7,7 @@ public class RecipeScreen : MonoBehaviour
     void Update()
     {
         timer++;
-        if (Input.GetMouseButtonDown(0) && timer > 20 && !MapManager.IsOpen)
+        if (Input.GetMouseButtonDown(0) && timer > 20 && !MapManager.IsOpen && !RoomSwitcher.IsTransitioning)
         {
             gameObject.SetActive(false);
             timer = 0;

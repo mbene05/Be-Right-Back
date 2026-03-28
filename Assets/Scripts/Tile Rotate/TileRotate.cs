@@ -26,7 +26,8 @@ public class TileRotate : MonoBehaviour
     void OnMouseDown()
     {
         if (manager.isSolved) return;
-        
+        if (RoomSwitcher.IsTransitioning) return;
+
          transform.Rotate(0, 0, 90);
     
         CheckIfCorrect();

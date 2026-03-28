@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MazeMiniGame : MonoBehaviour
 {
@@ -18,30 +19,34 @@ public class MazeMiniGame : MonoBehaviour
     public GameObject chef;
     public bool done2 = false;
 
-   
+    [Header("Draggable Object")]
+    public RectTransform draggableObject; // The object the player drags through the maze
+
     [Header("Walls")]
     public RectTransform[] walls;
 
     [Header("Feedback")]
-    public GameObject instructionOverlay; // "Hover over START to begin"
+    public GameObject instructionOverlay; // "Click and drag the object to the exit"
     public GameObject failOverlay;        // "You touched the wall!"
     public GameObject winOverlay;         // "You made it!"
 
-    private enum State { Idle, Playing, Failed, Won }
+    private enum State { Idle, Dragging, Failed, Won }
     private State state;
 
     private float failTimer;
     private const float FailDuration = 0.8f;
 
-    private float graceTimer;
-    private const float GraceDuration = 0.3f;
-
     private float winGraceTimer;
     private const float WinGraceDuration = 1.0f;
+
+    private Vector2 startPosition;
 
     private Canvas canvas;
     private Camera uiCamera;
     private GameObject mazeBlocker;
+
+    [Header("Authenticated")]
+    public GameObject authenticatedOverlay;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -88,6 +93,9 @@ public class MazeMiniGame : MonoBehaviour
 
         mazeBlocker.SetActive(false);
         mazePanel.SetActive(false);
+
+        if (draggableObject != null)
+            startPosition = draggableObject.anchoredPosition;
     }
 
     public void Open()
@@ -95,6 +103,7 @@ public class MazeMiniGame : MonoBehaviour
         IsOpen = true;
         mazePanel.SetActive(true);
         mazeBlocker?.SetActive(true);
+        ResetDraggable();
         SetState(State.Idle);
     }
 
@@ -105,11 +114,44 @@ public class MazeMiniGame : MonoBehaviour
         mazeBlocker?.SetActive(false);
     }
 
+    void ResetDraggable()
+    {
+        if (draggableObject != null)
+            draggableObject.anchoredPosition = startPosition;
+    }
+
+    // Returns true if any corner of the draggable is inside the given rect
+    bool DraggableTouchesRect(RectTransform rect)
+    {
+        Vector3[] corners = new Vector3[4];
+        draggableObject.GetWorldCorners(corners);
+        foreach (Vector3 corner in corners)
+        {
+            Vector2 screenCorner = RectTransformUtility.WorldToScreenPoint(uiCamera, corner);
+            if (RectTransformUtility.RectangleContainsScreenPoint(rect, screenCorner, uiCamera))
+                return true;
+        }
+        return false;
+    }
+
+    // Returns true if all corners of the draggable are inside the given rect
+    bool DraggableInsideRect(RectTransform rect)
+    {
+        Vector3[] corners = new Vector3[4];
+        draggableObject.GetWorldCorners(corners);
+        foreach (Vector3 corner in corners)
+        {
+            Vector2 screenCorner = RectTransformUtility.WorldToScreenPoint(uiCamera, corner);
+            if (!RectTransformUtility.RectangleContainsScreenPoint(rect, screenCorner, uiCamera))
+                return false;
+        }
+        return true;
+    }
+
     void Update()
     {
         if (!IsOpen) return;
 
-        // Allow closing with Escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Close();
@@ -121,51 +163,81 @@ public class MazeMiniGame : MonoBehaviour
         switch (state)
         {
             case State.Idle:
-                if (RectTransformUtility.RectangleContainsScreenPoint(startZone, mousePos, uiCamera))
-                    SetState(State.Playing);
+                // Begin dragging when the player clicks on the draggable object
+                if (Input.GetMouseButtonDown(0) && draggableObject != null)
+                {
+                    if (RectTransformUtility.RectangleContainsScreenPoint(draggableObject, mousePos, uiCamera))
+                        SetState(State.Dragging);
+                }
                 break;
 
-            case State.Playing:
-                graceTimer -= Time.deltaTime;
-
-                bool inStartZone = RectTransformUtility.RectangleContainsScreenPoint(startZone, mousePos, uiCamera);
-
-                if (!inStartZone && graceTimer <= 0f)
+            case State.Dragging:
+                // Releasing the mouse resets the object
+                if (!Input.GetMouseButton(0))
                 {
-                    if (!RectTransformUtility.RectangleContainsScreenPoint(mazeBounds, mousePos, uiCamera))
+                    ResetDraggable();
+                    SetState(State.Idle);
+                    return;
+                }
+
+                // Move the object to follow the mouse
+                if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    draggableObject.parent as RectTransform, mousePos, uiCamera, out Vector2 localPoint))
+                {
+                    draggableObject.anchoredPosition = localPoint;
+                }
+
+                // Fail if any corner leaves the maze bounds
+                if (!DraggableInsideRect(mazeBounds))
+                {
+                    SetState(State.Failed);
+                    return;
+                }
+
+                // Fail if any corner touches a wall
+                foreach (var wall in walls)
+                {
+                    if (wall == null) continue;
+                    if (DraggableTouchesRect(wall))
                     {
                         SetState(State.Failed);
                         return;
                     }
-
-                    foreach (var wall in walls)
-                    {
-                        if (wall == null) continue;
-                        if (RectTransformUtility.RectangleContainsScreenPoint(wall, mousePos, uiCamera))
-                        {
-                            SetState(State.Failed);
-                            return;
-                        }
-                    }
                 }
 
-                if (RectTransformUtility.RectangleContainsScreenPoint(exitZone, mousePos, uiCamera))
+                // Win when the draggable reaches the exit zone
+                if (DraggableTouchesRect(exitZone))
                     SetState(State.Won);
                 break;
 
             case State.Failed:
                 failTimer -= Time.deltaTime;
                 if (failTimer <= 0f)
+                {
+                    ResetDraggable();
                     SetState(State.Idle);
+                }
                 break;
 
             case State.Won:
                 audioSource.PlayOneShot(winSound);
                 winGraceTimer -= Time.deltaTime;
                 if (winGraceTimer <= 0f && Input.GetMouseButtonDown(0) && !MapManager.IsOpen)
+                {
                     Close();
+                    StartCoroutine(ShowAuthenticated());
+                }
                 break;
         }
+    }
+
+    IEnumerator ShowAuthenticated()
+    {
+        if (authenticatedOverlay != null)
+            authenticatedOverlay.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        if (authenticatedOverlay != null)
+            authenticatedOverlay.SetActive(false);
     }
 
     void SetState(State newState)
@@ -181,8 +253,7 @@ public class MazeMiniGame : MonoBehaviour
             case State.Idle:
                 instructionOverlay.SetActive(true);
                 break;
-            case State.Playing:
-                graceTimer = GraceDuration;
+            case State.Dragging:
                 break;
             case State.Failed:
                 failOverlay.SetActive(true);
@@ -194,8 +265,8 @@ public class MazeMiniGame : MonoBehaviour
                 if (done2 == false)
                 {
                     ChefManager selectedChef = chef.GetComponent<ChefManager>();
-                 selectedChef.logsCollected++;
-                 done2 = true;
+                    selectedChef.logsCollected++;
+                    done2 = true;
                 }
                 break;
         }

@@ -5,7 +5,8 @@ public class TitleScreenManager : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Intro"); // Replace with your actual game scene name
+        PlayerPrefs.DeleteKey("SkipIntro");
+        SceneManager.LoadScene("Intro");
     }
 
     public void QuitGame()

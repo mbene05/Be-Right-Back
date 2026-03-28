@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: GreenHaze
   itemID: 75
   itemSprite: {fileID: 21300000, guid: 5dff0150428995d43a95a0841b278c99, type: 3}
+  groupID: drinks

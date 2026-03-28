@@ -22,6 +22,7 @@ public Vector2 targetPosition;
     public AudioClip winSound;
 
     public GameObject tileTrigger;
+    public GameObject authenticatedOverlay;
 
     public bool move = false;
     void Start()
@@ -32,7 +33,7 @@ public Vector2 targetPosition;
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && done == false && !MapManager.IsOpen)
+        if (Input.GetMouseButtonDown(0) && done == false && !MapManager.IsOpen && !RoomSwitcher.IsTransitioning)
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
@@ -74,12 +75,21 @@ public Vector2 targetPosition;
                 selectedChef.logsCollected++;
                 done = true;
                 tileTrigger.SetActive(true);
-
+                StartCoroutine(ShowAuthenticated());
         }
 
     }
 
- public void SkipDialogue()
+    IEnumerator ShowAuthenticated()
+    {
+        if (authenticatedOverlay != null)
+            authenticatedOverlay.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        if (authenticatedOverlay != null)
+            authenticatedOverlay.SetActive(false);
+    }
+
+    public void SkipDialogue()
 {
     if (done) return;
 

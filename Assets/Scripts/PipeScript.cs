@@ -37,6 +37,7 @@ public float currentRotation;
     {
         if (puzzleManager.won == true) return;
         if (MapManager.IsOpen) return;
+        if (RoomSwitcher.IsTransitioning) return;
         if (!isRotating)
             StartCoroutine(RotateSmooth());
     }

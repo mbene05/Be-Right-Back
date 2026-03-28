@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HotbarManager : MonoBehaviour
 {
@@ -15,6 +16,56 @@ public class HotbarManager : MonoBehaviour
     // If true, pages wrap around when scrolling past ends
     public bool wrapPages = true;
 
+    [Header("Tooltip")]
+    public TMP_Text tooltipLabel;
+
+    TMP_Text CreateTooltipLabel()
+    {
+        var obj = new GameObject("HotbarTooltip");
+        obj.transform.SetParent(transform, false);
+
+        // Ignore layout so the hotbar's Layout Group doesn't squish it
+        var le = obj.AddComponent<LayoutElement>();
+        le.ignoreLayout = true;
+
+        var text = obj.AddComponent<TextMeshProUGUI>();
+        text.alignment = TextAlignmentOptions.Center;
+        text.fontSize = 14;
+        text.color = Color.white;
+
+        var rt = obj.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(120, 24);
+        rt.pivot = new Vector2(0.5f, 1f); // top-center pivot so it hangs below the slot
+
+        return text;
+    }
+
+    public void ShowTooltip(string itemName, RectTransform slotRect)
+    {
+        if (tooltipLabel == null) return;
+        tooltipLabel.text = itemName;
+
+        // Position tooltip below the bottom-center of the hovered slot
+        RectTransform tooltipRT = tooltipLabel.rectTransform;
+        Transform tooltipParent = tooltipRT.parent;
+        if (tooltipParent != null)
+        {
+            Vector3[] corners = new Vector3[4];
+            slotRect.GetWorldCorners(corners);
+            Vector3 bottomCenter = (corners[0] + corners[3]) / 2f;
+            Vector3 localPos = tooltipParent.InverseTransformPoint(bottomCenter);
+            tooltipRT.localPosition = new Vector3(localPos.x, localPos.y - 4f, 0f);
+        }
+
+        tooltipLabel.gameObject.SetActive(true);
+    }
+
+    public void HideTooltip()
+    {
+        if (tooltipLabel == null) return;
+        tooltipLabel.gameObject.SetActive(false);
+    }
+
     void Start()
     {
         // Add an overriding Canvas to this GameObject so it renders above
@@ -26,6 +77,9 @@ public class HotbarManager : MonoBehaviour
         if (GetComponent<GraphicRaycaster>() == null)
             gameObject.AddComponent<GraphicRaycaster>();
 
+        if (tooltipLabel == null)
+            tooltipLabel = CreateTooltipLabel();
+        HideTooltip();
         EnsureSlotsInitialized();
         RefreshVisibleSlots();
     }

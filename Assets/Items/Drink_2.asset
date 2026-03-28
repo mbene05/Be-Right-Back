@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Drink_0
   itemID: 73
   itemSprite: {fileID: 21300000, guid: 7d70906f7fa22c340a51f1ac3c2194fe, type: 3}
+  groupID: drinks

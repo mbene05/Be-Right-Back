@@ -9,6 +9,7 @@ public class HotbarScroller : MonoBehaviour, IScrollHandler
     public void OnScroll(PointerEventData eventData)
     {
         if (hotbarManager == null) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         if (eventData.scrollDelta.y > 0)
         {
@@ -23,6 +24,7 @@ public class HotbarScroller : MonoBehaviour, IScrollHandler
     void Update()
     {
         if (hotbarManager == null) return;
+        if (RoomSwitcher.IsTransitioning) return;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {

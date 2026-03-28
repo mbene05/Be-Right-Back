@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
-public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Image itemIcon;
     public Item currentItem;
@@ -15,12 +15,25 @@ public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     private Item draggingItem;
 
+    private HotbarManager hotbarManager;
+
     void Awake()
     {
         if (parentCanvas == null)
-        {
             parentCanvas = GetComponentInParent<Canvas>();
-        }
+        hotbarManager = GetComponentInParent<HotbarManager>();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (currentItem == null) return;
+        if (RoomSwitcher.IsTransitioning) return;
+        hotbarManager?.ShowTooltip(currentItem.itemName, transform as RectTransform);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        hotbarManager?.HideTooltip();
     }
 
     public void AddItem(Item newItem)
@@ -46,6 +59,7 @@ public class HotbarSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (currentItem == null) return;
+        hotbarManager?.HideTooltip();
 
         draggingItem = currentItem;
 

@@ -9,7 +9,7 @@ public class HighlightManager : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf)
+        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf || RoomSwitcher.IsTransitioning)
         {
             highlighted.SetActive(false);
         }

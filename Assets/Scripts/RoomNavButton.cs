@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 // Attach to each nav button under Canvas.
 // Show In Room:  which room this button is visible in.
 // Required Item: leave empty for unlocked rooms, or enter the item name needed to unlock.
-public class RoomNavButton : MonoBehaviour
+public class RoomNavButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public int showInRoom;
      public DialogueManager dialogueManager;
@@ -11,7 +12,8 @@ public class RoomNavButton : MonoBehaviour
     public GameObject phone;
 
     private CanvasGroup _group;
-    public TextAsset myInkJSON; 
+    public TextAsset myInkJSON;
+    public GameObject cannotAccessText;
     private RoomSwitcher _switcher;
     private HotbarManager _hotbar;
     private bool _locked;
@@ -45,8 +47,23 @@ public class RoomNavButton : MonoBehaviour
             SetVisible(true, false);
         else
             SetVisible(true, true);
+
+        if (cannotAccessText != null && !_locked)
+            cannotAccessText.SetActive(false);
     }
 
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (_locked && cannotAccessText != null)
+            cannotAccessText.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (cannotAccessText != null)
+            cannotAccessText.SetActive(false);
+    }
 
     void SetVisible(bool visible, bool interactable)
     {

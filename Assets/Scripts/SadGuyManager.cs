@@ -31,7 +31,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
     void OnMouseOver()
     {
-        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf)
+        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf || RoomSwitcher.IsTransitioning)
         {
             highlighted.SetActive(false);
         }
@@ -93,10 +93,10 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
     public bool UseWithItem(Item item, Vector3 hitPoint)
     {
+        if (item.groupID != "drinks") return false;
+
         if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf)
             return false;
-
-
 
         highlighted.SetActive(false);
 

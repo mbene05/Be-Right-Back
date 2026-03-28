@@ -14,13 +14,19 @@ public class IntroScreenToGame : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (PlayerPrefs.GetInt("SkipIntro", 0) == 1)
+        {
+            PlayerPrefs.DeleteKey("SkipIntro");
+            SceneManager.LoadScene("MainScene");
+            return;
+        }
+
         if (fadePanel != null)
         {
             Color c = fadePanel.color;
             c.a = 0f;
             fadePanel.color = c;
         }
-
     }
 
     // Update is called once per frame

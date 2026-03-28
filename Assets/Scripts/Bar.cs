@@ -82,6 +82,7 @@ public class Bar : MonoBehaviour
     public static void LoadEndScene()
     {
         Debug.Log("Time's up! Loading end scene...");
+        PlayerPrefs.SetInt("SkipIntro", 1);
         SceneManager.LoadScene(endSceneName);
     }
 

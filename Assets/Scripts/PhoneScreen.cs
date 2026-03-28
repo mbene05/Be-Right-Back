@@ -22,7 +22,7 @@ public class PhoneScreen : MonoBehaviour
     void Update()
 {   
     timer++;
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetMouseButtonDown(0) && !RoomSwitcher.IsTransitioning)
     {
         
 
