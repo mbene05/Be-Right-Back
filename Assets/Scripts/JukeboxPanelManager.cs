@@ -148,13 +148,13 @@ public class JukeboxPanelManager : MonoBehaviour
         // Begin drag
         if (Input.GetMouseButtonDown(0))
         {
-            if (!needlePlaced && RectTransformUtility.RectangleContainsScreenPoint(needle, mousePos, uiCamera))
+            if (!needlePlaced && needle.gameObject.activeSelf && RectTransformUtility.RectangleContainsScreenPoint(needle, mousePos, uiCamera))
             {
                 dragging = needle;
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(needle.parent as RectTransform, mousePos, uiCamera, out Vector2 local);
                 dragOffset = needle.anchoredPosition - local;
             }
-            else if (!chipPlaced && RectTransformUtility.RectangleContainsScreenPoint(computerChip, mousePos, uiCamera))
+            else if (!chipPlaced && computerChip.gameObject.activeSelf && RectTransformUtility.RectangleContainsScreenPoint(computerChip, mousePos, uiCamera))
             {
                 dragging = computerChip;
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(computerChip.parent as RectTransform, mousePos, uiCamera, out Vector2 local);
