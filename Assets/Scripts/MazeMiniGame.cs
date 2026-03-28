@@ -34,7 +34,7 @@ public class MazeMiniGame : MonoBehaviour
     private State state;
 
     private float failTimer;
-    private const float FailDuration = 0.8f;
+    private const float FailDuration = 1.2f;
 
     private float winGraceTimer;
     private const float WinGraceDuration = 1.0f;
