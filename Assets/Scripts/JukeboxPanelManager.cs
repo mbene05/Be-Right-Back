@@ -85,6 +85,8 @@ public class JukeboxPanelManager : MonoBehaviour
 
         panelBlocker.SetActive(false);
         jukeboxPanel.SetActive(false);
+        needle.gameObject.SetActive(false);
+        computerChip.gameObject.SetActive(false);
     }
 
     public void Open()
