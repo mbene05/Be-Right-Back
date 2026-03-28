@@ -9,7 +9,7 @@ public class HighlightManager : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf || RoomSwitcher.IsTransitioning)
+        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf || RoomSwitcher.IsTransitioning || PinCodeMiniGame.IsOpen)
         {
             highlighted.SetActive(false);
         }

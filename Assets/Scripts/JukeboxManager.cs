@@ -54,6 +54,7 @@ public class JukeboxManager : MonoBehaviour, IUsableWithItem
     public bool UseWithItem(Item item, Vector3 hitPoint)
     {
         if (item == null) return false;
+        if (!JukeboxPanelManager.IsOpen) return false;
         if (itemCount >= maxItems) return false;
 
         bool accepted = false;
