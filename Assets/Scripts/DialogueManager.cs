@@ -1,13 +1,16 @@
-using UnityEngine;
-using TMPro;
 using Ink.Runtime;
+using Ink.UnityIntegration;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using Ink.UnityIntegration;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Globals Ink File")]
+    [SerializeField] private InkFile globalInkFile;
     public TextAsset inkJSON;
     public TextMeshProUGUI dialogueText;
     public float typingSpeed = 0.03f;
@@ -60,6 +63,13 @@ public class DialogueManager : MonoBehaviour
 
     private AudioSource audioSource;
     private AudioSource voiceSource;
+
+    private DialogueVariables dialogueVariables;
+
+    private void Awake()
+    {
+        dialogueVariables = new DialogueVariables(globalInkFile.filePath);
+    }
 
     public void Start()
     {
@@ -281,9 +291,14 @@ void PlayResponseSound(AudioClip clip)
         dialogueStarted = true;
         IsOpen = true;
         dialoguePanel.SetActive(true);
+
+       
+
          // Assign the new Ink JSON
-         inkJSON = newInkJSON;
-          story = new Story(inkJSON.text); 
+        inkJSON = newInkJSON;
+        story = new Story(inkJSON.text);
+        dialogueVariables.StartListening(story);
+
           // Bind functions so Ink can call them
             story.BindExternalFunction("AddToBar", (float amount) => {
                 bar.AddTime(amount);
@@ -381,6 +396,7 @@ void PlayResponseSound(AudioClip clip)
 
     void EndDialogue()
     {
+        dialogueVariables.StopListening(story);
         dialoguePanel.SetActive(false);
         dialogueStarted = false;
         IsOpen = false;

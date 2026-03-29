@@ -1,15 +1,28 @@
+INCLUDE global.ink
 EXTERNAL AddToBar(amount)
 EXTERNAL SubToBar(amount)
 VAR shuffleNum = 0
 VAR shuffleAns = 0
-
-~ shuffleNum = RANDOM(1,25)
-~ shuffleAns = RANDOM(1,6)
-
 VAR GoodAmount = 65
 VAR NeutralAmount = 30
 VAR BadAmount = 5
+-> genNumber
 
+=== genNumber ===
+~ shuffleNum = RANDOM(1,25)
+~ shuffleAns = RANDOM(1,6)
+//Random number is {shuffleNum}, last questions were {lastquestion1},{lastquestion2},{lastquestion3},{lastquestion4},{lastquestion5}
+{ shuffleNum == lastquestion1 or shuffleNum == lastquestion2 or shuffleNum == lastquestion3 or shuffleNum == lastquestion4 or shuffleNum == lastquestion5 : -> genNumber}
+~ lastquestion5 = lastquestion4
+~ lastquestion4 = lastquestion3
+~ lastquestion3 = lastquestion2
+~ lastquestion2 = lastquestion1
+~ lastquestion1 = shuffleNum
+//Last questions now {lastquestion1},{lastquestion2},{lastquestion3},{lastquestion4},{lastquestion5}
+
+-> questionmanager
+
+=== questionmanager ===
 {
     - shuffleNum == 1: -> Question1
     - shuffleNum == 2: -> Question2
@@ -36,7 +49,6 @@ VAR BadAmount = 5
     - shuffleNum == 23: -> Question23
     - shuffleNum == 24: -> Question24
     - shuffleNum == 25: -> Question25
-
 }
 
 
