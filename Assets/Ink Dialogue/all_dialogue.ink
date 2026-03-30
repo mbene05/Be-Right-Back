@@ -1196,7 +1196,7 @@ Careful or I might start to think you're some sort of freak.
 How do you unwind after a long day?
 {
     -shuffleAns == 1:
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
     + [I go straight to bed to get the most of my apartment-share] 
@@ -1207,7 +1207,7 @@ How do you unwind after a long day?
     -> Bad14
     
     -shuffleAns == 2:
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
     + [I talk to a therapy-bot to get back to normal] 
@@ -1224,7 +1224,7 @@ How do you unwind after a long day?
     + [I go straight to bed to get the most of my apartment-share] 
     ~ AddToBar(NeutralAmount)
     -> Neutral14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
             
@@ -1235,7 +1235,7 @@ How do you unwind after a long day?
     + [I go straight to bed to get the most of my apartment-share] 
     ~ AddToBar(NeutralAmount)
     -> Neutral14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
             
@@ -1243,7 +1243,7 @@ How do you unwind after a long day?
     + [I go straight to bed to get the most of my apartment-share] 
     ~ AddToBar(NeutralAmount)
     -> Neutral14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
     + [I talk to a therapy-bot to get back to normal] 
@@ -1257,11 +1257,10 @@ How do you unwind after a long day?
     + [I talk to a therapy-bot to get back to normal] 
           ~ SubToBar(BadAmount)
     -> Bad14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
 }
-
 
 === Good14 ===
 # good2
