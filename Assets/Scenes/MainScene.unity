@@ -7492,9 +7492,10 @@ MonoBehaviour:
   - {fileID: 224100229}
   - {fileID: 968893966}
   - {fileID: 299707561}
-  - {fileID: 0}
+  - {fileID: 763418986}
   - {fileID: 250961988}
   - {fileID: 46858269}
+  - {fileID: 1839791041}
   instructionOverlay: {fileID: 1384934906}
   failOverlay: {fileID: 1085820844}
   winOverlay: {fileID: 864136397}
@@ -24784,7 +24785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.870117, y: 150.21002}
+  m_AnchoredPosition: {x: -16.870087, y: 150.21002}
   m_SizeDelta: {x: 240.3, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090131043
@@ -40277,7 +40278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1776123517
 RectTransform:
   m_ObjectHideFlags: 0
