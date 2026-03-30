@@ -12,7 +12,12 @@ VAR BadAmount = 5
 ~ shuffleNum = RANDOM(1,25)
 ~ shuffleAns = RANDOM(1,6)
 //Random number is {shuffleNum}, last questions were {lastquestion1},{lastquestion2},{lastquestion3},{lastquestion4},{lastquestion5}
-{ shuffleNum == lastquestion1 or shuffleNum == lastquestion2 or shuffleNum == lastquestion3 or shuffleNum == lastquestion4 or shuffleNum == lastquestion5 : -> genNumber}
+{ shuffleNum == lastquestion1 or shuffleNum == lastquestion2 or shuffleNum == lastquestion3 or shuffleNum == lastquestion4 or shuffleNum == lastquestion5 or shuffleNum == lastquestion6 or shuffleNum == lastquestion7 or shuffleNum == lastquestion8 or shuffleNum == lastquestion9 or shuffleNum == lastquestion10 : -> genNumber}
+~ lastquestion10 = lastquestion9
+~ lastquestion9 = lastquestion8
+~ lastquestion8 = lastquestion7
+~ lastquestion7 = lastquestion6
+~ lastquestion6 = lastquestion5
 ~ lastquestion5 = lastquestion4
 ~ lastquestion4 = lastquestion3
 ~ lastquestion3 = lastquestion2
