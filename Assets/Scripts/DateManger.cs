@@ -7,7 +7,7 @@ public class DateManager : MonoBehaviour
     public TextAsset myInkJSON;
     public TextAsset myInkJSON2;
     public TextAsset myInkJSON3;
-    public bool saidOp = false;
+    public bool saidOp;
     public GameObject phone;
 
     public AudioClip interactSound;
@@ -23,6 +23,7 @@ public class DateManager : MonoBehaviour
     private BoxCollider2D boxCollider;
     public float cooldownDuration;
 
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -37,6 +38,7 @@ public class DateManager : MonoBehaviour
             dialogueManager.StartDialogue(myInkJSON2, charlieVoice);
             saidOp = true;
         }
+        saidOp = true;
     }
 
     void OnMouseDown()
