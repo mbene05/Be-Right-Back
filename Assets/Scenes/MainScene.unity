@@ -12404,13 +12404,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e7bec643efc0992498588c5e7984ae20, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.205
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 153
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -12501,7 +12501,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.36
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -17513,7 +17513,7 @@ MonoBehaviour:
   pickUpDrink: 0
   hasReceivedDrink: 0
   hasTalked: 0
-  sadGuyVoice: {fileID: 8300000, guid: cbda2d18e0f6db74ab728b978c84fa4f, type: 3}
+  sadGuyVoice: {fileID: 8300000, guid: 603c27f178f98d64e8a42a9ce26abf1a, type: 3}
 --- !u!82 &830238210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17527,7 +17527,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22796,7 +22796,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 93d3267b40323f34ab8c3504c9430be5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 0.9
   Loop: 0
   Mute: 0
@@ -23087,7 +23087,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -27362,7 +27362,7 @@ MonoBehaviour:
   logsCollected: 0
   talked: 0
   audioSource: {fileID: 0}
-  ChefVoice: {fileID: 8300000, guid: 603c27f178f98d64e8a42a9ce26abf1a, type: 3}
+  ChefVoice: {fileID: 8300000, guid: cbda2d18e0f6db74ab728b978c84fa4f, type: 3}
 --- !u!114 &1216920844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28002,7 +28002,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31482,7 +31482,7 @@ MonoBehaviour:
   myInkJSON: {fileID: 4900000, guid: af5bf4cf960be974c9281226925c87d9, type: 3}
   myInkJSON2: {fileID: 4900000, guid: c4624c11d8a5cfb41bd1b9634a89e73d, type: 3}
   myInkJSON3: {fileID: 4900000, guid: ac74a16f4af158c4684a1238b4cac360, type: 3}
-  bartenderVoice: {fileID: 8300000, guid: 603c27f178f98d64e8a42a9ce26abf1a, type: 3}
+  bartenderVoice: {fileID: 8300000, guid: a37fbf6695d343f4c94791e40f6926bb, type: 3}
   highlighted: {fileID: 1539749367}
   pickUpDrink: 0
 --- !u!82 &1349623691
@@ -31498,7 +31498,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -38561,7 +38561,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.34
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
