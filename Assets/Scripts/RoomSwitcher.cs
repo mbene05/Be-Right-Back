@@ -207,8 +207,8 @@ public class RoomSwitcher : MonoBehaviour
                 break;
 
             case 6: //back room
-                backgroundAmbiance.volume = 0.03f;
-                dinerMusic.volume = 0.02f;
+                backgroundAmbiance.volume = 0.01f;
+                dinerMusic.volume = 0.01f;
                 break;
 
             case 7: //coat room

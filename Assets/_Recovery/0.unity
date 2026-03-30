@@ -7528,7 +7528,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.12
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22767,7 +22767,7 @@ MonoBehaviour:
   windows95: {fileID: 8300000, guid: d81010b705c27704ab384d298a9ab312, type: 3}
   bellDing: {fileID: 8300000, guid: f40d676ce4850c149ab36c1894ea3183, type: 3}
   waterDrip: {fileID: 8300000, guid: 249f653544f583c47b42769104d20cc3, type: 3}
-  squeakydoor: {fileID: 8300000, guid: b4bb99b91975c3349a8e96e4b4d80c16, type: 3}
+  squeakydoor: {fileID: 8300000, guid: 3a3896960e3c1fb4e973dcf1f61c3832, type: 3}
 --- !u!4 &1004845969
 Transform:
   m_ObjectHideFlags: 0
@@ -24707,7 +24707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.870117, y: 150.21002}
+  m_AnchoredPosition: {x: -16.870056, y: 150.21002}
   m_SizeDelta: {x: 240.3, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090131043
@@ -31482,7 +31482,7 @@ MonoBehaviour:
   myInkJSON: {fileID: 4900000, guid: af5bf4cf960be974c9281226925c87d9, type: 3}
   myInkJSON2: {fileID: 4900000, guid: c4624c11d8a5cfb41bd1b9634a89e73d, type: 3}
   myInkJSON3: {fileID: 4900000, guid: ac74a16f4af158c4684a1238b4cac360, type: 3}
-  bartenderVoice: {fileID: 8300000, guid: 41bb8b593ba32a5469a4a52e8241879c, type: 3}
+  bartenderVoice: {fileID: 8300000, guid: a37fbf6695d343f4c94791e40f6926bb, type: 3}
   highlighted: {fileID: 1539749367}
   pickUpDrink: 0
 --- !u!82 &1349623691
@@ -47592,7 +47592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12}
+  m_AnchoredPosition: {x: 0.000061035156, y: 12}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7850998347385365169

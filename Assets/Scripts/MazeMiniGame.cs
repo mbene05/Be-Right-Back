@@ -221,7 +221,6 @@ public class MazeMiniGame : MonoBehaviour
                 break;
 
             case State.Won:
-                audioSource.PlayOneShot(winSound);
                 winGraceTimer -= Time.deltaTime;
                 if (winGraceTimer <= 0f && Input.GetMouseButtonDown(0) && !MapManager.IsOpen)
                 {
@@ -229,6 +228,7 @@ public class MazeMiniGame : MonoBehaviour
                     StartCoroutine(ShowAuthenticated());
                 }
                 break;
+
         }
     }
 
@@ -236,6 +236,8 @@ public class MazeMiniGame : MonoBehaviour
     {
         if (authenticatedOverlay != null)
             authenticatedOverlay.SetActive(true);
+            audioSource.PlayOneShot(winSound);
+
         yield return new WaitForSeconds(2f);
         if (authenticatedOverlay != null)
             authenticatedOverlay.SetActive(false);
@@ -263,6 +265,7 @@ public class MazeMiniGame : MonoBehaviour
             case State.Won:
                 winOverlay.SetActive(true);
                 winGraceTimer = WinGraceDuration;
+
                 if (done2 == false)
                 {
                     ChefManager selectedChef = chef.GetComponent<ChefManager>();
