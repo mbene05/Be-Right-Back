@@ -1,15 +1,33 @@
+INCLUDE global.ink
 EXTERNAL AddToBar(amount)
 EXTERNAL SubToBar(amount)
 VAR shuffleNum = 0
 VAR shuffleAns = 0
-
-~ shuffleNum = RANDOM(1,25)
-~ shuffleAns = RANDOM(1,6)
-
 VAR GoodAmount = 65
 VAR NeutralAmount = 30
 VAR BadAmount = 5
+-> genNumber
 
+=== genNumber ===
+~ shuffleNum = RANDOM(1,25)
+~ shuffleAns = RANDOM(1,6)
+//Random number is {shuffleNum}, last questions were {lastquestion1},{lastquestion2},{lastquestion3},{lastquestion4},{lastquestion5}
+{ shuffleNum == lastquestion1 or shuffleNum == lastquestion2 or shuffleNum == lastquestion3 or shuffleNum == lastquestion4 or shuffleNum == lastquestion5 or shuffleNum == lastquestion6 or shuffleNum == lastquestion7 or shuffleNum == lastquestion8 or shuffleNum == lastquestion9 or shuffleNum == lastquestion10 : -> genNumber}
+~ lastquestion10 = lastquestion9
+~ lastquestion9 = lastquestion8
+~ lastquestion8 = lastquestion7
+~ lastquestion7 = lastquestion6
+~ lastquestion6 = lastquestion5
+~ lastquestion5 = lastquestion4
+~ lastquestion4 = lastquestion3
+~ lastquestion3 = lastquestion2
+~ lastquestion2 = lastquestion1
+~ lastquestion1 = shuffleNum
+//Last questions now {lastquestion1},{lastquestion2},{lastquestion3},{lastquestion4},{lastquestion5}
+
+-> questionmanager
+
+=== questionmanager ===
 {
     - shuffleNum == 1: -> Question1
     - shuffleNum == 2: -> Question2
@@ -36,7 +54,6 @@ VAR BadAmount = 5
     - shuffleNum == 23: -> Question23
     - shuffleNum == 24: -> Question24
     - shuffleNum == 25: -> Question25
-
 }
 
 
@@ -1184,7 +1201,7 @@ Careful or I might start to think you're some sort of freak.
 How do you unwind after a long day?
 {
     -shuffleAns == 1:
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
     + [I go straight to bed to get the most of my apartment-share] 
@@ -1195,7 +1212,7 @@ How do you unwind after a long day?
     -> Bad14
     
     -shuffleAns == 2:
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
     + [I talk to a therapy-bot to get back to normal] 
@@ -1212,7 +1229,7 @@ How do you unwind after a long day?
     + [I go straight to bed to get the most of my apartment-share] 
     ~ AddToBar(NeutralAmount)
     -> Neutral14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
             
@@ -1223,7 +1240,7 @@ How do you unwind after a long day?
     + [I go straight to bed to get the most of my apartment-share] 
     ~ AddToBar(NeutralAmount)
     -> Neutral14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
             
@@ -1231,7 +1248,7 @@ How do you unwind after a long day?
     + [I go straight to bed to get the most of my apartment-share] 
     ~ AddToBar(NeutralAmount)
     -> Neutral14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
     + [I talk to a therapy-bot to get back to normal] 
@@ -1245,11 +1262,10 @@ How do you unwind after a long day?
     + [I talk to a therapy-bot to get back to normal] 
           ~ SubToBar(BadAmount)
     -> Bad14
-    + [Drinking a cold beer and watching HUMAN produced TV shows]
+    + [I drink a cold beer and watch HUMAN produced TV shows]
     ~ AddToBar(GoodAmount)
     -> Good14
 }
-
 
 === Good14 ===
 # good2
