@@ -1,3 +1,6 @@
+VAR a_colour = "<color=\#FFFF00>wrench</color>"
+
+
 -> drinkguy_no_drink
 
 === drinkguy_no_drink ===
@@ -8,9 +11,9 @@ I'm tired of all this synthetic garbage.
 I just want something real for once, something human.
 You know what's really human?
 DRIIINKINGGGG RAAAAH!!!
-I want a drink from the bar that is made only with real ingredients, 
+I want a drink from the bar that is made <color=\#FFFF00>only with real ingredients</color>, 
 nothing synthetic. 
-I'll give you this wrench ive been crying into if you get me that drink..
+I'll give you this {a_colour} ive been crying into if you get me that drink..
 It reminds me of her cold, robotic touch.
 
 + [I can get that for you]

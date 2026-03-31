@@ -6,16 +6,25 @@ public class HighlightManager : MonoBehaviour
     public DialogueManager dialogueManager;
 
     public GameObject highlighted;
+    public bool canHighlightwithDia = false;
 
     void OnMouseOver()
     {
-        if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf || RoomSwitcher.IsTransitioning || PinCodeMiniGame.IsOpen)
-        {
-            highlighted.SetActive(false);
-        }
-        else
+        if(canHighlightwithDia == true)
         {
             highlighted.SetActive(true);
+        }
+
+        else
+        {
+            if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf || RoomSwitcher.IsTransitioning || PinCodeMiniGame.IsOpen)
+            {
+                highlighted.SetActive(false);
+            }
+            else
+            {
+                highlighted.SetActive(true);
+            }
         }
 
     }

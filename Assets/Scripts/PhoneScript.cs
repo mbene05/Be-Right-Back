@@ -35,8 +35,7 @@ public class PhoneScript : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (dialogueManager.dialogueStarted) return;
-        highlighted.SetActive(false);
+      
         if (HasClicked == true) return;
 
         if (MapManager.IsOpen) return;

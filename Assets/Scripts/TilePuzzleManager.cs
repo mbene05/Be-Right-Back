@@ -13,6 +13,7 @@ public int number;
 public Vector2 targetPosition;
     public int correctTiles;
     public GameObject skipButton;
+   
 
     public GameObject chef;
 

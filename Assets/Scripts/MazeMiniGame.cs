@@ -9,6 +9,7 @@ public class MazeMiniGame : MonoBehaviour
     bool done = false;
 
     public GameObject tileTrigger;
+    public GameObject backbutton;
     [Header("Panel")]
     public GameObject mazePanel;
     public RectTransform mazeBounds; // the outer boundary
@@ -225,6 +226,7 @@ public class MazeMiniGame : MonoBehaviour
                 if (winGraceTimer <= 0f && Input.GetMouseButtonDown(0) && !MapManager.IsOpen)
                 {
                     Close();
+                    backbutton.SetActive(false);
                     StartCoroutine(ShowAuthenticated());
                 }
                 break;
@@ -238,7 +240,7 @@ public class MazeMiniGame : MonoBehaviour
             authenticatedOverlay.SetActive(true);
             audioSource.PlayOneShot(winSound);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         if (authenticatedOverlay != null)
             authenticatedOverlay.SetActive(false);
     }

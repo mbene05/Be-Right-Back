@@ -7,7 +7,12 @@ public class DateManager : MonoBehaviour
     public TextAsset myInkJSON;
     public TextAsset myInkJSON2;
     public TextAsset myInkJSON3;
-    public bool saidOp;
+    public static bool saidOp;
+    public GameObject bar;
+    public static void ResetStatics()
+    {
+        saidOp = false;
+    }
     public GameObject phone;
 
     public AudioClip interactSound;
@@ -83,7 +88,8 @@ public class DateManager : MonoBehaviour
 
     public void UseAbility()
     {
-        nextAvailableTime = Time.time + cooldownDuration;
+        Bar bars = bar.GetComponent<Bar>();
+        nextAvailableTime = Time.time + (cooldownDuration * bars.percent);
 
         DialogueManager.dialogueActive = false;
 

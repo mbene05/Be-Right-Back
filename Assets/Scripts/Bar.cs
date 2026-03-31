@@ -32,6 +32,12 @@ public class Bar : MonoBehaviour
 
     void Update()
     {
+        //DONT FORET TO TAKE OUT LATER
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            currentTime = 0;
+        }
+
         percent = currentTime / maxTime;
         UpdateBarColor();
 

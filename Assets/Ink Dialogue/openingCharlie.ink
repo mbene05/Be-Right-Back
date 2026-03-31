@@ -1,3 +1,5 @@
+VAR a_colour = "<color=\#FFFF00>CHARLiE</color>"
+
 -> Charlie1
 
 === Charlie1 ===
@@ -10,7 +12,7 @@ Please have a seat.
 # igotthis
 I guess you were expecting someone else, weren't you.
 # good2
-I am CHARLiE, or Classic Human-antennuated Automata - Romantic LifelikE
+I am {a_colour}, or Classic Human-antennuated Automata - Romantic LifelikE
 I'm sorry I had to decieve you a little..
 I know I look a little different than my dating profile
 # colon3

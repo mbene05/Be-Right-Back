@@ -8,6 +8,11 @@ public class JukeboxPanelManager : MonoBehaviour
     public static JukeboxPanelManager Instance { get; private set; }
     public static bool IsOpen { get; private set; }
     public bool IsDone { get; private set; }
+    public static void ResetStatics()
+    {
+        Instance = null;
+        IsOpen = false;
+    }
 
     [Header("Panel")]
     public GameObject jukeboxPanel;

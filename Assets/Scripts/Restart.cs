@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Restart : MonoBehaviour
 {
@@ -8,7 +9,18 @@ public class Restart : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(RestartRoutine());
         }
+    }
+
+    IEnumerator RestartRoutine()
+    {
+        JukeboxPanelManager.ResetStatics();
+        DateManager.ResetStatics();
+        PlayerPrefs.DeleteAll();
+
+        yield return null; 
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

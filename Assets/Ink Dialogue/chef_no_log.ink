@@ -18,8 +18,7 @@ Actually, there's another problem.
 I use Con F-O-S so much, my conversation logs take up too much space on my phone...
 so I use external drives to store them, 
 but as you might know by now, I'm very forgetful,  
-I set the old drive down and then I just forget where I just placed it.
+Could you go <color=\#FFFF00>find the two ConFOS logs?</color>
+They should be somewhere around the resturant...
 I would get it, but I have to stay back here and keep an eye on things.
-Here's my most recent drive, hopefully it will lead you to my keycard.
-~ giveLog2(1)
 -> END

@@ -14,6 +14,7 @@ public class TilePuzzleTrigger : MonoBehaviour
     void OnMouseDown()
     {
         if (MapManager.IsOpen) return;
+        if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
         if (isOpen == false && done == false)
         {
