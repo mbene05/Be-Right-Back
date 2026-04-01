@@ -11,6 +11,7 @@ public class TilePuzzleTrigger : MonoBehaviour
     public GameObject tilereturnRoom;
     public DialogueManager dialogueManager;
     public GameObject Arrow;
+    public GameObject Arrow2;
 
     void OnMouseDown()
     {
@@ -22,6 +23,7 @@ public class TilePuzzleTrigger : MonoBehaviour
         if (isOpen == false && done == false)
         {
             Arrow.SetActive(false);
+            Arrow2.SetActive(false);
             isOpen = true;
             mainCamera.transform.position = new Vector3(tilePuzzleRoom.transform.position.x, tilePuzzleRoom.transform.position.y, cameraZPosition);
         }
@@ -32,6 +34,7 @@ public class TilePuzzleTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && isOpen == true)
         {
             Arrow.SetActive(true);
+            Arrow2.SetActive(true);
             isOpen = false;
             mainCamera.transform.position = new Vector3(tilereturnRoom.transform.position.x, tilereturnRoom.transform.position.y, cameraZPosition);
         }
