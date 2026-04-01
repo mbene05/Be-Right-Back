@@ -24,6 +24,8 @@ public class PinCodeMiniGame : MonoBehaviour
 
     [Header("On Success")]
     public GameObject computerChip;
+    public GameObject PC;
+    public Sprite pcSprite;
 
     private string enteredCode = "";
 
@@ -146,6 +148,8 @@ public class PinCodeMiniGame : MonoBehaviour
                 break;
             case State.Won:
                 winOverlay.SetActive(true);
+                SpriteRenderer sr = PC.GetComponent<SpriteRenderer>();
+                sr.sprite = pcSprite;
                 won = true;
                 BackButton.SetActive(false);
                 computerChip?.SetActive(true);

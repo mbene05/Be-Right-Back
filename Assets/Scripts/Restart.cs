@@ -27,4 +27,16 @@ public class Restart : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void restart()
+    {
+         //thedate.saidOp = false;
+        JukeboxPanelManager.ResetStatics();
+        DateManager.ResetStatics();
+        PlayerPrefs.DeleteAll();
+
+    
+
+         SceneManager.LoadScene("MainTitle");
+    }
 }

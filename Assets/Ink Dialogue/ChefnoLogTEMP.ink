@@ -13,12 +13,11 @@ At least that's what my assistant tells me.
     -> Answer
     
 === Answer ===
-I would, but I seem to have forgotten where I put my key.
+I would, but I seem to have forgotten where I put my keycard.
 I can't remember where I placed it, but my assistant might remember!
 I have her right here-
 ...I seem to have misplaced my conFOS authenticators.
-If you complete the authentication, I can help you find and get it.
+If you <color=\#FFFF00>complete the authenticators</color>, I can help you find and get the keycard!
 I would get it myself, but I have to stay back here and keep an eye on things.
 I know they're somewhere in the restaurant, I haven't left for a few days
-~ giveLog2(1)
 -> END

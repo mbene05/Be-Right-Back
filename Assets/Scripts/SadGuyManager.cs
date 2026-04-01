@@ -97,6 +97,11 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
         if (dialogueManager.dialogueStarted || dialogueManager.choicesContainer.gameObject.activeSelf)
             return false;
+        
+        if (GivenDrink)
+        {
+            return false;
+        }
 
         highlighted.SetActive(false);
 

@@ -8,6 +8,7 @@ public class PipeTrigger : MonoBehaviour
     public Color hoverColor = Color.red;
     private Color originalColor;
     public float cameraZPosition = -10f;
+    public DialogueManager dialogueManager;
     public GameObject pipePuzzleRoom;
     public GameObject returnRoom;
     public string requiredItemName = "Wrench";
@@ -39,6 +40,7 @@ public class PipeTrigger : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (RoomSwitcher.IsTransitioning) return;
