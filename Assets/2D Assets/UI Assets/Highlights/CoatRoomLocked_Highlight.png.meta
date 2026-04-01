@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: f6061ebaf525aec42a07f54cd3c3aea3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2252682529512741325
+    second: CoatRoomLocked_Highlight_0
+  - first:
+      213: 2821558854280130319
+    second: CoatRoomLocked_Highlight_1
+  - first:
+      213: -8479235725477359251
+    second: CoatRoomLocked_Highlight_2
+  - first:
+      213: -585007343818096503
+    second: CoatRoomLocked_Highlight_3
+  - first:
+      213: 2062606583936064532
+    second: CoatRoomLocked_Highlight_4
+  - first:
+      213: 6988502285711230470
+    second: CoatRoomLocked_Highlight_5
+  - first:
+      213: -3125162381784218923
+    second: CoatRoomLocked_Highlight_6
+  - first:
+      213: 1349498556335513775
+    second: CoatRoomLocked_Highlight_7
+  - first:
+      213: 4978808994570065738
+    second: CoatRoomLocked_Highlight_8
+  - first:
+      213: 3379433286218174686
+    second: CoatRoomLocked_Highlight_9
+  - first:
+      213: 7639861485855947550
+    second: CoatRoomLocked_Highlight_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 942
+        width: 437
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9d55b43d2234f10800000000000000
+      internalID: 2252682529512741325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_1
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 954
+        width: 263
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0fa93624d0382720800000000000000
+      internalID: 2821558854280130319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_2
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 951
+        width: 226
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61de185804b35a80800000000000000
+      internalID: -8479235725477359251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_3
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 952
+        width: 259
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9804ab89be2a1e7f0800000000000000
+      internalID: -585007343818096503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_4
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 947
+        width: 456
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c14ea82c9df9c10800000000000000
+      internalID: 2062606583936064532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_5
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 952
+        width: 313
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606c2db5dc52cf060800000000000000
+      internalID: 6988502285711230470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 487
+        width: 357
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d286502f5131a4d0800000000000000
+      internalID: -3125162381784218923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_7
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 488
+        width: 490
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0e74b79c16ab210800000000000000
+      internalID: 1349498556335513775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_8
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 486
+        width: 984
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a475ed5d668481540800000000000000
+      internalID: 4978808994570065738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 23
+        width: 1964
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed05a273ba826ee20800000000000000
+      internalID: 3379433286218174686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoatRoomLocked_Highlight_10
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 385
+        width: 1968
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1bb1ad2b8d360a60800000000000000
+      internalID: 7639861485855947550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CoatRoomLocked_Highlight_0: 2252682529512741325
+      CoatRoomLocked_Highlight_1: 2821558854280130319
+      CoatRoomLocked_Highlight_10: 7639861485855947550
+      CoatRoomLocked_Highlight_2: -8479235725477359251
+      CoatRoomLocked_Highlight_3: -585007343818096503
+      CoatRoomLocked_Highlight_4: 2062606583936064532
+      CoatRoomLocked_Highlight_5: 6988502285711230470
+      CoatRoomLocked_Highlight_6: -3125162381784218923
+      CoatRoomLocked_Highlight_7: 1349498556335513775
+      CoatRoomLocked_Highlight_8: 4978808994570065738
+      CoatRoomLocked_Highlight_9: 3379433286218174686
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: e91cf7d2240eea140bf86b76688a808b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1928387873500868379
+    second: FoodPrepLocked_Highlight_0
+  - first:
+      213: 5824367330956962196
+    second: FoodPrepLocked_Highlight_1
+  - first:
+      213: 1147055244408748963
+    second: FoodPrepLocked_Highlight_2
+  - first:
+      213: 6233204927045315770
+    second: FoodPrepLocked_Highlight_3
+  - first:
+      213: -1786213699886461836
+    second: FoodPrepLocked_Highlight_4
+  - first:
+      213: -6592727744626501573
+    second: FoodPrepLocked_Highlight_5
+  - first:
+      213: 5957625898659219994
+    second: FoodPrepLocked_Highlight_6
+  - first:
+      213: -6564889988608012050
+    second: FoodPrepLocked_Highlight_7
+  - first:
+      213: 7039677542561025092
+    second: FoodPrepLocked_Highlight_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 964
+        width: 452
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1fa03dcd8203ca10800000000000000
+      internalID: 1928387873500868379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_1
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 964
+        width: 247
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499641b8a3f44d050800000000000000
+      internalID: 5824367330956962196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_2
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 967
+        width: 268
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab7bbcdaa82bef00800000000000000
+      internalID: 1147055244408748963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_3
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 965
+        width: 899
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc20c03bdac08650800000000000000
+      internalID: 6233204927045315770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 487
+        width: 357
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47cc45d8a181637e0800000000000000
+      internalID: -1786213699886461836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_5
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 488
+        width: 490
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b38dca8cb0de184a0800000000000000
+      internalID: -6592727744626501573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_6
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 486
+        width: 984
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a0042a03dbda250800000000000000
+      internalID: 5957625898659219994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 23
+        width: 1964
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0508f6653d4e4a0800000000000000
+      internalID: -6564889988608012050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FoodPrepLocked_Highlight_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 385
+        width: 1968
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c05a95d65f1b160800000000000000
+      internalID: 7039677542561025092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FoodPrepLocked_Highlight_0: 1928387873500868379
+      FoodPrepLocked_Highlight_1: 5824367330956962196
+      FoodPrepLocked_Highlight_2: 1147055244408748963
+      FoodPrepLocked_Highlight_3: 6233204927045315770
+      FoodPrepLocked_Highlight_4: -1786213699886461836
+      FoodPrepLocked_Highlight_5: -6592727744626501573
+      FoodPrepLocked_Highlight_6: 5957625898659219994
+      FoodPrepLocked_Highlight_7: -6564889988608012050
+      FoodPrepLocked_Highlight_8: 7039677542561025092
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
