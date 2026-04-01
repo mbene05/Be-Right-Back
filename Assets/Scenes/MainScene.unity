@@ -1289,6 +1289,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 997972014}
+  UnlockObject: {fileID: 46784666}
 --- !u!1 &33358983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,9 +1512,9 @@ GameObject:
   m_Component:
   - component: {fileID: 46784667}
   - component: {fileID: 46784670}
-  - component: {fileID: 46784669}
   - component: {fileID: 46784668}
   - component: {fileID: 46784671}
+  - component: {fileID: 46784672}
   m_Layer: 0
   m_Name: PickUpItem_Key
   m_TagString: Untagged
@@ -1582,24 +1583,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6127722, y: 1.4461149}
   m_EdgeRadius: 0
---- !u!114 &46784669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46784666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: facc9f3e7c854ae469aa01b8230ccd7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  item: {fileID: 11400000, guid: 02400034a9790b044964b85e45e0a1c7, type: 2}
-  hotbar: {fileID: 0}
-  isLimitedPickup: 0
-  limitedGroupID: Key
-  Bartender: {fileID: 0}
-  SadGuy: {fileID: 0}
 --- !u!212 &46784670
 SpriteRenderer:
   serializedVersion: 2
@@ -1649,8 +1632,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a9251d031ac070144a3e255296a14116, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5185557003165074f940f5578d299570, type: 3}
+  m_Color: {r: 1, g: 0.14725882, b: 0.033018887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1674,6 +1657,21 @@ MonoBehaviour:
   dialogueManager: {fileID: 1683366673}
   highlighted: {fileID: 1980755820}
   canHighlightwithDia: 0
+--- !u!114 &46784672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46784666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886935c5b9b49f04a86652d9f5508844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockItemCick
+  dialogueManager: {fileID: 1683366673}
+  myInkJSON: {fileID: 4900000, guid: b78954fb5a5a2884e84360914f6d9922, type: 3}
+  opened: 0
 --- !u!1 &46858268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,6 +2283,8 @@ GameObject:
   m_Component:
   - component: {fileID: 92698806}
   - component: {fileID: 92698805}
+  - component: {fileID: 92698808}
+  - component: {fileID: 92698807}
   m_Layer: 0
   m_Name: foyer_exit_0
   m_TagString: Untagged
@@ -2366,6 +2366,123 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &92698807
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92698804}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.04, y: 7.05}
+    newSize: {x: 2.11, y: 5.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.04, y: -2.7549999}
+      - {x: -1.02, y: -2.7649999}
+      - {x: -0.96, y: -2.735}
+      - {x: -0.77, y: -2.605}
+      - {x: -0.45, y: -2.435}
+      - {x: -0.34, y: -2.405}
+      - {x: -0.11, y: -2.2949998}
+      - {x: -0.02, y: -2.2649999}
+      - {x: 0.21, y: -2.135}
+      - {x: 0.38, y: -2.0349998}
+      - {x: 0.42, y: -1.995}
+      - {x: 0.42999998, y: -1.765}
+      - {x: 0.42, y: -1.635}
+      - {x: 0.41, y: -1.355}
+      - {x: 0.41, y: -1.115}
+      - {x: 0.42, y: -0.645}
+      - {x: 0.42, y: -0.074999996}
+      - {x: 0.41, y: 0.085}
+      - {x: 0.41, y: 0.235}
+      - {x: 0.42999998, y: 0.355}
+      - {x: 0.42, y: 0.705}
+      - {x: 0.42999998, y: 0.705}
+      - {x: 0.42999998, y: 0.945}
+      - {x: 0.41, y: 0.945}
+      - {x: 0.41, y: 1.345}
+      - {x: 0.42, y: 1.365}
+      - {x: 0.41, y: 1.5849999}
+      - {x: 0.42999998, y: 1.6949999}
+      - {x: 0.42, y: 1.7249999}
+      - {x: 0.41, y: 1.935}
+      - {x: 0.39, y: 1.9549999}
+      - {x: 0.31, y: 1.9649999}
+      - {x: 0.17999999, y: 1.985}
+      - {x: 0.16, y: 2.0149999}
+      - {x: 0.06, y: 2.0249999}
+      - {x: -0.07, y: 2.175}
+      - {x: -0.19, y: 2.385}
+      - {x: -0.19999999, y: 2.485}
+      - {x: -0.24, y: 2.5149999}
+      - {x: -0.32999998, y: 2.5449998}
+      - {x: -0.45, y: 2.5549998}
+      - {x: -0.53999996, y: 2.585}
+      - {x: -0.64, y: 2.625}
+      - {x: -0.83, y: 2.675}
+      - {x: -0.9, y: 2.705}
+      - {x: -1, y: 2.745}
+      - {x: -1.27, y: 2.835}
+      - {x: -1.4399999, y: 2.875}
+      - {x: -1.52, y: 2.885}
+      - {x: -1.52, y: -2.985}
+      - {x: -1.48, y: -2.985}
+      - {x: -1.38, y: -2.935}
+      - {x: -1.31, y: -2.885}
+      - {x: -1.18, y: -2.825}
+  m_UseDelaunayMesh: 1
+--- !u!114 &92698808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92698804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25143a342bcc3a48830c448306025fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrontEntranceDia
+  dialogueManager: {fileID: 1683366673}
+  myInkJSON: {fileID: 4900000, guid: ae79257b32c0d0b40b9fde2cb416e400, type: 3}
+  audioSource: {fileID: 0}
+  DateVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
 --- !u!1 &102300629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,8 +4046,8 @@ Transform:
   m_GameObject: {fileID: 147977936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 65.05, y: 1.82, z: 0}
-  m_LocalScale: {x: 1.2136706, y: 4.8050685, z: 1}
+  m_LocalPosition: {x: 66.28, y: 1.99, z: 0}
+  m_LocalScale: {x: 1.2339278, y: 4.0710115, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 433869968}
@@ -3979,7 +4096,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.3}
+  m_Size: {x: 1.5, y: 1.3}
   m_EdgeRadius: 0
 --- !u!1 &148739386
 GameObject:
@@ -6237,7 +6354,7 @@ Transform:
   m_GameObject: {fileID: 236786928}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09000015, y: -0.030000001, z: 0}
+  m_LocalPosition: {x: 0.044, y: -0.129, z: 0}
   m_LocalScale: {x: 0.46866, y: 0.47458997, z: 0.47458997}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6453,6 +6570,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &250961987
 GameObject:
   m_ObjectHideFlags: 0
@@ -6919,16 +7037,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270996112}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380.3, y: 0.0000019073}
+  m_AnchoredPosition: {x: -16, y: 208.24}
   m_SizeDelta: {x: 190.5, y: 32.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270996114
@@ -6949,6 +7067,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!114 &270996115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15390,16 +15509,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753523521}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: 207.21}
+  m_AnchoredPosition: {x: 380.3, y: 0.0000038146973}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753523523
@@ -15514,6 +15633,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &756102033
 GameObject:
   m_ObjectHideFlags: 0
@@ -16495,7 +16615,7 @@ Transform:
   m_GameObject: {fileID: 786354839}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0604, y: -0.0861, z: -0.038665038}
+  m_LocalPosition: {x: -0.0247, y: -0.1594, z: -0.038665038}
   m_LocalScale: {x: 0.005612488, y: 0.010165134, z: 0.90277}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16548,7 +16668,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 742b414ab5c547843b67d8a15bf03e6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -23573,7 +23693,7 @@ Transform:
   m_GameObject: {fileID: 1018311098}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0.09, y: 0.01, z: 0}
   m_LocalScale: {x: 0.46866038, y: 0.47459278, z: 0.47459278}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24693,16 +24813,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082975504}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.1, y: 207.14}
+  m_AnchoredPosition: {x: 380.3, y: -0.00000095367}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1082975506
@@ -24817,6 +24937,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &1083094339
 GameObject:
   m_ObjectHideFlags: 0
@@ -25923,6 +26044,7 @@ MonoBehaviour:
   winSound: {fileID: 8300000, guid: 9f6787af969a12c44884a2394ec031c2, type: 3}
   won: 0
   tileTrigger: {fileID: 1765050134}
+  room_coatcheck_fg_pipe_fixed: {fileID: 406645975402055219, guid: 194f1006815e0f740a5d03a4d82a7fd6, type: 3}
 --- !u!4 &1134035850
 Transform:
   m_ObjectHideFlags: 0
@@ -26519,16 +26641,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1161646181}
   - component: {fileID: 1161646184}
-  - component: {fileID: 1161646182}
   - component: {fileID: 1161646185}
   - component: {fileID: 1161646186}
+  - component: {fileID: 1161646187}
   m_Layer: 0
   m_Name: PickUpItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1161646181
 Transform:
   m_ObjectHideFlags: 0
@@ -26544,24 +26666,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 189633548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1161646182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161646180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: facc9f3e7c854ae469aa01b8230ccd7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  item: {fileID: 11400000, guid: a4df2a2f44b5a8744b59bad10e41ece9, type: 2}
-  hotbar: {fileID: 0}
-  isLimitedPickup: 1
-  limitedGroupID: KeyCard
-  Bartender: {fileID: 0}
-  SadGuy: {fileID: 0}
 --- !u!212 &1161646184
 SpriteRenderer:
   serializedVersion: 2
@@ -26682,6 +26786,21 @@ MonoBehaviour:
   dialogueManager: {fileID: 1683366673}
   highlighted: {fileID: 1120723981}
   canHighlightwithDia: 0
+--- !u!114 &1161646187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161646180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886935c5b9b49f04a86652d9f5508844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockItemCick
+  dialogueManager: {fileID: 1683366673}
+  myInkJSON: {fileID: 4900000, guid: 0bd6365e58ec7774f9bb9dd14fa87e81, type: 3}
+  opened: 0
 --- !u!1 &1169209636
 GameObject:
   m_ObjectHideFlags: 0
@@ -28733,16 +28852,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246087523}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380.2, y: -1.035}
+  m_AnchoredPosition: {x: -15.999996, y: -205.89998}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1246087525
@@ -28763,6 +28882,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 1161646180}
 --- !u!114 &1246087526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30638,6 +30758,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &1313642530
 GameObject:
   m_ObjectHideFlags: 0
@@ -32780,16 +32901,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374962618}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380.2, y: -0.000030518}
+  m_AnchoredPosition: {x: -16, y: -203.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374962620
@@ -32904,6 +33025,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &1384934906
 GameObject:
   m_ObjectHideFlags: 0
@@ -33689,7 +33811,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8015823700838517919, guid: b3685c0d3ea96b44f888f88975184e3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -34561,6 +34683,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &1480173598
 GameObject:
   m_ObjectHideFlags: 0
@@ -35524,7 +35647,7 @@ Transform:
   m_GameObject: {fileID: 1523831628}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.194, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37399,6 +37522,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &1600273104
 GameObject:
   m_ObjectHideFlags: 0
@@ -37943,16 +38067,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622581563}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: -203.6}
+  m_AnchoredPosition: {x: -380.2, y: -1.035}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622581565
@@ -37973,6 +38097,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!114 &1622581566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39166,6 +39291,7 @@ MonoBehaviour:
   done: 0
   tilePuzzleRoom: {fileID: 1090959047}
   tilereturnRoom: {fileID: 1223012124}
+  dialogueManager: {fileID: 1683366673}
   Arrow: {fileID: 753523521}
 --- !u!212 &1702342041
 SpriteRenderer:
@@ -39214,7 +39340,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 8e5a7897425edb74f9acd2b0886b9212, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -39695,6 +39821,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!1 &1742784830
 GameObject:
   m_ObjectHideFlags: 0
@@ -40871,7 +40998,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2947807852739133975, guid: d2a1ad6c6a3fff144a1dc72e8902faea, type: 3}
+  m_Sprite: {fileID: -7262617152217554009, guid: 8cecf258c39d98a41b294630d74a5eaf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -40890,7 +41017,7 @@ Transform:
   m_GameObject: {fileID: 1805076145}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.236, y: -0.054, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40952,7 +41079,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.76, y: 6.35}
+    oldSize: {x: 4.23, y: 6.37}
     newSize: {x: 4.76, y: 6.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -42142,6 +42269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MazeTrigger
   MazeGame: {fileID: 314439844}
   backButton: {fileID: 223076708}
+  dialogueManager: {fileID: 1683366673}
 --- !u!212 &1871532731
 SpriteRenderer:
   serializedVersion: 2
@@ -42994,7 +43122,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2649101816845326612, guid: 7bebdb6720a3c5a4c986457221adeb56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -44543,7 +44671,7 @@ Transform:
   m_GameObject: {fileID: 1980755820}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 125.032, y: 0.136, z: 0}
+  m_LocalPosition: {x: 125.851, y: -0.135, z: 0}
   m_LocalScale: {x: 0.080668435, y: 0.08652067, z: 0.092913896}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44598,7 +44726,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 51e52e7bd159d6c499017b29b46b2e19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 211d93b44ed6dca47b4690b18997aa8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -45244,16 +45372,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022981845}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.1, y: -205.9}
+  m_AnchoredPosition: {x: -380.2, y: 56.999985}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022981847
@@ -45368,6 +45496,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 1161646180}
 --- !u!1 &2029240826
 GameObject:
   m_ObjectHideFlags: 0
@@ -46734,16 +46863,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108349618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.27, y: 2.1, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 800700104}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 377.7, y: -0.000030518}
+  m_AnchoredPosition: {x: -16, y: 207.21}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108349620
@@ -46764,6 +46893,7 @@ MonoBehaviour:
   phone: {fileID: 504177562}
   myInkJSON: {fileID: 0}
   cannotAccessText: {fileID: 0}
+  UnlockObject: {fileID: 0}
 --- !u!114 &2108349621
 MonoBehaviour:
   m_ObjectHideFlags: 0

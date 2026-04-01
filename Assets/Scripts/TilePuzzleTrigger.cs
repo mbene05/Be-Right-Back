@@ -9,11 +9,14 @@ public class TilePuzzleTrigger : MonoBehaviour
 
     public GameObject tilePuzzleRoom;
     public GameObject tilereturnRoom;
+    public DialogueManager dialogueManager;
     public GameObject Arrow;
 
     void OnMouseDown()
     {
+        if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
+        if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
         if (isOpen == false && done == false)

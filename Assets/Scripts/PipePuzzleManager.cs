@@ -16,6 +16,7 @@ public class PipePuzzleManager : MonoBehaviour
 
 
     public GameObject tileTrigger;
+    public Sprite room_coatcheck_fg_pipe_fixed;
 
     void Start()
     {
@@ -55,6 +56,8 @@ public class PipePuzzleManager : MonoBehaviour
 
     void DoSomethingAfterWin()
     {
+        SpriteRenderer sr = tileTrigger.GetComponent<SpriteRenderer>();
+        sr.sprite = room_coatcheck_fg_pipe_fixed;
         won = true;
         audioSource.PlayOneShot(winSound);
         SinkClogged.SetActive(false);
