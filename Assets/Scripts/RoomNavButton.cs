@@ -49,10 +49,6 @@ public class RoomNavButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             {
                 _locked = !unlock.opened;
             }
-            else
-            {
-                Debug.LogError("UnlockItemCick missing on UnlockObject!");
-            }
         }
 
         if (!inRoom || suppress)
