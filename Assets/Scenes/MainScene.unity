@@ -40490,18 +40490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37831ef7708b1b4393474e6f3024565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  globalInkFile:
-    inkAsset: {fileID: 102900000, guid: 24c3e73e131a4fb4697846cb818637ee, type: 3}
-    jsonAssetDirectory: {fileID: 0}
-    jsonAsset: {fileID: 0}
-    unhandledCompileErrors: []
-    recursiveIncludeErrorPaths: []
-    errors: []
-    warnings: []
-    todos: []
-    masterInkAssets: []
-    localIncludePaths: []
-    includes: []
+  loadGlobalsJSON: {fileID: 4900000, guid: b92c4fa45e9d7df40ae3c975e0361e57, type: 3}
   inkJSON: {fileID: 4900000, guid: 59c36a7beba8d9546b6fb691b9287f06, type: 3}
   dialogueText: {fileID: 124415452}
   typingSpeed: 0.03

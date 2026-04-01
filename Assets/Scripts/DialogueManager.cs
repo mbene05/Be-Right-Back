@@ -1,5 +1,5 @@
 using Ink.Runtime;
-using Ink.UnityIntegration;
+//using Ink.UnityIntegration;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,8 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("Globals Ink File")]
-    [SerializeField] private InkFile globalInkFile;
+    // variable for the load_globals.ink JSON
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
     public TextAsset inkJSON;
     public TextMeshProUGUI dialogueText;
     public float typingSpeed = 0.03f;
@@ -70,7 +72,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        dialogueVariables = new DialogueVariables(globalInkFile.filePath);
+        // pass that variable to the DIalogueVariables constructor in the Awake method
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
     public void Start()
