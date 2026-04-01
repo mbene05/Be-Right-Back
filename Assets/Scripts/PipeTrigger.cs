@@ -12,6 +12,7 @@ public class PipeTrigger : MonoBehaviour
     public GameObject returnRoom;
     public string requiredItemName = "Wrench";
     private HotbarManager hotbar;
+    
     public bool isOpen = false;
     public GameObject Arrow;
 

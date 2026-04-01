@@ -14,6 +14,7 @@ public class RoomNavButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private CanvasGroup _group;
     public TextAsset myInkJSON;
     public GameObject cannotAccessText;
+    public GameObject canAccessText;
     public GameObject UnlockObject;
     private RoomSwitcher _switcher;
     private HotbarManager _hotbar;
@@ -67,17 +68,23 @@ public class RoomNavButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (_locked && cannotAccessText != null)
             cannotAccessText.SetActive(true);
+
+        if (_locked == false)
+            canAccessText.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if (cannotAccessText != null)
             cannotAccessText.SetActive(false);
+
+        if (_locked == false)
+            canAccessText.SetActive(false);
     }
 
     void SetVisible(bool visible, bool interactable)
     {
-        _group.alpha = visible ? (_locked ? 0.35f : 1f) : 0f;
+        _group.alpha = visible ? (_locked ? 0.8f : 1f) : 0f;
         _group.interactable = interactable;
         _group.blocksRaycasts = visible;
     }
