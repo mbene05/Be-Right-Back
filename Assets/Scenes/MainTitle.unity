@@ -1002,7 +1002,6 @@ MonoBehaviour:
   - {fileID: 3257026595937430624, guid: 804d9405b4c77e64192e1fe8506548d7, type: 3}
   - {fileID: -4098806713482712642, guid: 35f842194aac29f4b8d5c2eb49212a87, type: 3}
   - {fileID: -4515452810032911684, guid: 82ac0c05af748054ab7e90d271c4040f, type: 3}
-  Num: 0
   index: 0
 --- !u!212 &1864843085
 SpriteRenderer:
@@ -1072,8 +1071,8 @@ Transform:
   m_GameObject: {fileID: 1864843083}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: 0.03, z: 0}
-  m_LocalScale: {x: 1.3948, y: 1.4403, z: 1}
+  m_LocalPosition: {x: 0.0486, y: 0.03, z: 0}
+  m_LocalScale: {x: 1.3988163, y: 1.4403, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
