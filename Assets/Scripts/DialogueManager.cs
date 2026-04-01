@@ -43,6 +43,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject Keycard;
 
     public GameObject CosLog;
+    public GameObject speechBubble;
+    public GameObject speechBubble2;
 
     private SpriteRenderer charlieRenderer;
     public Sprite charlieFace;
@@ -59,6 +61,7 @@ public class DialogueManager : MonoBehaviour
     public AudioClip goodSound;
     public AudioClip badSound;
     public AudioClip neutralSound;
+    public AudioClip charlieReadyBeep;
 
     private AudioSource audioSource;
     private AudioSource voiceSource;
@@ -72,6 +75,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Start()
     {
+        speechBubble.gameObject.SetActive(false);
         choicesActive = false;
         dialogueActive = false;
         hasChanged = false;
@@ -85,6 +89,8 @@ public class DialogueManager : MonoBehaviour
         voiceSource.loop = true;
 
         charlieRenderer = GameObject.Find("charlie color neutral_0").GetComponent<SpriteRenderer>();
+        charlieRenderer.sprite = charlieFace;
+
 
     }
 
@@ -184,8 +190,18 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator DelayedFace()
     {
-        yield return new WaitForSeconds(14); //important for delay very very important do not forget
+        yield return new WaitForSeconds(20); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
+/*        if (RoomSwitcher.currentRoom == 1)
+        {
+            speechBubble2.gameObject.SetActive(true);
+            yield return new WaitForSeconds(3);
+            speechBubble2.gameObject.SetActive(false);
+        }*/
+        speechBubble.gameObject.SetActive(true);
+        yield return new WaitForSeconds(5);
+        speechBubble.gameObject.SetActive(false);
+        //audioSource.PlayOneShot(charlieReadyBeep);
         Debug.Log("Delayed face back to normal");
 
     }

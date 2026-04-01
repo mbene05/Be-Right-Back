@@ -17,10 +17,16 @@ public class Bar : MonoBehaviour
     private bool hasEnded = false;
     private bool isTimerRunning = false;
 
+    public AudioClip runningLow;
+
+    private AudioSource audioSource;
+
 
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         bar.fillAmount = 1f;
         currentTime = maxTime;
         
@@ -99,6 +105,7 @@ public class Bar : MonoBehaviour
         if (percent <= 0.2f)
         {
             bar.color = Color.red;
+            audioSource.PlayOneShot(runningLow); //bar sound effect when low
         }
         else if (percent <= 0.5f)
         {
