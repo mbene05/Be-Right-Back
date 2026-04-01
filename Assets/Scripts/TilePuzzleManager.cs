@@ -26,6 +26,7 @@ public Vector2 targetPosition;
     public GameObject authenticatedOverlay;
 
     public bool move = false;
+   
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

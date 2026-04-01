@@ -14,6 +14,7 @@ public class RoomNavButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private CanvasGroup _group;
     public TextAsset myInkJSON;
     public GameObject cannotAccessText;
+    public GameObject UnlockObject;
     private RoomSwitcher _switcher;
     private HotbarManager _hotbar;
     private bool _locked;
@@ -39,7 +40,20 @@ public class RoomNavButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         bool itemOk  = string.IsNullOrEmpty(requiredItem) || (_hotbar != null && _hotbar.HasItem(requiredItem));
         bool suppress = DialogueManager.IsOpen || DialogueManager.choicesActive || RoomSwitcher.IsTransitioning || phone.GetComponent<PhoneScript>().HasClicked == true;
 
-        _locked = !itemOk;
+        //_locked = !itemOk;
+        if (UnlockObject != null)
+        {
+            UnlockItemCick unlock = UnlockObject.GetComponent<UnlockItemCick>();
+
+            if (unlock != null)
+            {
+                _locked = !unlock.opened;
+            }
+            else
+            {
+                Debug.LogError("UnlockItemCick missing on UnlockObject!");
+            }
+        }
 
         if (!inRoom || suppress)
             SetVisible(false, false);

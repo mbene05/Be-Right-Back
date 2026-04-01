@@ -5,6 +5,9 @@ using System.Collections;
 public class Restart : MonoBehaviour
 {
     // Update is called once per frame
+
+
+   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -15,6 +18,7 @@ public class Restart : MonoBehaviour
 
     IEnumerator RestartRoutine()
     {
+        //thedate.saidOp = false;
         JukeboxPanelManager.ResetStatics();
         DateManager.ResetStatics();
         PlayerPrefs.DeleteAll();
