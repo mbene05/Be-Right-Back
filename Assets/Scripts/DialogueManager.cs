@@ -46,7 +46,6 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject CosLog;
     public GameObject speechBubble;
-    public GameObject speechBubble2;
 
     private SpriteRenderer charlieRenderer;
     public Sprite charlieFace;
@@ -202,9 +201,9 @@ public class DialogueManager : MonoBehaviour
             speechBubble2.gameObject.SetActive(false);
         }*/
         speechBubble.gameObject.SetActive(true);
+        audioSource.PlayOneShot(charlieReadyBeep);
         yield return new WaitForSeconds(5);
         speechBubble.gameObject.SetActive(false);
-        //audioSource.PlayOneShot(charlieReadyBeep);
         Debug.Log("Delayed face back to normal");
 
     }

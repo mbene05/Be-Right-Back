@@ -1,5 +1,7 @@
     using UnityEngine;
 
+
+
 public class ItemPickup : MonoBehaviour
 {
     public Item item; // The Item ScriptableObject this pickup represents
@@ -7,13 +9,18 @@ public class ItemPickup : MonoBehaviour
     public bool isLimitedPickup = false; // Check this for the 4 special items
     public string limitedGroupID = "drinks"; // Group ID for items that share the limit
 
-     public GameObject Bartender;
+    public AudioClip pickUpSound; 
+    private AudioSource audioSource;
+    public float pickupVolume = 0.1f;
+
+    public GameObject Bartender;
      public GameObject SadGuy;
     
     private static System.Collections.Generic.Dictionary<string, GameObject> limitedPickups = new System.Collections.Generic.Dictionary<string, GameObject>();
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Find the hotbar in the scene if not assigned
         if (hotbar == null)
         {
@@ -26,7 +33,7 @@ public class ItemPickup : MonoBehaviour
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (RoomSwitcher.IsTransitioning) return;
-
+        
         if (isLimitedPickup)
         {
             if (limitedPickups.ContainsKey(limitedGroupID) && limitedPickups[limitedGroupID] != null)
@@ -40,6 +47,8 @@ public class ItemPickup : MonoBehaviour
         if (hotbar != null && item != null)
         {
             bool success = hotbar.AddItem(item);
+            AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, pickupVolume);
+
 
             if (success)
             {

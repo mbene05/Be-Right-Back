@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,10 +13,16 @@ public class PhoneScript : MonoBehaviour
     private int openTimer = 0;
 
     public GameObject highlighted;
-    
+
+    public AudioClip phonePickup;
+    public AudioClip phoneClose;
+
+    private AudioSource audioSource;
+
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Make sure menu is hidden at start
         menuPanel.SetActive(false);
     }
@@ -24,9 +31,10 @@ public class PhoneScript : MonoBehaviour
         if (menuPanel.activeSelf && Input.GetMouseButtonDown(0) && openTimer > 5)
         {
             if (!EventSystem.current.IsPointerOverGameObject())
-            {
-               // menuPanel.SetActive(false);
-                openTimer = 0;
+            { 
+              // menuPanel.SetActive(false);
+              //audioSource.PlayOneShot(phoneClose);
+              openTimer = 0; 
             }
         }
         if (menuPanel.activeSelf)
@@ -48,6 +56,7 @@ public class PhoneScript : MonoBehaviour
         // Toggle the menu on click
         menuPanel.SetActive(true);
         Arrow.SetActive(true);
+        audioSource.PlayOneShot(phonePickup);
     }
 
     void Awake()

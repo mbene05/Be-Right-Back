@@ -12,10 +12,14 @@ public class DrinkMenuTable : MonoBehaviour
     private int openTimer = 0;
 
     public GameObject highlighted;
-    
+    public AudioClip paperRustle;
+
+    private AudioSource audioSource;
+
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Make sure menu is hidden at start
         menuPanel.SetActive(false);
     }
@@ -48,6 +52,7 @@ public class DrinkMenuTable : MonoBehaviour
         Debug.Log("Menu object activated");
         // Toggle the menu on click
         menuPanel.SetActive(true);
+        audioSource.PlayOneShot(paperRustle);
     }
 
     void Awake()

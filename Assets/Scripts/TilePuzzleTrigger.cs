@@ -13,6 +13,14 @@ public class TilePuzzleTrigger : MonoBehaviour
     public GameObject Arrow;
     public GameObject Arrow2;
 
+    public AudioClip tilePuzzleOpenSound;
+
+    private AudioSource audioSource;
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void OnMouseDown()
     {
         if (dialogueManager.dialogueStarted) return;
@@ -20,6 +28,7 @@ public class TilePuzzleTrigger : MonoBehaviour
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
+        audioSource.PlayOneShot(tilePuzzleOpenSound);
         if (isOpen == false && done == false)
         {
             Arrow.SetActive(false);

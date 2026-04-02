@@ -7,7 +7,15 @@ public class UnlockItemCick : MonoBehaviour
 
     public TextAsset myInkJSON; 
     public bool opened = false;
-   
+
+    public AudioClip importantItem;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void OnMouseDown()
     {
       
@@ -18,6 +26,7 @@ public class UnlockItemCick : MonoBehaviour
         if (RoomSwitcher.IsTransitioning) return;
         opened = true;
        
+        audioSource.PlayOneShot(importantItem);
 
         dialogueManager.StartDialogue(myInkJSON, null);
        
