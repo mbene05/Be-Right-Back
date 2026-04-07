@@ -58,11 +58,13 @@ public class DialogueManager : MonoBehaviour
     public Sprite charlieConfused;
     public Sprite CharlieSlightlyHappier;
     public Sprite CharlieLoading;
+    public Sprite CharlieDistracted;
 
     public AudioClip goodSound;
     public AudioClip badSound;
     public AudioClip neutralSound;
     public AudioClip charlieReadyBeep;
+    public GameObject Charlie;
 
     private AudioSource audioSource;
     private AudioSource voiceSource;
@@ -91,7 +93,10 @@ public class DialogueManager : MonoBehaviour
         voiceSource.loop = true;
 
         charlieRenderer = GameObject.Find("charlie color neutral_0").GetComponent<SpriteRenderer>();
-        charlieRenderer.sprite = charlieFace;
+        if (Charlie.GetComponent<DateManager>().Distracted == false)
+        {
+            charlieRenderer.sprite = charlieFace;
+        }
 
 
     }
@@ -193,18 +198,22 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator DelayedFace()
     {
         //yield return new WaitForSeconds(20); //important for delay very very important do not forget
-        charlieRenderer.sprite = charlieFace;
-/*        if (RoomSwitcher.currentRoom == 1)
+        if (Charlie.GetComponent<DateManager>().Distracted == false)
         {
-            speechBubble2.gameObject.SetActive(true);
-            yield return new WaitForSeconds(3);
-            speechBubble2.gameObject.SetActive(false);
-        }*/
-        speechBubble.gameObject.SetActive(true);
-        audioSource.PlayOneShot(charlieReadyBeep);
-        yield return new WaitForSeconds(5);
-        speechBubble.gameObject.SetActive(false);
-        Debug.Log("Delayed face back to normal");
+                charlieRenderer.sprite = charlieFace;
+            
+    /*        if (RoomSwitcher.currentRoom == 1)
+            {
+                speechBubble2.gameObject.SetActive(true);
+                yield return new WaitForSeconds(3);
+                speechBubble2.gameObject.SetActive(false);
+            }*/
+            speechBubble.gameObject.SetActive(true);
+            audioSource.PlayOneShot(charlieReadyBeep);
+            yield return new WaitForSeconds(5);
+            speechBubble.gameObject.SetActive(false);
+            Debug.Log("Delayed face back to normal");
+        }
 
     }
     public void Choices(int choiceIndex)
@@ -260,6 +269,9 @@ public class DialogueManager : MonoBehaviour
                 break;
             case "loading":
                 charlieRenderer.sprite = CharlieLoading;
+                break;
+            case "distarcted":
+                charlieRenderer.sprite = CharlieDistracted;
                 break;
             }
     }

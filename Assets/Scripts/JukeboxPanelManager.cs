@@ -19,6 +19,7 @@ public class JukeboxPanelManager : MonoBehaviour
     [Header("Draggable Items")]
     public GameObject JukeboxTrigger;
     public RectTransform needle;
+    public GameObject Charlie;
     public RectTransform computerChip;
 
     [Header("Drop Zones (Invisible Boxes)")]
@@ -36,6 +37,8 @@ public class JukeboxPanelManager : MonoBehaviour
     private Vector2 needleStartPos;
     private Vector2 chipStartPos;
     private bool needlePlaced = false;
+    public DialogueManager dialogueManager;
+    public TextAsset myInkJSON;
     private bool chipPlaced = false;
 
     private Canvas canvas;
@@ -219,8 +222,10 @@ public class JukeboxPanelManager : MonoBehaviour
 
     void OnPuzzleComplete()
     {
+       Charlie.GetComponent<DateManager>().Distracted = true;
         IsDone = true;
         DateManager.saidOp = false;
+        dialogueManager.StartDialogue(myInkJSON, null);
         if (audioSource != null && successSound != null)
             audioSource.PlayOneShot(successSound);
         Invoke(nameof(Close), 1.0f);

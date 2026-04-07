@@ -14445,14 +14445,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 4.43, y: 3.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -14466,7 +14466,7 @@ Transform:
   m_GameObject: {fileID: 546114527}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.47, y: 0.62, z: 0}
+  m_LocalPosition: {x: -2.46, y: 1.114, z: 0}
   m_LocalScale: {x: 0.6, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14488,14 +14488,17 @@ MonoBehaviour:
   myInkJSON: {fileID: 4900000, guid: 59c36a7beba8d9546b6fb691b9287f06, type: 3}
   myInkJSON2: {fileID: 4900000, guid: 814e1182b696bdd4f950771738f8186f, type: 3}
   myInkJSON3: {fileID: 4900000, guid: 2f85d86c7094030448141eea14f8479c, type: 3}
+  myInkJSONFinal: {fileID: 4900000, guid: 2c6384c23a7f5a445b6805352f607c42, type: 3}
   drinkDropInkJSON: {fileID: 4900000, guid: 3900f2e912aad944f8750406b7872128, type: 3}
   wrenchDropInkJSON: {fileID: 4900000, guid: fa97a89a37d1dad4e93e6fe417a995e3, type: 3}
   bar: {fileID: 1169209636}
   phone: {fileID: 504177562}
+  Distracted: 0
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
   TableMenu: {fileID: 493312494}
   charlieVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
   charlieNormal: {fileID: 0}
+  DistractedSprite: {fileID: -8443748972630884517, guid: e8765d304bb23574b97b43384044c864, type: 3}
   cooldownDuration: 20
   saidOpeningFr: 0
 --- !u!61 &546114532
@@ -14536,8 +14539,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.34, y: 2.02}
-    newSize: {x: 1.34, y: 2.02}
+    oldSize: {x: 4.43, y: 3.83}
+    newSize: {x: 4.43, y: 3.83}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -29066,7 +29069,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.059
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -42876,10 +42879,12 @@ MonoBehaviour:
   charlieConfused: {fileID: 3639219197766262169, guid: 379321a56652f3b41ab2577d8e4afd21, type: 3}
   CharlieSlightlyHappier: {fileID: -8633302258997058776, guid: 636a09ed63fad9240b4d38b375cc54e5, type: 3}
   CharlieLoading: {fileID: -8248260018913809423, guid: 69016f8a93b19494985ac87d39f8707e, type: 3}
+  CharlieDistracted: {fileID: -8443748972630884517, guid: e8765d304bb23574b97b43384044c864, type: 3}
   goodSound: {fileID: 8300000, guid: dc5cd3a244a4a7142bcaed8d223eebd3, type: 3}
   badSound: {fileID: 8300000, guid: a362358af3beb6543b94386284878825, type: 3}
-  neutralSound: {fileID: 8300000, guid: 7215e44791cec8340a9b6b709b5ab7fe, type: 3}
+  neutralSound: {fileID: 8300000, guid: 8d3e671a563802a49b99f9b98392050d, type: 3}
   charlieReadyBeep: {fileID: 8300000, guid: 0fcaabed2047b86498ce5a1c6cb6a5f3, type: 3}
+  Charlie: {fileID: 546114527}
 --- !u!4 &1683366674
 Transform:
   m_ObjectHideFlags: 0
@@ -49656,11 +49661,14 @@ MonoBehaviour:
   jukeboxPanel: {fileID: 1742784830}
   JukeboxTrigger: {fileID: 0}
   needle: {fileID: 488771145}
+  Charlie: {fileID: 546114527}
   computerChip: {fileID: 1423032447}
   needleDropZone: {fileID: 1085353094}
   chipDropZone: {fileID: 853089343}
   winSceneName: WinScreen
   successSound: {fileID: 8300000, guid: fc8b0433032f806408aca5e8682970aa, type: 3}
+  dialogueManager: {fileID: 1683366673}
+  myInkJSON: {fileID: 4900000, guid: 39085f81a8b60fd419484c51576d4d09, type: 3}
   JukeBoxTrigger: {fileID: 337970784}
 --- !u!4 &2021784039
 Transform:

@@ -7,6 +7,7 @@ public class DateManager : MonoBehaviour, IUsableWithItem
     public TextAsset myInkJSON;
     public TextAsset myInkJSON2;
     public TextAsset myInkJSON3;
+    public TextAsset myInkJSONFinal;
     public TextAsset drinkDropInkJSON;
     public TextAsset wrenchDropInkJSON;
     public static bool saidOp;
@@ -17,6 +18,8 @@ public class DateManager : MonoBehaviour, IUsableWithItem
     }
     public GameObject phone;
 
+    public bool Distracted = false;
+
     public AudioClip interactSound;
     public GameObject TableMenu;
     public AudioClip charlieVoice;
@@ -25,6 +28,8 @@ public class DateManager : MonoBehaviour, IUsableWithItem
 
     private SpriteRenderer charlieRenderer;
     public Sprite charlieNormal;
+    public Sprite DistractedSprite;
+  
 
     private float nextAvailableTime;
     private BoxCollider2D boxCollider;
@@ -42,6 +47,10 @@ public class DateManager : MonoBehaviour, IUsableWithItem
 
     void Update()
     {
+        if (Distracted)
+        {
+            charlieRenderer.sprite = DistractedSprite;
+        }
         if (saidOp == false && saidOpeningFr == false)
         {
             dialogueManager.StartDialogue(myInkJSON2, charlieVoice);
@@ -60,34 +69,41 @@ public class DateManager : MonoBehaviour, IUsableWithItem
         if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
 
-
-        if (Time.time < nextAvailableTime)
+        if (Distracted)
         {
-
-            Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
-
-            dialogueManager.LoadingDialogue(myInkJSON3, charlieVoice);
-            DialogueManager.hasChanged = false;
-            DialogueManager.dialogueActive = true;
-
-            return;
+            dialogueManager.LoadingDialogue(myInkJSONFinal, charlieVoice);
         }
 
-        audioSource.pitch = Random.Range(0.9f, 1.1f);
-
-        if (interactSound != null)
+        else
         {
-            audioSource.PlayOneShot(interactSound);
-        }
+            if (Time.time < nextAvailableTime)
+            {
 
-        UseAbility();
+                Debug.Log("Ability is on cooldown! Time remaining: " + (nextAvailableTime - Time.time).ToString("F2") + "s");
 
-        if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
-        {
-            DialogueManager.dialogueActive = true;
-            dialogueManager.StartDialogue(myInkJSON, charlieVoice);
-            DialogueManager.dialogueActive = false;
+                dialogueManager.LoadingDialogue(myInkJSON3, charlieVoice);
+                DialogueManager.hasChanged = false;
+                DialogueManager.dialogueActive = true;
 
+                return;
+            }
+
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+
+            if (interactSound != null)
+            {
+                audioSource.PlayOneShot(interactSound);
+            }
+
+            UseAbility();
+
+            if (!dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
+            {
+                DialogueManager.dialogueActive = true;
+                dialogueManager.StartDialogue(myInkJSON, charlieVoice);
+                DialogueManager.dialogueActive = false;
+
+            }
         }
     }
 
@@ -112,7 +128,7 @@ public class DateManager : MonoBehaviour, IUsableWithItem
     {
         yield return new WaitForSeconds(cooldownDuration);
 
-        if (charlieRenderer != null && charlieNormal != null)
+        if (charlieRenderer != null && charlieNormal != null && Distracted == false)
         {
             charlieRenderer.sprite = charlieNormal;
         }
