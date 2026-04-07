@@ -120,13 +120,15 @@ public class DateManager : MonoBehaviour, IUsableWithItem
 
     IEnumerator CooldownRoutine()
     {
-        yield return new WaitForSeconds(cooldownDuration);
+         Bar bars = bar.GetComponent<Bar>();
+        yield return new WaitForSeconds(cooldownDuration * bars.percent);
         dialogueManager.StartCoroutine(dialogueManager.DelayedFace());
     }
 
     IEnumerator ReturnToNormalFace()
     {
-        yield return new WaitForSeconds(cooldownDuration);
+        Bar bars = bar.GetComponent<Bar>();
+        yield return new WaitForSeconds(cooldownDuration * bars.percent);
 
         if (charlieRenderer != null && charlieNormal != null && Distracted == false)
         {

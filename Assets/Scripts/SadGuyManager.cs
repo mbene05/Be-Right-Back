@@ -14,6 +14,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     public TextAsset myInkJSON6;
     public TextAsset wrongDrink;
     public TextAsset angryGuy;
+    public bool playSfx = false;
 
     public bool GivenDrink = false;
     private bool waitingToShowOverlay = false;
@@ -26,9 +27,10 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     public bool rightDrink = false;
     public bool pickUpDrink = false;
     public bool hasReceivedDrink = false;
+    public AudioSource audioSource;
     public bool hasTalked = false;
 
-
+    public AudioClip SadGuyDrunk;
     public AudioClip sadGuyVoice;
     public GameObject drinkAcceptedOverlay;
 
@@ -107,6 +109,11 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     {
         if (drinkAcceptedOverlay != null)
         {
+            if (playSfx == false)
+            {
+                audioSource.PlayOneShot(SadGuyDrunk);
+                playSfx = true;
+            }
             drinkAcceptedOverlay.SetActive(true);
             yield return new WaitForSeconds(2f);
             drinkAcceptedOverlay.SetActive(false);

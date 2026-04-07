@@ -10,6 +10,7 @@ public class Bar : MonoBehaviour
 {
     public Image bar;
     public float maxTime;
+    public DialogueManager dialogueManager;
     public static string endSceneName = "DeathScreen"; 
     public float percent;
     public float currentTime;
@@ -57,8 +58,12 @@ public class Bar : MonoBehaviour
 
         if (currentTime > 0 && isTimerRunning)
         {
-            currentTime -= Time.deltaTime;
-            bar.fillAmount = currentTime / maxTime;
+            if (DialogueManager.dialogueActive == false)
+            {
+                    
+                currentTime -= Time.deltaTime;
+                bar.fillAmount = currentTime / maxTime;
+            }
         }
         else if (currentTime <= 0 && !hasEnded)
         {
