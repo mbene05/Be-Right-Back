@@ -71,7 +71,7 @@ public class HotbarManager : MonoBehaviour
         Canvas c = GetComponent<Canvas>();
         if (c == null) c = gameObject.AddComponent<Canvas>();
         c.overrideSorting = true;
-        c.sortingOrder = 0;
+        c.sortingOrder = 999;
         if (GetComponent<GraphicRaycaster>() == null)
             gameObject.AddComponent<GraphicRaycaster>();
 

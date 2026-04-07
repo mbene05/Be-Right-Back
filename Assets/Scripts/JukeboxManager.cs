@@ -17,6 +17,9 @@ public class JukeboxManager : MonoBehaviour, IUsableWithItem
     public string[] acceptedItemNames = new string[] { "ComputerChip", "Needle" };
     public TextMeshProUGUI counterText;
     public string endSceneName = "WinScreen";
+    public GameObject JukeBoxTrigger;
+   
+    public GameObject jukeboxPanelObject;
 
     private int itemCount = 0;
 
@@ -33,6 +36,13 @@ public class JukeboxManager : MonoBehaviour, IUsableWithItem
 
     void OnMouseDown()
     {
+        HotbarManager hotbar = FindObjectOfType<HotbarManager>();
+        if (hotbar == null) return;
+        if (JukeBoxTrigger.GetComponent<JukeboxTrigger>().alwayshasAccess == false)
+        {
+          if (hotbar.HasItem("Needle") & hotbar.HasItem("ComputerChip")) return;
+        }
+
         if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;

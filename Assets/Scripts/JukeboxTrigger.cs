@@ -3,7 +3,7 @@ using UnityEngine;
 public class JukeboxTrigger : MonoBehaviour
 {
     public GameObject jukeboxPanelObject;
-
+    public bool alwayshasAccess = false;
     void OnMouseDown()
     {
         if (JukeboxPanelManager.Instance.IsDone) return;
@@ -13,7 +13,11 @@ public class JukeboxTrigger : MonoBehaviour
 
         HotbarManager hotbar = FindObjectOfType<HotbarManager>();
         if (hotbar == null) return;
-        if (!hotbar.HasItem("Needle") || !hotbar.HasItem("ComputerChip")) return;
+        
+        if (alwayshasAccess == false)
+        {
+            if (!hotbar.HasItem("Needle") || !hotbar.HasItem("ComputerChip")) return;
+        }
 
         JukeboxPanelManager.Instance.Open();
     }

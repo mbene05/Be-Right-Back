@@ -29,6 +29,7 @@ public class DateManager : MonoBehaviour, IUsableWithItem
     private float nextAvailableTime;
     private BoxCollider2D boxCollider;
     public float cooldownDuration;
+    public bool saidOpeningFr = false;
 
 
     void Start()
@@ -36,16 +37,18 @@ public class DateManager : MonoBehaviour, IUsableWithItem
         audioSource = GetComponent<AudioSource>();
         charlieRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+        
     }
 
     void Update()
     {
-        if (saidOp == false)
+        if (saidOp == false && saidOpeningFr == false)
         {
             dialogueManager.StartDialogue(myInkJSON2, charlieVoice);
             saidOp = true;
         }
         saidOp = true;
+        saidOpeningFr = true;
     }
 
     void OnMouseDown()
