@@ -26,7 +26,7 @@ public class Restart : MonoBehaviour
 
         yield return null;
 
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainTitle");
     }
 
     public void restart()
