@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PipeTrigger : MonoBehaviour
+public class PipeTrigger : MonoBehaviour, IUsableWithItem
 {
     public Camera mainCamera;
     private SpriteRenderer sr;
@@ -64,6 +64,28 @@ public class PipeTrigger : MonoBehaviour
         mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
         
 
+    }
+
+    public bool UseWithItem(Item item, Vector3 hitPoint)
+    {
+         if (item.groupID != "wrench") {
+            Debug.Log("Item groupID is: " + item.groupID);
+            return false;
+        }
+
+        if (dialogueManager.dialogueStarted) return false;
+        if (MapManager.IsOpen) return false;
+        if (PinCodeMiniGame.IsOpen) return false;
+        if (RoomSwitcher.IsTransitioning) return false;
+        if (isOpen) return false; 
+
+        Arrow.SetActive(false);
+        Arrow2.SetActive(false);
+        if (hotbar != null) hotbar.gameObject.SetActive(false);
+
+        isOpen = true;
+        mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
+        return true;
     }
 
     void Update()
