@@ -7,7 +7,8 @@ public class DateManager : MonoBehaviour, IUsableWithItem
     public TextAsset myInkJSON;
     public TextAsset myInkJSON2;
     public TextAsset myInkJSON3;
-    public TextAsset itemDropInkJSON;
+    public TextAsset drinkDropInkJSON;
+    public TextAsset wrenchDropInkJSON;
     public static bool saidOp;
     public GameObject bar;
     public static void ResetStatics()
@@ -120,9 +121,10 @@ public class DateManager : MonoBehaviour, IUsableWithItem
 
         UseAbility();
 
-        if (itemDropInkJSON != null && !dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
+        TextAsset dialogueToPlay = isDrink ? drinkDropInkJSON : wrenchDropInkJSON;
+        if (dialogueToPlay != null && !dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
-            dialogueManager.StartDialogue(itemDropInkJSON, charlieVoice);
+            dialogueManager.StartDialogue(dialogueToPlay, charlieVoice);
         }
 
         return false;
