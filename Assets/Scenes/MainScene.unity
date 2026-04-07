@@ -3000,7 +3000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &102300630
 Transform:
   m_ObjectHideFlags: 0
@@ -9875,6 +9875,8 @@ MonoBehaviour:
   - Needle
   counterText: {fileID: 0}
   endSceneName: WinScreen
+  JukeBoxTrigger: {fileID: 337970784}
+  jukeboxPanelObject: {fileID: 1742784830}
 --- !u!61 &337970787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9993,6 +9995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JukeboxTrigger
   jukeboxPanelObject: {fileID: 1742784830}
+  alwayshasAccess: 0
 --- !u!114 &337970790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14494,6 +14497,7 @@ MonoBehaviour:
   charlieVoice: {fileID: 8300000, guid: a31ef69ff4e618642b3328a72963ce5e, type: 3}
   charlieNormal: {fileID: 0}
   cooldownDuration: 20
+  saidOpeningFr: 0
 --- !u!61 &546114532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33197,7 +33201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1298813499
 Transform:
   m_ObjectHideFlags: 0
@@ -34517,7 +34521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1337247535
 Transform:
   m_ObjectHideFlags: 0
@@ -49650,12 +49654,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JukeboxPanelManager
   jukeboxPanel: {fileID: 1742784830}
+  JukeboxTrigger: {fileID: 0}
   needle: {fileID: 488771145}
   computerChip: {fileID: 1423032447}
   needleDropZone: {fileID: 1085353094}
   chipDropZone: {fileID: 853089343}
   winSceneName: WinScreen
   successSound: {fileID: 8300000, guid: fc8b0433032f806408aca5e8682970aa, type: 3}
+  JukeBoxTrigger: {fileID: 337970784}
 --- !u!4 &2021784039
 Transform:
   m_ObjectHideFlags: 0

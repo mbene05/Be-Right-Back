@@ -38,17 +38,20 @@ public class JukeboxManager : MonoBehaviour, IUsableWithItem
     {
         HotbarManager hotbar = FindObjectOfType<HotbarManager>();
         if (hotbar == null) return;
-        if (JukeBoxTrigger.GetComponent<JukeboxTrigger>().alwayshasAccess == false)
-        {
+        
           if (hotbar.HasItem("Needle") & hotbar.HasItem("ComputerChip")) return;
-        }
+        
 
         if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (RoomSwitcher.IsTransitioning) return;
 
-        dialogueManager.StartDialogue(myInkJSON, null);
+        if (JukeBoxTrigger.GetComponent<JukeboxTrigger>().alwayshasAccess == false)
+        {
+          dialogueManager.StartDialogue(myInkJSON, null);
+        }
+        
     }
 
     void OnMouseEnter()
