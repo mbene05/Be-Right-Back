@@ -18,14 +18,15 @@ public class Restart : MonoBehaviour
 
     IEnumerator RestartRoutine()
     {
-        //thedate.saidOp = false;
         JukeboxPanelManager.ResetStatics();
         DateManager.ResetStatics();
+        MazeMiniGame.ResetStatics();
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
 
-        yield return null; 
+        yield return null;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void restart()
