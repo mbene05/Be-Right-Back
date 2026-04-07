@@ -120,13 +120,12 @@ public class DateManager : MonoBehaviour, IUsableWithItem
 
         UseAbility();
 
-        TextAsset dialogueToPlay = itemDropInkJSON != null ? itemDropInkJSON : myInkJSON;
-        if (dialogueToPlay != null && !dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
+        if (itemDropInkJSON != null && !dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
         {
-            dialogueManager.StartDialogue(dialogueToPlay, charlieVoice);
+            dialogueManager.StartDialogue(itemDropInkJSON, charlieVoice);
         }
 
-        return true;
+        return false;
     }
 
 }
