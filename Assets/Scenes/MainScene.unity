@@ -29955,7 +29955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bar
   bar: {fileID: 1979720963}
   maxTime: 150
-  dialogueManager: {fileID: 0}
   percent: 0
   currentTime: 0
   runningLow: {fileID: 8300000, guid: 2d47f7dfb9c5d094bac5a8d91b3e9c0f, type: 3}
@@ -37143,8 +37142,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -258.9, y: -128.9}
-  m_SizeDelta: {x: 243.54, y: 164.43}
+  m_AnchoredPosition: {x: -273.9, y: -128.9}
+  m_SizeDelta: {x: 213.54, y: 164.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1423032448
 MonoBehaviour:
@@ -47521,8 +47520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.98, y: -76.21}
-  m_SizeDelta: {x: 139.84, y: 0.46}
+  m_AnchoredPosition: {x: 19.95, y: -76.21}
+  m_SizeDelta: {x: 149.79, y: 0.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912505593
 MonoBehaviour:
