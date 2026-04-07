@@ -21,16 +21,24 @@ public class Bar : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public SpriteRenderer charlieRenderer;
+    public Sprite BarHigh;
+    public Sprite BarMid;
+    public Sprite BarLow;
+
+
 
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        charlieRenderer = GameObject.Find("charlie color neutral_0 (1)").GetComponent<SpriteRenderer>();
 
         bar.fillAmount = 1f;
         currentTime = maxTime;
         
         percent = currentTime / maxTime;
+
 
         StartCoroutine(StartTimerDelay()); //start delay
 
@@ -105,14 +113,17 @@ public class Bar : MonoBehaviour
         if (percent <= 0.2f)
         {
             bar.color = Color.red;
+            charlieRenderer.sprite = BarLow;
             audioSource.PlayOneShot(runningLow); //bar sound effect when low
         }
         else if (percent <= 0.5f)
         {
+            charlieRenderer.sprite = BarMid;
             bar.color = Color.yellow;
         }
         else
         {
+            charlieRenderer.sprite = BarHigh;
             bar.color = Color.green; // optional default
         }
     }
