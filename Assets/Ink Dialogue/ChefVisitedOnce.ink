@@ -11,9 +11,9 @@ Looks like you got one down, so you still got one more to go!
 === Answer ===
 I need you to find the key to get into the food prep area still.
 I really can't remember where I put it, so you have to find my authenticators..
-and complete the authentication, so I can find out where I put the key.
+and complete the authentication, so I can find out where I put the keycard.
 You've got one done, but I still need the other to access conFOS.
-Once you have completed the authentication on both, I can ask conFOS where the key is.
+Once you have done the authentication on both, I can ask conFOS where the keycard is.
 -> END
 
 === Answer2 ===
