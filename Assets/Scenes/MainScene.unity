@@ -43939,10 +43939,10 @@ MonoBehaviour:
   pipePuzzleRoom: {fileID: 896109459}
   returnRoom: {fileID: 1540643731}
   requiredItemName: Wrench
-  myInkJSON: {fileID: 0}
+  myInkJSON: {fileID: 4900000, guid: bc7fe856cd131ad408148c9517ac5e73, type: 3}
   isOpen: 0
   Arrow: {fileID: 1082975504}
-  Arrow2: {fileID: 0}
+  Arrow2: {fileID: 2108349618}
 --- !u!212 &1765050138
 SpriteRenderer:
   serializedVersion: 2
