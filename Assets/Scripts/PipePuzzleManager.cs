@@ -12,6 +12,16 @@ public class PipePuzzleManager : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip winSound;
     public bool won = false;
+    public GameObject authenticatedOverlay;
+    public Camera mainCamera;
+    public float cameraZPosition = -10f;
+    public GameObject tilereturnRoom;
+
+    public GameObject Arrow;
+    public GameObject Arrow2;
+    public GameObject Back;
+
+    
 
 
 
@@ -51,19 +61,25 @@ public class PipePuzzleManager : MonoBehaviour
         {
             pipe.TurnGreen();
         }
-
-        yield return new WaitForSeconds(1.2f);
-
-        DoSomethingAfterWin();
-    }
-
-    void DoSomethingAfterWin()
-    {
-        SpriteRenderer sr = tileTrigger.GetComponent<SpriteRenderer>();
+        Back.SetActive(false);
+ 
+          SpriteRenderer sr = tileTrigger.GetComponent<SpriteRenderer>();
         sr.sprite = room_coatcheck_fg_pipe_fixed;
         won = true;
         audioSource.PlayOneShot(winSound);
         SinkClogged.SetActive(false);
         SinkFull.SetActive(true);
+        if (authenticatedOverlay != null)
+            authenticatedOverlay.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        if (authenticatedOverlay != null)
+            authenticatedOverlay.SetActive(false);
+            Arrow.SetActive(true);
+            Back.SetActive(true);
+            Arrow2.SetActive(true);
+            tileTrigger.GetComponent<PipeTrigger>().isOpen = false;
+            mainCamera.transform.position = new Vector3(tilereturnRoom.transform.position.x, tilereturnRoom.transform.position.y, cameraZPosition);
+    
     }
+      
 }
