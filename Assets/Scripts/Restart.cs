@@ -30,13 +30,13 @@ public class Restart : MonoBehaviour
 
     public void restart()
     {
-         //thedate.saidOp = false;
         JukeboxPanelManager.ResetStatics();
         DateManager.ResetStatics();
+        MazeMiniGame.ResetStatics();
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("SkipIntro", 1);
+        PlayerPrefs.Save();
 
-    
-
-         SceneManager.LoadScene("MainTitle");
+        SceneManager.LoadScene("MainScene");
     }
 }

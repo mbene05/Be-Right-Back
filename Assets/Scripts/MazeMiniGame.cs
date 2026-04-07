@@ -6,6 +6,12 @@ public class MazeMiniGame : MonoBehaviour
 {
     public static MazeMiniGame Instance { get; private set; }
     public static bool IsOpen { get; private set; }
+
+    public static void ResetStatics()
+    {
+        Instance = null;
+        IsOpen = false;
+    }
     bool done = false;
 
     public GameObject tileTrigger;
