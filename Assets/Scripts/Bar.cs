@@ -62,7 +62,7 @@ public class Bar : MonoBehaviour
 
     IEnumerator StartTimerDelay()
     {
-        yield return new WaitForSeconds(60f); //delay of 60 seconds before the timer starts
+        yield return new WaitForSeconds(30f); //delay of 60 seconds before the timer starts
         isTimerRunning = true;
     }
 

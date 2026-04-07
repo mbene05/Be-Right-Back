@@ -183,16 +183,16 @@ public class DialogueManager : MonoBehaviour
 
             hasChanged = true;
 
-            if (dialogueActive == false) {
-                StartCoroutine(DelayedFace());
-            }
+          //  if (dialogueActive == false) {
+               // StartCoroutine(DelayedFace());
+           // }
 
 
         }
     }
-    IEnumerator DelayedFace()
+    public IEnumerator DelayedFace()
     {
-        yield return new WaitForSeconds(20); //important for delay very very important do not forget
+        //yield return new WaitForSeconds(20); //important for delay very very important do not forget
         charlieRenderer.sprite = charlieFace;
 /*        if (RoomSwitcher.currentRoom == 1)
         {

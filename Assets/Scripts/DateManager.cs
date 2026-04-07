@@ -90,13 +90,21 @@ public class DateManager : MonoBehaviour, IUsableWithItem
 
     public void UseAbility()
     {
+        
         Bar bars = bar.GetComponent<Bar>();
         nextAvailableTime = Time.time + (cooldownDuration * bars.percent);
 
         DialogueManager.dialogueActive = false;
-
+        StartCoroutine(CooldownRoutine());
         StartCoroutine(ReturnToNormalFace());
     }
+
+    IEnumerator CooldownRoutine()
+    {
+        yield return new WaitForSeconds(cooldownDuration);
+        dialogueManager.StartCoroutine(dialogueManager.DelayedFace());
+    }
+
     IEnumerator ReturnToNormalFace()
     {
         yield return new WaitForSeconds(cooldownDuration);
