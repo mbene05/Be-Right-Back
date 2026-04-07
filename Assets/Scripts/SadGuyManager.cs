@@ -105,6 +105,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
         highlighted.SetActive(false);
 
+        rightDrink = item.itemName == "ZipBomb";
 
         BartenderManager selectedBartender = Bartender.GetComponent<BartenderManager>();
         selectedBartender.pickUpDrink = false;
