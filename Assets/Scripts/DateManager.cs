@@ -55,9 +55,9 @@ public class DateManager : MonoBehaviour, IUsableWithItem
         {
             dialogueManager.StartDialogue(myInkJSON2, charlieVoice);
             saidOp = true;
+            saidOpeningFr = true;
         }
-        saidOp = true;
-        saidOpeningFr = true;
+    
     }
 
     void OnMouseDown()

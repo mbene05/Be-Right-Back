@@ -23,7 +23,7 @@ public class Restart : MonoBehaviour
         MazeMiniGame.ResetStatics();
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-
+        DateManager.saidOp = false;
         yield return null;
 
         SceneManager.LoadScene("MainTitle");
@@ -33,11 +33,12 @@ public class Restart : MonoBehaviour
     {
         JukeboxPanelManager.ResetStatics();
         DateManager.ResetStatics();
+        DateManager.saidOp = false;
         MazeMiniGame.ResetStatics();
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("SkipIntro", 1);
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainTitle");
     }
 }

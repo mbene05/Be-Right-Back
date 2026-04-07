@@ -224,7 +224,7 @@ public class JukeboxPanelManager : MonoBehaviour
     {
        Charlie.GetComponent<DateManager>().Distracted = true;
         IsDone = true;
-        DateManager.saidOp = false;
+       // DateManager.saidOp = false;
         dialogueManager.StartDialogue(myInkJSON, null);
         if (audioSource != null && successSound != null)
             audioSource.PlayOneShot(successSound);

@@ -105,6 +105,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            DateManager.saidOp = false;
              SceneManager.LoadScene("MainTitle");
         }
 
