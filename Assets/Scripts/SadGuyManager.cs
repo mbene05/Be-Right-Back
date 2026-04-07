@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SadGuyManager : MonoBehaviour, IUsableWithItem
 {
@@ -28,6 +29,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
 
 
     public AudioClip sadGuyVoice;
+    public GameObject drinkAcceptedOverlay;
 
     void OnMouseOver()
     {
@@ -91,6 +93,16 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     }
 
 
+    IEnumerator ShowDrinkAccepted()
+    {
+        if (drinkAcceptedOverlay != null)
+        {
+            drinkAcceptedOverlay.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            drinkAcceptedOverlay.SetActive(false);
+        }
+    }
+
     public bool UseWithItem(Item item, Vector3 hitPoint)
     {
         if (item.groupID != "drinks") return false;
@@ -121,7 +133,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         {
             dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
             GivenDrink = true;
-
+            StartCoroutine(ShowDrinkAccepted());
         }
 
 

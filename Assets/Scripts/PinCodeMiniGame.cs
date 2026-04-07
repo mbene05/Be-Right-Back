@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class PinCodeMiniGame : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PinCodeMiniGame : MonoBehaviour
     public GameObject computerChip;
     public GameObject PC;
     public Sprite pcSprite;
+    public GameObject passwordGuessedOverlay;
 
     private string enteredCode = "";
 
@@ -85,10 +87,6 @@ public class PinCodeMiniGame : MonoBehaviour
             }
         }
 
-        if (state == State.Won && stateTimer <= 0f && Input.GetMouseButtonDown(0))
-        {
-            Close();
-        }
     }
 
     public void OnNumberPressed(int digit)
@@ -127,6 +125,18 @@ public class PinCodeMiniGame : MonoBehaviour
         }
     }
 
+    IEnumerator CloseAndShowOverlay()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Close();
+        if (passwordGuessedOverlay != null)
+        {
+            passwordGuessedOverlay.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            passwordGuessedOverlay.SetActive(false);
+        }
+    }
+
     void SetState(State newState)
     {
         state = newState;
@@ -153,6 +163,7 @@ public class PinCodeMiniGame : MonoBehaviour
                 won = true;
                 BackButton.SetActive(false);
                 computerChip?.SetActive(true);
+                StartCoroutine(CloseAndShowOverlay());
                 break;
         }
     }
