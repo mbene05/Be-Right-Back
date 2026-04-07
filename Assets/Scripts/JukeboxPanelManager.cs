@@ -17,6 +17,7 @@ public class JukeboxPanelManager : MonoBehaviour
     public GameObject jukeboxPanel;
 
     [Header("Draggable Items")]
+    public GameObject JukeboxTrigger;
     public RectTransform needle;
     public RectTransform computerChip;
 
@@ -26,6 +27,7 @@ public class JukeboxPanelManager : MonoBehaviour
 
     [Header("On Complete")]
     public string winSceneName = "WinScreen";
+   
 
     [Header("Audio")]
     public AudioClip successSound;
@@ -37,6 +39,7 @@ public class JukeboxPanelManager : MonoBehaviour
     private bool chipPlaced = false;
 
     private Canvas canvas;
+    public GameObject JukeBoxTrigger;
     private Camera uiCamera;
     private GameObject panelBlocker;
     private PhysicsRaycaster physicsRaycaster;
@@ -52,6 +55,7 @@ public class JukeboxPanelManager : MonoBehaviour
 
     void Start()
     {
+        
         audioSource = GetComponent<AudioSource>();
         canvas = jukeboxPanel.GetComponentInParent<Canvas>();
         uiCamera = canvas ? canvas.worldCamera : null;
@@ -96,6 +100,8 @@ public class JukeboxPanelManager : MonoBehaviour
 
     public void Open()
     {
+        JukeBoxTrigger.GetComponent<JukeboxTrigger>().alwayshasAccess = true;
+        JukeBoxTrigger.SetActive(false);
         IsOpen = true;
         jukeboxPanel.SetActive(true);
         // Items stay hidden until dropped from hotbar
@@ -127,6 +133,7 @@ public class JukeboxPanelManager : MonoBehaviour
 
     public void Close()
     {
+        JukeBoxTrigger.SetActive(true);
         IsOpen = false;
         dragging = null;
         jukeboxPanel.SetActive(false);
@@ -213,6 +220,7 @@ public class JukeboxPanelManager : MonoBehaviour
     void OnPuzzleComplete()
     {
         IsDone = true;
+        DateManager.saidOp = false;
         if (audioSource != null && successSound != null)
             audioSource.PlayOneShot(successSound);
         Invoke(nameof(Close), 1.0f);
