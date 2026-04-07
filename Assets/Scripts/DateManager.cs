@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class DateManager : MonoBehaviour
+public class DateManager : MonoBehaviour, IUsableWithItem
 {
     public DialogueManager dialogueManager;
     public TextAsset myInkJSON;
     public TextAsset myInkJSON2;
     public TextAsset myInkJSON3;
+    public TextAsset itemDropInkJSON;
     public static bool saidOp;
     public GameObject bar;
     public static void ResetStatics()
@@ -103,6 +104,29 @@ public class DateManager : MonoBehaviour
         {
             charlieRenderer.sprite = charlieNormal;
         }
+    }
+
+    public bool UseWithItem(Item item, Vector3 hitPoint)
+    {
+        if (item == null) return false;
+        if (item.itemName == "Needle" || item.itemName == "ComputerChip") return false;
+
+        bool isDrink = item.groupID == "drinks";
+        bool isWrench = item.itemName == "Wrench";
+        if (!isDrink && !isWrench) return false;
+
+        if (DialogueManager.choicesActive) return false;
+        if (RoomSwitcher.IsTransitioning) return false;
+
+        UseAbility();
+
+        TextAsset dialogueToPlay = itemDropInkJSON != null ? itemDropInkJSON : myInkJSON;
+        if (dialogueToPlay != null && !dialogueManager.dialogueStarted && !dialogueManager.choicesContainer.gameObject.activeSelf)
+        {
+            dialogueManager.StartDialogue(dialogueToPlay, charlieVoice);
+        }
+
+        return true;
     }
 
 }

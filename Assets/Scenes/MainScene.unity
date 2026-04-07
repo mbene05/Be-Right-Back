@@ -13798,6 +13798,7 @@ MonoBehaviour:
   myInkJSON: {fileID: 4900000, guid: 59c36a7beba8d9546b6fb691b9287f06, type: 3}
   myInkJSON2: {fileID: 4900000, guid: 814e1182b696bdd4f950771738f8186f, type: 3}
   myInkJSON3: {fileID: 4900000, guid: 2f85d86c7094030448141eea14f8479c, type: 3}
+  itemDropInkJSON: {fileID: 0}
   bar: {fileID: 1169209636}
   phone: {fileID: 504177562}
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}

@@ -1,5 +1,8 @@
 {
   "permissions": {
-    "allow": []
+    "allow": [
+      "Bash(ls /c/Users/Dev/Documents/GitHub/Be-Right-Back/Assets/Scripts/*.cs)",
+      "Bash(wc -l /c/Users/Dev/Documents/GitHub/Be-Right-Back/Assets/Scripts/*.cs)"
+    ]
   }
 }
