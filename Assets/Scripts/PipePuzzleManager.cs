@@ -18,10 +18,13 @@ public class PipePuzzleManager : MonoBehaviour
     public GameObject tileTrigger;
     public Sprite room_coatcheck_fg_pipe_fixed;
 
+    private HotbarManager hotbar;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         pipes = FindObjectsOfType<PipeScript>();
+        hotbar = FindObjectOfType<HotbarManager>();
     }
 
     public void CheckWin()
@@ -62,5 +65,6 @@ public class PipePuzzleManager : MonoBehaviour
         audioSource.PlayOneShot(winSound);
         SinkClogged.SetActive(false);
         SinkFull.SetActive(true);
+        if (hotbar != null) hotbar.gameObject.SetActive(true);
     }
 }

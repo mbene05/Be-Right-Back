@@ -20,6 +20,7 @@ public Vector2 targetPosition;
     bool done = false;
 
     private AudioSource audioSource;
+    private HotbarManager hotbar;
     public AudioClip winSound;
 
     public GameObject tileTrigger;
@@ -30,6 +31,7 @@ public Vector2 targetPosition;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        hotbar = FindObjectOfType<HotbarManager>();
         skipButton.SetActive(false);
         Shuffle();
     }
@@ -77,6 +79,7 @@ public Vector2 targetPosition;
                 selectedChef.logsCollected++;
                 done = true;
                 tileTrigger.SetActive(true);
+                if (hotbar != null) hotbar.gameObject.SetActive(true);
                 StartCoroutine(ShowAuthenticated());
         }
 
