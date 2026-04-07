@@ -6,6 +6,7 @@ public class PipeTrigger : MonoBehaviour, IUsableWithItem
     private SpriteRenderer sr;
 
     public Color hoverColor = Color.red;
+    public bool unlocked = false;
     private Color originalColor;
     public float cameraZPosition = -10f;
     public DialogueManager dialogueManager;
@@ -47,20 +48,23 @@ public class PipeTrigger : MonoBehaviour, IUsableWithItem
         if (PinCodeMiniGame.IsOpen) return;
         if (RoomSwitcher.IsTransitioning) return;
         if (isOpen) return;
-
-        if (hotbar != null && !hotbar.HasItem(requiredItemName))
+        if (unlocked == false)
         {
-            if (dialogueManager.dialogueStarted) return;
-            if (MapManager.IsOpen) return;
-            if (PinCodeMiniGame.IsOpen) return;
-            if (RoomSwitcher.IsTransitioning) return;
-            dialogueManager.StartDialogue(myInkJSON, null);
-            return;
+            if (hotbar != null && !hotbar.HasItem(requiredItemName))
+            {
+                if (dialogueManager.dialogueStarted) return;
+                if (MapManager.IsOpen) return;
+                if (PinCodeMiniGame.IsOpen) return;
+                if (RoomSwitcher.IsTransitioning) return;
+                dialogueManager.StartDialogue(myInkJSON, null);
+                return;
+            }
         }
         Arrow.SetActive(false);
         Arrow2.SetActive(false);
 
         isOpen = true;
+        unlocked = true;
         mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
         
 
@@ -68,22 +72,21 @@ public class PipeTrigger : MonoBehaviour, IUsableWithItem
 
     public bool UseWithItem(Item item, Vector3 hitPoint)
     {
-         if (item.groupID != "wrench") {
-            Debug.Log("Item groupID is: " + item.groupID);
+         if (item.itemName != "Wrench") {
             return false;
         }
-
-        if (dialogueManager.dialogueStarted) return false;
+if (dialogueManager.dialogueStarted) return false;
         if (MapManager.IsOpen) return false;
         if (PinCodeMiniGame.IsOpen) return false;
         if (RoomSwitcher.IsTransitioning) return false;
-        if (isOpen) return false; 
+        if (isOpen) return false;
 
+        
         Arrow.SetActive(false);
         Arrow2.SetActive(false);
-        if (hotbar != null) hotbar.gameObject.SetActive(false);
 
         isOpen = true;
+        unlocked = true;
         mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
         return true;
     }
