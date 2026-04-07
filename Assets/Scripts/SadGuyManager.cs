@@ -16,6 +16,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     public TextAsset angryGuy;
 
     public bool GivenDrink = false;
+    private bool waitingToShowOverlay = false;
 
 
     public GameObject Hotbar;
@@ -93,6 +94,15 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
     }
 
 
+    void Update()
+    {
+        if (waitingToShowOverlay && !dialogueManager.dialogueStarted)
+        {
+            waitingToShowOverlay = false;
+            StartCoroutine(ShowDrinkAccepted());
+        }
+    }
+
     IEnumerator ShowDrinkAccepted()
     {
         if (drinkAcceptedOverlay != null)
@@ -133,7 +143,7 @@ public class SadGuyManager : MonoBehaviour, IUsableWithItem
         {
             dialogueManager.StartDialogue(myInkJSON2, sadGuyVoice);
             GivenDrink = true;
-            StartCoroutine(ShowDrinkAccepted());
+            waitingToShowOverlay = true;
         }
 
 
