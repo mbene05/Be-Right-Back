@@ -14209,8 +14209,8 @@ MonoBehaviour:
   myInkJSON: {fileID: 4900000, guid: 59c36a7beba8d9546b6fb691b9287f06, type: 3}
   myInkJSON2: {fileID: 4900000, guid: 814e1182b696bdd4f950771738f8186f, type: 3}
   myInkJSON3: {fileID: 4900000, guid: 2f85d86c7094030448141eea14f8479c, type: 3}
-  drinkDropInkJSON: {fileID: 4900000, guid: caa26d47b4f880e43a683976520a16b1, type: 3}
-  wrenchDropInkJSON: {fileID: 4900000, guid: b65a8e0222700bf40b3f7996be92e1e6, type: 3}
+  drinkDropInkJSON: {fileID: 4900000, guid: 3900f2e912aad944f8750406b7872128, type: 3}
+  wrenchDropInkJSON: {fileID: 4900000, guid: fa97a89a37d1dad4e93e6fe417a995e3, type: 3}
   bar: {fileID: 1169209636}
   phone: {fileID: 504177562}
   interactSound: {fileID: 8300000, guid: dc28ff883e028d240871286de880f59c, type: 3}
@@ -28515,6 +28515,13 @@ MonoBehaviour:
   SinkFull: {fileID: 1805076145}
   winSound: {fileID: 8300000, guid: 9f6787af969a12c44884a2394ec031c2, type: 3}
   won: 0
+  authenticatedOverlay: {fileID: 0}
+  mainCamera: {fileID: 0}
+  cameraZPosition: -10
+  tilereturnRoom: {fileID: 0}
+  Arrow: {fileID: 0}
+  Arrow2: {fileID: 0}
+  Back: {fileID: 0}
   tileTrigger: {fileID: 1765050134}
   room_coatcheck_fg_pipe_fixed: {fileID: 406645975402055219, guid: 194f1006815e0f740a5d03a4d82a7fd6, type: 3}
 --- !u!4 &1134035850
@@ -39918,6 +39925,13 @@ MonoBehaviour:
   isSolved: 0
   winSound: {fileID: 8300000, guid: 9f6787af969a12c44884a2394ec031c2, type: 3}
   playSfx: 0
+  mainCamera: {fileID: 0}
+  cameraZPosition: -10
+  tilereturnRoom: {fileID: 0}
+  trigger: {fileID: 0}
+  Arrow: {fileID: 0}
+  Arrow2: {fileID: 0}
+  Back: {fileID: 0}
   authenticatedOverlay: {fileID: 1602964164}
 --- !u!4 &1566263046
 Transform:
@@ -43567,8 +43581,10 @@ MonoBehaviour:
   pipePuzzleRoom: {fileID: 896109459}
   returnRoom: {fileID: 1540643731}
   requiredItemName: Wrench
+  myInkJSON: {fileID: 0}
   isOpen: 0
   Arrow: {fileID: 1082975504}
+  Arrow2: {fileID: 0}
 --- !u!212 &1765050138
 SpriteRenderer:
   serializedVersion: 2
