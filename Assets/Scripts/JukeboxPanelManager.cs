@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class JukeboxPanelManager : MonoBehaviour
@@ -216,12 +215,7 @@ public class JukeboxPanelManager : MonoBehaviour
         IsDone = true;
         if (audioSource != null && successSound != null)
             audioSource.PlayOneShot(successSound);
-        Invoke(nameof(LoadWinScreen), 1.0f);
-    }
-
-    void LoadWinScreen()
-    {
-        SceneManager.LoadScene(winSceneName);
+        Invoke(nameof(Close), 1.0f);
     }
 
     bool RectsOverlap(RectTransform a, RectTransform b)

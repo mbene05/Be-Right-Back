@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e9401f8003aeb40a9a206359f9fe01, type: 3}
   m_Name: Drink_4
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: GreenHaze
+  itemName: Hallucination
   itemID: 75
   itemSprite: {fileID: 21300000, guid: 5dff0150428995d43a95a0841b278c99, type: 3}
   groupID: drinks

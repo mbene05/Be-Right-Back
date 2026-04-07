@@ -16,9 +16,11 @@ public class TilePuzzleTrigger : MonoBehaviour
     public AudioClip tilePuzzleOpenSound;
 
     private AudioSource audioSource;
+    private HotbarManager hotbar;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        hotbar = FindObjectOfType<HotbarManager>();
     }
 
     void OnMouseDown()
@@ -33,6 +35,7 @@ public class TilePuzzleTrigger : MonoBehaviour
         {
             Arrow.SetActive(false);
             Arrow2.SetActive(false);
+            if (hotbar != null) hotbar.gameObject.SetActive(false);
             isOpen = true;
             mainCamera.transform.position = new Vector3(tilePuzzleRoom.transform.position.x, tilePuzzleRoom.transform.position.y, cameraZPosition);
         }
@@ -44,6 +47,7 @@ public class TilePuzzleTrigger : MonoBehaviour
         {
             Arrow.SetActive(true);
             Arrow2.SetActive(true);
+            if (hotbar != null) hotbar.gameObject.SetActive(true);
             isOpen = false;
             mainCamera.transform.position = new Vector3(tilereturnRoom.transform.position.x, tilereturnRoom.transform.position.y, cameraZPosition);
         }

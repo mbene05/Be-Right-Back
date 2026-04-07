@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e9401f8003aeb40a9a206359f9fe01, type: 3}
   m_Name: Drink_3
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Rum
+  itemName: Bourbon
   itemID: 74
   itemSprite: {fileID: 21300000, guid: 57d2115cb7993fa4996aebf02ca28d57, type: 3}
   groupID: drinks

@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class FrontEntranceDia : MonoBehaviour 
+public class FrontEntranceDia : MonoBehaviour
 {
     public DialogueManager dialogueManager;
 
@@ -16,16 +17,19 @@ public class FrontEntranceDia : MonoBehaviour
     }
     void OnMouseDown()
     {
-      
         if (dialogueManager.dialogueStarted) return;
         if (MapManager.IsOpen) return;
         if (PinCodeMiniGame.IsOpen) return;
         if (DialogueManager.choicesActive) return;
         if (RoomSwitcher.IsTransitioning) return;
-       
+
+        if (JukeboxPanelManager.Instance != null && JukeboxPanelManager.Instance.IsDone)
+        {
+            SceneManager.LoadScene(JukeboxPanelManager.Instance.winSceneName);
+            return;
+        }
 
         dialogueManager.StartDialogue(myInkJSON, DateVoice);
-       
     }
               
 
