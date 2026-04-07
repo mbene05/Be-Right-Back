@@ -9,18 +9,10 @@ public class BackScriptPipe : MonoBehaviour
     public GameObject trigger;
     public GameObject Arrow;
 
-    private HotbarManager hotbar;
-
-    void Start()
-    {
-        hotbar = FindObjectOfType<HotbarManager>();
-    }
-
     void OnMouseDown()
     {
         Arrow.SetActive(true);
         trigger.GetComponent<PipeTrigger>().isOpen = false;
-        if (hotbar != null) hotbar.gameObject.SetActive(true);
         mainCamera.transform.position = new Vector3(tilereturnRoom.transform.position.x, tilereturnRoom.transform.position.y, cameraZPosition);
     }
 }

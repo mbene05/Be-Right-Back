@@ -52,7 +52,6 @@ public class PipeTrigger : MonoBehaviour
             return;
         }
         Arrow.SetActive(false);
-        if (hotbar != null) hotbar.gameObject.SetActive(false);
 
         isOpen = true;
         mainCamera.transform.position = new Vector3(pipePuzzleRoom.transform.position.x, pipePuzzleRoom.transform.position.y, cameraZPosition);
@@ -65,7 +64,6 @@ public class PipeTrigger : MonoBehaviour
         if (isOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             Arrow.SetActive(true);
-            if (hotbar != null) hotbar.gameObject.SetActive(true);
             isOpen = false;
             mainCamera.transform.position = new Vector3(returnRoom.transform.position.x, returnRoom.transform.position.y, cameraZPosition);
         }

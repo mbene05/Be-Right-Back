@@ -65,6 +65,5 @@ public class PipePuzzleManager : MonoBehaviour
         audioSource.PlayOneShot(winSound);
         SinkClogged.SetActive(false);
         SinkFull.SetActive(true);
-        if (hotbar != null) hotbar.gameObject.SetActive(true);
     }
 }

@@ -79,7 +79,6 @@ public Vector2 targetPosition;
                 selectedChef.logsCollected++;
                 done = true;
                 tileTrigger.SetActive(true);
-                if (hotbar != null) hotbar.gameObject.SetActive(true);
                 StartCoroutine(ShowAuthenticated());
         }
 
