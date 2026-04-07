@@ -179,8 +179,8 @@ MonoBehaviour:
   m_text: Explore the restaurant to find a way to leave without being detected by
     your date... but don't leave her alone for too long!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
+  m_sharedMaterial: {fileID: 3418385928081353211, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -356,8 +356,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Okay!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7252723f5e5e4941a4919b6992ce57c, type: 2}
+  m_sharedMaterial: {fileID: -7779040909820177938, guid: d7252723f5e5e4941a4919b6992ce57c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -671,7 +671,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.8679245, g: 0.7564772, b: 0.72463506, a: 1}
+    m_NormalColor: {r: 0.51886785, g: 0.6766893, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0.9725491, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1348,8 +1348,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142.2, y: -14}
-  m_SizeDelta: {x: 246.7378, y: 47.5511}
+  m_AnchoredPosition: {x: -140.95851, y: -14}
+  m_SizeDelta: {x: 240.1822, y: 47.5511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258221704
 MonoBehaviour:
@@ -1376,8 +1376,8 @@ MonoBehaviour:
 
     when she runs out of patience.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
+  m_sharedMaterial: {fileID: 3418385928081353211, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1512,10 +1512,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: If you're not sure how to answer a question, use the dating profiles at
-    the table as a hint
+    the table as a hint.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
+  m_sharedMaterial: {fileID: 3418385928081353211, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1828,8 +1828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -172, y: -116.1}
-  m_SizeDelta: {x: 166.1263, y: 31.0139}
+  m_AnchoredPosition: {x: -168.72217, y: -116.1}
+  m_SizeDelta: {x: 180.0322, y: 31.0139}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846724847
 MonoBehaviour:

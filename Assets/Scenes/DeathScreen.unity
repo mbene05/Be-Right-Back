@@ -338,8 +338,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7252723f5e5e4941a4919b6992ce57c, type: 2}
+  m_sharedMaterial: {fileID: -7779040909820177938, guid: d7252723f5e5e4941a4919b6992ce57c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -502,8 +502,8 @@ Transform:
   m_GameObject: {fileID: 838406519}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0067, y: 0.0906, z: 0}
-  m_LocalScale: {x: 17.974485, y: 10.090016, z: 1}
+  m_LocalPosition: {x: 0.0067, y: -0.0386, z: 0}
+  m_LocalScale: {x: 17.974485, y: 10.34832, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -556,7 +556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -141}
+  m_AnchoredPosition: {x: 0, y: -129}
   m_SizeDelta: {x: 321.7023, y: 113.5166}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1755448386
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.37759572, g: 0.6842035, b: 0.9308176, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -711,10 +711,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: CHARLiE's patience has run out and her circuits shorted, exploding the
-    restaurant.
+    restaurant!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
+  m_sharedMaterial: {fileID: 3418385928081353211, guid: 6dd9a8778ca90064b8a6035c6dc5d023, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 2.6653442, w: 0}
+  m_margin: {x: 21.271057, y: 0, z: 15.073547, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
