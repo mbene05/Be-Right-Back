@@ -13,9 +13,11 @@ public class PipeTrigger : MonoBehaviour
     public GameObject returnRoom;
     public string requiredItemName = "Wrench";
     private HotbarManager hotbar;
+    public TextAsset myInkJSON;
     
     public bool isOpen = false;
     public GameObject Arrow;
+    public GameObject Arrow2;
 
     void Start()
     {
@@ -48,10 +50,15 @@ public class PipeTrigger : MonoBehaviour
 
         if (hotbar != null && !hotbar.HasItem(requiredItemName))
         {
-            Debug.Log("You need a " + requiredItemName + " to access this.");
+            if (dialogueManager.dialogueStarted) return;
+            if (MapManager.IsOpen) return;
+            if (PinCodeMiniGame.IsOpen) return;
+            if (RoomSwitcher.IsTransitioning) return;
+            dialogueManager.StartDialogue(myInkJSON, null);
             return;
         }
         Arrow.SetActive(false);
+        Arrow2.SetActive(false);
         if (hotbar != null) hotbar.gameObject.SetActive(false);
 
         isOpen = true;
@@ -65,6 +72,7 @@ public class PipeTrigger : MonoBehaviour
         if (isOpen && Input.GetKeyDown(KeyCode.Escape))
         {
             Arrow.SetActive(true);
+            Arrow2.SetActive(true);
             if (hotbar != null) hotbar.gameObject.SetActive(true);
             isOpen = false;
             mainCamera.transform.position = new Vector3(returnRoom.transform.position.x, returnRoom.transform.position.y, cameraZPosition);
